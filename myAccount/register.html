@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <link rel="stylesheet" href="signin.css">
+    </head>
+
+    <body>
+
+        <div class="login-panel">
+            <img src="../images/Logo_final.png" alt="GT-logo">
+            <h1 class="connect-way">Register</h1>
+            <form class="login-form" action="">
+                <i class="fa fa-user icon"></i>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required >
+                <input type="password" name="" id="password" placeholder="Enter your password" required>
+                <input type="password" name="" id="confirm-password" placeholder="Confirm password" required>
+                <input type="submit" value="Sign up" onclick="return checkPasswordEquality()">
+                <span id = "message" style="color:red"></span>
+            </form>
+            <section class="alternative-connect">
+                <a href="login.html">Already have an acount?</a>
+            </section>
+            
+        </div>
+
+        <footer></footer>
+
+        <script>
+            var password = document.getElementById('password'),
+            confirm_password = document.getElementById('confirm-password');
+
+            function checkPasswordEquality(){
+                if(password.value != confirm_password.value)
+                {
+                    confirm_password.getElementById('message').innerHTML = "Passwords Don't Match";
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        
+    </body>
+</html>
