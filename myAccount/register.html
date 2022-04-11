@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Register</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="signin.css">
     </head>
 
     <body>
+<!-- 
+        <header class="main-header">
+            <div class="header-container">
+                <a class="logo" href="#">
+                    <img src="images\logo2.png" alt="Logo">
+                </a>
+            
+                <nav>
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">About</a></li>
+                        <li>
+                            <ul class="lang-selector">
+                                <li><a href="#">RU</a></li>    
+                                <li onclick=switchToRussian()><a href="#">RU</a></li>
+                                <li><a href="#ro" >RO</a></li>
+                            </ul>
+            
+                            <select class="lang-selector">
+                                <option id="opt1" value="0">EN</option>
+                                <option id="opt2" value="1">RO</option>
+                                <option id="opt3" value="2">RU</option>
+                            </select>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header> -->
 
         <div class="login-panel">
-            <img src="images/logo2.png" alt="GT-logo">
+            <img src="images/logo2.png" alt="GT-logo" class="login-logo">
             <h1 class="connect-way">Register</h1>
-            <form class="login-form" action="">
+            <form class="login-form" action="register">
                 <i class="fa fa-user icon"></i>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
                 <input type="email" name="email" id="email" placeholder="Enter your email" required >
-                <input type="password" name="" id="password" placeholder="Enter your password" required>
-                <input type="password" name="" id="confirm-password" placeholder="Confirm password" required>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" required>
                 <input type="submit" value="Sign up" onclick="checkPasswordEquality()">
                 <span id = "message" style="color:red"></span>
             </form>
-            <section class="alternative-connect">
+            <div class="alternative-connect">
                 <a href="login.html">Already have an acount?</a>
-            </section>
+            </div>
             
         </div>
 
