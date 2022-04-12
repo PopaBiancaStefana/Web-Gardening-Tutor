@@ -110,8 +110,32 @@ a:visited, a:link{
     color: rgb(243,120,76);
 }
 
-.fa {
-    display: inline;
+
+#message {
+    display:none;
+    color: #000;
+    position: relative;
+}
+
+.valid {
+    color: green;
+  }
+  
+.valid:before {
+    position: relative;
+    left: -5px;
+    content: "&#10004";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -5px;
+    content: "&#10008;";
 }
 
 

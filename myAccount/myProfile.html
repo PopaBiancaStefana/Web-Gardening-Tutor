@@ -4,49 +4,112 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>My profile</title>
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+
         <link rel="stylesheet" href="myProfile.css">
     </head>
 
     <body>
+<!-- 
+        <header>
+            <a class="logo" href="#">
+                <img src="images/logo2.png" alt="Logo">
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                     <li><a href="#">About</a></li> 
+                    <li>
+                     <ul class="lang-selector">
+                        <li><a href="#">RU</a></li>	
+                        <li onclick=switchToRussian()><a href="#">RU</a></li>
+                        <li><a href="#ro" >RO</a></li>
+                    </ul> 
+
+                        <select class="lang-selector">
+                          <option id="opt1" value="0">EN</option>
+                          <option id="opt2" value="1">RO</option>
+                          <option id="opt3" value="2">RU</option>
+                        </select>
+                    </li>
+                </ul>			
+            </nav>					
+        </header> -->
+
         <div class="container">
-        
-            <div class="profile-information">
-                <div class="profile-header"> <!-- photo and name-->
-                    
-                    <img src="images/avatar.png" alt="avatar" class="profile-image">
-                    <div class="profile-info">
-                        <h3 class="my-name">John Doe</h3>
-                    </div>
 
-                </div> 
+            <div class="menu">
+                <button id="default_open" class="menu-button" onclick="openContent(event, 'profile-information')">
+                    Profile information
+                </button>
 
-                <section class="profile-details">
-                    <h3>About</h3>
-                    <div class="profile-details-field">
-                        <p class="profile-details-label">bla</p>
-                        <p class="profile-details-value">bla</p>
-                    </div>
+                <button class="menu-button" onclick="openContent(event, 'achievemnets')">
+                    Achievements
+                </button>
 
-                    <div class="profile-details-field">
-                        <p class="profile-details-label">Registration date</p>
-                        <p class="profile-details-value">10.04.2022</p>
-                    </div>
-                </section>
+                <button class="menu-button" onclick="openContent(event, 'your-courses')">
+                    Your Courses
+                </button>
 
-                <section class="profile-details">
-                    <h3>Statistics</h3>
-                    
-                    <div class="profile-details-field">
-                        <p class="profile-details-label">Completed courses</p>
-                        <p class="profile-details-value">2</p>
-                    </div>
-                </section>
+                <button class="menu-button" onclick="openContent(event, 'bookmarks')">
+                    Bookmarked Courses
+                </button>
+
+                <button class="menu-button" >
+                    Garden Manager
+                </button>
+
             </div>
 
-            <div class="right-side">
+            <div class="content-container">
+                
+                <div class="profile-information content" id="profile-information">
+                    <div class="profile-header"> 
+                        
+                        <div class="profile-picture">
+                            <label class="picture-label" for="avatar">
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <span>Change Image</span>
+                            </label>
+                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png, .jpg, .jpeg">
+                            <img src="images/avatar.png" alt="avatar" class="profile-image" id="output">
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="my-name">John Doe</h3> <br>
+                            <h3>john.doe@gmail.com</h3>
+                        </div>
+    
+                    </div> 
+    
+                    <section class="profile-details">
+                        <h1>About</h1>
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">bla</p>
+                            <p class="profile-details-value">bla</p>
+                        </div>
+    
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">Registration date</p>
+                            <p class="profile-details-value">10.04.2022</p>
+                        </div>
+                    </section>
+    
+                    <section class="profile-details">
+                        <h1>Statistics</h1>
+                        
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">Completed courses</p>
+                            <p class="profile-details-value">2</p>
+                        </div>
+                    </section>
+                </div>
 
-                <section class="section-card">
-                    <h3>Avhievements</h3>
+                
+                <section class="section-card content" id="achievemnets">
+                    <h1>Avhievements</h1>
 
                     <div class="section-card-content">
                         <div class="badge-container tooltip">
@@ -60,22 +123,108 @@
                         </div>
                 </section>
 
-                <section class="section-card">
-                    <h3>Followed courses</h3>
+                <section class="section-card content" id="your-courses">
+                    <h1>Followed courses</h1>
                     
-                    <div class="section-card-content">
-                        <div class="course-card">
-                            <h3>Course Title</h3>
-                            <button class="course-button">Continue</button>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
-                            </div>
-                        </div>    
+                    <div class="courses-container">
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Continue</button>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>    
+                        </div>
                     </div>
 
                 </section>
+                
+
             </div>
+      
+
+            <div class="right-side content">
+
+
+                
+            </div> 
         </div>
+
+        <script>
+            function openContent(evt, contentName){
+                var i, tabs, tab_links;
+                tabs = document.getElementsByClassName("content");
+                for(i=0; i < tabs.length; i++)
+                    tabs[i].style.display = "none";
+
+                tab_links = document.getElementsByClassName("menu-button");
+               
+                for(i=0; i<tab_links.length; i++)
+                    tab_links[i].className = tab_links[i].className.replace(" active", "");
+                    
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            document.getElementById("default_open").click();
+
+
+            var loadFile = function (event) {
+                var image = document.getElementById("output");
+                image.src = URL.createObjectURL(event.target.files[0]);
+            }
+
+        </script>
 
     </body>
 
