@@ -1,137 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Web Gardening Tutor</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" href="style.css"> 
-	</head>
-	<body>
-			<header>
-						<a class="logo" href="#">
-							<img src="logo2.png" alt="Logo">
-						</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Gardening Tutor</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-						<nav>
-							<ul>
-								<li><a href="#">Profile</a></li>
-								<li><a href="#">Courses</a></li>
-								<li><a href="#">Leaderboard</a></li>
-								<!-- <li><a href="#">About</a></li> -->
-								<li>
-								<!-- <ul class="lang-selector">
-									<li><a href="#">RU</a></li>	
-									<li onclick=switchToRussian()><a href="#">RU</a></li>
-									<li><a href="#ro" >RO</a></li>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a class="logo" href="#">
+          <img src="logo2.png" alt="Logo" />
+        </a>
 
-								</ul> -->
+        <nav>
+          <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Leaderboard</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-									<select class="lang-selector">
-									  <option id="opt1" value="0">EN</option>
-									  <option id="opt2" value="1">RO</option>
-									  <option id="opt3" value="2">RU</option>
-									</select>
-								</li>
-							</ul>			
-						</nav>					
-			</header>
+    <main>
+      <div class="welcome-text" id="welcome_text">
+        <h1>Gardening <span>for all</span></h1>
+        <a href="#about"><button class="button">About us</button></a>
+      </div>
+    </main>
 
-			<main>
-				<div class="welcome-text" id="welcome_text">
-					<h1>Gardening <span>for all</span></h1>
-					<button class="button">About us</button>
-				</div>
-			</main>
+    <section class="about-area" id="about">
+      <h3 class="section-title">About us</h3>
+      <ul class="about-content">
+        <li class="about-left img"></li>
+        <li class="about-right">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet
+            ultricies sodales. Quisque feugiat placerat nisl. Phasellus dapibus
+            elit nunc, id mollis risus porta non. Sed non nunc viverra,
+            ullamcorper est id, ullamcorper est. Integer a eros eget ipsum
+            suscipit dictum.
+          </p>
+        </li>
+      </ul>
+    </section>
 
-			<section class="about-area" id="about">
-				<h3 class="section-title">About Us</h3>
-				<ul class="about-content">
-					<li class="about-left"></li>
-					<li class="about-right">
-						<h2>About our Company</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt iusto unde modi aspernatur amet blanditiis quibusdam ipsam. Veritatis, rerum, fuga.</p><a class="about-btn" href="">Learn more</a>
-					</li>
-				</ul>
-			</section>
-			<section class="services-area" id="services">
-				<h3 class="section-title">Services</h3>
-				<ul class="services-content">
-					<li>
-						<i class="fa fa-laptop"></i>
-						<h4>Web Design</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
-					</li>
-					<li>
-						<i class="fa fa-signal"></i>
-						<h4>Marketing</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
-					</li>
-					<li>
-						<i class="fa fa-picture-o"></i>
-						<h4>Graphics</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, reprehenderit.</p>
-					</li>
-				</ul>
-			</section>
-			<section class="contact-area" id="contact">
-				<h3 class="section-title">Contact</h3>
-				<ul class="contact-content">
-					<li>
-						<i class="fa fa-map-marker"></i>
-						<p>247 Westwood Lane<br>
-						Blackfen, UK</p>
-					</li>
-					<li>
-						<i class="fa fa-phone"></i>
-						<p>+123 456 789<br>
-						+789 456 123</p>
-					</li>
-					<li>
-						<i class="fa fa-envelope"></i>
-						<p>info@saffron.com<br>
-						yourdomain@website.com</p>
-					</li>
-				</ul>
-			</section>
-			<footer>
-				<p>All Right Reserved by Your Website</p>
-			</footer>
-		</div>
+    <section class="services-area" id="services">
+      <h3 class="section-title">Our services</h3>
+      <ul class="services-content">
+        <li>
+          <img class="gardening-courses" src="images/book.png" alt="Book" />
+          <h4>Gardening courses</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
+            reprehenderit.
+          </p>
+        </li>
+        <li>
+          <img
+            class="garden-manager"
+            src="images/gardening3.png"
+            alt="Gardening"
+          />
+          <h4>Garden manager</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
+            reprehenderit.
+          </p>
+        </li>
+      </ul>
+    </section>
 
-		<script>
+    <section class="faq-area" id="faq">
+      <h3 class="section-title">FAQ</h3>
+      <ul class="faq-content">
+        <li id="faq-image"></li>
 
-			function switchToRussian(){
-				document.getElementById("welcome_text").innerHTML = "Садоводство для всех";
-			}
-			// var dataReload = document.querySelectorAll("[data-reload]");
+        <li class="faq-right">
+          <p>Can I learn at my own pace?</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet
+            ultricies sodales. Quisque feugiat placerat nisl. Phasellus dapibus
+            elit nunc, id mollis risus porta non. Sed non nunc viverra,
+            ullamcorper est id, ullamcorper est. Integer a eros eget ipsum
+            suscipit dictum.
+          </p>
+        </li>
+      </ul>
+    </section>
 
-			// var language = {
-			// 	ru: {
-			// 		welcome: "Садоводство для всех"
+    <section class="contact-area" id="contact">
+      <h3 class="section-title">Contact us</h3>
+      <ul class="contact-content">
+        <li>
+          <img class="telephone" src="images/telephone.png" alt="Telephone" />
+          <p>
+            +40 234 142 659<br />
+            +40 456 123 921
+          </p>
+        </li>
+        <li>
+          <img class="envelope" src="images/envelope.png" alt="Envelope" />
+          <p>info@gardeningtutor.com</p>
+        </li>
+      </ul>
+    </section>
 
-			// 	},
-
-			// 	ro:{
-			// 		welcome: "Grădinăritul e pentru toți"
-			// 	}
-
-			// };
-
-			// if(window.location.hash){
-			// 	if(window.location.hash === "#ru"){
-			// 		welcome_text.textContent = language.ru.welcome;
-			// 	}
-
-			// }
-
-			// for(i=0; i<=dataReload.length; i++){
-			// 	dataReload[i].onclick = function() {
-			// 		location.reload(true);
-			// 	};
-			// }
-			
-		</script>
-
-	</body>
+    <footer>
+      <p>Web project 2022 Faculty of Computer Science Iași</p>
+      <br />
+      <p id="copyright">&copy All Rights Reserved</p>
+    </footer>
+  </body>
 </html>
