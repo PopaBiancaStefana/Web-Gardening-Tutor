@@ -74,21 +74,30 @@ ul li a:hover {
 /*Responsive header elements*/
 @media (max-width: 1000px) {
   header {
-    padding: 20px 50px;
+    flex-direction: column;
+  }
+  .logo img {
+    margin: 0;
+    padding: 10px;
+    width: 20rem;
+    height: 10rem;
   }
 }
 @media (max-width: 700px) {
   header {
     flex-direction: column;
   }
-
   .logo img {
-    margin-bottom: 15px;
+    margin: 0;
     padding: 10px;
+    width: 20rem;
+    height: 10rem;
   }
-
   header nav li {
     margin: 0;
+  }
+  .container {
+    height: 160px;
   }
 }
 
@@ -590,20 +599,4 @@ footer {
   .button {
     margin-top: 25px;
   }
-}
-
-/*Fonts*/
-@font-face {
-  font-family: Wood;
-  src: url(fonts/Drift___.woff);
-}
-
-@font-face {
-  font-family: Uptown;
-  src: url(fonts/Uptown-Elegance-Regular.woff);
-}
-
-@font-face {
-  font-family: Lato;
-  src: url(https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@300&display=swap);
 }
