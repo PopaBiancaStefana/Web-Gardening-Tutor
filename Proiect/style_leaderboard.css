@@ -148,7 +148,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 110px 100px;
+  padding: 50px 100px;
+  background-color: rgba(228, 190, 168, 0.8);
   height: auto;
 }
 .scroll {
@@ -168,195 +169,57 @@ section {
   }
 }
 
-/*Garden Manager area*/
-.manager-content {
-  width: 100%;
+/*Leaderboard area*/
+.divTableHeader {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border: solid 0.5rem;
+  border-radius: 1.5rem;
+  border-color: rgba(149, 177, 175, 0.5);
+  width: 120rem;
+  background-color: rgba(149, 177, 175, 0.5);
 }
-.manager-content li {
-  margin: 20px;
-  height: 500px;
-  background-clip: content-box;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center;
-}
-
-.manager-left {
-  flex-basis: 40%;
-}
-.manager-right {
-  flex-basis: 60%;
-}
-.manager-right h2 {
-  margin-bottom: 3%;
-}
-
-.manager-left #name-label {
-  width: 20rem;
-  height: 5rem;
-  font-size: 2rem;
-  margin-right: 85px;
-  font-weight: bold;
-  color: #ff7c59;
-}
-
-.manager-left #last-interaction-label {
-  width: 20rem;
-  height: 5rem;
-  font-size: 2rem;
-  margin-right: 1px;
-  font-weight: bold;
-  color: #ff7c59;
-}
-
-.manager-left #due-date-label {
-  width: 20rem;
-  height: 5rem;
-  font-size: 2rem;
-  margin-right: 57px;
-  font-weight: bold;
-  color: #ff7c59;
-}
-
-.manager-left #stage-label {
-  width: 20rem;
-  height: 5rem;
-  font-size: 2rem;
-  margin-right: 89px;
-  font-weight: bold;
-  color: #ff7c59;
-}
-
-.manager-left #interaction-label {
-  width: 20rem;
-  height: 5rem;
-  font-size: 2rem;
-  margin-right: 45px;
-  font-weight: bold;
-  color: #ff7c59;
-}
-.manager-left input {
-  width: 23rem;
-  height: 4rem;
-  font-size: large;
-  font-weight: bold;
-  border-radius: 0.8rem;
-  padding: 0.8rem;
-}
-
-.manager-left select {
-  width: 23rem;
-  height: 4rem;
-  font-size: large;
-  font-weight: bold;
-  border-radius: 0.8rem;
-  padding: 0.8rem;
-}
-
-.manager-left div {
-  margin: 20px 20px 20px 20px;
-}
-.manager-area {
-  background-color: rgba(178, 216, 227, 0.6);
-  padding: 55px;
-}
-
-.add-button input {
-  padding: 8px 15px;
-  font-size: 20px;
-  cursor: pointer;
+.divTableHeader .divTableCell {
+  width: 100px;
+  margin: 10px;
   text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #205565;
-  background-color: #95ce8b;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-  text-transform: uppercase;
-  font-family: "Quicksand", sans-serif;
-}
-
-.add-button input:hover {
-  background-color: #e3a95f;
-  transition: all 0.5s;
-}
-
-.add-button input:hover::after {
-  background-color: #e3a95f;
-  transition: all 0.5s;
-}
-
-.add-button input:active {
-  background-color: #e3a95f;
-  box-shadow: 0 5px #666;
-  transform: translateY(15px);
-}
-
-table {
-  border-collapse: collapse;
-}
-table.list {
-  width: 100%;
-}
-
-td,
-th {
-  border: 1px solid #95ce8b;
-  text-align: left;
-  padding: 8px;
-  font-size: 1.4rem;
-  color: #205565;
+  line-height: 25px;
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #205565;
+  border-radius: 1.5rem;
 }
-
-tr:nth-child(even),
-table.list thead > tr {
-  background-color: #95ce8b;
+.divTableRow {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-radius: 1.5rem;
+  width: 120rem;
+  background-color: rgba(149, 177, 175, 0.5);
 }
-
-.edit-delete {
-  font-size: 1.4rem;
-  text-transform: uppercase;
+.divTableRow .divTableCell {
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #205565;
+  border-radius: 1.5rem;
 }
-
-.edit-delete:hover {
-  color: #e3a95f;
-  cursor: pointer;
+.divTableRow .divTableCell img {
+  width: 10rem;
+  height: 10rem;
 }
-
-/* Responsive Garden Manager area */
+/* Responsive Leaderboard area */
 @media only screen and (max-width: 1000px) {
-  .manager-left,
-  .manager-right {
-    flex-basis: 100%;
-  }
-  .manager-content li {
-    padding: 8px;
-  }
 }
 
 @media only screen and (max-width: 800px) {
-  .manager-left,
-  .manager-right {
-    flex-basis: 100%;
-  }
-  .manager-content li {
-    padding: 8px;
-  }
 }
 
 @media only screen and (max-width: 600px) {
-  .manager-left,
-  .manager-right {
-    flex-basis: 100%;
-  }
-  .manager-content li {
-    padding: 8px;
-  }
 }
 
 /*Footer*/
@@ -383,63 +246,12 @@ footer {
     height: 15rem;
     padding: 5px;
   }
-  .manager-left #name-label {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-right: 300px;
-    font-weight: bold;
-    color: #ff7c59;
-  }
-  .manager-left #last-interaction-label {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-right: 195px;
-    font-weight: bold;
-    color: #ff7c59;
-  }
-  .manager-left #due-date-label {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-right: 265px;
-    font-weight: bold;
-    color: #ff7c59;
-  }
-  .manager-left #stage-label {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-right: 305px;
-    font-weight: bold;
-    color: #ff7c59;
-  }
-  .manager-left #interaction-label {
-    width: 20rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-right: 250px;
-    font-weight: bold;
-    color: #ff7c59;
-  }
-  .add-button button {
-    padding: 10px 20px;
-    font-size: 24px;
-  }
   .title-text h1 span {
     font-size: 50px;
   }
   .title-text img {
     width: 25rem;
     margin-top: 5px;
-  }
-  td,
-  th {
-    font-size: 2.5rem;
-  }
-  .edit-delete {
-    font-size: 2.5rem;
   }
 }
 
@@ -458,64 +270,43 @@ footer {
   }
   .title-text h1 {
     margin: 4rem 0rem;
-    font-size: 18px;
+    font-size: x-large;
   }
   .title-text h1 span {
-    font-size: 18px;
+    font-size: x-large;
   }
   .title-text img {
-    width: 10rem;
+    width: 16rem;
   }
   .container {
     height: 150px;
   }
-  main {
-    margin-top: 70px;
-    height: 180px;
+  .divTableHeader {
+    width: 35rem;
   }
-  td,
-  th {
-    font-size: 1rem;
+  .divTableRow {
+    width: 35rem;
   }
-  .manager-area {
-    padding: 0px;
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
   }
-  .manager-left input {
-    height: 3rem;
-    font-size: 12px;
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
   }
-  .manager-left select {
-    height: 3rem;
-    font-size: 12px;
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
   }
-  .manager-left #name-label {
-    font-size: 1.5rem;
-  }
-  .manager-left #last-interaction-label {
-    font-size: 1.5rem;
-    margin-right: 23px;
-  }
-  .manager-left #due-date-label {
-    font-size: 1.5rem;
-    margin-right: 65px;
-  }
-  .manager-left #stage-label {
-    font-size: 1.5rem;
-  }
-  .manager-left #interaction-label {
-    font-size: 1.5rem;
-    margin-right: 55px;
-  }
-  .manager-left .add-button input {
-    font-size: 1.5rem;
-  }
-  .edit-delete {
-    font-size: 1rem;
+  section {
+    padding: 30px;
   }
 }
 
 /* Responsive on Mobile screen with landscape orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: landscape) {
+  main {
+    height: 22rem;
+  }
   .logo img {
     height: 90px;
     width: 170px;
@@ -526,14 +317,11 @@ footer {
   .title-text {
     height: 100px;
   }
-  .manager-area {
-    margin-top: 35px;
-  }
   .title-text h1 {
-    font-size: 20px;
+    font-size: 15px;
   }
   .title-text h1 span {
-    font-size: 20px;
+    font-size: 15px;
   }
   .container {
     height: 140px;
@@ -541,8 +329,24 @@ footer {
   .title-text img {
     width: 10rem;
   }
-  main {
-    height: 190px;
+  .divTableHeader {
+    width: 60rem;
+  }
+  .divTableRow {
+    width: 60rem;
+  }
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
+  }
+  section {
+    padding: 30px;
   }
 }
 
@@ -566,13 +370,25 @@ footer {
   .title-text img {
     width: 15rem;
   }
-  td,
-  th {
-    font-size: 1.5rem;
+  .divTableHeader {
+    width: 85rem;
   }
-  /* main {
-    height: 385px;
-  } */
+  .divTableRow {
+    width: 85rem;
+  }
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
+  }
+  section {
+    padding: 80px;
+  }
 }
 
 /* Responsive on Tablet screen with landscape orientation */
@@ -580,7 +396,23 @@ footer {
   .container {
     height: 150px;
   }
-  .title-text img {
-    width: 20rem;
+  .divTableHeader {
+    width: 60rem;
+  }
+  .divTableRow {
+    width: 60rem;
+  }
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
+  }
+  section {
+    padding: 30px;
   }
 }

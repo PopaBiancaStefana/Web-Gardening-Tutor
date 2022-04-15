@@ -12,7 +12,7 @@
   <body>
     <header class="main-header">
       <div class="container">
-        <a class="logo" href="#">
+        <a class="logo" href="start.html">
           <img src="logo2.png" alt="Logo" />
         </a>
 
@@ -20,7 +20,7 @@
           <ul class="nav-bar">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Courses</a></li>
-            <li><a href="#">Leaderboard</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
           </ul>
         </nav>
       </div>
@@ -42,7 +42,7 @@
             >
               <div>
                 <label id="name-label">Name</label>
-                <input type="text" name="name" id="name" />
+                <input type="text" name="name" id="name" required />
               </div>
               <div>
                 <label id="last-interaction-label">Last interaction</label>
@@ -50,17 +50,12 @@
                   type="date"
                   name="last_interaction"
                   id="last_interaction"
-                  placeholder="DD-MM-YYYY"
+                  required
                 />
               </div>
               <div>
                 <label id="due-date-label">Due date</label>
-                <input
-                  type="date"
-                  name="due_date"
-                  id="due_date"
-                  placeholder="DD-MM-YYYY"
-                />
+                <input type="date" name="due_date" id="due_date" required />
               </div>
               <div>
                 <label id="stage-label">Stage</label>
