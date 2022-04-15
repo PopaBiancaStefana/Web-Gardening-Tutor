@@ -192,7 +192,7 @@ ul li a:hover {
 
   header {
     padding: 1px;
-    overflow: auto;
+    overflow: visible;
   }
 
   .logo img {
