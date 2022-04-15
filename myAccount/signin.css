@@ -161,7 +161,7 @@ ul {
 }
 
 ul li a {
-  padding: 0 20px;
+  padding: 0;
   text-decoration: none;
   color: #ff7c59;
   font-size: 18px;
@@ -203,7 +203,7 @@ ul li a:hover {
 
   ul{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
 }

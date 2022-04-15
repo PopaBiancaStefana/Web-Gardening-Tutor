@@ -15,14 +15,13 @@ html {
 
 body{
     font-family: 'Quicksand', sans-serif;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin: 0;
 }
 
 
 .container{
     display: flex;
-    margin-top: 100px;;
+    margin: 10px 50px 0px 50px;
 }
 
 .menu {
@@ -330,9 +329,17 @@ body{
         margin: 0px 0px 55px;
     }
 
+    
+    .profile-picture img, .profile-picture  .picture-label
+    {
+        height: 100px;
+        width: 100px;
+    }
+
     .container {
         display: block;
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .menu {
@@ -340,6 +347,7 @@ body{
         flex-direction: row;
         position: fixed;
         bottom: 0px;
+        left: 0px;
         width: 100%;
     }
 
@@ -359,6 +367,7 @@ body{
         border-radius: 50px;
         padding: 10px;
         margin: 0px 5px;
+        padding-bottom: 60px;
     }
 
     .profile-information {
@@ -380,6 +389,7 @@ body{
 header{
     background-color: rgba(255, 255, 255, 0.412);
     width: 100%;
+    margin: 0;
   }
   
   
@@ -435,9 +445,13 @@ header{
       flex-direction: column;
     }
   
+    ul li a {
+        padding: 0;
+    }
+
     header {
       padding: 1px;
-      overflow: auto;
+      overflow: hidden;
     }
   
     .logo img {
@@ -453,7 +467,7 @@ header{
   
     ul{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
     }
   
   }
@@ -466,6 +480,10 @@ header{
       flex-direction: column;
     }
   
+    ul li a {
+        padding: 0;
+    }
+
     .logo img {
       margin: 0;
       padding: 10px;
@@ -479,7 +497,7 @@ header{
       height: 160px;
     } */
   
-    .main-header .header-container {
+    .main-header .container {
       flex-direction: column;
     }
   
