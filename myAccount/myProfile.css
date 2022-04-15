@@ -73,21 +73,30 @@ ul li a:hover {
 }
 
 .menu button {
-    margin: 0;
     background-color: wheat;
-    border: none;
     height: 70px;
     width: 100%;
     cursor: pointer;
-    border-radius: 10px 0px 0px 10px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: Quicksand, sans-serif;
     font-weight: bold;
     font-size: large;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .menu button.active {
     background-color: beige;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: rgb(254, 131, 79);
+
 }
 
 .menu button:hover
@@ -262,34 +271,36 @@ ul li a:hover {
 
 .section-card{
     display: flex;
-    background-color: powderblue;
     /* box-shadow: 0 10px 10px 0 rgb(0 0 0 / 10%); */
     padding: 20px;
     margin-bottom: 20px;
 }
 
 
-
 /* followed and bookmaked courses cards */
-.coursess-container{
+.courses-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+.section-card-content {
+    margin: 5px;
 }
 
 .course-card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 25%;
+    width: 200px;
     height: 200px;
     align-items: center;
-    border-radius: 18px;
-    background: rgb(254, 131, 79);
-    background: linear-gradient(0deg, rgba(254, 131, 79, 1) 0%, rgba(245, 153, 114, 1) 95%);
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 10px 16px -3px,
-        rgba(0, 0, 0, 0.2) 0px -10px 3px inset;
-    transition: .2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 10px 16px -3px, rgba(0, 0, 0, 0.2) 0px -10px 3px inset;
+    border-radius: 18px;
+    background: linear-gradient(0deg, rgb(254, 131, 79) 0%, rgb(245, 153, 114) 95%);
+    transition: all 0.2s ease-in-out 0s;
 }
 
 
@@ -304,7 +315,7 @@ ul li a:hover {
     background-color: #ffffff;
     border-radius: 6px;
     border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -5px 0 inset;
+    box-shadow: rgb(45 35 66 / 40%) 0 2px 4px, rgb(45 35 66 / 30%) 0 7px 13px -3px, #d6d6e7 0 -5px 0 inset;
     box-sizing: border-box;
     color: #0b628d;
     cursor: pointer;
@@ -350,21 +361,50 @@ ul li a:hover {
     width: 45%;
 }
 
-/* 
-@media screen and (max-width: 1000px){
-    .container{
+@media screen and (max-width: 1000px)
+{
+    body {
+        margin: 0px 0px 55px;
+    }
+
+    .container {
+        display: block;
+        flex-direction: column-reverse;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    .menu button {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        font-size: 0px;
+        width: calc(20%);
+        flex: 1 1 0px;
+        border-radius: 0px;
     }
 
-    .badge-container{
-        width: 20%;
+    .content-container {
+        border-radius: 50px;
+        padding: 10px;
+        margin: 0px 5px;
     }
 
-    .course-card{
-        width: 80%;
-        aspect-ratio: 4/3;
+    .profile-information {
+        width: 100%;
     }
-} 
- */
+
+    .badge-container {
+        width: 25%;
+    }
+}
+
 

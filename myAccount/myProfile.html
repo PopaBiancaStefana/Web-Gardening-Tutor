@@ -5,68 +5,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>My profile</title>
             <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
-
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link rel="stylesheet" href="myProfile.css">
     </head>
 
     <body>
-<!-- 
-        <header>
-            <a class="logo" href="#">
-                <img src="images/logo2.png" alt="Logo">
-            </a>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Leaderboard</a></li>
-                     <li><a href="#">About</a></li> 
-                    <li>
-                     <ul class="lang-selector">
-                        <li><a href="#">RU</a></li>	
-                        <li onclick=switchToRussian()><a href="#">RU</a></li>
-                        <li><a href="#ro" >RO</a></li>
-                    </ul> 
 
-                        <select class="lang-selector">
-                          <option id="opt1" value="0">EN</option>
-                          <option id="opt2" value="1">RO</option>
-                          <option id="opt3" value="2">RU</option>
-                        </select>
-                    </li>
-                </ul>			
-            </nav>					
-        </header> -->
 
         <div class="container">
 
+            
+
             <div class="menu">
-                <button id="default_open" class="menu-button" onclick="openContent(event, 'profile-information')">
+                <button id="default_open" class="menu-button active" onclick="openContent(event, 'profile-information')">
                     Profile information
+                    <span class="material-icons">
+                        account_circle
+                    </span>
                 </button>
+                
 
                 <button class="menu-button" onclick="openContent(event, 'achievemnets')">
                     Achievements
+                    <span class="material-icons">
+                        workspace_premium
+                    </span>
                 </button>
 
                 <button class="menu-button" onclick="openContent(event, 'your-courses')">
                     Your Courses
+                    <span class="material-icons">
+                        menu_book
+                    </span>
                 </button>
 
                 <button class="menu-button" onclick="openContent(event, 'bookmarks')">
                     Bookmarked Courses
+                    <span class="material-icons">
+                        bookmarks
+                    </span>
                 </button>
 
-                <button class="menu-button" >
+                <button class="menu-button">
                     Garden Manager
+                    <span class="material-icons">
+                        dashboard
+                    </span>
                 </button>
 
             </div>
 
             <div class="content-container">
                 
-                <div class="profile-information content" id="profile-information">
+                <div class="profile-information content" id="profile-information" style="display: block;">
                     <div class="profile-header"> 
                         
                         <div class="profile-picture">
@@ -81,22 +73,22 @@
                             <h3 class="my-name">John Doe</h3> <br>
                             <h3>john.doe@gmail.com</h3>
                         </div>
-    
+
                     </div> 
-    
+
                     <section class="profile-details">
                         <h1>About</h1>
                         <div class="profile-details-field">
                             <p class="profile-details-label">bla</p>
                             <p class="profile-details-value">bla</p>
                         </div>
-    
+
                         <div class="profile-details-field">
                             <p class="profile-details-label">Registration date</p>
                             <p class="profile-details-value">10.04.2022</p>
                         </div>
                     </section>
-    
+
                     <section class="profile-details">
                         <h1>Statistics</h1>
                         
@@ -108,8 +100,8 @@
                 </div>
 
                 
-                <section class="section-card content" id="achievemnets">
-                    <h1>Avhievements</h1>
+                <section class="section-card content" id="achievemnets" style="display: none;">
+                    <h1>Acvhievements</h1>
 
                     <div class="section-card-content">
                         <div class="badge-container tooltip">
@@ -121,9 +113,9 @@
                             <img src="images/first-course.png" alt="badge" class="badge">
                             <span class="tooltip-text">First course</span>
                         </div>
-                </section>
+                </div></section>
 
-                <section class="section-card content" id="your-courses">
+                <section class="section-card content" id="your-courses" style="display: none;">
                     <h1>Followed courses</h1>
                     
                     <div class="courses-container">
@@ -187,18 +179,47 @@
                             </div>    
                         </div>
                     </div>
+                </section>
 
+                <section class="section-card content" id="bookmarks" style="display: none;">
+                    <h1>Bookmarked courses</h1>
+                    
+                    <div class="courses-container">
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Get started</button>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Get started</button>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Get started</button>
+                            </div>    
+                        </div>
+
+                        <div class="section-card-content">
+                            <div class="course-card">
+                                <h3>Course Title</h3>
+                                <button class="course-button">Get started</button>
+                            </div>    
+                        </div>
+
+                    </div>
                 </section>
                 
 
             </div>
-      
+    
 
-            <div class="right-side content">
-
-
-                
-            </div> 
         </div>
 
         <script>
@@ -209,7 +230,7 @@
                     tabs[i].style.display = "none";
 
                 tab_links = document.getElementsByClassName("menu-button");
-               
+            
                 for(i=0; i<tab_links.length; i++)
                     tab_links[i].className = tab_links[i].className.replace(" active", "");
                     
@@ -218,7 +239,7 @@
             }
             document.getElementById("default_open").click();
 
-
+        
             var loadFile = function (event) {
                 var image = document.getElementById("output");
                 image.src = URL.createObjectURL(event.target.files[0]);
@@ -226,6 +247,7 @@
 
         </script>
 
-    </body>
 
+
+    </body>
 </html>

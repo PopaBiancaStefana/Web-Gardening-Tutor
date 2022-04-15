@@ -8,59 +8,47 @@
     </head>
 
     <body>
-<!-- 
-        <header class="main-header">
-            <div class="header-container">
-                <a class="logo" href="#">
-                    <img src="images\logo2.png" alt="Logo">
-                </a>
-            
-                <nav>
-                    <ul>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Leaderboard</a></li>
-                        <li><a href="#">About</a></li>
-                        <li>
-                            <ul class="lang-selector">
-                                <li><a href="#">RU</a></li>    
-                                <li onclick=switchToRussian()><a href="#">RU</a></li>
-                                <li><a href="#ro" >RO</a></li>
-                            </ul>
-            
-                            <select class="lang-selector">
-                                <option id="opt1" value="0">EN</option>
-                                <option id="opt2" value="1">RO</option>
-                                <option id="opt3" value="2">RU</option>
-                            </select>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header> -->
 
-        <div class="login-panel">
-            <img src="images/logo2.png" alt="GT-logo" class="login-logo">
-            <h1 class="connect-way">Register</h1>
-            <form class="login-form" action="register">
-                <input type="text" name="name" id="name" placeholder="Enter your name" required>
-                <input type="email" name="email" id="email" placeholder="Enter your email" required >
-                <input type="password" name="password" id="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" required>
-                <div id="message">
-                    <h3>Password must contain the following:</h3>
-                    <p id="letter" class="invalid"> A <b>lowercasae</b> letter</p>
-                    <p id="capital" class="invalid"> A <b>capital</b> letter</p>
-                    <p id="digit" class="invalid"> A <b>digit</b></p>
-                    <p id="length" class="invalid"> Minimum <b>8 characters</b></p>
-                </div>
-                <input type="submit" value="Sign up">
-            </form>
-            <div class="alternative-connect">
-                <a href="login.html">Already have an acount?</a>
+        <header class="main-header">
+            <div class="container">
+              <a class="logo" href="#">
+                <img src="images/logo2.png" alt="Logo" />
+              </a>
+      
+              <nav>
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Leaderboard</a></li>
+                </ul>
+              </nav>
             </div>
-            
-        </div>
+        </header>
+
+        <main>
+            <div class="login-panel">
+                <img src="images/logo2.png" alt="GT-logo" class="login-logo">
+                <h1 class="connect-way">Register</h1>
+                <form class="login-form" action="register">
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required >
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" required>
+                    <div id="message">
+                        <h3>Password must contain the following:</h3>
+                        <p id="letter" class="invalid"> A <b>lowercasae</b> letter</p>
+                        <p id="capital" class="invalid"> A <b>capital</b> letter</p>
+                        <p id="digit" class="invalid"> A <b>digit</b></p>
+                        <p id="length" class="invalid"> Minimum <b>8 characters</b></p>
+                    </div>
+                    <input type="submit" value="Sign up">
+                </form>
+                <div class="alternative-connect">
+                    <a href="login.html">Already have an acount?</a>
+                </div>
+                
+            </div>
+        </main>
 
         <footer></footer>
 
