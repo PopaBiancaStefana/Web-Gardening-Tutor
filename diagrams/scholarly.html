@@ -16,6 +16,11 @@
                 counter-reset: item;
             }
 
+            ul
+            {
+                list-style-type:circle;
+            }
+
             li {
                 display: block;
             }
@@ -80,10 +85,10 @@
                 <li>
                     <a href="#caracterisitici_sistem">Caracteristicile sistemului</a>
                     <ol>
-                        <li><a href="#">feature</a></li>
-                        <li><a href="#">feature</a></li>
-                        <li><a href="#">feature</a></li>
-                        <li><a href="#">feature</a></li>
+                        <li><a href="#inregistrare">Inregistrare</a></li>
+                        <li><a href="#autentificare"></a>Autentificare</li>
+                        <li><a href="#curs">Parcurgere curs</a></li>
+                        <li><a href="#info_cont">Vizualizare informatii despre propriul cont</a></li>
                     </ol>
                 </li>
 
@@ -216,11 +221,85 @@
 
         <section id="caracterisitici_sistem">
             <h1>4. Caracteristicile sistemului</h1>
-            <section id="feature_1">
-                <h2>4.1 Feature 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum expedita doloremque quam possimus, quisquam voluptates sit dolores voluptate. Consectetur animi quia eos facilis quibusdam non expedita doloremque voluptatem mollitia deleniti.</p>
+            <section id="inregistrare">
+                <h2>4.1 Inregistrare</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Pentru a putea accesa continutul unui curs si pentru a beneficia de monitorizorea progresului, respectiv de posibilitatea de a salva cursuri, utilizatorii aplicatiei sunt nevoiti sa-si creeze mai intai un cont.
+                        Informatiile necesarii crearii contului vor fi un nume, un email valid si o parola care sa respecte anumite conditii de siguranta. <br>
+                        Prioritatea acestei componente este ridicata deoarece, pentru ca un utilizator sa se poata bucura pe deplin de functionlaitatile aplicatiei, acesta trebuia sa detina un cont.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un alizator trebuie sa ii urmeze pentru a-si crea un cont sunt urmatorii: <br>
+                        <ul>
+                            <li>introducerea numelui in campul corespunzator;</li>
+                            <li>introducere unei adrese email valide in campul corespunzator;</li>
+                            <li>introducerea unei parole care sa trebuie sa respecte anumite cerinte; <br>
+                                utilizatorul va fi informat in timp real, care din aceste cerinte sunt indeplinite de textul introdus in campul aferent parolei;
+                            </li>
+                            <li>reintroducerea parolei (exact aceeasi) din campul precdent;</li>
+                            <li>apasarea butonului "Sign Up", aflat sub campurile de completat;</li>                            
+                        </ul>
+
+                        <p>
+                            Dupa apasarea butonului de "Sign up", daca unul dintre campuri nu a fost completat sau daca nu a fost completat corect,
+                            atunci contul nu va fi creat, iar utilizatorului i se va atrage atentia asupra campului care nu a fost completat/ nu a fost completat corect. 
+                        </p>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a putea fi creat contul, fiecare camp trebuie completat, iar urmatoarele campuri trebuie sa aiba si un continut valid:
+                        <ul>
+                            <li>email-ul trebuie sa fie unul valid</li>
+                            <li>parola trebuie sa respecte urmatoarele cerinte: sa contina cel putin 8 caracterem, sa contina cel putin o litera mica, o litera mare, respectiv o cifra</li>
+                            <li>textul introdus in campul pentru confirmarea parolei trebuie sa coincida cu textul din campul corespunzator parolei</li>
+                        </ul>
+                    </p>
+                </div>
             </section>
 
+
+            <section id="autentificare">
+                <h2>4.2 Autentificare</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Rolul acestei componente este acelasi ca cel al componentei de inregistrare. Singura diferenta este ca autentificarea completeaza, inregistrarea: 
+                        nu este suficient ca un utilizator sa aibe cont in aplicatie, acesta trebuie sa se si autentifice cu acest cont, pentru a beneficia de functionalitatile aplicatiei.
+                        <br> Prioritatea este ridicata.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pentur a se autentifica utilizatorii trebuie sa urmeze urmatorii pasi:
+                        <ul>
+                            <li>introduca adresa de email pe care a folosit-o la crearea contului;</li>
+                            <li>introduca parola pe carea a setat-o la crearea contului;</li>
+                            <li>apasarea butonului "Log In";</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a se putea realiza autentificarea, combinatia dintre email si parola trebuie sa fie una corecta- sa fi fost folosita la crearea vreunui cont.
+                    </p>
+                </div>
+            </section>
+
+
+            <section id="curs">
+                <h2>4.3 Parcurgere Curs</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Aceasta componenta constituie sufletul acestei aplicatii, oferind
+                    </p>
+                </div>
+            </section>
 
         </section>
 
