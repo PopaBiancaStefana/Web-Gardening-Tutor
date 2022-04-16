@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-image: url("images/pattern_flori.png");
+  background-image: url("../images/pattern_flori.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -227,7 +227,7 @@ ul.about-content {
 .about-left {
   background-repeat: no-repeat;
   width: 46rem;
-  background-image: url(images/handwithplant.png);
+  background-image: url(../images/handwithplant.png);
 }
 
 .about-right {
@@ -360,7 +360,7 @@ ul.faq-content {
 
 .faq-left {
   flex-basis: 37%;
-  background-image: url(images/chat.png);
+  background-image: url(../images/chat.png);
 }
 
 .faq-right {
@@ -389,7 +389,7 @@ ul.faq-content {
   background-color: rgba(228, 190, 168, 0.8);
 }
 #faq-image {
-  background-image: url(images/chat.png);
+  background-image: url(../images/chat.png);
   height: 15rem;
   width: 15rem;
   margin: 0rem 1rem;
@@ -491,7 +491,7 @@ footer {
     margin-top: 1rem;
   }
   #faq-image {
-    background-image: url(images/chat.png);
+    background-image: url(../images/chat.png);
     height: 28rem;
     width: 34rem;
     margin: 0rem 14rem;
