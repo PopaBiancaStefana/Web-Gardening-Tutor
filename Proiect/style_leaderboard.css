@@ -214,12 +214,47 @@ section {
 }
 /* Responsive Leaderboard area */
 @media only screen and (max-width: 1000px) {
+  .divTableHeader {
+    width: 25rem;
+  }
+  .divTableRow {
+    width: 25rem;
+  }
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
+  }
+  section {
+    padding: 30px;
+  }
 }
 
-@media only screen and (max-width: 800px) {
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+  .divTableHeader {
+    width: 35rem;
+  }
+  .divTableRow {
+    width: 35rem;
+  }
+  .divTableHeader .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell {
+    font-size: 1.3rem;
+  }
+  .divTableRow .divTableCell img {
+    width: 5rem;
+    height: 5rem;
+  }
+  section {
+    padding: 30px;
+  }
 }
 
 /*Footer*/
