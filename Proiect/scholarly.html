@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gardening Tutoe Documentation</title>
+        
+        <style>
+            ol {
+                counter-reset: item;
+            }
+
+            li {
+                display: block;
+            }
+            
+            li:before{
+                content: counters(item, ".") " ";
+                counter-increment: item;
+            }
+
+            h1{
+                text-indent: 20px;
+            }
+            h2{
+                text-indent: 40px;
+            }
+            p{
+                text-indent: 60px;
+            }
+        </style>
+    
+    </head>
+
+    <body>
+        
+        <div class="table-of-contents">
+            <h1>Table of contents</h1>
+            <ol>
+                <li>
+                    <a href="#introducere">Introducere</a>
+                    <ol>
+                        <li><a href="#scop">Scop</a></li>
+                        <li><a href="#conventii">Conventii ale documentului</a></li>
+                        <li><a href="#sugestii">Publicul tinta si sugestii de parcurgere a documentului</a></li>
+                        <li><a href="#scop_produs">Scopul produsului</a></li>
+                        <li><a href="#referinte">Referinte</a></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <a href="#descriere">Descriere Generala</a>
+                    <ol>
+                        <li><a href="#perspectiva">Perspectiva produsului</a></li>
+                        <li><a href="#functii">Functiile produsului</a></li>
+                        <li><a href="#user_classes">Clasele si caracteristicile utlizatorului</a></li>
+                        <li><a href="#mediu_operare">Mediul de operare</a></li>
+                        <li><a href="#constrangeri">Constrangeri ale designului si ale implementarii</a></li>
+                        <li><a href="#user_doc">Documentatia pentru utilizator</a></li>
+                        <li><a href="#premise">Premise si dependinte</a></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <a href="#cerinte_externe">Cerintele externe pentru interfata</a>
+                    <ol>
+                        <li><a href="#user_interfaces">Interfete de utilizator</a></li>
+                        <li><a href="#hardware_interfaces">Interfete hardware</a></li>
+                        <li><a href="#software_interfaces">Interfete software</a></li>
+                        <li><a href="#comunication_interfaces">Interfete de comunicare</a></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <a href="#caracterisitici_sistem">Caracteristicile sistemului</a>
+                    <ol>
+                        <li><a href="#">feature</a></li>
+                        <li><a href="#">feature</a></li>
+                        <li><a href="#">feature</a></li>
+                        <li><a href="#">feature</a></li>
+                    </ol>
+                </li>
+
+
+                <li>
+                    <a href="#nonfunctional">Alte cerinte nonfunctionale</a>
+                    <ol>
+                        <li><a href="#performance">Cerinte de performanta</a></li>
+                        <li><a href="#securitate">Cerinte de securitate</a></li>
+                        <li><a href="#calitate">Cerinte de calitate software</a></li>
+                        <li><a href="#business">Reguli de business</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+        <section id="introducere">
+            <h1>1. Introducere</h1>
+            <section id="scop">
+                <h2>1.1 Scop</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt quos sapiente, eaque et architecto obcaecati voluptatum culpa consequuntur rerum iusto eligendi autem eveniet veniam atque. Itaque ratione obcaecati fugiat?
+                </p>
+            </section>
+
+            <section id="conventii">
+                <h2>1.2 Conventii ale documentului</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt quos sapiente, eaque et architecto obcaecati voluptatum culpa consequuntur rerum iusto eligendi autem eveniet veniam atque. Itaque ratione obcaecati fugiat?
+                </p>
+            </section>
+
+            <section id="sugestii">
+                <h2>1.3 Publicul tinta si sugestii de parcurgere a documentului</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt quos sapiente, eaque et architecto obcaecati voluptatum culpa consequuntur rerum iusto eligendi autem eveniet veniam atque. Itaque ratione obcaecati fugiat?
+                </p>
+            </section>
+
+            <section id="scop_produs">
+                <h2>1.4 Scopul produsului</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt quos sapiente, eaque et architecto obcaecati voluptatum culpa consequuntur rerum iusto eligendi autem eveniet veniam atque. Itaque ratione obcaecati fugiat?
+                </p>
+            </section>
+
+            <section id="referinte">
+                <h2>1.5 Referinte</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt quos sapiente, eaque et architecto obcaecati voluptatum culpa consequuntur rerum iusto eligendi autem eveniet veniam atque. Itaque ratione obcaecati fugiat?
+                </p>
+            </section>
+        </section>
+
+
+        <section id="descriere">
+            <h1>2. Descriere Generala</h1>
+
+            <section id="perspectiva">
+                <h2>2.1 Perspectiva produsului</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="functii">
+                <h2>2.2 Functiile produsului</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="user_classes">
+                <h2>2.3 Clasele si caracteristicile utlizatorului</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="mediu_operare">
+                <h2>2.4 Mediul de operare</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="constangeri">
+                <h2>2.5 Constangeri ale designului si ale implementarii</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="user_doc">
+                <h2>2.6 Documentatia pentru utilizator</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+
+            <section id="premise">
+                <h2>2.7 Premise si dependinte</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus in perspiciatis quae illo accusamus maxime fugiat minima facere error rem numquam reiciendis nesciunt cupiditate, cumque sunt laudantium sit veritatis.</p>
+            </section>
+        </section>
+
+        <section id="cerinte_externe">
+            <h1>3. Cerintele externe pentru interfata</h1>
+
+            <section id="user_interfaces">
+                <h2>3.1 Interfete de utilizator</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos, consequuntur, nobis alias magni aut beatae sunt odit fugit amet dolores officia aliquam explicabo, enim porro nam ipsa exercitationem harum!</p>
+            </section>
+
+            <section id="hardware_interfaces">
+                <h2>3.2 Interfete hardware</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deleniti, eos recusandae eaque quae ab sint? Nisi, voluptas nobis porro culpa, explicabo atque nesciunt laborum eum quae, molestias sunt laudantium?</p>
+            </section>
+
+            <section id="software_interfaces">
+                <h2>3.3 Interfete software</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deleniti, eos recusandae eaque quae ab sint? Nisi, voluptas nobis porro culpa, explicabo atque nesciunt laborum eum quae, molestias sunt laudantium?</p>
+            </section>
+
+            <section id="comunication_interfaces">
+                <h2>3.4 Interfete de comunicare</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deleniti, eos recusandae eaque quae ab sint? Nisi, voluptas nobis porro culpa, explicabo atque nesciunt laborum eum quae, molestias sunt laudantium?</p>
+            </section>
+            
+        </section>
+
+
+        <section id="caracterisitici_sistem">
+            <h1>Caracteristicile sistemului</h1>
+            <section id="feature_1">
+                <h2>Feature 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum expedita doloremque quam possimus, quisquam voluptates sit dolores voluptate. Consectetur animi quia eos facilis quibusdam non expedita doloremque voluptatem mollitia deleniti.</p>
+            </section>
+
+
+        </section>
+
+
+        <li>
+            <a href="#nonfunctional">Alte cerinte nonfunctionale</a>
+            <ol>
+                <li><a href="#performance">Cerinte de performanta</a></li>
+                <li><a href="#securitate">Cerinte de securitate</a></li>
+                <li><a href="#calitate">Cerinte de calitate software</a></li>
+                <li><a href="#business">Reguli de business</a></li>
+            </ol>
+        </li>
+
+    </body>
