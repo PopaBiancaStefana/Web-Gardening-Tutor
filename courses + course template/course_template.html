@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_course.css">
+
+
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a class="logo" href="#">
+                <img src="images\logo2.png" alt="Logo">
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <div class="title">
+        <div class="text">
+            <h1>Garden Flowers</h1>
+            <ul>
+                <li>difficulty: easy</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="second-banner">
+        <div class="image" style >
+            <h>The tools you need: </h>
+            <img src="images/growing.png">
+
+        </div>
+        <div class="list">
+            <ul>
+                <li data-modal-target="#modal">rake </li>
+                <div class="modal" id="modal">
+                    <h2>What is this tool?</h2>
+                    <p> Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam.
+                        Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis
+                        perferendis atque!
+                        Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis
+                        nesciunt sequi iure!
+                        Eligendi, eius libero. Ex, repellat sapiente!
+                    </p>
+                    <button data-close-button id="close-button">Close</button>
+                </div>
+
+                <li data-modal-target="#modal1">shovel </li>
+                <div class="modal" id="modal1">
+                    <h2>What is this tool? </h2>
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, consequatur dicta cupiditate
+                        cum adipisci fugiat deleniti exercitationem perspiciatis ducimus repellendus earum minus
+                        inventore aut debitis?
+                    </p>
+                    <button data-close-button id="close-button">Close</button>
+                </div>
+
+                <li data-modal-target="#modal2">gloves</li>
+                <div class="modal" id="modal2">
+                    <h2>What is this tool? </h2>
+                    <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique.
+                    </p>
+                    <button data-close-button id="close-button">Close</button>
+                </div>
+
+                <li data-modal-target="#modal3">bucket</li>
+                <div class="modal" id="modal3">
+                    <h2>What is this tool? </h2>
+                    <p>Sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                    <button data-close-button id="close-button">Close</button>
+                </div>
+            </ul>
+            <ul>
+                <li data-modal-target="#modal">mower </li>
+                <li data-modal-target="#modal">schissors </li>
+                <li data-modal-target="#modal">some tool </li>
+                <li data-modal-target="#modal">some tool </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="third-banner">
+        <div class="image">
+            <h>Environment: </h>
+            <img src="images/garden.png">
+
+        </div>
+        <div class="list">
+            <ul>
+                <li>spring season </li>
+                <li>good soil</li>
+                <li>sunny place</li>
+                <li>irrigation available</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="content">
+
+        <div class="main">
+            <form name="form1">
+                <label for="test1" class="part">
+                    <input type="checkbox" name="ckb" value=1 id="test1" onclick='enable_next_checkbox(0)' />
+                    <h2>Step one ~ Find a seed</h2>
+                    <br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                        sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                    <div class="photos">
+                        <div class="gallery">
+                            <a target="_blank" href="images/step1.jpg">
+                                <img src="images/step1.jpg" alt="step1">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step2.jpg">
+                                <img src="images/step2.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step3.jpg">
+                                <img src="images/step3.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step4.jpg">
+                                <img src="images/step4.jpg" alt="Mountains" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+                </label>
+
+
+                <label for="test2" class="part">
+                    <input type="checkbox" name="ckb" value=2 id="test2" disabled="disabled"
+                        onclick='enable_next_checkbox(1, this)' />
+                    <h2>Step two ~ Find another seed</h2>
+                    <br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                        sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                    <div class="photos">
+                        <div class="gallery">
+                            <a target="_blank" href="images/step1.jpg">
+                                <img src="images/step1.jpg" alt="step1">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step2.jpg">
+                                <img src="images/step2.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step3.jpg">
+                                <img src="images/step3.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step4.jpg">
+                                <img src="images/step4.jpg" alt="Mountains" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+                </label>
+
+                <label for="test3" class="part">
+                    <input type="checkbox" name="ckb" value=3 id="test3" disabled="disabled"
+                        onclick='enable_next_checkbox(2, this)' />
+                    <h2>Step three ~ Find another seed</h2>
+                    <br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                        sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                    <div class="photos">
+                        <div class="gallery">
+                            <a target="_blank" href="images/step1.jpg">
+                                <img src="images/step1.jpg" alt="step1">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step2.jpg">
+                                <img src="images/step2.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step3.jpg">
+                                <img src="images/step3.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+
+                        <div class="gallery">
+                            <a target="_blank" href="images/step4.jpg">
+                                <img src="images/step4.jpg" alt="Mountains" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+                </label>
+
+                <label for="test4" class="part">
+                    <input type="checkbox" name="ckb" value=4 id="test4" disabled="disabled"
+                        onclick='enable_next_checkbox(3, this)' />
+                    <h2>Step four ~ Find another seed</h2>
+                    <br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                        sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                </label>
+
+                <label for="test5" class="part">
+                    <input type="checkbox" name="ckb" value=5 id="test5" disabled="disabled"
+                        onclick='enable_next_checkbox(4, this)' />
+                    <h2>Step five ~ Find another seed</h2>
+                    <br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                        voluptatum deleniti atque corrupti
+                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+                        sunt in culpa qui officia
+                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                        et expedita distinctio.</p>
+                </label>
+
+                <button type="button" onclick="return_val()">Done!</button>
+                <p id="message"></p>
+            </form>
+
+
+
+        </div>
+
+        <div class="right">
+            <h1>Useful Tips</h1>
+        
+            <h2>Tip 1</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque dolorem quisquam dicta fuga perferendis
+                distinctio.</p>
+        
+            <h2>Tip 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto?</p>
+        
+            <h2>Tip 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere ut ipsa praesentium ducimus
+                quos voluptatibus.</p>
+        
+            <h2>Tip 4</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto?</p>
+        
+            <h2>Tip 5</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto?</p>
+        
+            <h2>Tip 6</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto?</p>
+        
+        
+        </div>
+    </div>
+
+    <footer>
+        <p>Web project 2022 Faculty of Computer Science Iași</p>
+        <br />
+        <p id="copyright">&copy All Rights Reserved</p>
+    </footer>
+
+    <!-- FOR THE MODAL BOX -->
+    <div id="overlay"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
