@@ -77,16 +77,15 @@
             text-align: left;
         }
 
-        ol {
+        .cuprins, .cuprins ol {
             counter-reset: item;
         }
 
-        li {
+        .cuprins li {
             display: block;
-            color: #666666;
         }
 
-        li:before {
+        .cuprins li:before {
             content: counters(item, ".") " ";
             counter-increment: item;
         }
