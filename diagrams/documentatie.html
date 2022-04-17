@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentatie</title>
+    <!-- <link rel="stylesheet" href="style_documentatie.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: Dashed;
+            src: url(/fonts/Quicksand_Dash.otf);
+        }
+
+
+        body {
+            background-image: url("images/pattern.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Quicksand', sans-serif;
+            height: 100%;
+        }
+
+
+        a {
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        h1 {
+            font-size: 50px;
+            color: #0b628d;
+            text-indent: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #0b628d;
+            text-indent: 40px;
+            padding-bottom: 10px;
+        }
+
+        p {
+            text-indent: 60px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+
+        ul {
+            font-size: 20px;
+            list-style-type: circle;
+        }
+
+
+        .content {
+            margin-top: 50px;
+            padding-left: 80px;
+            padding-top: 20px;
+            text-align: left;
+            color: #132a35;
+            background-color: rgba(240, 255, 255, 0.692);
+        }
+
+        .content h2 {
+            text-align: left;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        li {
+            display: block;
+            color: #666666;
+        }
+
+        li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>GarT</h1>
+    <h2> (Gardening Web Tutor)</h2>
+    <div class="content">
+        <h2>Authors</h2>
+        <ul>
+            <li>Muntean Iulian</li>
+            <li>Godovaniuc Victoria</li>
+            <li>Popa Bianca</li>
+        </ul>
+
+        <h2>Table of Contents</h2>
+        <ol class="cuprins">
+            <li>
+                <a href="#introducere">Introducere</a>
+                <ol>
+                    <li><a href="#scop">Scop</a></li>
+                    <li><a href="#sugestii">Publicul tinta si sugestii de parcurgere a documentului</a></li>
+                    <li><a href="#scop_produs">Scopul produsului</a></li>
+                    <li><a href="#referinte">Referinte</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="#descriere">Descriere Generala</a>
+                <ol>
+                    <li><a href="#perspectiva">Perspectiva produsului</a></li>
+                    <li><a href="#functii">Functiile produsului</a></li>
+                    <li><a href="#user_classes">Clasele si caracteristicile utlizatorului</a></li>
+                    <li><a href="#mediu_operare">Mediul de operare</a></li>
+                    <li><a href="#constrangeri">Constrangeri ale designului si ale implementarii</a></li>
+                    <li><a href="#user_doc">Documentatia pentru utilizator</a></li>
+                    <li><a href="#premise">Premise si dependinte</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="#cerinte_externe">Cerintele externe pentru interfata</a>
+                <ol>
+                    <li><a href="#user_interfaces">Interfete de utilizator</a></li>
+                    <li><a href="#hardware_interfaces">Interfete hardware</a></li>
+                    <li><a href="#software_interfaces">Interfete software</a></li>
+                    <li><a href="#comunication_interfaces">Interfete de comunicare</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="#caracterisitici_sistem">Caracteristicile sistemului</a>
+                <ol>
+                    <li><a href="#inregistrare">Inregistrare</a></li>
+                    <li><a href="#autentificare">Autentificare</a></li>
+                    <li><a href="#curs">Parcurgere curs</a></li>
+                    <li><a href="#manager">Managementul plantelor din propria gradina</a></li>
+                    <li><a href="#info_cont">Vizualizare informatii despre propriul profil</a></li>
+                    <li><a href="#clasament">Vizualizarea clasamentului</a></li>
+                </ol>
+            </li>
+
+
+            <li>
+                <a href="#nonfunctional">Alte cerinte nonfunctionale</a>
+                <ol>
+                    <li><a href="#performance">Cerinte de performanta</a></li>
+                    <li><a href="#securitate">Cerinte de securitate</a></li>
+                    <li><a href="#calitate">Cerinte de calitate software</a></li>
+                    <li><a href="#business">Reguli de business</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="#structura">Structura proiectului</a>
+            </li>
+
+            <li>
+                <a href="#diagrame">Pasi de utilizare</a>
+            </li>
+
+            <li>
+                <a href="#arhitectura">Arhitectura</a>
+            </li>
+        </ol>
+
+        <section id="introducere">
+            <h1>1. Introducere</h1>
+            <section id="scop">
+                <h2>1.1 Scop</h2>
+                <p>
+                    Acest document are ca scop enumerarea si analiza tuturor conceptelor necesare in vederea
+                    dezvoltarii aplicatiei web "Gardening Tutor". De asemenea, acest document isi propune conturarea
+                    unor idei care ar putea fi
+                    introduse in apicatie odata cu dezvoltarea acesteia.
+                </p>
+            </section>
+
+            <section id="conventii">
+                <h2>1.2 Conventii ale documentului</h2>
+                <p>
+                    --anumite conventii din documentatie
+
+                </p>
+            </section>
+
+            <section id="sugestii">
+                <h2>1.3 Publicul tinta si sugestii de parcurgere a documentului</h2>
+                <p>
+                    Proiectul prezentat in acest document are ca public tinta cadrele didactice ale Facultatii de
+                    Informatica din cadrul Universitatii Ioan Cuza, specializate pe disciplina Tehnologii Web. Pentru o
+                    cat mai buna intelegere a
+                    acestui document se recomanda parcurgerea in ordinea subunitatilor prezentate in cuprinsul de mai
+                    sus.
+                </p>
+            </section>
+
+            <section id="scop_produs">
+                <h2>1.4 Scopul produsului</h2>
+                <p>
+
+                    Scopul proiectului "Gardening Tutor" este acela de a pune la dispozitia tuturor celor pasionati de
+                    gradinarit o serie de
+                    cursuri, de diferite dificultati si categorii, cu ajutorul carora utilizatorii vor invata pas cu pas
+                    modul in care se creste si ingrijeste
+                    corect o anumita planta. Acestia vor primi indicatii in legatura cu ustensilele necesare, timpul de
+                    parcurgere al
+                    cursului, sfaturi utile si, de asemenea, vor primi notificari cu privire la activitatile pe care
+                    trebuie sa le intreprinda pentru buna
+                    dezvoltare a plantei.
+                </p>
+            </section>
+
+            <section id="referinte">
+                <h2>1.5 Referinte</h2>
+                <p>
+                    --likuri la documentatii sql / php
+                </p>
+            </section>
+        </section>
+
+
+        <section id="descriere">
+            <h1>2. Descriere Generala</h1>
+
+            <section id="perspectiva">
+                <h2>Perspectiva produsului</h2>
+                <p>Aplicatia web "Gardening Tutor" a fost aleasa dintr-o serie de aplicatii propuse spre dezvoltare de
+                    catre domnul
+                    profesor
+                    Matei Micu, avand scop didactic si de dezvoltare.
+
+                    Aceasta aplicatie este constituita din trei componente: o pagina web principala ce poate fi vizualizata de
+                    catre orice
+                    utilizator,
+                    o serie de pagini web disponibile numai clientilor cu un cont creat si o baza de date pentru a stoca
+                    toate informatiile
+                    legate de utilizatori.</p>
+            </section>
+
+            <section id="functii">
+                <h2>Functiile produsului</h2>
+                <p>
+                    Interactiunea utlizatorului cu aplicatia poate consta in:
+                <ul>
+                    <li>Autentificare sau inregistrare</li>
+                    <li>Marcarea oricarui curs in sectiunea de favorite</li>
+                    <li>Parcurgerea unor cursuri si finalizarea acestora</li>
+                    <li>Adaugarea unor anumite plante si informatii legate de acestea in tabelul din sectiunea de
+                        management a gradinii </li>
+                    <li>Vizualizarea realizarilor utliziatorului si a topului celor mai devotati utilizatori</li>
+                    <li>Primirea de notificari in vederea intretinerii plantelor gestionate de utilizator</li>
+                </ul>
+
+                </p>
+            </section>
+
+            <section id="user_classes">
+                <h2>Clasele si caracteristicile utlizatorului</h2>
+                <p>
+                    Cele doua categorii de utilizatori care vor interactiona cu aplicatia se diferentiaza prin
+                    serviciile la care acestia au acces.
+                </p>
+                <p>
+                    Prima categorie reprezinta vizitatorul. Acesta poate vizualiza detaliile legate de aplicatie si
+                    contact in pagina
+                    principala,
+                    categoriile de cursuri si dificultatile acestora, precum si clasamentul utilizatorilor cei mai
+                    activi.
+                </p>
+                <p>
+                    A doua categorie reprezinta utilizatorul activ, ce si-a creat un cont si are acces la continutul
+                    cursurilor si
+                    posibilitatea de a le parcurge, evolutia sa, informatiile profilului sau si pagina dedicata
+                    managementului gradinii.
+                    De asemenea, va primi notificari legate de intretinearea plantelor ( data limita pentru o anumita
+                    actiune asupra unei plante), 
+                    in functie de informatiile adaugate de acesta in tabelul de plante.
+                </p>
+            </section>
+
+            <section id="mediu_operare">
+                <h2>Mediul de operare</h2>
+                <p>
+                    Aplicatia va putea fi rulata de pe mai multe platforme. Componentele vor fi scrise si proiectate in
+                    HTML, Java Script si CSS
+                    pentru styling si vor folosi Node JS pentru serverul web. Pentru baza de date se va utiliza MySQL.
+                </p>
+            </section>
+
+            <section id="constangeri">
+                <h2>Constangeri ale designului si ale implementarii</h2>
+                <p>
+                    Proiectul prezinta o gamă largă de constrângeri. Avand scop didactic, acesta se axeaza pe folosirea
+                    tehnologiilor web
+                    clasice, fiind interzisa utilizarea framework-urilor.
+                </p>
+                <p>Din punct de vedere a designului, aplicatia trebuie sa fie cat mai intuitiva si usor de utilizat de
+                    catre orice tip de
+                    utilizator, indiferent de cunostintele in tehnologie ale acestuia.
+                </p>
+
+                </p>
+            </section>
+
+            <section id="user_doc">
+                <h2>Documentatia pentru utilizator</h2>
+                <p>
+                    Deoarece aplicatia este realizata cu scopul de a fi usor de utilizat si intuitiva, documentatia de
+                    fata
+                    este suficienta pentru intelegerea de catre utilizator a functionalitatilor si folosirea acesteia.
+                </p>
+            </section>
+
+            <section id="premise">
+                <h2>Premise si dependente</h2>
+                <p>
+                    Proiectul nu prezinta dependente fata de factori externi, de exemplu alte componente software.
+                    Aplicatia ofera la dispozitie un mediu de gestionare a plantelor si un sistem de notificare,
+                    ramanand la decizia clientului
+                    utilizarea si respecatrea acestuia.
+                </p>
+            </section>
+        </section>
+
+        <section id="cerinte_externe">
+            <h1>3. Cerintele externe pentru interfata</h1>
+
+            <section id="user_interfaces">
+                <h2>3.1 Interfete de utilizator</h2>
+                <p>Pentru a putea beneficia de cele 2 servicii ale produsului "Web Gardening Tutor": Garden Manager și
+                    Courses,
+                    în primul rând, utilizatorul trebuie să-și creeze un cont nou dacă nu are unul deja și apoi să se
+                    autentifice,
+                    sau să meargă direct pe autentificare pentru cont deja existent. Pentru înregistrare vor fi
+                    solicitate
+                    următoarele informații: numele, adresa de e-mail, parola și confirmarea acesteia, iar pentru
+                    autentificare
+                    doar adresa de e-mail și parola. </p>
+                <p>
+                    După autentificare utlizatorul va vedea pagina profilului său cu următoarele secțiuni: Profile
+                    information,
+                    Achievements, Your courses, Bookmarked Courses și Garden Manager. De asemenea, precum orice
+                    utilizator neautentificat
+                    va fi permisă accesarea paginilor din meniul principal: Profile, Courses și Leaderboard. La
+                    accesarea paginii
+                    Courses pe lângă vizualizarea cursurilor existente vor putea fi accesate și paginile fiecărui curs
+                    în parte unde
+                    va învăța într-un mod cât mai interactiv și captivant bazele grădinăritului. Atunci când va fi
+                    accesată pagina
+                    Garden Manager utilizatorul va avea un tabel pentru managementul plantelor din grădina sa, unde va
+                    putea să planteze
+                    și mai apoi să facă update-uri la statutul acestora. Mai mult decât atât, în cadrul serviciului Garden
+                    Manager utilizatorul
+                    va putea primi reminder pe e-mailul pe care l-a folosit la înregistrare cu o zi sau două înainte de
+                    deadline
+                    pentru a avea grijă la timp de plantele din grădina sa.
+                </p>
+                <p>
+                    Utilizatorii neautentificați atunci când vor intra în Profile vor avea un formular de autentificare
+                    sau vor putea
+                    accesa un formular de înregistrare și apoi să se autentifice. Atunci când vor accesa Courses vor
+                    putea vedea
+                    doar pagina cu toate cursurile existente pe platformă și nivelul de dificultate al acestora, iar
+                    când va fi
+                    accesată pagina Leaderboard vor putea vedea clasamentul Top 10 pentru cei mai sârguincioși
+                    utilizatori.
+                </p>
+                <p>
+                    Screenshots
+                </p>
+            </section>
+
+            <section id="hardware_interfaces">
+                <h2>3.2 Interfete hardware</h2>
+                <p> Interfața aplicației a fost creata astfel incat sa fie compatibilă cu cele mai utilizate dispozitive
+                    (telefon mobil, tabletă, PC etc.). Avand in vedere functionalitatile simple ale aplicatiei, se estimeaza un cost
+                    cost minim al necesitatilor tehnice.
+
+                    Partea de back-end va rula pe un server de capacitate redusă, pentru că funcțiile de back-end sunt
+                    simple.
+                    Într-un mediu de producție, această decizie este economă pentru mentenanța aplicației. Protocolul de
+                    comunicare
+                    client-server și server-server (pentru comunicare internă între componente) va fi TCP.</p>
+            </section>
+
+            <section id="software_interfaces">
+                <h2>3.3 Interfete software</h2>
+                <p> Aplicatia interactioneaza cu alte elemente software externe, cum ar fi: browser-ul si sistem de mailing.
+                </p>
+            </section>
+
+            <section id="comunication_interfaces">
+                <h2>3.4 Interfete de comunicare</h2>
+                <p> Comunicarea dintre frontend si backend se bazeaza pe protocolul HTTP. Request-urile pentru baza de date se vor realiza cu ajutorul
+                    unor interogari SQL. Desi, pentru securitatea datelor este necesara utilizarea protocoulului HTTPS, nu il putem utiliza din
+                    cauza costurilor ridicate pentru ca proiectul este unul realizat in scop didactic.
+
+                </p>
+            </section>
+
+        </section>
+
+        <section id="caracterisitici_sistem">
+            <h1>4. Caracteristicile sistemului</h1>
+            <section id="inregistrare">
+                <h2>4.1 Inregistrare</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Pentru a putea accesa continutul unui curs si pentru a beneficia de monitorizarea progresului, respectiv de posibilitatea de a salva cursuri, utilizatorii aplicatiei sunt nevoiti sa-si creeze mai intai un cont.
+                        Informatiile necesare crearii contului vor fi un nume, un email valid si o parola care sa respecte anumite conditii de siguranta. <br>
+                        Prioritatea acestei componente este ridicata deoarece, pentru ca un utilizator sa se poata bucura pe deplin de functionlaitatile aplicatiei, acesta trebuia sa detina un cont.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a-si crea un cont sunt urmatorii: <br>
+                        <ul>
+                            <li>introducerea numelui in campul corespunzator;</li>
+                            <li>introducerea unei adrese de email valide in campul corespunzator;</li>
+                            <li>introducerea unei parole care sa respecte anumite cerinte; <br>
+                                utilizatorul va fi informat in timp real, care din aceste cerinte sunt indeplinite de textul introdus in campul aferent parolei;
+                            </li>
+                            <li>reintroducerea parolei (exact aceeasi) din campul precdent;</li>
+                            <li>apasarea butonului "Sign Up", aflat sub campurile de completat;</li>                            
+                        </ul>
+
+                        <p>
+                            Dupa apasarea butonului "Sign up", daca unul dintre campuri nu a fost completat sau daca nu a fost completat corect,
+                            atunci contul nu va fi creat, iar utilizatorului i se va atrage atentia asupra campului care nu a fost completat/ nu a fost completat corect.
+                            Daca inregistrarea a fost facuta cu succes, atunci utilizatorul va primi un mesaj prin care va fi informat ca i-a fost transmis un email pentru
+                            confirmarea identitatii. 
+                        </p>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a putea fi creat contul, fiecare camp trebuie completat, iar urmatoarele campuri trebuie sa aiba si un continut valid:
+                        <ul>
+                            <li>email-ul trebuie sa fie unul valid</li>
+                            <li>parola trebuie sa respecte urmatoarele cerinte: sa contina cel putin 8 caracterem, sa contina cel putin o litera mica, o litera mare, respectiv o cifra</li>
+                            <li>textul introdus in campul pentru confirmarea parolei trebuie sa coincida cu textul din campul corespunzator parolei</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+
+            <section id="autentificare">
+                <h2>4.2 Autentificare</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Rolul acestei componente este acelasi ca cel al componentei de inregistrare. Singura diferenta este ca autentificarea completeaza inregistrarea: 
+                        nu este suficient ca un utilizator sa aibe cont in aplicatie, acesta trebuie sa se si autentifice cu acest cont, pentru a beneficia de functionalitatile aplicatiei.
+                        <br> Prioritatea este ridicata.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a se autentifica sunt urmatorii:
+                        <ul>
+                            <li>introducerea adresei de email pe care a folosit-o la crearea contului;</li>
+                            <li>introducerea parolei pe carea a setat-o la crearea contului;</li>
+                            <li>apasarea butonului "Log In";</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a se putea realiza autentificarea, combinatia dintre email si parola trebuie sa fie una corecta- sa fi fost folosita la crearea vreunui cont.
+                    </p>
+                </div>
+            </section>
+
+
+            <section id="curs">
+                <h2>4.3 Parcurgere Curs</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Aceasta componenta constituie nucleul produsului, fiind cea care ofera utilizatorului cele mai importante motive ca sa foloseasca aceasta aplicatie.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a parcurge un curs sunt urmatorii"
+                        <ul>
+                            <li>accesarea paginii "Courses" prin apasarea butonului cu acelasi nume aflat in bara de navigare pusa la dispozitie in fiecare pagina a aplicatiei; sau acesarea sectiunii "My Courses" din interiorul paginii "Profile"</li>
+                            <li>selectarea cursului dorit, prin apasarea butonului "Get Started"/"Continue" din cadrul cardului unui curs</li>
+                            <li>bifarea pe rand a etapelor necesare ducerii la bun sfarsit a cursuliui</li>
+                            <li>apasarea butonului "Done" de la finalul cursului</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Utilizatorul va trebui sa bifeze pe rand etapele din interiorul cursului, in ordinea in care apar (de sus in jos). Incercarea de bifare a unei etape nu va avea succes daca toate etapele premergatoare nu au fost deja bifate.
+                        Pentru a avea efect apasarea butonului "Done", utilizatorul trebuie mai intai sa bifeze toate etapele cursului, respectand cerintele prezentate mai sus.
+                    </p>
+                </div>
+            </section>
+
+            <section id="info_cont">
+                <h2>4.4 Vizualizare informatii despre propriul profil</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Utilizatorii care si-au creat un cont in aceasta aplicatie pot verifica anumite informatii despre propriul profil, cum ar fi: informatii generale, realizari, cursurile pe care le urmeaza, cursurile salvate.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utiliztor trebuie sa ii urmeze pentru a vizualiza informatiile despre propriul profil sunt urmatorii:
+                        <ul>    
+                            <li>accesarera paginii "Profile" prin apasarea butonului cu acelasi nume aflat in bara de navigare pusa la dispozitie in fiecare pagina a aplicatiei</li>
+                            <li>accesarea unei sectiuni specifice de informatii prin apasarea unui buton din meniul aflat in aceasta pagina</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+            <section id="manager">
+                <h2>4.5 Managementul plantelor din propria gradina</h2>
+                <div>
+                    <h3>Descriere</h3>
+                    <p>
+                        Utilizatorii au posibilitatea de a-si monitoriza fiecare planta, introducand-o, apoi modificand-o in formularul aflat in pagina "Garden Manager".
+                        De asemenea, acestia pot sterge o planta din tabel in cazul in care nu mai doreste monitorizarea acesteia.
+                        Utilizatorii vor fi notificati prin email cu privire la momentul si activitatea pe care trebuie sa o desfasoare. 
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a introduce o planta in tabelul de monitorizare sunt urmatorii:
+                        <ul>
+                            <li>introducerea unui nume pentru planta ce se doreste a fi monitorizata</li>
+                            <li>introducerea datei calenderistice la care a avut loc ultima interactiune cu planta</li>
+                            <li>introducerea datei calendaristice la care utilizatorul trebuie sa desfasoare urmatoarea activitate</li>
+                            <li>selectarea stadiului in care se afla obiectul ce se doreste a fi monitorizat</li>
+                            <li>selectarea urmatoarei interactiuni pe care trebuie sa o aibe utilizatorul cu planta</li>
+                            <li>apasarea butonului "Add New Plant"</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a putea adauga o planta in tabelul de monitorizare, toate din campurile de mai sus trebuie sa fie completate.
+                        Data pana la care trebuie sa aibe loc urmatoarea interactiune cu planta, nu trebuie sa fie cronologic inaintea datei ultimei interactiuni.
+                    </p>
+                    
+                </div>
+            </section>
+
+            <section id="clasament">
+                <h2>4.6 Vizualizarea clasamentului</h2>
+                <div>
+                    <h3>Descriere</h3>
+                    <p>
+                        Aplicatia pune la dispozitia tuturor utilizatorilor (nu doar celor care au un cont) sa vizualizeze un clasamnet creat pe baza
+                        numarului si dificultatii cursurilor terminate.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pentru a putea vizualiza clasamentul, singurul lucru pe care trebuie sa il faca un utilizator este sa aceseze pagina "Leaderboard" apasand butonul cu acelasi nume din bara de navigare. 
+                    </p>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="nonfunctional">
+            <h1>5. Alte cerinte nonfunctionale</h1>
+
+            <section id="performance">
+                <h2>5.1 Cerinte de performanta</h2>
+                <p>
+                    <ul>
+                        <li>Normalizarea bazei de date</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="siguranta">
+                <h2>5.2 Cerinte de siguranta</h2>
+                <p>
+                    Dupa ce utilizatorul a introdus date valide in formularul de inregistrare acesta va primi pe adresa de email specificata un mail de confirmare a identitatii.
+                </p>
+            </section>
+
+            <section id="securitate">
+                <h2>5.3 Cerinte de securitate</h2>
+                <p>
+                    Parola introdusa de utilizator va fi trimisa catre backend si mentinuta in baza de date intr-un format criptat.
+                </p>
+            </section>
+
+            <section id="calitate">
+                <h2>5.5 Cerinte de calitate software</h2>
+                <ul>
+                    <li>
+                        Portability: aplicatia va putea fi folosita pe mai multe tipuri de dispozitive 
+                    </li>
+                    <li>Corectness: informatiile regasite in cursuri sunt corecte</li>
+                    <li>Usability: usurinta in navigarea intre paginilie aplicatiei si un comportament predictibil</li>
+                    
+                </ul>
+            </section>
+
+            <section id="business">
+                <h2>5.5 Reguli de business</h2>
+                <p>
+                    Un utilizator fara cont are acces doar la home page, lista de cursuri, si clasament. <br>
+                    Pentru a putea beneficia de functionalitatile aplicatiei: parcurgerea de cursuri si managemntul gradinii, un utilizator trebuie mai intai sa-si creeze un cont. 
+                </p>
+            </section>
+
+
+        </section>
+
+        <section id="structura">
+            <ul>
+                <li>html</li>
+                <li>styles</li>
+                <li>scripts</li>
+                <li>images</li>
+                <li>digarams</li>
+                <li>fonts</li>
+            </ul>
+        </section>
+
+        <section id="diagrame">
+
+        </section>
+
+    </div>
+</body>
+
+</html>
