@@ -88,7 +88,9 @@
                         <li><a href="#inregistrare">Inregistrare</a></li>
                         <li><a href="#autentificare"></a>Autentificare</li>
                         <li><a href="#curs">Parcurgere curs</a></li>
-                        <li><a href="#info_cont">Vizualizare informatii despre propriul cont</a></li>
+                        <li><a href="#manager">Managementul plantelor din propria gradina</a></li>
+                        <li><a href="#info_cont">Vizualizare informatii despre propriul profil</a></li>
+                        <li><a href="#clasament">Vizualizarea clasamentului</a></li>
                     </ol>
                 </li>
 
@@ -233,11 +235,11 @@
 
                     <h3>Secvente de stimul/raspuns</h3>
                     <p>
-                        Pasii pe care un alizator trebuie sa ii urmeze pentru a-si crea un cont sunt urmatorii: <br>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a-si crea un cont sunt urmatorii: <br>
                         <ul>
                             <li>introducerea numelui in campul corespunzator;</li>
                             <li>introducere unei adrese email valide in campul corespunzator;</li>
-                            <li>introducerea unei parole care sa trebuie sa respecte anumite cerinte; <br>
+                            <li>introducerea unei parole care sa respecte anumite cerinte; <br>
                                 utilizatorul va fi informat in timp real, care din aceste cerinte sunt indeplinite de textul introdus in campul aferent parolei;
                             </li>
                             <li>reintroducerea parolei (exact aceeasi) din campul precdent;</li>
@@ -245,7 +247,7 @@
                         </ul>
 
                         <p>
-                            Dupa apasarea butonului de "Sign up", daca unul dintre campuri nu a fost completat sau daca nu a fost completat corect,
+                            Dupa apasarea butonului "Sign up", daca unul dintre campuri nu a fost completat sau daca nu a fost completat corect,
                             atunci contul nu va fi creat, iar utilizatorului i se va atrage atentia asupra campului care nu a fost completat/ nu a fost completat corect. 
                         </p>
                     </p>
@@ -268,17 +270,17 @@
                 <div>
                     <h3>Descriere si prioritate</h3>
                     <p>
-                        Rolul acestei componente este acelasi ca cel al componentei de inregistrare. Singura diferenta este ca autentificarea completeaza, inregistrarea: 
+                        Rolul acestei componente este acelasi ca cel al componentei de inregistrare. Singura diferenta este ca autentificarea completeaza inregistrarea: 
                         nu este suficient ca un utilizator sa aibe cont in aplicatie, acesta trebuie sa se si autentifice cu acest cont, pentru a beneficia de functionalitatile aplicatiei.
                         <br> Prioritatea este ridicata.
                     </p>
 
                     <h3>Secvente de stimul/raspuns</h3>
                     <p>
-                        Pentur a se autentifica utilizatorii trebuie sa urmeze urmatorii pasi:
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a se autentifica sunt urmatorii:
                         <ul>
-                            <li>introduca adresa de email pe care a folosit-o la crearea contului;</li>
-                            <li>introduca parola pe carea a setat-o la crearea contului;</li>
+                            <li>introducerea adresei de email pe care a folosit-o la crearea contului;</li>
+                            <li>introducerea parolei pe carea a setat-o la crearea contului;</li>
                             <li>apasarea butonului "Log In";</li>
                         </ul>
                     </p>
@@ -296,8 +298,90 @@
                 <div>
                     <h3>Descriere si prioritate</h3>
                     <p>
-                        Aceasta componenta constituie sufletul produsului, fiind cea care ofera utilizatorului cele mai importante motive ca sa foloseasca aceasta aplicatie.
-                        
+                        Aceasta componenta constituie nucleul produsului, fiind cea care ofera utilizatorului cele mai importante motive ca sa foloseasca aceasta aplicatie.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a parcurge un curs sunt urmatorii"
+                        <ul>
+                            <li>accesarea paginii "Courses" prin apasarea butonului "Courses" aflat in bara de navigare pusa la dispozitie in fiecare pagina a aplicatiei; sau acesarea sectiunii "My Courses" din interiorul paginii "Profile"</li>
+                            <li>selectarea cursului dorit, prin apasarea butonului "Get Started"/"Continue" din cadrul cardului unui curs</li>
+                            <li>bifarea pe rand a etapelor necesare ducerii la bun sfarsit a cursuliui</li>
+                            <li>apsaarea butonului "Done" de la finalul cursului</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Utilizatorul va trebui sa bifeze pe rand etapele din interiorul cursului, in ordinea in care apar (de sus in jos). Incercarea de bifare a unei etape nu va avea succes daca toate etapele premergatoare nu au fost deja bifate.
+                        Pentru a avea efect apasarea butonului "Done", utilizatorul trebuie mai intai sa bifeze toate etapele cursului, respectand cerintele prezentate mai sus.
+                    </p>
+                </div>
+            </section>
+
+            <section id="info_cont">
+                <h2>4.4 Vizualizare informatii despre propriul profil</h2>
+                <div>
+                    <h3>Descriere si prioritate</h3>
+                    <p>
+                        Utilizatorii care si-au creata un cont in aceasta aplicatie pot verifica anumite informatii despre propriul profil, cum ar fi: informatii generale, realizari, cursurile pe care le urmeaza, cursurile salvate.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utiliztor trebuie sa ii urmeze pentru a vizualiza informatiile despre propriul profil sunt urmatorii:
+                        <ul>    
+                            <li>accesarera paginii "Profile" prin apasarea butonului "Profile" aflat in bara de navigare pusa la dispozitie in fiecare pagina a aplicatiei</li>
+                            <li>accesarea unei sectiuni specifice de informatii prin apasarea unui buton din meniul aflat in aceasta pagina</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+            <section id="manager">
+                <h2>4.5 Managementul plantelor din propria gradina</h2>
+                <div>
+                    <h3>Descriere</h3>
+                    <p>
+                        Utilizatorii au posibilitatea de a-si monitoriza fiecare planta, introducand-o in formularul aflat in pagina "Garden Manager".
+                        Acestia vor fi notificati prin email si in aplicatie cu privire la momentul si activitatea pe care trebuie sa o desfasoare.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pasii pe care un utilizator trebuie sa ii urmeze pentru a introduce o planta in tabelul de monitorizare sunt urmatorii:
+                        <ul>
+                            <li>introducerea unui nume pentru planta ce se doreste a fi monitorizata</li>
+                            <li>introducerea datei calenderistice la carea a avut loc ultima interactiune cu planta</li>
+                            <li>introducerea datei calendaristice la care utilizatorul trebuie sa desfasoare urmatoarea activitate</li>
+                            <li>selectarea stadiului in care se afla obiectul ce se doreste a fi monitorizat</li>
+                            <li>selectarea urmatoarei interactiuni pe care trebuie sa o aibe utilizatorul cu planta</li>
+                            <li>apasarea butonului "Add New Plant"</li>
+                        </ul>
+                    </p>
+
+                    <h3>Cerinte functionale</h3>
+                    <p>
+                        Pentru a putea adauga o planta in tabelul de monitorizare, toate din campurile de mai sus trebuie sa fie completate.
+                        Data pana la care trebuie sa aibe loc urmatoarea interactiuni cu planta, nu trebuie sa fie cronologic inaintea datei ultimei interactiuni. 
+                    </p>
+                    
+                </div>
+            </section>
+
+            <section id="clasament">
+                <h2>4.6 Vizualizarea clasamentului</h2>
+                <div>
+                    <h3>Descriere</h3>
+                    <p>
+                        Aplicatia pune la dispozitia tuturor utilizatorilor (nu doar cei care au un cont) sa vizualizeze un clasamnet creat pe baza
+                        numarului si dificultatii cursurilor terminate.
+                    </p>
+
+                    <h3>Secvente de stimul/raspuns</h3>
+                    <p>
+                        Pentru a putea vizualiza un clasaamentul, singurul lucru pe carea trebui sa il faca un utilizator este sa aceseze pagina "Leaderboard" apasand butonul cu acelasi nume din bara de navigare. 
                     </p>
                 </div>
             </section>
@@ -309,27 +393,45 @@
 
             <section id="performance">
                 <h2>5.1 Cerinte de performanta</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed, dolorum voluptas obcaecati cupiditate ex consequuntur quasi enim dignissimos labore non totam odio modi tenetur aut placeat quaerat officia fuga!</p>
+                <p>
+                    <ul>
+                        <li>Normalizarea bazei de date</li>
+                    </ul>
+                </p>
             </section>
 
-            <section id="securitate">
+            <section id="siguranta">
                 <h2>5.2 Cerinte de siguranta</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed, dolorum voluptas obcaecati cupiditate ex consequuntur quasi enim dignissimos labore non totam odio modi tenetur aut placeat quaerat officia fuga!</p>
+                <p>
+                    Dupa ce utilizatorul a introdus date valide in formularul de inregistrare acesta va primi pe adresa de email specificata un mail de confirmare a identitatii.
+                </p>
             </section>
 
             <section id="securitate">
-                <h2>5.2 Cerinte de securitate</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed, dolorum voluptas obcaecati cupiditate ex consequuntur quasi enim dignissimos labore non totam odio modi tenetur aut placeat quaerat officia fuga!</p>
+                <h2>5.3 Cerinte de securitate</h2>
+                <p>
+                    Parola introdusa de utilizator va fi trimisa catre backend si mentinuta in baza de date intr-un format criptat.
+                </p>
             </section>
 
             <section id="calitate">
-                <h2>5.3 Cerinte de calitate software</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed, dolorum voluptas obcaecati cupiditate ex consequuntur quasi enim dignissimos labore non totam odio modi tenetur aut placeat quaerat officia fuga!</p>
+                <h2>5.5 Cerinte de calitate software</h2>
+                <ul>
+                    <li>
+                        Portability: aplicatia va putea fi folosita pe mai multe tipuri de dispozitive 
+                    </li>
+                    <li>Corectness: informatiile regasite in gursuri sunt corecte</li>
+                    <li>Usability: usurinta in navigarea intre paginilie aplicatiei si va avea un comportament predictibil</li>
+                    
+                </ul>
             </section>
 
             <section id="business">
-                <h2>5.4 Reguli de business</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed, dolorum voluptas obcaecati cupiditate ex consequuntur quasi enim dignissimos labore non totam odio modi tenetur aut placeat quaerat officia fuga!</p>
+                <h2>5.5 Reguli de business</h2>
+                <p>
+                    Un utilizator fara cont are acces doar la home page, lista de cursuri, si clasament. <br>
+                    Pentru a putea beneficia de functionalitatile aplicatiei: parcurgerea de cursuri si managemntul gradinii, un utilizator trebuie mai intai sa-si creeze un cont. 
+                </p>
             </section>
 
 

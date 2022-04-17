@@ -334,12 +334,30 @@ body{
     width: 45%;
 }
 
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(221, 221, 221, 0.8);
+    padding: 60px 0;
+    font-size: 25px;
+    color: #ff7c59;
+    margin-top: 100px;
+  }
+  
+
 @media screen and (max-width: 1000px)
 {
     body {
         margin: 0px 0px 55px;
     }
 
+    footer{
+        display: none;
+    }
     
     .profile-picture img, .profile-picture  .picture-label
     {
@@ -515,6 +533,11 @@ header{
   
     header nav li {
       margin: 0;
+    }
+
+    
+    footer{
+        display: none;
     }
   }
   
