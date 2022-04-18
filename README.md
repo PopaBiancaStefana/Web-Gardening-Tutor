@@ -1,1 +1,1 @@
-# pagina de cursuri si template pentru pagina de curs
+# GarT(Web Gardening Tutor)
