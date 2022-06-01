@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.1",
+    "mime-types": "^2.1.35",
+    "mimetypes": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "nodemonConfig": {
+    "delay": 2000
+  }
+}
