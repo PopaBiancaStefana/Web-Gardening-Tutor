@@ -17,7 +17,6 @@ const server = http.createServer((req, res) => {
     if(urlPath == "")
         urlPath = "home.html"
 
-
     let file = path.join(__dirname, 'public', urlPath);
     console.log(file);
     fs.readFile(file, (err, content) =>{
