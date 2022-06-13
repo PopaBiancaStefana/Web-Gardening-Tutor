@@ -128,7 +128,7 @@ button:active {
 
 /*--------TITLE BANNER----------*/
 
-.title {
+#course-title {
     height: auto;
     width: 100%;
     background-image: url("../images/skyy.jpg");
@@ -136,14 +136,12 @@ button:active {
     background-size: 100%;
     position: relative;
     text-align: center;
-}
-
-.title .text {
     padding-top: 10%;
     padding-bottom: 3%;
 }
 
-.title .text h1 {
+
+#course-title h1 {
     position: relative;
     color: #041a2c;
     font-size: 80px;
@@ -153,12 +151,11 @@ button:active {
     transition: ease all .6s;
 }
 
-
-.title ul {
+#course-title ul {
     list-style-type: disc;
 }
 
-.text ul li {
+#course-title ul li {
     display: inline;
     text-decoration: none;
     color: #FF7C59;
@@ -202,7 +199,7 @@ button:active {
 }
 
 .second-banner .list {
-    width: 450px;
+    width: 540px;
     height: 250px;
     display: flex;
     flex-wrap: wrap;
@@ -349,7 +346,7 @@ button:active {
 }
 
 
-.right {
+#right {
     background-image: url("../images/tools.jpg");
     float: left;
     width: 25%;
@@ -358,7 +355,7 @@ button:active {
     height: fit-content;
 }
 
-.right h1 {
+#right h1 {
     padding-top: 25px;
     font-size: 35px;
     color: #053780;
@@ -369,7 +366,7 @@ button:active {
     text-decoration-style: dashed;
 }
 
-.right h2 {
+#right h2 {
     padding-top: 50px;
     padding-bottom: 10px;
     font-size: 25px;
@@ -378,7 +375,7 @@ button:active {
 
 }
 
-.right p {
+#right p {
     padding-bottom: 30px;
     font-size: 17px;
     color: #053680b1;
@@ -468,7 +465,7 @@ form {
 .main .part p {
     padding: 20px 10px 0px 20px;
     color: #012b50;
-    font-size: 28px;
+    font-size: 23px;
     padding-bottom: 15px;
 }
 
@@ -501,6 +498,8 @@ form {
     margin-top: 30px;
     border: 1px solid #777;
     border-radius: 10px;
+    background-color: rgba(242, 255, 243, 0.232);
+    font-weight: 600;
 }
 
 .main .part .gallery img {
@@ -561,6 +560,9 @@ footer {
 
 @media only screen and (max-width:800px) {
 
+    #course-title h1 {
+        font-size: 55px;
+    }
     .title .text {
         padding-top: 10%;
     }
@@ -650,9 +652,10 @@ footer {
 }
 
 @media only screen and (max-width:1000px) and (min-width:620px) {
-    .title ul li{
+    .title ul li {
         font-size: 28px;
     }
+
     .second-banner .list ul li {
         font-size: 25px;
     }
@@ -667,6 +670,10 @@ footer {
 }
 
 @media only screen and (max-width:620px) {
+    #course-title {
+        width: 820px;
+    }
+
     .main-header .container {
         width: 820px;
     }
@@ -699,7 +706,7 @@ footer {
         width: 820px;
     }
 
-    .right p{
+    .right p {
         font-size: 22px;
     }
 
@@ -726,6 +733,10 @@ footer {
 }
 
 @media only screen and (max-width:460px) and (min-width:360px) {
+    #course-title {
+        width: 660px;
+    }
+
     .main-header .container {
         width: 660px;
         height: auto;
@@ -851,6 +862,9 @@ footer {
 
 
 @media only screen and (max-width:360px) {
+    #course-title {
+            width: 600px;
+        }
     .main-header .container {
         width: 600px;
         height: auto;
