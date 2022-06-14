@@ -1,5 +1,6 @@
 {
     "Turf": {
+        "difficulty":"medium",
         "tools": {
             "tool1": "sod cutter",
             "tool1-modal": " <h2>What is this tool?</h2> <p> Sod cutters, a sod remover tool, remove the grass and a thin layer of dirt underneath so that when you go to lay the new sod, it is flat and even with other parts of your lawn.</p>",
@@ -51,6 +52,7 @@
         }
     },
     "Indoor plants": {
+        "difficulty":"easy",
         "tools": {
             "tool1": " indoor pots",
             "tool1-modal": "<h2>What is this tool?</h2><p>Indoor pots will generally not have a drainage hole, with the plant generally kept in its plastic pot using the decorative or 'cache' pot as the saucer.</p>",
@@ -99,6 +101,7 @@
         }
     },
     "Vegetables": {
+        "difficulty":"easy",
         "tools": {
             "tool1": "watering wand ",
             "tool1-modal": "<h2>What is this tool?</h2><p> Give your plants a gentle rain shower with a water-breaking wand. The extended reach is also helpful to get to out-of-the-way containers, hanging plants, or the back edges of borders. Watering wands come in a variety of lengths, from 10 to 48 inches.</p>",
@@ -146,6 +149,7 @@
         }
     },
     "Fruit trees": {
+        "difficulty":"hard",
         "tools": {
             "tool1": "bypass pruners",
             "tool1-modal": "<h2>What is this tool?</h2> <p>For the cleanest cuts, choose bypass pruners, which cut like a pair of scissors, with a curved cutting blade that slides past a lower broad blade. Also called lopping shears, a lopper is the tool of choice for cutting branches 2 inches in diameter.</p>",
@@ -198,6 +202,7 @@
         }
     },
     "template": {
+        "difficulty":"",
         "tools": {
             "tool1": "",
             "tool1-modal": "",
