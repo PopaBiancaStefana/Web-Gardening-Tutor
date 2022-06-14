@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 // const StringDecoder = require("string_decoder").StringDecoder;
 const util = require("util");
-const lookup = require("mime-types").lookup;
+const fileController = require("./controllers/staticFileController");
 require("dotenv").config();
 
 let port = process.env.PORT || 1234;
@@ -17,26 +17,53 @@ const server = http.createServer((req, res) => {
     if(urlPath == "")
         urlPath = "home.html"
 
+    let qs = parsedUrl.query;
+    let headers = parsedUrl.heaeders;
+    let method = req.method.toLocaleLowerCase();
 
-    let file = path.join(__dirname, 'public', urlPath);
-    console.log(file);
-    fs.readFile(file, (err, content) =>{
-        if(err)
-        {
-            console.log(`File not found ${file}`)
-            res.writeHead(404);
-            res.end();
-        } else {
-            console.log(`Returning ${urlPath}`);
-            
-            // res.setHeader("X-Content-Type-Options", "nosniff"); //nu inecerca sa deduci mimetype ul
+    console.log(urlPath);
+    req.on("data", function(){
+        
+    });
+    req.on("end", function(){
+        let data = {
+            path: urlPath,
+            qureyString: qs,
+            headers: headers,
+            method : method
+        };
 
-            let mime = lookup(urlPath);
-            res.writeHead(200, {"Content-type": mime});
-            res.end(content);
+        switch (method) {
+            case 'get' : 
+                {
+                    let route;
+                    if(urlPath in getRoutes)
+                    {
+                        route = getRoutes[urlPath];
+                    } else {
+                        route = getRoutes["staticFile"];
+                    }
+
+                    //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
+                    route(urlPath, res);
+                }
+            case 'post':
+
         }
     })
 
+
+
+
 })
+
+const getRoutes = {
+    "home.html": fileController.serveFile,
+    "staticFile": fileController.serveFile
+}
+
+
+
+
 
 server.listen(port,host, () => console.log(`listening on  ${host}:${port}`));

@@ -29,7 +29,7 @@
             <div class="login-panel">
                 <img src="../images/logo2.png" alt="GT-logo" class="login-logo">
                 <h1 class="connect-way">Register</h1>
-                <form class="login-form" action="register">
+                <form class="login-form" action="register" id="regisetr-form">
                     <input type="text" name="name" id="name" placeholder="Enter your name" required>
                     <input type="email" name="email" id="email" placeholder="Enter your email" required >
                     <input type="password" name="password" id="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
@@ -44,7 +44,7 @@
                     <input type="submit" value="Sign up">
                 </form>
                 <div class="alternative-connect">
-                    <a href="login.html">Already have an acount?</a>
+                    <a href="login.html" id="register-botton">Already have an acount?</a>
                 </div>
                 
             </div>
@@ -64,6 +64,7 @@
             var capital = document.getElementById("capital");
             var digit = document.getElementById("digit");
             var length = document.getElementById("length");
+
 
             password.onfocus = function(){
                 document.getElementById("message").style.display = "block";
@@ -121,6 +122,60 @@
 
             password.onchange = checkPasswordEquality;
             confirm_password.onkeyup = checkPasswordEquality;
+
+            
+            //regisering
+            var register_botton = document.getElementById("register-botton");
+            register_botton.addEventListener('clik', doRegister);
+
+            function doRegister(event)
+            {
+                console.log("incercare de inregistrare");
+
+                //preluam valorile introduse in form
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let pass = document.getElementById("password").value;
+                let confirm_pass = document.getElementById("confirm-password").value;
+            
+                let user = {
+                    name:name,
+                    email:email,
+                    password:password,
+                    confirm_pass:confirm_pass
+                }
+
+                let endpoint = "register";
+                sendData(user, endpoint, successfulRegister);
+            }
+
+
+            function sendData(user, endpoint, callback)
+            {
+                let url = `http://localhost:1234/${endpoint}`;
+                let head = new Headers();
+                h.append("Content-Type", "application/json");
+                let req = new Request(url, {
+                    method: 'POST',
+                    headers: head,
+                    body: JSON.stringify(user)
+                });
+                fetch(req).then((res) => res.json())
+                .then((content) => {
+                    if("error" in content){
+                        //incerare esuata
+                        failure(content.error);
+                    } 
+                    if ("data" in content) {
+                        callback(content.data)
+                    }
+                })
+                .catch(failure);
+
+            }
+
+            function successfulRegister(adta)
+
         </script>
         
     </body>
