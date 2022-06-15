@@ -18,9 +18,9 @@
       
               <nav>
                 <ul>
-                  <li><a href="myProfile.html">Profile</a></li>
-                  <li><a href="courses.html">Courses</a></li>
-                  <li><a href="leaderboard.html">Leaderboard</a></li>
+                  <li><a href="myProfile">Profile</a></li>
+                  <li><a href="courses">Courses</a></li>
+                  <li><a href="leaderboard">Leaderboard</a></li>
                 </ul>
               </nav>
             </div>
@@ -30,11 +30,11 @@
             <div class="login-panel">
                 <img src=" images/logo2.png" alt="GT-logo" class="login-logo">
                 <h1 class="connect-way">Register</h1>
-                <form class="login-form" action="register" id="regisetr-form">
+                <form class="login-form" action="register" id="register-form" method="POST">
                     <input type="text" name="name" id="name" placeholder="Enter your name" required>
                     <input type="email" name="email" id="email" placeholder="Enter your email" required >
                     <input type="password" name="password" id="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" required>
+                    <input type="password" name="confirm password" id="confirm-password" placeholder="Confirm password" required>
                     <div id="message">
                         <h3>Password must contain the following:</h3>
                         <p id="letter" class="invalid"> A <b>lowercasae</b> letter</p>
@@ -42,10 +42,10 @@
                         <p id="digit" class="invalid"> A <b>digit</b></p>
                         <p id="length" class="invalid"> Minimum <b>8 characters</b></p>
                     </div>
-                    <input type="submit" value="Sign up">
+                    <input type="submit" value="Register">
                 </form>
                 <div class="alternative-connect">
-                    <a href="login.html" id="register-botton">Already have an acount?</a>
+                    <a href="login">Already have an acount?</a>
                 </div>
                 
             </div>
@@ -59,13 +59,12 @@
 
 
         <script>
-            var password = document.getElementById("password");
+           var password = document.getElementById("password");
             var confirm_password = document.getElementById("confirm-password");
             var letter = document.getElementById("letter");
             var capital = document.getElementById("capital");
             var digit = document.getElementById("digit");
             var length = document.getElementById("length");
-
 
             password.onfocus = function(){
                 document.getElementById("message").style.display = "block";
@@ -123,27 +122,25 @@
 
             password.onchange = checkPasswordEquality;
             confirm_password.onkeyup = checkPasswordEquality;
-
             
             //regisering
-            var register_botton = document.getElementById("register-botton");
-            register_botton.addEventListener('clik', doRegister);
+            var register_form = document.getElementById("register-form");
+            register_form.addEventListener('submit', doRegister);
 
             function doRegister(event)
             {
+                event.preventDefault();
                 console.log("incercare de inregistrare");
-
                 //preluam valorile introduse in form
                 let name = document.getElementById("name").value;
                 let email = document.getElementById("email").value;
                 let pass = document.getElementById("password").value;
-                let confirm_pass = document.getElementById("confirm-password").value;
+                //let confirm_pass = document.getElementById("confirm-password").value;
             
                 let user = {
                     name:name,
                     email:email,
-                    password:password,
-                    confirm_pass:confirm_pass
+                    password:pass
                 }
 
                 let endpoint = "register";
@@ -155,9 +152,10 @@
             {
                 let url = `http://localhost:1234/${endpoint}`;
                 let head = new Headers();
-                h.append("Content-Type", "application/json");
+                head.append("Content-Type", "application/json");
                 let req = new Request(url, {
                     method: 'POST',
+                    mode: 'cors',
                     headers: head,
                     body: JSON.stringify(user)
                 });
@@ -175,7 +173,15 @@
 
             }
 
-            function successfulRegister(adta)
+            function successfulRegister(data){
+                console.log("new user registered", data);
+                alert("Registered successfuly!");
+            }
+
+            function failure(error)
+            {
+                console.log(error);
+            }
 
         </script>
         
