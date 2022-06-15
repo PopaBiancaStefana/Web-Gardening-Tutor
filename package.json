@@ -15,7 +15,8 @@
     "debug": "^4.3.4",
     "dotenv": "^16.0.1",
     "mime-types": "^2.1.35",
-    "mimetypes": "^0.1.1"
+    "mimetypes": "^0.1.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
