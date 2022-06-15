@@ -7,6 +7,7 @@ const util = require("util");
 
 const fileController = require("./controllers/staticFileController");
 const userController = require("./controllers/userController");
+const courseController = require("./controllers/courseController");
 
 require("dotenv").config();
 
@@ -81,11 +82,13 @@ const server = http.createServer((req, res) => {
 
 const getRoutes = {
     "staticFile": fileController.serveFile
+   // "course_template" : courseController.getProgress
 }
 
 
 const postRoutes = {
-    "register" : userController.register
+    "register": userController.register,
+    "course_template": courseController.saveForm
 }
 
 
