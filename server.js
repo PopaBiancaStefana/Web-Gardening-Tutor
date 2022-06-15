@@ -80,7 +80,6 @@ const server = http.createServer((req, res) => {
 })
 
 const getRoutes = {
-    "home.html": fileController.serveFile,
     "staticFile": fileController.serveFile
 }
 
