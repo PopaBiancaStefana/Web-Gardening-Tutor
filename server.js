@@ -85,7 +85,8 @@ const getRoutes = {
 
 
 const postRoutes = {
-    "register" : userController.register
+    "register" : userController.register,
+    "login" : userController.login
 }
 
 
