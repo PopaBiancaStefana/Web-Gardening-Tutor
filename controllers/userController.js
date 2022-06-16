@@ -32,9 +32,10 @@ async function login(data,res) {
         res.writeHead(200);
         res.end("logged in successfuly");
     }
-    else
+    else{
         res.writeHead(401, "bad credentials"); //unauthorized
-        res.end(msg);
+        res.end(JSON.stringify({error : msg}));
+    }
 }
 
 module.exports = {register, login};

@@ -71,8 +71,29 @@ async function createSession(userId, sessionId)
 {
     db.pool.query("insert into user_session (id_user, id_session) values (?,?)" , [userId, sessionId], (err, result) =>{
         if(err) throw err;
-        console.log("user inserted");
+        console.log("session created");
     })
 }
 
-module.exports = {findByEmail, createUser, login};
+
+function getUserBySid(sid)
+{
+    return new Promise((resolve, reject) => {
+        db.pool.query("select id_user from user_session where id_session = ?", [sid], (err, data) => {
+            if(err) reject(err);
+            if(data.length<=0)
+                reject("sid not found");
+            else {
+                resolve(data[0].id_user);
+            }
+        })
+    })
+    
+}
+
+module.exports = {
+    findByEmail,
+    createUser, 
+    login,
+    getUserBySid
+};
