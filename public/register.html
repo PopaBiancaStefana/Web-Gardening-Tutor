@@ -30,7 +30,7 @@
             <div class="login-panel">
                 <img src=" images/logo2.png" alt="GT-logo" class="login-logo">
                 <h1 class="connect-way">Register</h1>
-                <form class="login-form" action="register" id="register-form" method="POST">
+                <form id="register-form" action="register" id="register-form" method="POST">
                     <input type="text" name="name" id="name" placeholder="Enter your name" required>
                     <input type="email" name="email" id="email" placeholder="Enter your email" required >
                     <input type="password" name="password" id="password" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
@@ -181,6 +181,13 @@
             function failure(error)
             {
                 console.log(error);
+                let errorMsg = document.createElement('div');
+                errorMsg.textContent = error;
+                errorMsg.style.color = 'red';
+                errorMsg.style.fontWeight = 'bold';
+                register_form.appendChild(errorMsg);
+
+                setTimeout(() => errorMsg.remove(), 4000);
             }
 
         </script>

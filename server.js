@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
         urlPath = "home"
 
     let qs = parsedUrl.query;
-    let headers = parsedUrl.heaeders;
+    let headers = req.headers;
     let method = req.method.toLocaleLowerCase();
 
     let payload = '';
@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
         let parsedPayload;
         if(payload != '')
             parsedPayload = JSON.parse(payload);
-        console.log('payload: '+ payload)
+        console.log('payload: '+ payload);
 
         let data = {
             path: urlPath,
@@ -54,11 +54,11 @@ const server = http.createServer((req, res) => {
                         route = getRoutes[urlPath];
                     } else {
                         route = getRoutes["staticFile"];
-                        console.log("ramura asta");
                     }
 
                     //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
                     route(data, res);
+                    console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
                     break;
                 }
             case 'post':
@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
                 }
                 route(data, res);
                 break;
-            
+        
         }
     })
 
@@ -81,13 +81,15 @@ const server = http.createServer((req, res) => {
 })
 
 const getRoutes = {
-    "staticFile": fileController.serveFile
-   // "course_template" : courseController.getProgress
+    "staticFile": fileController.serveFile,
+    "profile": fileController.restrictedFile,
+    "garden_manager": fileController.restrictedFile
 }
 
 
 const postRoutes = {
-    "register": userController.register,
+    "register" : userController.register,
+    "login" : userController.login
     "course_template": courseController.saveForm
 }
 

@@ -1,6 +1,7 @@
 const { reject } = require("bcrypt/promises");
 const db =require("../database");
 const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 
 
  async function findByEmail(email)
@@ -24,7 +25,7 @@ const bcrypt = require('bcrypt');
 async function createUser(user)
 {
     console.log(user.password);
-    let hashedPassword = await bcrypt.hash('alalala', 14);
+    let hashedPassword = await bcrypt.hash(user.password, 14);
 
     let usersWithGivenEmail;
     usersWithGivenEmail = await findByEmail(user.email);
@@ -40,4 +41,59 @@ async function createUser(user)
 }
 
 
-module.exports = {findByEmail, createUser};
+async function login(user)
+{
+    //verificam daca combinatia dintre user si parola este valida
+    usersWithGivenEmail = await findByEmail(user.email);
+    if(usersWithGivenEmail.length > 0){
+        expectedUser = usersWithGivenEmail[0];
+        let passwordsDoMatch = await bcrypt.compare(user.password, expectedUser.password)
+        if(passwordsDoMatch)
+        {
+            //parola corespunde emailului => cream un sid
+            let sid = uuid.v4();
+            let cookieSession = {
+                sid:sid,
+                expires:new Date(+new Date()+ 12*3600*1000),
+            }
+            await createSession(expectedUser.id, sid);
+            return cookieSession;
+        }
+        else return "invalid email or password";
+    }
+    else return "invalid email or password";
+
+
+}
+
+
+async function createSession(userId, sessionId)
+{
+    db.pool.query("insert into user_session (id_user, id_session) values (?,?)" , [userId, sessionId], (err, result) =>{
+        if(err) throw err;
+        console.log("session created");
+    })
+}
+
+
+function getUserBySid(sid)
+{
+    return new Promise((resolve, reject) => {
+        db.pool.query("select id_user from user_session where id_session = ?", [sid], (err, data) => {
+            if(err) reject(err);
+            if(data.length<=0)
+                reject("sid not found");
+            else {
+                resolve(data[0].id_user);
+            }
+        })
+    })
+    
+}
+
+module.exports = {
+    findByEmail,
+    createUser, 
+    login,
+    getUserBySid
+};

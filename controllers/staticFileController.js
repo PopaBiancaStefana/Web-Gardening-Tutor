@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const lookup = require("mime-types").lookup;
+const checkSession = require('../models/sessionModel').checkSession;
 
 
 function serveFile(data, res)
@@ -28,4 +29,21 @@ function serveFile(data, res)
     })
 }
 
-module.exports = {serveFile}
+
+
+async function restrictedFile(data, res)
+{
+    let result = JSON.parse(await checkSession(data.headers));
+    
+    if("user_id" in result) // exista sesiunea pentru client
+    {
+        serveFile(data, res);
+    }
+    else{
+        data.path='login';
+        serveFile(data,res);
+    }
+   
+}
+
+module.exports = {serveFile, restrictedFile}

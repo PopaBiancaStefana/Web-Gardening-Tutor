@@ -10,13 +10,32 @@ async function register(data, res)
         // res.writeHead(201, {"Content-type" : "applicaton/json"});
         // res.end( {msg: "user registered"});
         res.setHeader("Content-type", "application/json");
+        res.writeHead(201, "user created");
         res.end(JSON.stringify({data: data.payload }));
     } catch(err) {
         console.log(err);
         res.setHeader("Content-type", "application/json");
+        res.writeHead(400, "email used");
         res.end(JSON.stringify({error: err }));
     }
     
 }
 
-module.exports = {register};
+
+
+async function login(data,res) {
+    let msg = await userModel.login(data.payload);
+    if(typeof msg === 'object' && msg !== null)
+    {
+        //logare cu succes, trimiem cookieul catre client
+        res.setHeader("Set-Cookie", `sid=${msg.sid}`);
+        res.writeHead(200);
+        res.end("logged in successfuly");
+    }
+    else{
+        res.writeHead(401, "bad credentials"); //unauthorized
+        res.end(JSON.stringify({error : msg}));
+    }
+}
+
+module.exports = {register, login};
