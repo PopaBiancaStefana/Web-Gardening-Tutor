@@ -11,9 +11,10 @@ const data = await getData("jsons/content.json");
 
 injectContent();
 
-function injectContent() {
-    var course = sessionStorage.getItem("course");
-    var diff = sessionStorage.getItem("difficulty");
+export function injectContent(course) {
+    if (course == undefined) {
+        var course = sessionStorage.getItem("course");
+    }
 
     //------TITLE PART
     var title = document.getElementById("course-title");
@@ -23,7 +24,7 @@ function injectContent() {
 
     var ul = document.createElement("ul");
     var li = document.createElement("li");
-    li.innerHTML = diff;
+    li.innerHTML = data[course]["difficulty"];
     ul.appendChild(li);
     title.appendChild(ul);
 
@@ -57,10 +58,6 @@ function injectContent() {
         li.innerHTML = data[course]["environment"]["env" + index];
         li.style.display = "block";
         index++;
-
-        li.addEventListener('click', function handleClick(event) {
-            change_modal();
-        });
     }
 
     //--------TIPS PART
@@ -116,59 +113,18 @@ function injectContent() {
     }
 }
 
-function change_modal() {
 
+
+// ---------CODE FOR MODAL POPUP--------
+
+
+function change_modal() {
     window.onclick = e => {
         var course = sessionStorage.getItem("course");
         var modal = document.getElementById("modal-text");
         modal.innerHTML = data[course]["tools"][e.target.id + "-modal"];
     }
 }
-
-
-
-// --------CODE FOR CHECKBOX---------
-
-//const checkbox1 = document.getElementById('test1');
-// checkbox1.addEventListener('click', enable_next_checkbox(1));
-
-function enable_next_checkbox(j) {
-    if (document.form1.ckb[j].checked == true) {
-        document.form1.ckb[j + 1].disabled = false;
-    }
-    else {
-        for (var i = j + 1; document.form1.ckb.length; i++) {
-            document.form1.ckb[i].checked = false;
-            document.form1.ckb[i].disabled = true;
-        }
-    }
-}
-
-
-function return_val() {
-    var total = 0;
-    for (var i = 0; i < document.form1.ckb.length; i++) {
-        if (document.form1.ckb[i].checked) {
-            total = total + 1;
-        }
-    }
-
-    var text = "You still have some steps left";
-    if (total < document.form1.ckb.length) {
-        document.getElementById("message").innerHTML = text;
-        return false;
-    }
-    else {
-        document.getElementById("message").innerHTML = "";
-        return true;
-    }
-}
-//GLOBAL -not recomended
-window.return_val = return_val;
-window.enable_next_checkbox = enable_next_checkbox;
-
-
-// ---------CODE FOR MODAL POPUP--------
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -180,13 +136,6 @@ openModalButtons.forEach(button => {
         openModal(modal)
     })
 })
-
-// overlay.addEventListener('click', () => {
-//     const modals = document.querySelectorAll('.modal.active')
-//     modals.forEach(modal => {
-//         closeModal(modal)
-//     })
-// })
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {

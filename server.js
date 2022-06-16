@@ -7,6 +7,7 @@ const util = require("util");
 
 const fileController = require("./controllers/staticFileController");
 const userController = require("./controllers/userController");
+const courseController = require("./controllers/courseController");
 
 require("dotenv").config();
 
@@ -89,6 +90,7 @@ const getRoutes = {
 const postRoutes = {
     "register" : userController.register,
     "login" : userController.login
+    "course_template": courseController.saveForm
 }
 
 
