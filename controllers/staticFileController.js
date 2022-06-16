@@ -39,6 +39,10 @@ async function restrictedFile(data, res)
     {
         serveFile(data, res);
     }
+    else{
+        data.path='login';
+        serveFile(data,res);
+    }
    
 }
 
