@@ -89,11 +89,9 @@ const getRoutes = {
 
 const postRoutes = {
     "register" : userController.register,
-<<<<<<< Updated upstream
-    "login" : userController.login
-    "course_template": courseController.saveForm
-=======
->>>>>>> Stashed changes
+    "login" : userController.login,
+    "course_template": courseController.saveForm,
+    "logout" : userController.logout
 }
 
 
