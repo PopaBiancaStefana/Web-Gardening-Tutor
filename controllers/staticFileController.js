@@ -33,18 +33,17 @@ function serveFile(data, res)
 
 async function restrictedFile(data, res)
 {
+    console.log("avem aici " + data.headers );
+
     let result = JSON.parse(await checkSession(data.headers));
-    console.log('rez ');
-
-
 
     if("user_id" in result) // exista sesiunea pentru client
     {
         serveFile(data, res);
     }
     else{
-        data.path='login';
-        serveFile(data,res);
+        res.writeHead(303, {Location: 'login'});
+        res.end();
     }
    
 }
