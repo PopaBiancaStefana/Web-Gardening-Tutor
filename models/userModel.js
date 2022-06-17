@@ -81,11 +81,7 @@ function getUserBySid(sid)
     return new Promise((resolve, reject) => {
         db.pool.query("select id_user from user_session where id_session = ?", [sid], (err, data) => {
             if(err) reject(err);
-            if(data.length<=0)
-                reject("sid not found");
-            else {
-                resolve(data[0].id_user);
-            }
+            resolve(data);
         })
     })
     
