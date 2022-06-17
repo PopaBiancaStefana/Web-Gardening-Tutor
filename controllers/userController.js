@@ -31,9 +31,9 @@ async function login(data,res) {
         console.log('suntem pe aici :' + JSON.stringify(msg));
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
-        // res.writeHead(301, {Location: 'profile'});
+        //res.writeHead(307, {Location: 'profile'});
         res.writeHead(201);
-        res.end(JSON.stringify({data: msg}));
+        res.end(JSON.stringify({data: "logged in"}));
     }
     else{
         res.writeHead(401, "bad credentials"); //unauthorized

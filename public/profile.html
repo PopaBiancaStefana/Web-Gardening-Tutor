@@ -283,6 +283,10 @@
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "logout", true);
                 xhr.send();
+
+                xhr.onload = () => {
+                    window.location.href = "login";
+                }
             }
 
         </script>
