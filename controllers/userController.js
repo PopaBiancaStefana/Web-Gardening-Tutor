@@ -1,4 +1,5 @@
 const userModel = require("../models/userModel");
+const sessionModel = require("../models/sessionModel");
 
 async function register(data, res)
 {
@@ -29,7 +30,8 @@ async function login(data,res) {
     {
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
-        res.writeHead(200);
+        //res.writeHead(301, {Location: 'profile'});
+        res.writeHead(201);
         res.end("logged in successfuly");
     }
     else{
@@ -38,4 +40,18 @@ async function login(data,res) {
     }
 }
 
-module.exports = {register, login};
+
+async function logout(data,res)
+{
+    //preluam sidul de la client, si stergem sesiunea din baza de date
+    let sesCookie = headers.cookie.split('=');
+    let sid=sesCookie[1];
+    let userId = await userModel.getUserBySid(sid);
+    sessionModel.deleteUserSession(userId);
+
+    res.setHeader("Set-Cookie", "sid=\'\'");
+    res.writeHead(301, {Location: 'home'});
+    res.end('logged out');
+}
+
+module.exports = {register, login, logout};

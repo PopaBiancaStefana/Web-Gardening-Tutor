@@ -19,6 +19,15 @@ async function checkSession(headers)
     
 }
 
+function deleteUserSession(userId)
+{
+    db.pool.query("delete from user_seesion where id_user = ? " , [userId], (err, result) =>{
+        if(err) throw err;
+        console.log("session deleted");
+    })
+}
+
 module.exports = {
-    checkSession
+    checkSession,
+    deleteUserSession
 }

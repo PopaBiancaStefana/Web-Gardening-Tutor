@@ -91,7 +91,8 @@ const getRoutes = {
 const postRoutes = {
     "register" : userController.register,
     "login" : userController.login,
-    "course_template": courseController.saveForm
+    "course_template": courseController.saveForm,
+    "logout" : userController.logout
 }
 
 
