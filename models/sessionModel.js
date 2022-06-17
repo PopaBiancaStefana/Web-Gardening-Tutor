@@ -14,7 +14,7 @@ async function checkSession(headers)
     //cautam sid ul in bd
     let userId = await userModel.getUserBySid(sid)
     .catch((err) => {return JSON.stringify({error: err}) })
-    
+
     return JSON.stringify({user_id: userId});
     
 }

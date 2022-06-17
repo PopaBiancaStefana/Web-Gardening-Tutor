@@ -40,8 +40,8 @@ async function restrictedFile(data, res)
         serveFile(data, res);
     }
     else{
-        data.path='login';
-        serveFile(data,res);
+        res.writeHead(301, {Location: 'login'});
+        res.end();
     }
    
 }

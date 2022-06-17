@@ -83,13 +83,14 @@ const server = http.createServer((req, res) => {
 const getRoutes = {
     "staticFile": fileController.serveFile,
     "profile": fileController.restrictedFile,
-    "garden_manager": fileController.restrictedFile
+    "garden_manager": fileController.restrictedFile,
+    "courses": fileController.restrictedFile
 }
 
 
 const postRoutes = {
     "register" : userController.register,
-    "login" : userController.login
+    "login" : userController.login,
     "course_template": courseController.saveForm
 }
 
