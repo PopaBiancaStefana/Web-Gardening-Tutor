@@ -34,7 +34,10 @@ function serveFile(data, res)
 async function restrictedFile(data, res)
 {
     let result = JSON.parse(await checkSession(data.headers));
-    
+    console.log('rez ');
+
+
+
     if("user_id" in result) // exista sesiunea pentru client
     {
         serveFile(data, res);
