@@ -28,11 +28,12 @@ async function login(data,res) {
     let msg = await userModel.login(data.payload);
     if(typeof msg === 'object' && msg !== null)
     {
+        console.log('suntem pe aici :' + JSON.stringify(msg));
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
-        //res.writeHead(301, {Location: 'profile'});
+        //res.writeHead(307, {Location: 'profile'});
         res.writeHead(201);
-        res.end("logged in successfuly");
+        res.end(JSON.stringify({data: "logged in"}));
     }
     else{
         res.writeHead(401, "bad credentials"); //unauthorized
@@ -44,13 +45,16 @@ async function login(data,res) {
 async function logout(data,res)
 {
     //preluam sidul de la client, si stergem sesiunea din baza de date
-    let sesCookie = headers.cookie.split('=');
+    let sesCookie = data.headers.cookie.split('=');
     let sid=sesCookie[1];
-    let userId = await userModel.getUserBySid(sid);
-    sessionModel.deleteUserSession(userId);
+    console.log('delogam userul cu sid ul' + sesCookie);
+    let users = await userModel.getUserBySid(sid);
+    
+    console.log(users[0]);
+    sessionModel.deleteUserSession(users[0].id_user);
 
     res.setHeader("Set-Cookie", "sid=\'\'");
-    res.writeHead(301, {Location: 'home'});
+    res.writeHead(303, {Location: 'home'});
     res.end('logged out');
 }
 
