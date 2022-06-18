@@ -95,16 +95,17 @@
                       failure(content.error);
                   } 
                   if ("data" in content) {
-                      callback(content.data)
+                      callback(content.data);
                   }
+                  
               })
               .catch(failure);
 
           }
 
           function successfulLogin(data){
-            console.log("new user registered", data);
-            alert("Registered successfuly!");
+            console.log("logged in", data);
+            window.location.href = "profile";
           }
 
           

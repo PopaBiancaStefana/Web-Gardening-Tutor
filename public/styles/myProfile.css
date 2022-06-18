@@ -277,7 +277,7 @@ body{
     transition: .2s ease-in-out;
 }
 
-.course-button, .logout-button {
+.course-button, #logout-button {
     background-color: #ffffff;
     border-radius: 6px;
     border-width: 0;
@@ -293,28 +293,28 @@ body{
     font-size: 19px;
 }
 
-.logout-button {
+#logout-button {
     display: flex;
     align-items: center;
     position: relative;
     left: 240px;
 }
 
-.course-button a, .logout-button a {
+.course-button a, #logout-button a {
     color: #0b628d;
     font-weight: 600;
 }
 
-.course-button:focus, .logout-button:focus {
+.course-button:focus, #logout-button:focus {
     box-shadow: #fbe4ce 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0         -3px 0 inset;
 }
 
-.course-button:hover, .logout-button:hover {
+.course-button:hover, #logout-button:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -5px 0 inset;
     transform: translateY(-2px);
 }
 
-.course-button:active, .logout-button:active {
+.course-button:active, #logout-button:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
 }
@@ -342,8 +342,8 @@ footer {
     text-align: center;
     color: #fff;
     background-color: rgba(221, 221, 221, 0.8);
-    padding: 60px 0;
-    font-size: 25px;
+    padding: 40px 0;
+    font-size: 15px;
     color: #ff7c59;
     margin-top: 100px;
   }

@@ -8,6 +8,7 @@ const util = require("util");
 const fileController = require("./controllers/staticFileController");
 const userController = require("./controllers/userController");
 const courseController = require("./controllers/courseController");
+const leaderboardController = require("./controllers/leaderboardController");
 
 require("dotenv").config();
 
@@ -18,7 +19,7 @@ const server = http.createServer((req, res) => {
 
     let parsedUrl = url.parse(req.url, true);
     let urlPath = parsedUrl.path.replace(/^\/+|\/+$/g, ""); //sterge slash-urile de la inceput si sfarsit
-    if(urlPath == "")
+    if (urlPath == "")
         urlPath = "home"
 
     let qs = parsedUrl.query;
@@ -32,25 +33,24 @@ const server = http.createServer((req, res) => {
     });
     req.on("end", () => {
         let parsedPayload;
-        if(payload != '')
+        if (payload != '')
             parsedPayload = JSON.parse(payload);
-        console.log('payload: '+ payload);
+        console.log('payload: ' + payload);
 
         let data = {
             path: urlPath,
             qureyString: qs,
             headers: headers,
-            method : method,
+            method: method,
             payload: parsedPayload
         };
         // console.log(data.payload);
 
         switch (method) {
-            case 'get' : 
+            case 'get':
                 {
                     let route;
-                    if(urlPath in getRoutes)
-                    {
+                    if (urlPath in getRoutes) {
                         route = getRoutes[urlPath];
                     } else {
                         route = getRoutes["staticFile"];
@@ -58,20 +58,19 @@ const server = http.createServer((req, res) => {
 
                     //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
                     route(data, res);
-                    console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
+                    console.log('headers: \n' + JSON.stringify(data.headers) + '\n');
                     break;
                 }
             case 'post':
                 let route;
-                if(urlPath in postRoutes)
-                {
+                if (urlPath in postRoutes) {
                     route = postRoutes[urlPath];
                 } else {
-                    route = (data,res) => (console.log('nimic'));
+                    route = (data, res) => (console.log('nimic'));
                 }
                 route(data, res);
                 break;
-        
+
         }
     })
 
@@ -84,15 +83,17 @@ const getRoutes = {
     "staticFile": fileController.serveFile,
     "profile": fileController.restrictedFile,
     "garden_manager": fileController.restrictedFile,
-    "courses": fileController.restrictedFile
+    "courses": fileController.restrictedFile,
+    "leaderboard": leaderboardController.topUsers
 }
 
 
 const postRoutes = {
-    "register" : userController.register,
-    "login" : userController.login,
-    "course_template": courseController.saveForm
+    "register": userController.register,
+    "login": userController.login,
+    "course_template": courseController.saveForm,
+    "logout": userController.logout
 }
 
 
-server.listen(port,host, () => console.log(`listening on  ${host}:${port}`));
+server.listen(port, host, () => console.log(`listening on  ${host}:${port}`));

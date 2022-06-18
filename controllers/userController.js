@@ -1,4 +1,5 @@
 const userModel = require("../models/userModel");
+const sessionModel = require("../models/sessionModel");
 
 async function register(data, res)
 {
@@ -27,10 +28,12 @@ async function login(data,res) {
     let msg = await userModel.login(data.payload);
     if(typeof msg === 'object' && msg !== null)
     {
+        console.log('suntem pe aici :' + JSON.stringify(msg));
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
-        res.writeHead(200);
-        res.end("logged in successfuly");
+        //res.writeHead(307, {Location: 'profile'});
+        res.writeHead(201);
+        res.end(JSON.stringify({data: "logged in"}));
     }
     else{
         res.writeHead(401, "bad credentials"); //unauthorized
@@ -38,4 +41,19 @@ async function login(data,res) {
     }
 }
 
-module.exports = {register, login};
+
+async function logout(data,res)
+{
+    //preluam sidul de la client, si stergem sesiunea din baza de date
+    let sesCookie = data.headers.cookie.split('=');
+    let sid=sesCookie[1];
+    console.log('delogam userul cu sid ul ' + sid);
+
+    sessionModel.deleteUserSession(sid);
+
+    res.setHeader("Set-Cookie", "sid=\'\'");
+    res.writeHead(303, {Location: 'home'});
+    res.end('logged out');
+}
+
+module.exports = {register, login, logout};

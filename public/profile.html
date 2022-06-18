@@ -26,7 +26,7 @@
                   <li><a href="courses">Courses</a></li>
                   <li><a href="leaderboard">Leaderboard</a></li>
                 </ul>
-                <button class="logout-button">
+                <button id="logout-button">
                     Logut
                     <span class="material-icons">
                         logout
@@ -273,6 +273,20 @@
             var loadFile = function (event) {
                 var image = document.getElementById("output");
                 image.src = URL.createObjectURL(event.target.files[0]);
+            }
+
+
+            var logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", logout);
+            function logout(event){
+                event.preventDefault();
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "logout", true);
+                xhr.send();
+
+                xhr.onload = () => {
+                    window.location.href = "login";
+                }
             }
 
         </script>
