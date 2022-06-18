@@ -38,7 +38,7 @@ async function restrictedFile(data, res)
     .catch((err) => {
         res.writeHead(303, {Location: 'login'});
         res.end();
-        return;
+        return {error: "no session"};
     });
 
     
@@ -48,11 +48,12 @@ async function restrictedFile(data, res)
 
     if("user_id" in JSON.parse(result)) // exista sesiunea pentru client
     {
-        serveFile(data, res);
+        return result;
     }
     else{
         res.writeHead(303, {Location: 'login'});
         res.end();
+        return {error: "no session"};
     }
    
 }

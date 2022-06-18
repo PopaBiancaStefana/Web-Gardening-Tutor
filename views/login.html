@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href=" styles/signin.css">
+    </head>
+
+
+    
+
+    <body>
+
+        <header class="main-header">
+            <div class="container">
+              <a class="logo" href="home">
+                <img src=" images/logo2.png" alt="Logo" />
+              </a>
+      
+              <nav>
+                <ul>
+                  <li><a href="profile">Profile</a></li>
+                  <li><a href="courses">Courses</a></li>
+                  <li><a href="leaderboard">Leaderboard</a></li>
+                </ul>
+              </nav>
+            </div>
+        </header>
+      
+        <main>
+            <div class="login-panel">
+                <img src=" images/logo2.png" alt="GT-logo" class="login-logo">
+                <h1 class="connect-way">Log in</h1>
+                <form id="login-form" action="login" method="POST">
+                    <i class="fa fa-user icon"></i>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
+                    <input type="submit" value="Log in" id="login-button">
+                </form>
+                <div class="alternative-connect">
+                    <a href="">Forgot password?</a>
+                    <a href="register">Sign up</a>
+                </div>
+                
+            </div>
+
+        </main>    
+
+        <footer>
+          <p>Web project 2022 Faculty of Computer Science Iași</p>
+          <br />
+          <p id="copyright">&copy; All Rights Reserved</p>
+        </footer>
+
+
+        <script>
+          var login_form = document.getElementById("login-form");
+          login_form.addEventListener('submit', doLogin);
+
+          function doLogin(event)
+          {
+            event.preventDefault();
+
+            console.log("log in try");
+
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+
+            let user = {
+              email:email,
+              password:pass
+            }
+
+            let endpoint = "login";
+            sendData(user, endpoint, successfulLogin);
+          }
+
+          function sendData(user, endpoint, callback)
+          {
+              let url = `http://localhost:1234/${endpoint}`;
+              let head = new Headers();
+              head.append("Content-Type", "application/json");
+              let req = new Request(url, {
+                  method: 'POST',
+                  mode: 'cors',
+                  headers: head,
+                  body: JSON.stringify(user)
+              });
+              fetch(req).then((res) => res.json())
+              .then((content) => {
+                  if("error" in content){
+                      //incerare esuata
+                      failure(content.error);
+                  } 
+                  if ("data" in content) {
+                      callback(content.data);
+                  }
+                  
+              })
+              .catch(failure);
+
+          }
+
+          function successfulLogin(data){
+            console.log("logged in", data);
+            window.location.href = "profile";
+          }
+
+          
+          function failure(error)
+          {
+            console.log(error);
+            let errorMsg = document.createElement('div');
+            errorMsg.textContent = error;
+            errorMsg.style.color = 'red';
+            errorMsg.style.fontWeight = 'bold';
+            login_form.appendChild(errorMsg);
+
+            setTimeout(() => errorMsg.remove(), 4000);
+          }
+
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My profile</title>
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href=" styles/myProfile.css">
+
+    </head>
+    
+    <body>
+
+        
+        <header class="main-header">
+            <div class="header-container">
+              <a class="logo" href="home">
+                <img src=" images/logo2.png" alt="Logo" />
+              </a>
+      
+              <nav>
+                <ul>
+                  <li><a href="profile">Profile</a></li>
+                  <li><a href="courses">Courses</a></li>
+                  <li><a href="leaderboard">Leaderboard</a></li>
+                </ul>
+                <button id="logout-button">
+                    Logut
+                    <span class="material-icons">
+                        logout
+                    </span>
+                  </button>
+              </nav>
+
+            </div>
+        </header>
+
+        <div class="container">
+
+            
+
+            <div class="menu">
+                <button id="default_open" class="menu-button active" onclick="openContent(event, 'profile-information')">
+                    Profile information
+                    <span class="material-icons">
+                        account_circle
+                    </span>
+                </button>
+                
+
+                <button class="menu-button" onclick="openContent(event, 'achievemnets')">
+                    Achievements
+                    <span class="material-icons">
+                        workspace_premium
+                    </span>
+                </button>
+
+                <button class="menu-button" onclick="openContent(event, 'your-courses')">
+                    Your Courses
+                    <span class="material-icons">
+                        menu_book
+                    </span>
+                </button>
+
+                <button class="menu-button" onclick="openContent(event, 'bookmarks')">
+                    Bookmarked Courses
+                    <span class="material-icons">
+                        bookmarks
+                    </span>
+                </button>
+
+                <button class="menu-button"  onclick="window.location.href='gardenmanager'">
+                    Garden Manager
+                    <span class="material-icons">
+                        dashboard
+                    </span>
+                </button>
+
+            </div>
+
+            <div class="content-container">
+                
+                <div class="section-card content" id="profile-information" style="display: block;">
+                    <div class="profile-header"> 
+                        
+                        <div class="profile-picture">
+                            <label class="picture-label" for="avatar">
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <span>Change Image</span>
+                            </label>
+                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png, .jpg, .jpeg">
+                            <img src=" images/avatar.png" alt="avatar" class="profile-image" id="output">
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="my-name"> <%= name %>  </h3> <br>
+                            <h3> <%= email %> </h3>
+                        </div>
+
+                    </div> 
+
+                    <section class="profile-details">
+                        <h1>About</h1>
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">bla</p>
+                            <p class="profile-details-value">bla</p>
+                        </div>
+
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">Registration date</p>
+                            <p class="profile-details-value">10.04.2022</p>
+                        </div>
+                    </section>
+
+                    <section class="profile-details">
+                        <h1>Statistics</h1>
+                        
+                        <div class="profile-details-field">
+                            <p class="profile-details-label">Completed courses</p>
+                            <p class="profile-details-value">2</p>
+                        </div>
+                    </section>
+                </div>
+
+                
+                <section class="section-card content" id="achievemnets" style="display: none;">
+                    <h1>Achievements</h1>
+
+                    <div class="section-card-content">
+
+                        <% achievemnets.forEach((achievemnet) => { %> 
+
+                            <div class="badge-container tooltip">
+                                <img src="<%- achievemnet.source  %>" alt="badge" class="badge">
+                                <span class="tooltip-text"> <%= achievemnet.description %> </span>
+                            </div>
+
+                        <% }) %> 
+
+                </section>
+
+                <section class="section-card content" id="your-courses" style="display: none;">
+                    <h1>Followed courses</h1>
+                    
+                    <div class="courses-container">
+
+                        <% my_courses.forEach(course => { %>
+                            
+                            <div class="section-card-content">
+                                <div class="course-card">
+                                    <h3> <%= course.title %> </h3>
+                                    <button class="course-button">Continue</button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"> <%= course.progerss %> </div>
+                                    </div>
+                                </div>    
+                            </div>
+
+                        <% }); %> 
+                    </div>
+                </section>
+
+                <section class="section-card content" id="bookmarks" style="display: none;">
+                    <h1>Bookmarked courses</h1>
+
+                    <div class="courses-container">
+
+                        <% bookmarked.forEach(course => { %>
+                            
+                            <div class="section-card-content">
+                                <div class="course-card">
+                                    <h3> <%= course.title %>  </h3>
+                                    <button class="course-button">Get started</button>
+                                </div>    
+                            </div>
+    
+                        <% }); %> 
+
+                    </div>
+                </section>
+                
+
+            </div>
+    
+
+        </div>
+
+        <footer>
+            <p>Web project 2022 Faculty of Computer Science Iași</p>
+            <br />
+            <p id="copyright">&copy; All Rights Reserved</p>
+        </footer>
+
+        <script>
+            function openContent(evt, contentName){
+                var i, tabs, tab_links;
+                tabs = document.getElementsByClassName("content");
+                for(i=0; i < tabs.length; i++)
+                    tabs[i].style.display = "none";
+
+                tab_links = document.getElementsByClassName("menu-button");
+            
+                for(i=0; i<tab_links.length; i++)
+                    tab_links[i].className = tab_links[i].className.replace(" active", "");
+                    
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            document.getElementById("default_open").click();
+
+        
+            var loadFile = function (event) {
+                var image = document.getElementById("output");
+                image.src = URL.createObjectURL(event.target.files[0]);
+            }
+
+
+            var logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", logout);
+            function logout(event){
+                event.preventDefault();
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "logout", true);
+                xhr.send();
+
+                xhr.onload = () => {
+                    window.location.href = "login";
+                }
+            }
+
+        </script>
+
+
+
+    </body>
+</html>

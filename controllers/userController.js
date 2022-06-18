@@ -1,5 +1,7 @@
 const userModel = require("../models/userModel");
 const sessionModel = require("../models/sessionModel");
+const { restrictedFile } = require("./staticFileController");
+const ejs = require("ejs");
 
 async function register(data, res)
 {
@@ -56,4 +58,18 @@ async function logout(data,res)
     res.end('logged out');
 }
 
-module.exports = {register, login, logout};
+
+async function getProfile(data, res)
+{
+    let result = await restrictedFile(data, res);
+    if("error" in JSON.parse(result)) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
+        return;
+
+    let data = await userModel.getProfile(JSON.parse(result).user_id);
+    
+    //todo render profile view
+    
+
+}
+
+module.exports = {register, login, logout, getProfile};

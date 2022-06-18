@@ -82,7 +82,7 @@ const server = http.createServer((req, res) => {
 
 const getRoutes = {
     "staticFile": fileController.serveFile,
-    "profile": fileController.restrictedFile,
+    "profile": userController.getProfile,
     "garden_manager": fileController.restrictedFile,
     "courses": fileController.restrictedFile
 }

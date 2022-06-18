@@ -2,6 +2,7 @@ const { reject } = require("bcrypt/promises");
 const db =require("../database");
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
+const { EUCJPMS } = require("mysql/lib/protocol/constants/charsets");
 
 
  async function findByEmail(email)
@@ -84,6 +85,26 @@ function getUserBySid(sid)
             resolve(data);
         })
     })
+}
+
+
+function getProfile(id_user)
+{
+    let data = {};
+
+
+    //adaugam numele si emailul
+    db.pool.query("select name, e_mail from registered_users wher id = ?" , [id_user], (err, result) => {
+        if (err) throw err;
+        Object.keys(result).forEach((key) => {
+            let row = result[key];
+            data.name = row.name;
+            data.email = row.e_mail;  
+        })
+    })
+
+    // adaugam cursurile pe care le urmeaza
+    db.pool.query("select c.name, cp.progress/c.checkpoints as fraction from registered_users join  ")
     
 }
 
@@ -91,5 +112,6 @@ module.exports = {
     findByEmail,
     createUser, 
     login,
-    getUserBySid
+    getUserBySid,
+    getProfile
 };
