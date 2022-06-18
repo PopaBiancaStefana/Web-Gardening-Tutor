@@ -94,7 +94,7 @@ async function geCourseProgress(data) {
   let user_id = data.user_id;
 
   //get the id of the course
-  let course_id = await getEmailId(data.course_name);
+  let course_id = await getCourseId(data.course_name);
 
   return new Promise((resolve, reject) => {
     db.pool.query(
@@ -105,7 +105,14 @@ async function geCourseProgress(data) {
           console.log(err);
           reject(err);
         }
-        resolve(result[0].progress);
+     
+        let prog;
+        if (result[0] == undefined) {
+          prog = 0;
+        } else {
+          prog = result[0].progress;
+        }
+        resolve(prog);
       }
     );
   });

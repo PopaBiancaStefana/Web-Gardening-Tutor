@@ -3,6 +3,7 @@ const checkSession = require("../models/sessionModel").checkSession;
 
 async function saveForm(data, res) {
   try {
+    //get the id of the current user
     let result = await checkSession(data.headers);
     id = JSON.parse(result);
     data.payload.user_id = id["user_id"];
@@ -25,17 +26,28 @@ async function saveForm(data, res) {
   }
 }
 
-//NEED TO BE MODIFIED
 async function getProgress(data, res) {
   try {
-    let progress = await courseModel.geCourseProgress(data.payload);
+   
+    //get the id of the current user
+    let result = await checkSession(data.headers);
+    id = JSON.parse(result);
 
-    res.setHeader("Content-type", "application/json");
-    res.end(JSON.stringify({ progress: progress }));
+
+    let info = {
+      user_id: id["user_id"],
+      course_name: data.headers.course,
+    };
+
+    let prog = await courseModel.geCourseProgress(info);
+
+    console.log("The progress for course " + data.headers.course + ": " + prog);
+     res.setHeader("Content-type", "application/json");
+     res.end(JSON.stringify({ progress: prog }));
   } catch (err) {
-    console.log(err);
-    res.setHeader("Content-type", "application/json");
-    res.end(JSON.stringify({ error: err }));
+     console.log(err);
+     res.setHeader("Content-type", "application/json");
+     res.end(JSON.stringify({ error: err }));
   }
 }
 
