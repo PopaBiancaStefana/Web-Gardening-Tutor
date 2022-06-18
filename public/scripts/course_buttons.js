@@ -35,7 +35,7 @@ function saveForm(event) {
   };
 
   let endpoint = "course_template";
-  sendData(data, endpoint, successfulSave);
+  sendData(data, endpoint);
 
   return true;
 }
