@@ -65,7 +65,7 @@ async function getProfile(data, res)
     if("error" in JSON.parse(result)) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
         return;
 
-    let data = await userModel.getProfile(JSON.parse(result).user_id);
+    let profileData = await userModel.getProfile(JSON.parse(result).user_id);
     
     //todo render profile view
     

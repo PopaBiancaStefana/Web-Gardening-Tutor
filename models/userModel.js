@@ -104,7 +104,29 @@ function getProfile(id_user)
     })
 
     // adaugam cursurile pe care le urmeaza
-    db.pool.query("select c.name, cp.progress/c.checkpoints as fraction from registered_users join  ")
+    db.pool.query("select c.name, cp.progress/c.checkpoints as fraction, cp.bookmarked from registered_users as u join courses_in_progress as cp \
+    on u.id = cp.id_user join courses as c on cp.id_course = c.id \
+    where u.id = ?", [id_user], (err, result)=>{
+        if(err) throw err;
+
+        let myCourses = [];
+        let bookmarkedCourses = [];
+
+        Object.keys(result).forEach( (key) => {
+            let row = result[key];
+            let course = {};
+            course.title = row.name;
+            course.progress = row.fraction;
+            
+            myCourses.push(course);
+            if(course.bookmarked)
+                bookmarkedCourses.push(course);
+        })
+
+        data.my_courses = myCourses;
+        data.bookmarked = bookmarkedCourses;
+
+    } )
     
 }
 
