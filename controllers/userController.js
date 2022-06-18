@@ -47,11 +47,9 @@ async function logout(data,res)
     //preluam sidul de la client, si stergem sesiunea din baza de date
     let sesCookie = data.headers.cookie.split('=');
     let sid=sesCookie[1];
-    console.log('delogam userul cu sid ul' + sesCookie);
-    let users = await userModel.getUserBySid(sid);
-    
-    console.log(users[0]);
-    sessionModel.deleteUserSession(users[0].id_user);
+    console.log('delogam userul cu sid ul ' + sid);
+
+    sessionModel.deleteUserSession(sid);
 
     res.setHeader("Set-Cookie", "sid=\'\'");
     res.writeHead(303, {Location: 'home'});

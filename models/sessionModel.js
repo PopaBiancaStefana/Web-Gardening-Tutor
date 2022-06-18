@@ -32,9 +32,9 @@ async function checkSession(headers)
     
 }
 
-function deleteUserSession(userId)
+function deleteUserSession(sid)
 {
-    db.pool.query("delete from user_session where id_user = ? " , [userId], (err, result) =>{
+    db.pool.query("delete from user_session where id_session = ? " , [sid], (err, result) =>{
         if(err) throw err;
         console.log("session deleted");
     })
