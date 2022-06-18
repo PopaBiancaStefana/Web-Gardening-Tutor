@@ -5,7 +5,7 @@ async function topUsers(data, res) {
         let msg = await leaderboardModel.showTopUsers(data.payload);
         console.log("Rezultat returnar " + JSON.stringify(msg));
         res.setHeader("Content-type", "application/json");
-        res.end(JSON.stringify({ msg: msg }));
+        res.end(JSON.stringify({ data: msg }));
     } catch (err) {
         console.log(err);
         res.setHeader("Content-type", "application/json");
