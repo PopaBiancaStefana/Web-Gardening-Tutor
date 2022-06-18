@@ -84,7 +84,8 @@ const getRoutes = {
     "staticFile": fileController.serveFile,
     "profile": userController.getProfile,
     "garden_manager": fileController.restrictedFile,
-    "courses": fileController.restrictedFile
+    "courses": fileController.restrictedFile,
+    "profile": userController.getProfile
 }
 
 
