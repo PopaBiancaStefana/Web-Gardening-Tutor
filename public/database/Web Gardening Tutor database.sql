@@ -7,15 +7,10 @@ CREATE TABLE registered_users (
   registration_date  date
 );
 
-CREATE TABLE  login_sessions  (
-  id  int PRIMARY KEY AUTO_INCREMENT,
-  session  varchar(255)
-);
 
 CREATE TABLE  user_session  (
-  id  int PRIMARY KEY AUTO_INCREMENT,
-  id_user  int,
-  id_session  int
+  id_user  int PRIMARY KEY AUTO_INCREMENT,
+  id_session  varchar(36)
 );
 
 CREATE TABLE  courses  (
