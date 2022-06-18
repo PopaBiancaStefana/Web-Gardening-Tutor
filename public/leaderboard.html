@@ -51,8 +51,18 @@
     </footer>
 
     <script>
-      function getData(callback) {
-        let url = `http://localhost:1234/leaderboard`;
+      makeTable();
+
+      function makeTable(event) {
+        // event.preventDefault();
+
+        console.log("Getting the table");
+
+        let endpoint = "leaderboard";
+        getData(endpoint, processData);
+      }
+      function getData(endpoint, callback) {
+        let url = `http://localhost:1234/${endpoint}`;
         let head = new Headers();
         // head.append("Content-Type", "application/json");
         let req = new Request(url, {
@@ -65,24 +75,12 @@
           .then((content) => {
             if ("error" in content) {
               //incercare esuata
-              failure(content.error);
+              console.log(content.error);
             }
             if ("data" in content) {
               callback(content.data);
             }
-          })
-          .catch(failure);
-      }
-
-      function failure(error) {
-        console.log(error);
-        let errorMsg = document.createElement("div");
-        errorMsg.textContent = error;
-        errorMsg.style.color = "red";
-        errorMsg.style.fontWeight = "bold";
-        login_form.appendChild(errorMsg);
-
-        setTimeout(() => errorMsg.remove(), 4000);
+          });
       }
 
       function processData(data) {
@@ -122,8 +120,6 @@
           table.appendChild(row);
         });
       }
-
-      getData(processData);
     </script>
   </body>
 </html>
