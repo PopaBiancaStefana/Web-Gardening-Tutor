@@ -3,7 +3,7 @@ const leaderboardModel = require("../models/leaderboardModel");
 async function topUsers(data, res) {
     try {
         let msg = await leaderboardModel.showTopUsers(data.payload);
-        console.log("Rezultat returnar " + JSON.stringify(msg));
+        console.log("Rezultat returnat " + JSON.stringify(msg));
         res.setHeader("Content-type", "application/json");
         res.end(JSON.stringify({ data: msg }));
     } catch (err) {
