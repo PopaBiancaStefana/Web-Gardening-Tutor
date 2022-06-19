@@ -24,7 +24,8 @@ CREATE TABLE  courses_in_progress  (
   id_user  int,
   id_course  int,
   progress  int,
-  finished  boolean
+  finished  boolean,
+  bookmarked boolean
 );
 
 CREATE TABLE  garden_manager  (
@@ -58,3 +59,9 @@ INSERT INTO courses(name, checkpoints) VALUES ("Turf",5);
 INSERT INTO courses(name, checkpoints) VALUES ("Indoor plants",5);
 INSERT INTO courses(name, checkpoints) VALUES ("Vegetables",5);
 INSERT INTO courses(name, checkpoints) VALUES ("Fruit trees",5);
+
+alter table user_session drop constraint user_session_ibfk_2;
+drop table login_sessions;
+alter table user_session modify column id_session varchar(36);
+alter table user_session drop column id;
+
