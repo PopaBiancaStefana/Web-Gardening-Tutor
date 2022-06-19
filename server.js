@@ -78,6 +78,17 @@ const server = http.createServer((req, res) => {
                 route(data, res);
                 break;
             }
+
+            case "put": {
+                let route;
+                if (urlPath in putRoutes) {
+                    route = putRoutes[urlPath];
+                } else {
+                    route = (data, res) => console.log("nimic");
+                }
+                route(data, res);
+                break;
+            }
         }
     });
 });
@@ -90,16 +101,19 @@ const getRoutes = {
     topUsers: leaderboardController.topUsers,
     leaderboard: fileController.serveFile,
     course_template: courseController.getProgress,
-    garden: gardenController.getPlants
-}
-
+    garden: gardenController.getPlants,
+};
 
 const postRoutes = {
     register: userController.register,
     login: userController.login,
     course_template: courseController.saveForm,
     logout: userController.logout,
-    garden_manager: gardenController.savePlants
+    garden_manager: gardenController.savePlants,
+};
+
+const putRoutes = {
+    garden_manager: gardenController.updatePlants,
 };
 
 const deleteRoutes = {

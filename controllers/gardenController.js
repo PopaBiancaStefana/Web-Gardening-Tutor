@@ -1,7 +1,6 @@
 const gardenModel = require("../models/gardenModel");
 const checkSession = require("../models/sessionModel").checkSession;
 
-
 async function savePlants(data, res) {
     try {
         //get the id of the current user
@@ -37,7 +36,24 @@ async function getPlants(data, res) {
         res.setHeader("Content-type", "application/json");
         res.end(JSON.stringify({ error: err }));
     }
+}
 
+async function updatePlants(data, res) {
+    try {
+        //get the id of the current user
+        let result = await checkSession(data.headers);
+        id = JSON.parse(result);
+        data.payload.id_user = id["user_id"];
+
+        await gardenModel.updateGarden(data.payload);
+
+        res.setHeader("Content-type", "application/json");
+        res.end(JSON.stringify({ data: "Plant updated." }));
+    } catch (err) {
+        console.log(err);
+        res.setHeader("Content-type", "application/json");
+        res.end(JSON.stringify({ error: err }));
+    }
 }
 
 async function deletePlants(data, res) {
@@ -59,4 +75,4 @@ async function deletePlants(data, res) {
 
 }
 
-module.exports = { deletePlants, getPlants, savePlants };
+module.exports = { getPlants, savePlants, updatePlants, deletePlants };

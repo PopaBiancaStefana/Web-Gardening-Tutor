@@ -91,11 +91,19 @@ function onFormSubmit() {
     var formData = readFormData();
     if (selectedRow == null) {
       insertNewRecord(formData);
+
+      //we save in database
       let endpoint = "garden_manager";
       sendData(formData, endpoint);
+      resetForm();
+    } else {
+      formData.old_plant_name = selectedRow.cells[0].innerHTML;
+      console.log(JSON.stringify(formData));
+
+      //we make update in database
+      let endpoint = "garden_manager";
+      updateData(formData, endpoint);
     }
-    else updateRecord(formData);
-    resetForm();
   }
 }
 
@@ -134,6 +142,68 @@ function insertNewRecord(data) {
                        <a class="edit-delete" onClick="onDelete(this)">Delete</a>`;
 }
 
+function sendData(data, endpoint) {
+  let url = `http://localhost:1234/${endpoint}`;
+  let head = new Headers();
+  head.append("Content-Type", "application/json");
+  let req = new Request(url, {
+    method: "POST",
+    mode: "cors",
+    headers: head,
+    body: JSON.stringify(data),
+  });
+  fetch(req)
+    .then((res) => res.json())
+    .then((content) => {
+      if ("error" in content) {
+        //incerare esuata
+        console.log("Eroare: ", content.error);
+      }
+      if ("data" in content) {
+        console.log("Message: ", content.data);
+      }
+    });
+}
+
+function updateData(data, endpoint) {
+  let url = `http://localhost:1234/${endpoint}`;
+  let head = new Headers();
+  head.append("Content-Type", "application/json");
+  let req = new Request(url, {
+    method: "PUT",
+    mode: "cors",
+    headers: head,
+    body: JSON.stringify(data),
+  });
+  fetch(req)
+    .then((res) => res.json())
+    .then((content) => {
+      if ("error" in content) {
+        failure(content.error);
+      }
+      if ("data" in content) {
+        console.log("Message: ", content.data);
+        updateRecord(data);
+        resetForm();
+      }
+    });
+}
+
+function failure(error) {
+  console.log("Eroare: ", error);
+  let addDiv = document.getElementById("add-button");
+  let errorMsg = document.createElement('div');
+  let msg = document.createElement('a');
+  msg.textContent = error;
+  msg.style.color = 'red';
+  msg.style.fontWeight = 'bold';
+  errorMsg.appendChild(msg);
+  addDiv.appendChild(errorMsg);
+
+  setTimeout(() => errorMsg.remove(), 4000);
+
+}
+
 function resetForm() {
   document.getElementById("name").value = "";
   document.getElementById("last_interaction").value = "";
@@ -154,7 +224,7 @@ function onEdit(td) {
 }
 
 function updateRecord(formData) {
-  selectedRow.cells[0].innerHTML = formData.name;
+  selectedRow.cells[0].innerHTML = formData.plant_name;
   selectedRow.cells[1].innerHTML = formData.last_interaction;
   selectedRow.cells[2].innerHTML = formData.due_date;
   selectedRow.cells[3].innerHTML = formData.stage;
