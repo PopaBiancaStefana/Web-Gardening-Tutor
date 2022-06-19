@@ -10,9 +10,9 @@ async function saveForm(data, res) {
 
     console.log(
       "Form info: user: " +
-        data.payload.user_id +
-        ", progress: " +
-        data.payload.progress
+      data.payload.user_id +
+      ", progress: " +
+      data.payload.progress
     );
 
     await courseModel.updateProgress(data.payload);
@@ -28,7 +28,7 @@ async function saveForm(data, res) {
 
 async function getProgress(data, res) {
   try {
-   
+
     //get the id of the current user
     let result = await checkSession(data.headers);
     id = JSON.parse(result);
@@ -42,12 +42,12 @@ async function getProgress(data, res) {
     let prog = await courseModel.getCourseProgress(info);
 
     console.log("The progress for course " + data.headers.course + ": " + prog);
-     res.setHeader("Content-type", "application/json");
-     res.end(JSON.stringify({ progress: prog }));
+    res.setHeader("Content-type", "application/json");
+    res.end(JSON.stringify({ progress: prog }));
   } catch (err) {
-     console.log(err);
-     res.setHeader("Content-type", "application/json");
-     res.end(JSON.stringify({ error: err }));
+    console.log(err);
+    res.setHeader("Content-type", "application/json");
+    res.end(JSON.stringify({ error: err }));
   }
 }
 

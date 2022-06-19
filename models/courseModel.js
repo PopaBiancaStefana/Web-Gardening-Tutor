@@ -105,7 +105,7 @@ async function getCourseProgress(data) {
           console.log(err);
           reject(err);
         }
-     
+
         let prog;
         if (result[0] == undefined) {
           prog = 0;
