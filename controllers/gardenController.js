@@ -40,6 +40,10 @@ async function getPlants(data, res) {
 
 async function updatePlants(data, res) {
   try {
+    //get the id of the current user
+    let result = await checkSession(data.headers);
+    id = JSON.parse(result);
+    data.payload.id_user = id["user_id"];
 
     await gardenModel.updateGarden(data.payload);
 

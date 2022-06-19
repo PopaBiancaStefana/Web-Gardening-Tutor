@@ -45,23 +45,23 @@ async function saveGarden(info) {
 }
 
 async function updateGarden(info) {
-  // Info contains: plant_name, last_interaction, due_date, stage,interaction
+  // Info contains: plant_name, last_interaction, due_date, stage,interaction, id_user
 
-  let plantByNewName = await findPlant(info.plant_name);
+  let plantByNewName = await findPlant(info.plant_name, info.id_user);
   if (plantByNewName.length > 0 && info.plant_name != info.old_plant_name)
     throw "There is already a plant with this name";
 
-  db.pool.query("update garden_manager set plant_name = ?, last_interaction = ?, due_date = ?, stage = ?, interaction = ? where   plant_name = ?",
-    [info.plant_name, info.last_interaction, info.due_date, info.stage, info.interaction, info.old_plant_name],
+  db.pool.query("update garden_manager set plant_name = ?, last_interaction = ?, due_date = ?, stage = ?, interaction = ? where   plant_name = ? and id_user = ?",
+    [info.plant_name, info.last_interaction, info.due_date, info.stage, info.interaction, info.old_plant_name, info.id_user],
     (err) => {
       if (err) throw err;
       console.log("Plant updated.");
     });
 }
 
-async function findPlant(name) {
+async function findPlant(name, user) {
   return new Promise((resolve, reject) => {
-    db.pool.query("select * from garden_manager where plant_name = ?", [name], (err, data) => {
+    db.pool.query("select * from garden_manager where plant_name = ? and id_user = ?", [name, user], (err, data) => {
       if (err) {
         console.log(err);
         reject(err);
