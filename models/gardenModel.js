@@ -30,4 +30,18 @@ async function saveGarden(info) {
 
 }
 
-module.exports = { getGarden, saveGarden };
+async function deleteGarden(plant, user_id) {
+    return new Promise((resolve, reject) => {
+        db.pool.query("delete from garden_manager where plant_name = ? and id_user = ?", [plant, user_id], (err, data) => {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            console.log(JSON.stringify(data));
+            resolve(data);
+        })
+    });
+
+}
+
+module.exports = { deleteGarden, getGarden, saveGarden };

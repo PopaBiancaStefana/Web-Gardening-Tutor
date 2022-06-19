@@ -2,13 +2,18 @@ var selectedRow = null;
 
 loadTable();
 
-function loadTable(event) {
-  // event.preventDefault();
-
+function loadTable() {
   console.log("Loading table");
 
   let endpoint = "garden";
   getData(endpoint);
+}
+
+function deleteFromTable(plant_name) {
+  console.log("Deleting from table");
+
+  let endpoint = "garden_manager";
+  deleteData(plant_name, endpoint);
 }
 function getData(endpoint) {
   let url = `http://localhost:1234/${endpoint}`;
@@ -36,6 +41,50 @@ function putInTable(data) {
   data.forEach(function (line) {
     insertNewRecord(line);
   });
+}
+
+function sendData(data, endpoint) {
+  let url = `http://localhost:1234/${endpoint}`;
+  let head = new Headers();
+  head.append("Content-Type", "application/json");
+  let req = new Request(url, {
+    method: 'POST',
+    mode: 'cors',
+    headers: head,
+    body: JSON.stringify(data)
+  });
+  fetch(req).then((res) => res.json())
+    .then((content) => {
+      if ("error" in content) {
+        //incerare esuata
+        console.log("Eroare ", content.error);
+      }
+      if ("data" in content) {
+        console.log("Message ", content.data);
+      }
+
+    });
+}
+
+function deleteData(plant_name, endpoint) {
+  let url = `http://localhost:1234/${endpoint}`;
+  let head = new Headers();
+  head.append("plant_name", plant_name);
+  let req = new Request(url, {
+    method: 'DELETE',
+    headers: head
+  });
+  fetch(req).then((res) => res.json())
+    .then((content) => {
+      if ("error" in content) {
+        //incerare esuata
+        console.log("Eroare: ", content.error);
+      }
+      if ("data" in content) {
+        console.log("Message: ", content.data);
+      }
+
+    });
 }
 function onFormSubmit() {
   if (validateNullFields() && validateDueDate()) {
@@ -76,7 +125,6 @@ function insertNewRecord(data) {
   cell2.innerHTML = data.last_interaction;
   cell3 = newRow.insertCell(2);
   cell3.innerHTML = data.due_date;
-  console.log(data.due_date);
   cell4 = newRow.insertCell(3);
   cell4.innerHTML = data.stage;
   cell5 = newRow.insertCell(4);
@@ -84,29 +132,6 @@ function insertNewRecord(data) {
   cell6 = newRow.insertCell(5);
   cell6.innerHTML = `<a class="edit-delete" onClick="onEdit(this)">Edit</a>
                        <a class="edit-delete" onClick="onDelete(this)">Delete</a>`;
-}
-
-function sendData(data, endpoint) {
-  let url = `http://localhost:1234/${endpoint}`;
-  let head = new Headers();
-  head.append("Content-Type", "application/json");
-  let req = new Request(url, {
-    method: 'POST',
-    mode: 'cors',
-    headers: head,
-    body: JSON.stringify(data)
-  });
-  fetch(req).then((res) => res.json())
-    .then((content) => {
-      if ("error" in content) {
-        //incerare esuata
-        console.log("Eroare ", content.error);
-      }
-      if ("data" in content) {
-        console.log("Message ", content.data);
-      }
-
-    });
 }
 
 function resetForm() {
@@ -139,6 +164,7 @@ function updateRecord(formData) {
 function onDelete(td) {
   if (confirm("Are you sure you want to delete this record ?")) {
     row = td.parentElement.parentElement;
+    deleteFromTable(row.cells[0].innerHTML);
     document.getElementById("plantList").deleteRow(row.rowIndex);
     resetForm();
   }

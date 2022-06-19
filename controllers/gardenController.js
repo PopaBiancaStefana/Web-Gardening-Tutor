@@ -40,4 +40,23 @@ async function getPlants(data, res) {
 
 }
 
-module.exports = { getPlants, savePlants };
+async function deletePlants(data, res) {
+    try {
+        //get the id of the current user
+        let result = await checkSession(data.headers);
+        id = JSON.parse(result);
+
+        await gardenModel.deleteGarden(data.headers.plant_name, id["user_id"]);
+        console.log("Plant deleted: ", data.headers.plant_name, " User id: ", id["user_id"]);
+
+        res.setHeader("Content-type", "application/json");
+        res.end(JSON.stringify({ data: "Plant deleted." }));
+    } catch (err) {
+        console.log(err);
+        res.setHeader("Content-type", "application/json");
+        res.end(JSON.stringify({ error: err }));
+    }
+
+}
+
+module.exports = { deletePlants, getPlants, savePlants };

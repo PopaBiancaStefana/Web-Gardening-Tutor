@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
                 //console.log('headers: \n' + JSON.stringify(data.headers) + '\n');
                 break;
             }
-            case "post":
+            case "post": {
                 let route;
                 if (urlPath in postRoutes) {
                     route = postRoutes[urlPath];
@@ -67,6 +67,17 @@ const server = http.createServer((req, res) => {
                 }
                 route(data, res);
                 break;
+            }
+            case "delete": {
+                let route;
+                if (urlPath in deleteRoutes) {
+                    route = deleteRoutes[urlPath];
+                } else {
+                    route = (data, res) => console.log("nimic");
+                }
+                route(data, res);
+                break;
+            }
         }
     });
 });
@@ -89,6 +100,10 @@ const postRoutes = {
     course_template: courseController.saveForm,
     logout: userController.logout,
     garden_manager: gardenController.savePlants
+};
+
+const deleteRoutes = {
+    garden_manager: gardenController.deletePlants
 };
 
 server.listen(port, host, () => console.log(`listening on  ${host}:${port}`));
