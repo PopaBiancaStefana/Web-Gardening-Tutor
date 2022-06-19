@@ -6,7 +6,7 @@ async function saveForm(data, res) {
     //get the id of the current user
     let result = await checkSession(data.headers);
     id = JSON.parse(result);
-    data.payload.user_id = id["user_id"];
+    user_id = id["user_id"];
 
     console.log(
       "Form info: user: " +
@@ -39,7 +39,7 @@ async function getProgress(data, res) {
       course_name: data.headers.course,
     };
 
-    let prog = await courseModel.geCourseProgress(info);
+    let prog = await courseModel.getCourseProgress(info);
 
     console.log("The progress for course " + data.headers.course + ": " + prog);
      res.setHeader("Content-type", "application/json");

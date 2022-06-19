@@ -24,7 +24,8 @@ CREATE TABLE  courses_in_progress  (
   id_user  int,
   id_course  int,
   progress  int,
-  finished  boolean
+  finished  boolean,
+  bookmarked boolean
 );
 
 CREATE TABLE  garden_manager  (

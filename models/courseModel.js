@@ -87,7 +87,7 @@ async function verifyProgress(user_id, course_id) {
   });
 }
 
-async function geCourseProgress(data) {
+async function getCourseProgress(data) {
   //data contains the fields: user_id and course_name
 
   //get the id of the user
@@ -118,4 +118,4 @@ async function geCourseProgress(data) {
   });
 }
 
-module.exports = { updateProgress, geCourseProgress };
+module.exports = { updateProgress, getCourseProgress };

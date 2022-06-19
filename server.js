@@ -75,7 +75,8 @@ const getRoutes = {
   profile: fileController.restrictedFile,
   garden_manager: fileController.restrictedFile,
   courses: fileController.restrictedFile,
-  leaderboard: leaderboardController.topUsers,
+  leaderboard: fileController.serveFile,
+  topUsers: leaderboardController.topUsers,
   course_template: courseController.getProgress,
 };
 
