@@ -6,7 +6,7 @@ async function saveForm(data, res) {
     //get the id of the current user
     let result = await checkSession(data.headers);
     id = JSON.parse(result);
-    user_id = id["user_id"];
+    data.payload.user_id = id["user_id"];
 
     console.log(
       "Form info: user: " +

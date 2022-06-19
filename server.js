@@ -9,6 +9,7 @@ const fileController = require("./controllers/staticFileController");
 const userController = require("./controllers/userController");
 const courseController = require("./controllers/courseController");
 const leaderboardController = require("./controllers/leaderboardController");
+const gardenController = require("./controllers/gardenController");
 
 require("dotenv").config();
 
@@ -71,13 +72,14 @@ const server = http.createServer((req, res) => {
 });
 
 const getRoutes = {
-    "staticFile": fileController.serveFile,
-    "profile": fileController.restrictedFile,
-    "garden_manager": fileController.restrictedFile,
-    "courses": fileController.restrictedFile,
-    "topUsers": leaderboardController.topUsers,
-    "leaderboard": fileController.serveFile,
-    "course_template": courseController.getProgress
+    staticFile: fileController.serveFile,
+    profile: fileController.restrictedFile,
+    garden_manager: fileController.restrictedFile,
+    courses: fileController.restrictedFile,
+    topUsers: leaderboardController.topUsers,
+    leaderboard: fileController.serveFile,
+    course_template: courseController.getProgress,
+    garden: gardenController.getPlants
 }
 
 
@@ -86,6 +88,7 @@ const postRoutes = {
     login: userController.login,
     course_template: courseController.saveForm,
     logout: userController.logout,
+    garden_manager: gardenController.savePlants
 };
 
 server.listen(port, host, () => console.log(`listening on  ${host}:${port}`));
