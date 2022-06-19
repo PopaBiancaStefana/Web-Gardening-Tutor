@@ -48,7 +48,7 @@ async function restrictedFile(data, res)
 
     if("user_id" in JSON.parse(result)) // exista sesiunea pentru client
     {
-        return result;
+        return JSON.parse(result);
     }
     else{
         res.writeHead(303, {Location: 'login'});

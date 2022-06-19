@@ -58,8 +58,3 @@ ALTER TABLE  courses_in_progress  ADD FOREIGN KEY ( id_course ) REFERENCES  cour
 ALTER TABLE  garden_managed_by_user  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
 
 ALTER TABLE  garden_managed_by_user  ADD FOREIGN KEY ( id_garden ) REFERENCES  garden_manager  ( id );
-
-INSERT INTO courses(name, checkpoints) VALUES ("Turf",5);
-INSERT INTO courses(name, checkpoints) VALUES ("Indoor plants",5);
-INSERT INTO courses(name, checkpoints) VALUES ("Vegetables",5);
-INSERT INTO courses(name, checkpoints) VALUES ("Fruit trees",5);
