@@ -21,27 +21,27 @@ async function getGarden(user_id) {
 async function saveGarden(info) {
     // Info contains: plant_name, last_interaction, due_date, stage,
     // interaction, id_user
-    return new Promise((resolve, reject) => {
-        db.pool.query(
-            "insert into garden_manager(plant_name, last_interaction, due_date, stage, interaction, id_user) values (?,date_format(?, '%Y-%m-%d'),date_format(?, '%Y-%m-%d'),?,?,?)",
-            [
-                info.plant_name,
-                info.last_interaction,
-                info.due_date,
-                info.stage,
-                info.interaction,
-                info.id_user,
-            ],
-            (err, data) => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                }
-                console.log(JSON.stringify(data));
-                resolve(data);
-            }
-        );
-    });
+
+    let plantByNewName = await findPlant(info.plant_name, info.id_user);
+    if (plantByNewName.length > 0 && info.plant_name != info.old_plant_name)
+        throw "There is already a plant with this name";
+
+    db.pool.query(
+        "insert into garden_manager(plant_name, last_interaction, due_date, stage, interaction, id_user) values (?,date_format(?, '%Y-%m-%d'),date_format(?, '%Y-%m-%d'),?,?,?)",
+        [
+            info.plant_name,
+            info.last_interaction,
+            info.due_date,
+            info.stage,
+            info.interaction,
+            info.id_user,
+        ],
+        (err) => {
+            if (err) throw err;
+            console.log("Plant saved.");
+        }
+    );
+
 }
 
 async function updateGarden(info) {

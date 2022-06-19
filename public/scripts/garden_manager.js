@@ -90,12 +90,9 @@ function onFormSubmit() {
   if (validateNullFields() && validateDueDate()) {
     var formData = readFormData();
     if (selectedRow == null) {
-      insertNewRecord(formData);
-
       //we save in database
       let endpoint = "garden_manager";
       sendData(formData, endpoint);
-      resetForm();
     } else {
       formData.old_plant_name = selectedRow.cells[0].innerHTML;
       console.log(JSON.stringify(formData));
@@ -156,11 +153,12 @@ function sendData(data, endpoint) {
     .then((res) => res.json())
     .then((content) => {
       if ("error" in content) {
-        //incerare esuata
-        console.log("Eroare: ", content.error);
+        failure(content.error);
       }
       if ("data" in content) {
         console.log("Message: ", content.data);
+        insertNewRecord(data);
+        resetForm();
       }
     });
 }
