@@ -35,147 +35,105 @@
       </div>
     </header>
 
-    <div id="course-title"> <%= title %> </div>
+    <div id="course-title">
+        <h1> <%= title %>  </h1>
+        <ul>
+            <li> <%= difficulty %> </li>
+        </ul>
+    </div>
 
     <div class="second-banner">
-      <div class="image">
-        <div id="banner2-title"></div>
-        <img src="images/growing.png" alt="Tools"/>
-      </div>
-      <div class="list" id="tools">
-        <ul>
-          <li data-modal-target="#modal" id="tool1" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool2" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool3" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool4" style="display: none"></li>
-        </ul>
+        <div class="image">
+            <div id="banner2-title"><h>The tools you need:</h></div>
+            <img src="images/growing.png" alt="Tools">
 
-        <ul>
-          <li data-modal-target="#modal" id="tool5" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool6" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool7" style="display: none"></li>
-          <li data-modal-target="#modal" id="tool8" style="display: none"></li>
-        </ul>
-        <!-- THE MODAL FOR EACH TOOL -->
-        <div class="modal" id="modal">
-          <div id="modal-text"></div>
-          <button data-close-button class="close-button">Close</button>
         </div>
-      </div>
+        <div class="list" id="tools">
+            <ul>
+                <% tools.forEach(tool => { %>
+                    
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tool.tool %> </li>
+
+                <% }); %> 
+            </ul>
+
+            <ul>
+                <li data-modal-target="#modal" id="tool5" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool6" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool7" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool8" style="display:none"></li>
+            </ul>
+            <!-- THE MODAL FOR EACH TOOL -->
+            <div class="modal" id="modal">
+                <div id="modal-text">
+                </div>
+                <button data-close-button="" class="close-button">Close</button>
+            </div>
+
+        </div>
     </div>
 
     <div class="third-banner">
-      <div class="image">
-        <div id="banner3-title"></div>
-        <img src="images/garden.png" alt="Environment" />
-      </div>
-      <div class="list" id="environment">
-        <ul>
-          <li id="env1" style="display: none"></li>
-          <li id="env2" style="display: none"></li>
-          <li id="env3" style="display: none"></li>
-          <li id="env4" style="display: none"></li>
-        </ul>
-        <ul>
-          <li id="env5" style="display: none"></li>
-          <li id="env6" style="display: none"></li>
-          <li id="env7" style="display: none"></li>
-          <li id="env8" style="display: none"></li>
-        </ul>
-      </div>
+        <div class="image">
+            <div id="banner3-title"><h>Environment:</h></div>
+            <img src="images/garden.png" alt="Environment">
+
+        </div>
+        <div class="list" id="environment">
+
+
+
+            <ul>
+                <% environment.forEach(env => { %>
+                    
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= env.env %> </li>
+
+                <% }); %> 
+            </ul>
+
+
+            <ul>
+                <li id="env5" style="display:none"> </li>
+                <li id="env6" style="display:none"></li>
+                <li id="env7" style="display:none"></li>
+                <li id="env8" style="display:none"></li>
+            </ul>
+        </div>
     </div>
 
     <div class="content">
-      <div class="main">
-        <form name="form1">
-          
-          <div class="part">
-            <label for="test1" class="part">
-              <input
-                type="checkbox"
-                name="ckb"
-                value="1"
-                id="test1"
-                onclick="enable_next_checkbox(0)"
-              />
-            </label>
 
-            <div id="text-part1"></div>
-            <div class="photos" id="photos1"></div>
-          </div>
+        <div class="main">
+            <form name="form1">
 
-          <div class="part">
-            <label for="test2" class="part">
-              <input
-                type="checkbox"
-                name="ckb"
-                value="2"
-                id="test2"
-                disabled="disabled"
-                onclick="enable_next_checkbox(1)"
-              />
-            </label>
+                <% let index = 0 %> 
+                <% steps.forEach(step => { %>
+                    
+                    <div class="part">
 
-            <div id="text-part2"></div>
-            <div class="photos" id="photos2"></div>
-          </div>
+                        <label for="test1" class="part">
+                            <input type="checkbox" name="ckb" value="<%= index +1  %> " id="test1" <%-  onclick="enable_next_checkbox(index)" %> >
+                        </label>
+    
+                        <div id="text-part">
+                             <h2> <%= step.step_title  %> </h2>
+                             <br>
+                             <%- step.step_text  %> 
+                        <div class="photos" id="photos"></div>
+                    </div>
 
-          <div class="part">
-            <label for="test3" class="part">
-              <input
-                type="checkbox"
-                name="ckb"
-                value="3"
-                id="test3"
-                disabled="disabled"
-                onclick="enable_next_checkbox(2)"
-              />
-            </label>
+                <% }); %> 
 
-            <div id="text-part3"></div>
-            <div class="photos" id="photos3"></div>
-          </div>
+                <button type="button" onclick="return_val()">Done!</button>
+                <p id="message"></p>
+            </form>
 
-          <div class="part">
-            <label for="test4" class="part">
-              <input
-                type="checkbox"
-                name="ckb"
-                value="4"
-                id="test4"
-                disabled="disabled"
-                onclick="enable_next_checkbox(3)"
-              />
-            </label>
+        </div>
 
-            <div id="text-part4"></div>
-            <div class="photos" id="photos4"></div>
-          </div>
-
-          <div class="part">
-            <label for="test5" class="part">
-              <input
-                type="checkbox"
-                name="ckb"
-                value="5"
-                id="test5"
-                disabled="disabled"
-                onclick="enable_next_checkbox(4)"
-              />
-            </label>
-
-            <div id="text-part5"></div>
-            <div class="photos" id="photos5"></div>
-          </div>
-
-          <button type="button" onclick="saveForm()">Save</button>
-          <p id="message"></p>
-        </form>
-      </div>
-
-      <div id="right">
-        <h1>Useful Tips</h1>
-      </div>
+        <div id="right">
+            <h1>Useful Tips</h1>
+            
+        <h2>Tip 1</h2><p>When shopping for your grass seed, you’ll notice that some bags contain seed blends and seed mixes. But what’s the difference? <br> A seed blend is a combination of two or more cultivars of the same grass species. <br> A seed mix is a combination of different grass species.</p><h2>Tip 2</h2><p>Do not apply pre-emergent weed control during planting, as it will harm grass seed germination.</p><h2>Tip 3</h2><p>On average, a bag of grass seed costs between $1.35 and $7.04 per pound. A 20-pound bag of grass seed ranges between $27 and $141, depending on the grass type.</p><h2>Tip 4</h2><p>Throwing grass seeds on hard, unworked soil puts the seeds at risk of the rain washing them away. </p><h2>Tip 5</h2><p> Check to see if a pest or disease is attacking your lawn before you overseed. Otherwise, you might be prolonging a severe issue.</p><h2>Tip 6</h2><p>Using a spreader can make the job go by a little faster, especially when seeding over large areas. It also ensures you spread the seed evenly and don’t miss any spots.</p><h2>Tip 7</h2><p>Not every grass type has the same water demands. Some grass species need more water than others to survive. Before planting your grass seed, it’s a good idea to research the grass type and discover its water needs. </p></div>
     </div>
 
     <footer>
