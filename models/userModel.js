@@ -2,6 +2,7 @@ const { reject } = require("bcrypt/promises");
 const db =require("../database");
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
+const { EUCJPMS } = require("mysql/lib/protocol/constants/charsets");
 
 
  async function findByEmail(email)
@@ -84,12 +85,82 @@ function getUserBySid(sid)
             resolve(data);
         })
     })
+}
+
+
+async function getProfile(id_user)
+{
+    let data ={};
+
+        //adaugam numele si emailul
+    let profileInfo = await getProfileInformation(id_user);
+    Object.assign(data, profileInfo);
+
+    let userCourses = await getUserCourses(id_user);
+    //adaugam cursurile
+    Object.assign(data, userCourses);
+
     
+    return data;
+}
+
+function getUserCourses(id_user)
+{
+        return new Promise((resolve, reject) => {
+            db.pool.query("select c.name, cp.progress/c.checkpoints as fraction, cp.bookmarked from registered_users as u join courses_in_progress as cp on u.id = cp.id_user join courses as c on cp.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
+                if(err) {
+                    reject(err);
+                    return;
+                }
+
+                let data = {};
+                let myCourses = [];
+                let bookmarkedCourses = [];
+
+                Object.keys(result).forEach( (key) => {
+                    let row = result[key];
+                    let course = {};
+                    course.title = row.name;
+                    course.progress = row.fraction;
+                    
+                    myCourses.push(course);
+                    if(course.bookmarked)
+                        bookmarkedCourses.push(course);
+                })
+
+                data.my_courses = myCourses;
+                data.bookmarked = bookmarkedCourses;
+
+                resolve(data);
+        
+            });
+        });
+}
+
+
+function getProfileInformation(id_user)
+{
+    return new Promise((resolve, reject) => {
+        db.pool.query("select name, e_mail from registered_users where id = ?" , [id_user], (err, result) => {
+            if (err){
+                reject(err);
+                return;
+            }
+            let data = {};
+            Object.keys(result).forEach((key) => {
+                let row = result[key];
+                data.name = row.name;
+                data.email = row.e_mail;  
+            });
+            resolve(data);
+        })
+    })
 }
 
 module.exports = {
     findByEmail,
     createUser, 
     login,
-    getUserBySid
+    getUserBySid,
+    getProfile
 };

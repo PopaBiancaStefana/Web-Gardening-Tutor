@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style_course.css">
+    <script type="module" src="scripts/course_content.js"></script>
+    <script src="scripts/course_buttons.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a class="logo" href="home">
+                <img src="images/logo2.png" alt="Logo">
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="profile">Profile</a></li>
+                    <li><a href="courses">Courses</a></li>
+                    <li><a href="leaderboard">Leaderboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <div id="course-title">
+    </div>
+
+
+    <div class="second-banner">
+        <div class="image">
+            <div id="banner2-title"></div>
+            <img src="images/growing.png" alt="Tools">
+
+        </div>
+        <div class="list" id="tools">
+            <ul>
+                <li data-modal-target="#modal" id="tool1" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool2" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool3" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool4" style="display:none"></li>
+            </ul>
+
+            <ul>
+                <li data-modal-target="#modal" id="tool5" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool6" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool7" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool8" style="display:none"></li>
+            </ul>
+            <!-- THE MODAL FOR EACH TOOL -->
+            <div class="modal" id="modal">
+                <div id="modal-text">
+                </div>
+                <button data-close-button class="close-button">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="third-banner">
+        <div class="image">
+            <div id="banner3-title"></div>
+            <img src="images/garden.png" alt="Environment">
+
+        </div>
+        <div class="list" id="environment">
+            <ul>
+                <li id="env1" style="display:none"> </li>
+                <li id="env2" style="display:none"></li>
+                <li id="env3" style="display:none"></li>
+                <li id="env4" style="display:none"></li>
+            </ul>
+            <ul>
+                <li id="env5" style="display:none"> </li>
+                <li id="env6" style="display:none"></li>
+                <li id="env7" style="display:none"></li>
+                <li id="env8" style="display:none"></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="content">
+
+        <div class="main">
+            <form name="form1">
+                <div class="part">
+
+                    <label for="test1" class="part">
+                        <input type="checkbox" name="ckb" value=1 id="test1" onclick='enable_next_checkbox(0)' />
+                    </label>
+
+                    <div id="text-part1"> </div>
+                    <div class="photos" id="photos1"></div>
+                </div>
+
+                <div class="part">
+                    <label for="test2" class="part">
+                        <input type="checkbox" name="ckb" value=2 id="test2" disabled="disabled"
+                            onclick='enable_next_checkbox(1)' />
+                    </label>
+
+                    <div id="text-part2"></div>
+                    <div class="photos" id="photos2"></div>
+                </div>
+
+                <div class="part">
+                    <label for="test3" class="part">
+                        <input type="checkbox" name="ckb" value=3 id="test3" disabled="disabled"
+                            onclick='enable_next_checkbox(2)' />
+                    </label>
+
+                    <div id="text-part3"></div>
+                    <div class="photos" id="photos3"></div>
+                </div>
+
+                <div class="part">
+                    <label for="test4" class="part">
+                        <input type="checkbox" name="ckb" value=4 id="test4" disabled="disabled"
+                            onclick='enable_next_checkbox(3)' />
+                    </label>
+
+                    <div id="text-part4"></div>
+                    <div class="photos" id="photos4"></div>
+                </div>
+
+                <div class="part">
+                    <label for="test5" class="part">
+                        <input type="checkbox" name="ckb" value=5 id="test5" disabled="disabled"
+                            onclick='enable_next_checkbox(4)' />
+                    </label>
+
+                    <div id="text-part5"> </div>
+                    <div class="photos" id="photos5"></div>
+                </div>
+
+                <button type="button" onclick="return_val()">Done!</button>
+                <p id="message"></p>
+            </form>
+
+        </div>
+
+        <div id="right">
+            <h1>Useful Tips</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p>Web project 2022 Faculty of Computer Science Iași</p>
+        <br />
+        <p id="copyright">&copy; All Rights Reserved</p>
+    </footer>
+
+    <!-- FOR THE MODAL BOX -->
+    <div id="overlay"></div>
+
+</body>
+
+</html>

@@ -1,5 +1,10 @@
 const userModel = require("../models/userModel");
 const sessionModel = require("../models/sessionModel");
+const { restrictedFile } = require("./staticFileController");
+const ejs = require("ejs");
+const path = require("path"); 
+const { write } = require("fs");
+const { compareSync } = require("bcrypt");
 
 async function register(data, res)
 {
@@ -56,4 +61,36 @@ async function logout(data,res)
     res.end('logged out');
 }
 
-module.exports = {register, login, logout};
+
+async function getProfile(data, res)
+{
+    let result = await restrictedFile(data, res);
+    if("error" in result) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
+        return;
+
+    console.log('am primit ' + result);
+    let profileData = await userModel.getProfile(result.user_id);
+
+    
+    console.log('sarlalala ' + profileData);
+    
+    //todo render profile view
+    try{
+        ejs.renderFile(path.join(__dirname, "/../views/profile.ejs"), profileData, {}, (err, result) =>{
+            if(err)
+                throw err;
+            
+            res.writeHead(200, {"Content-type":"text/html"});
+            res.end(result);
+        });
+    } catch (err)
+    {
+        console.log(err);
+        res.writeHead(500);
+        res.end();
+    }
+    
+
+}
+
+module.exports = {register, login, logout, getProfile};
