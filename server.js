@@ -8,6 +8,7 @@ const util = require("util");
 const fileController = require("./controllers/staticFileController");
 const userController = require("./controllers/userController");
 const courseController = require("./controllers/courseController");
+const { createNullProtoObjWherePossible } = require("ejs/lib/utils");
 
 require("dotenv").config();
 
@@ -48,18 +49,37 @@ const server = http.createServer((req, res) => {
         switch (method) {
             case 'get' : 
                 {
-                    let route;
-                    if(urlPath in getRoutes)
-                    {
-                        route = getRoutes[urlPath];
-                    } else {
-                        route = getRoutes["staticFile"];
-                    }
+                    let route = null;
+                    Object.keys(getRoutes).every((key) => {
 
-                    //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
+                        console.log(key + new RegExp(key).test(urlPath));
+                        if(new RegExp(key).test(urlPath))
+                        {
+                            route = getRoutes[key];
+                            return false; //break
+                        }
+                        return true; //continue
+                    })
+
+                    // if(urlPath in getRoutes)
+                    // {
+                    //     route = getRoutes[urlPath];
+                    // } else {
+                    //     route = getRoutes["staticFile"];
+                    // }
+
+                    if(route == null) // daca nu s-a gasit o ruta
+                    {
+                        console.log("aci avem "+ urlPath);
+                        route = fileController.serveFile;
+                    }
                     route(data, res);
-                    console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
                     break;
+                    
+                    // //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
+                    // route(data, res);
+                    // console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
+                    // break;
                 }
             case 'post':
                 let route;
@@ -81,10 +101,11 @@ const server = http.createServer((req, res) => {
 })
 
 const getRoutes = {
-    "staticFile": fileController.serveFile,
-    "profile": userController.getProfile,
-    "garden_manager": fileController.restrictedFile,
-    "courses": fileController.restrictedFile,
+    "^staticFile$": fileController.serveFile,
+    "^profile$": userController.getProfile,
+    "^garden_manager$": fileController.restrictedFile,
+    "^courses$": courseController.getCourses,
+    "^courses/\\w+$": courseController.getCourse
 }
 
 
