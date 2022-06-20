@@ -2,6 +2,7 @@ const courseModel = require("../models/courseModel");
 const staticFileController = require("./staticFileController");
 const checkSession = require("../models/sessionModel").checkSession;
 const ejs = require("ejs");
+const path = require("path");
 
 async function saveForm(data, res) {
   try {
@@ -69,10 +70,11 @@ async function getCourse(data, res)
 
 
     //todo
-    course = await courseModel.getCourseByName(course_name);
+    let course = await courseModel.getCourseByName(course_name);
+    console.log("am primit cursul " + course);
     if("error" in course)
     {
-        res.head(200);
+        res.head(404);
         res.end('Course not found');
         return;
     }

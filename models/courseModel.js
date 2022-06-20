@@ -1,3 +1,4 @@
+const { CLIENT_FOUND_ROWS, CLIENT_LONG_PASSWORD } = require("mysql/lib/protocol/constants/client");
 const db = require("../database");
 
 async function updateProgress(data) {
@@ -118,4 +119,20 @@ async function getCourseProgress(data) {
   });
 }
 
-module.exports = { updateProgress, getCourseProgress };
+async function getCourseByName(name)
+{
+  const courses = require("../public/jsons/content.json");
+
+  //verificam daca exis cursul cu numele dat ca parametru
+  let course;
+  if(name in courses)
+  {
+    course = courses[name];
+  } else
+    course["error"] = "course not found";
+
+  console.log('trimitem cursul ' + course);
+  return course;
+}
+
+module.exports = { updateProgress, getCourseProgress, getCourseByName };

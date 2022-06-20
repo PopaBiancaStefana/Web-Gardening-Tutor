@@ -106,13 +106,13 @@
         <div class="main">
             <form name="form1">
 
-                <% let index = 0 %> 
+                <% let step_index = 0 %> 
                 <% steps.forEach(step => { %>
                     
                     <div class="part">
 
                         <label for="test1" class="part">
-                            <input type="checkbox" name="ckb" value="<%= index +1  %> " id="test1" <%-  onclick="enable_next_checkbox(index)" %> >
+                            <input type="checkbox" name="ckb" value="<% step_index +1  %> " id="test1"  <% onclick="enable_next_checkbox(step_index)" %> > 
                         </label>
     
                         <div id="text-part">
@@ -121,6 +121,8 @@
                              <%- step.step_text  %> 
                         <div class="photos" id="photos"></div>
                     </div>
+
+                    <% step_index++ %> 
 
                 <% }); %> 
 
@@ -132,9 +134,17 @@
 
         <div id="right">
             <h1>Useful Tips</h1>
-            
-        <h2>Tip 1</h2><p>When shopping for your grass seed, you’ll notice that some bags contain seed blends and seed mixes. But what’s the difference? <br> A seed blend is a combination of two or more cultivars of the same grass species. <br> A seed mix is a combination of different grass species.</p><h2>Tip 2</h2><p>Do not apply pre-emergent weed control during planting, as it will harm grass seed germination.</p><h2>Tip 3</h2><p>On average, a bag of grass seed costs between $1.35 and $7.04 per pound. A 20-pound bag of grass seed ranges between $27 and $141, depending on the grass type.</p><h2>Tip 4</h2><p>Throwing grass seeds on hard, unworked soil puts the seeds at risk of the rain washing them away. </p><h2>Tip 5</h2><p> Check to see if a pest or disease is attacking your lawn before you overseed. Otherwise, you might be prolonging a severe issue.</p><h2>Tip 6</h2><p>Using a spreader can make the job go by a little faster, especially when seeding over large areas. It also ensures you spread the seed evenly and don’t miss any spots.</p><h2>Tip 7</h2><p>Not every grass type has the same water demands. Some grass species need more water than others to survive. Before planting your grass seed, it’s a good idea to research the grass type and discover its water needs. </p></div>
-    </div>
+
+            <% let tip_index = 1 %> 
+            <% tips.forEach(tip => { %>
+              
+                <h2> Tip <%= tip_index  %>  </h2>
+                <p> <%= tip.tip  %> </p>
+
+                <% tip_index++ %> 
+
+            <% }); %> 
+        </div>
 
     <footer>
       <p>Web project 2022 Faculty of Computer Science Iași</p>

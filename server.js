@@ -118,7 +118,7 @@ const getRoutes = {
     "^profile$": userController.getProfile,
     "^garden_manager$": fileController.restrictedFile,
     "^courses$": courseController.getCourses,
-    "^courses/\\w+$": courseController.getCourse,
+    "^courses/\\w+$": courseController.getCourse, // path: courses/:course
     staticFile: fileController.serveFile,
     "^topUsers$": leaderboardController.topUsers,
     "^leaderboard$": fileController.serveFile,
