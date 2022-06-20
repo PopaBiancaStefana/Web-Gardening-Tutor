@@ -26,7 +26,7 @@ async function checkSession(headers)
         return JSON.stringify({error: "no user with given sid"});
     }
 
-    console.log('aici este ' + users[0].id_user);
+    console.log('Current user id: ' + users[0].id_user);
 
     return JSON.stringify({user_id: users[0].id_user});
     

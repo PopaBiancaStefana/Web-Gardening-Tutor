@@ -50,12 +50,19 @@
                   type="date"
                   name="last_interaction"
                   id="last_interaction"
+                  placeholder="yyyy-mm-dd"
                   required
                 />
               </div>
               <div>
                 <label id="due-date-label">Due date</label>
-                <input type="date" name="due_date" id="due_date" required />
+                <input
+                  type="date"
+                  name="due_date"
+                  id="due_date"
+                  placeholder="yyyy-mm-dd"
+                  required
+                />
               </div>
               <div>
                 <label id="stage-label">Stage</label>
@@ -75,7 +82,7 @@
                   <option value="changed-soil">Changed the soil</option>
                 </select>
               </div>
-              <div class="add-button">
+              <div class="add-button" id="add-button">
                 <input type="submit" value="Add new plant" />
               </div>
             </form>
@@ -105,6 +112,6 @@
       <p id="copyright">&copy; All Rights Reserved</p>
     </footer>
 
-    <script src="scripts/gm.js"></script>
+    <script src="scripts/garden_manager.js"></script>
   </body>
 </html>
