@@ -1,17 +1,26 @@
 const leaderboardModel = require("../models/leaderboardModel");
+const ejs = require("ejs");
+const path = require("path");
 
-async function topUsers(data, res) {
+async function gettopUsers(data, res) {
+
+    let tableData = await leaderboardModel.topUsers(data.payload);
+
+    console.log(tableData);
     try {
-        let msg = await leaderboardModel.showTopUsers(data.payload);
-        console.log("Rezultat returnat " + JSON.stringify(msg));
 
-        res.setHeader("Content-type", "application/json");
-        res.end(JSON.stringify({ data: msg }));
+        ejs.renderFile(path.join(__dirname, "/../views/leaderboard.ejs"), tableData, {}, (err, result) => {
+            if (err)
+                throw err;
+
+            res.writeHead(200, { "Content-type": "text/html" });
+            res.end(result);
+        });
     } catch (err) {
         console.log(err);
-        res.setHeader("Content-type", "application/json");
-        res.end(JSON.stringify({ error: err }));
+        res.writeHead(500);
+        res.end();
     }
 }
 
-module.exports = { topUsers };
+module.exports = { gettopUsers };
