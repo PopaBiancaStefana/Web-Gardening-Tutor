@@ -24,8 +24,7 @@ CREATE TABLE  courses_in_progress  (
   id_user  int,
   id_course  int,
   progress  int,
-  finished  boolean,
-  bookmarked boolean
+  finished  boolean
 );
 
 CREATE TABLE  garden_manager  (
@@ -38,6 +37,13 @@ CREATE TABLE  garden_manager  (
   id_user int
 );
 
+CREATE TABLE  bookmarked_courses  (
+  id  int PRIMARY KEY AUTO_INCREMENT,
+  id_user  int,
+  id_course  int,
+  bookmarked boolean
+);
+
 ALTER TABLE  user_session  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
 
 ALTER TABLE  user_session  ADD FOREIGN KEY ( id_session ) REFERENCES  login_sessions  ( id );
@@ -48,6 +54,11 @@ ALTER TABLE  courses_in_progress  ADD FOREIGN KEY ( id_course ) REFERENCES  cour
 
 ALTER TABLE  garden_manager  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
 
+ALTER TABLE  bookmarked_courses  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
+
+ALTER TABLE  bookmarked_courses  ADD FOREIGN KEY ( id_course ) REFERENCES  courses  ( id );
+
+
 INSERT INTO courses(name, checkpoints) VALUES ("Turf",5);
 INSERT INTO courses(name, checkpoints) VALUES ("Indoor plants",5);
 INSERT INTO courses(name, checkpoints) VALUES ("Vegetables",5);
@@ -57,4 +68,5 @@ alter table user_session drop constraint user_session_ibfk_2;
 drop table login_sessions;
 alter table user_session modify column id_session varchar(36);
 alter table user_session drop column id;
+alter table courses_in_progress drop column bookmarked;
 
