@@ -7,15 +7,10 @@ CREATE TABLE registered_users (
   registration_date  date
 );
 
-CREATE TABLE  login_sessions  (
-  id  int PRIMARY KEY AUTO_INCREMENT,
-  session  varchar(255)
-);
 
 CREATE TABLE  user_session  (
-  id  int PRIMARY KEY AUTO_INCREMENT,
-  id_user  int,
-  id_session  int
+  id_user  int PRIMARY KEY AUTO_INCREMENT,
+  id_session  varchar(36)
 );
 
 CREATE TABLE  courses  (
@@ -29,7 +24,8 @@ CREATE TABLE  courses_in_progress  (
   id_user  int,
   id_course  int,
   progress  int,
-  finished  boolean
+  finished  boolean,
+  bookmarked boolean
 );
 
 CREATE TABLE  garden_manager  (
@@ -38,13 +34,8 @@ CREATE TABLE  garden_manager  (
   last_interaction  date,
   due_date  date,
   stage  varchar(255),
-  interaction  varchar(255)
-);
-
-CREATE TABLE  garden_managed_by_user  (
-  id  int PRIMARY KEY AUTO_INCREMENT,
-  id_user  int,
-  id_garden  int
+  interaction  varchar(255),
+  id_user int
 );
 
 ALTER TABLE  user_session  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
@@ -55,6 +46,15 @@ ALTER TABLE  courses_in_progress  ADD FOREIGN KEY ( id_user ) REFERENCES  regist
 
 ALTER TABLE  courses_in_progress  ADD FOREIGN KEY ( id_course ) REFERENCES  courses  ( id );
 
-ALTER TABLE  garden_managed_by_user  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
+ALTER TABLE  garden_manager  ADD FOREIGN KEY ( id_user ) REFERENCES  registered_users  ( id );
 
-ALTER TABLE  garden_managed_by_user  ADD FOREIGN KEY ( id_garden ) REFERENCES  garden_manager  ( id );
+INSERT INTO courses(name, checkpoints) VALUES ("Turf",5);
+INSERT INTO courses(name, checkpoints) VALUES ("Indoor plants",5);
+INSERT INTO courses(name, checkpoints) VALUES ("Vegetables",5);
+INSERT INTO courses(name, checkpoints) VALUES ("Fruit trees",5);
+
+alter table user_session drop constraint user_session_ibfk_2;
+drop table login_sessions;
+alter table user_session modify column id_session varchar(36);
+alter table user_session drop column id;
+
