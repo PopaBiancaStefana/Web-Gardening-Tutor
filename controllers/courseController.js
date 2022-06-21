@@ -28,6 +28,13 @@ async function saveForm(data, res) {
     res.end(JSON.stringify({ error: err }));
   }
 }
+function toFormalEncoding(string)
+{
+  string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
+  string = string.replace('_', ' ');
+  console.log("sirul intors este " + string);
+  return string;
+}
 
 async function getProgress(data, res) {
   try {
@@ -37,7 +44,7 @@ async function getProgress(data, res) {
 
     let info = {
       user_id: id["user_id"],
-      course_name: data.headers.course,
+      course_name: toFormalEncoding(data.headers.course),
     };
 
     let prog = await courseModel.getCourseProgress(info);
