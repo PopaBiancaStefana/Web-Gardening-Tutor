@@ -3,8 +3,8 @@ const db = require("../database");
 
 function toFormalEncoding(string)
 {
-  string = string.charAt(0).toLowerCase() + string.slice(1); // capitalize
-  string = string.replace(' ', '_');
+  string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
+  string = string.replace('_', ' ');
   console.log("sirul intors este " + string);
   return string;
 }
@@ -16,7 +16,7 @@ async function updateProgress(data) {
   let user_id = data.user_id;
 
   //get the id of the course
-  let course_id = await getCourseId(data.course_name);
+  let course_id = await getCourseId(toFormalEncoding(data.course_name));
 
   //set finished
   let nr_check = await getCheckpoints(course_id);

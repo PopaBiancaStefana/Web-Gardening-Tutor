@@ -28,6 +28,7 @@ async function saveForm(data, res) {
     res.end(JSON.stringify({ error: err }));
   }
 }
+
 function toFormalEncoding(string)
 {
   string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
