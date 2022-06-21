@@ -100,6 +100,9 @@ async function getProfile(id_user)
     //adaugam cursurile
     Object.assign(data, userCourses);
 
+    let bookmarkedCourses = await getBookmarkedCourses(id_user);
+    Object.assign(data, bookmarkedCourses);
+
     
     return data;
 }
@@ -107,7 +110,7 @@ async function getProfile(id_user)
 function getUserCourses(id_user)
 {
         return new Promise((resolve, reject) => {
-            db.pool.query("select c.name, cp.progress/c.checkpoints as fraction, cp.bookmarked from registered_users as u join courses_in_progress as cp on u.id = cp.id_user join courses as c on cp.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
+            db.pool.query("select c.name, cp.progress/c.checkpoints as fraction from registered_users as u join courses_in_progress as cp on u.id = cp.id_user join courses as c on cp.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
                 if(err) {
                     reject(err);
                     return;
@@ -115,7 +118,6 @@ function getUserCourses(id_user)
 
                 let data = {};
                 let myCourses = [];
-                let bookmarkedCourses = [];
 
                 Object.keys(result).forEach( (key) => {
                     let row = result[key];
@@ -124,13 +126,37 @@ function getUserCourses(id_user)
                     course.progress = row.fraction;
                     
                     myCourses.push(course);
-                    if(course.bookmarked)
-                        bookmarkedCourses.push(course);
                 })
 
                 data.my_courses = myCourses;
-                data.bookmarked = bookmarkedCourses;
+                resolve(data);
+        
+            });
+        });
+}
 
+
+function getBookmarkedCourses(id_user)
+{
+        return new Promise((resolve, reject) => {
+            db.pool.query("select c.name from registered_users as u join bookmarked_courses as bc on u.id = bc.id_user join courses as c on bc.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
+                if(err) {
+                    reject(err);
+                    return;
+                }
+
+                let data = {};
+                let bookmarkedCourses = [];
+
+                Object.keys(result).forEach( (key) => {
+                    let row = result[key];
+                    let course = {};
+                    course.title = row.name;
+                    
+                    bookmarkedCourses.push(course);
+                })
+
+                data.bookmarked = bookmarkedCourses;
                 resolve(data);
         
             });
