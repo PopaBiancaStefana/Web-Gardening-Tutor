@@ -1,6 +1,8 @@
 const courseModel = require("../models/courseModel");
 const staticFileController = require("./staticFileController");
 const checkSession = require("../models/sessionModel").checkSession;
+const ejs = require("ejs");
+const path = require("path");
 
 async function saveForm(data, res) {
   try {
@@ -60,11 +62,38 @@ async function getProgress(data, res) {
     staticFileController.serveFile(data,res);
 }
 
-function getCourse(data, res)
+async function getCourse(data, res)
 {
     console.log("am ajuns aici " + data.path);
     let course_name =  data.path.split('/')[1];
     console.log('nume curs' + course_name);
+
+
+    //todo
+    let course = await courseModel.getCourseByName(course_name);
+    console.log("am primit cursul " + course);
+    if("error" in course)
+    {
+        res.head(404);
+        res.end('Course not found');
+        return;
+    }
+
+    try{
+        ejs.renderFile(path.join(__dirname, "/../views/course_template.ejs"), course, {}, (err, result) =>{
+            if(err)
+                throw err;
+            
+            res.writeHead(200, {"Content-type":"text/html"});
+            res.end(result);
+        });
+    } catch (err)
+    {
+        console.log(err);
+        res.writeHead(500);
+        res.end();
+    }
+    
 }
 
 module.exports = {saveForm, getProgress, getCourses, getCourse}

@@ -50,9 +50,8 @@ const server = http.createServer((req, res) => {
                 {
                     let route = null;
                     Object.keys(getRoutes).every((key) => {
-
-                        console.log(key + new RegExp(key).test(urlPath));
-                        if (new RegExp(key).test(urlPath)) {
+                        if(new RegExp(key).test(urlPath))
+                        {
                             route = getRoutes[key];
                             return false; //break
                         }
@@ -68,7 +67,6 @@ const server = http.createServer((req, res) => {
 
                     if (route == null) // daca nu s-a gasit o ruta
                     {
-                        console.log("aci avem " + urlPath);
                         route = fileController.serveFile;
                     }
                     route(data, res);
@@ -81,10 +79,11 @@ const server = http.createServer((req, res) => {
                 }
             case 'post': {
                 let route;
-                if (urlPath in postRoutes) {
+                if(urlPath in postRoutes)
+                {
                     route = postRoutes[urlPath];
                 } else {
-                    route = (data, res) => (console.log('nimic'));
+                    route = (data,res) => (console.log('nimic'));
                 }
                 route(data, res);
                 break;
@@ -118,7 +117,7 @@ const getRoutes = {
     "^staticFile$": fileController.serveFile,
     "^profile$": userController.getProfile,
     "^courses$": courseController.getCourses,
-    "^courses/\\w+$": courseController.getCourse,
+    "^courses/\\w+$": courseController.getCourse, // path: courses/:course
     staticFile: fileController.serveFile,
     "^leaderboard$": leaderboardController.gettopUsers,
     "^course_template$": courseController.getProgress,

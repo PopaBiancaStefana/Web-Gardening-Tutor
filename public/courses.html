@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com" />
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
@@ -38,20 +38,22 @@
     </div>
 
     <div class="courses-container">
-      <div class="box">
-        <div class="course">
-          <h1>Indoor plants</h1>
-          <div class="photo">
-            <img src="images/indoor-flowers.png" alt="" />
-          </div>
-          <button class="btn" onclick='setCourse("Indoor plants")'>
-            Get started
-          </button>
+
+
+        <div class="box">
+            <div class="course">
+            <h1>Indoor plants</h1>
+            <div class="photo">
+                <img src="images/indoor-flowers.png" alt="" />
+            </div>
+            <button class="btn" onclick='setCourse("indoor_plants")'>
+                Get started
+            </button>
+            </div>
+            <span class="tag-shadow">
+            <span class="tag-easy"> easy </span>
+            </span>
         </div>
-        <span class="tag-shadow">
-          <span class="tag-easy"> easy </span>
-        </span>
-      </div>
 
       <div class="box">
         <div class="course">
@@ -59,7 +61,7 @@
           <div class="photo">
             <img src="images/vegetables.png" alt="img" />
           </div>
-          <button class="btn" onclick='setCourse("Vegetables")'>
+          <button class="btn" onclick='setCourse("vegetables")'>
             Get started
           </button>
         </div>
@@ -76,7 +78,7 @@
           <div class="photo">
             <img src="images/lawn.png" alt="flowers" />
           </div>
-          <button class="btn" onclick='setCourse("Turf")'>Get started</button>
+          <button class="btn" onclick='setCourse("turf")'>Get started</button>
         </div>
 
         <span class="tag-shadow">
@@ -90,7 +92,7 @@
           <div class="photo">
             <img src="images/tree.png" alt="flowers" />
           </div>
-          <button class="btn" onclick='setCourse("Fruit trees")'>
+          <button class="btn" onclick='setCourse("fruit_trees")'>
             Get started
           </button>
         </div>
@@ -108,7 +110,7 @@
 
     <script>
       function setCourse(course) {
-        window.location.href = "course_template.html";
+        window.location.href = "courses/" +  course;
         sessionStorage.setItem("course", course);
       }
     </script>

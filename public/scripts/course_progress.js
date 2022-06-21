@@ -103,6 +103,7 @@ function sendData(data, endpoint) {
 }
 
 function enable_next_checkbox(j) {
+  console.log('se ajunge in functia asta ' + j);
   if (
     document.form1.ckb[j].checked == true &&
     j < document.form1.ckb.length - 1
