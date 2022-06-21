@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style_course.css" />
+    <script type="module" src="../scripts/course_content.js"></script>
+    <script src="../scripts/course_progress.js"></script>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a class="logo" href="home">
+          <img src="../images/logo2.png" alt="Logo" />
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="../profile">Profile</a></li>
+            <li><a href="../courses">Courses</a></li>
+            <li><a href="../leaderboard">Leaderboard</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <div id="course-title">
+        <h1> <%= title %>  </h1>
+        <ul>
+            <li> <%= difficulty %> </li>
+        </ul>
+    </div>
+
+    <div class="second-banner">
+        <div class="image">
+            <div id="banner2-title"><h>The tools you need:</h></div>
+            <img src="../images/growing.png" alt="Tools">
+
+        </div>
+        <div class="list" id="tools">
+            <ul>
+                <% tools.forEach(tool => { %>
+                    
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tool.tool %> </li>
+
+                <% }); %> 
+            </ul>
+
+            <ul>
+                <li data-modal-target="#modal" id="tool5" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool6" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool7" style="display:none"></li>
+                <li data-modal-target="#modal" id="tool8" style="display:none"></li>
+            </ul>
+            <!-- THE MODAL FOR EACH TOOL -->
+            <div class="modal" id="modal">
+                <div id="modal-text">
+                </div>
+                <button data-close-button="" class="close-button">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="third-banner">
+        <div class="image">
+            <div id="banner3-title"><h>Environment:</h></div>
+            <img src="../images/garden.png" alt="Environment">
+
+        </div>
+        <div class="list" id="environment">
+
+
+
+            <ul>
+                <% environment.forEach(env => { %>
+                    
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= env.env %> </li>
+
+                <% }); %> 
+            </ul>
+
+
+            <ul>
+                <li id="env5" style="display:none"> </li>
+                <li id="env6" style="display:none"></li>
+                <li id="env7" style="display:none"></li>
+                <li id="env8" style="display:none"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="main">
+            <form name="form1">
+
+                <% let step_index = 0 %> 
+                <% steps.forEach(step => { %>
+                    
+                    <div class="part">
+
+                        <label for="test1" class="part">
+                            <input type="checkbox" name="ckb" value="<% step_index +1  %> " id="test1"  <% onclick="enable_next_checkbox(step_index)" %> > 
+                        </label>
+    
+                        <div id="text-part">
+                             <h2> <%= step.step_title  %> </h2>
+                             <br>
+                             <%- step.step_text  %> 
+                        </div>
+
+                        <% if("step_images" in step) {%>
+                            <div class="photos" id="photos">
+                                <% step.step_images.forEach(image => { %>
+                                    <div class="gallery"><img src="../<%- image.img_src %>" alt="images/turf4.png">
+                                    <div class="desc"> <%= image.img_desc  %>  </div></div>
+                                <% }) %> 
+                            </div>
+                        <% } %> 
+
+                        
+                    </div>
+
+                    <% step_index++ %> 
+
+                <% }); %> 
+
+                <button type="button" onclick="return_val()">Done!</button>
+                <p id="message"></p>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <div id="right">
+        <h1>Useful Tips</h1>
+
+        <% let tip_index = 1 %> 
+        <% tips.forEach(tip => { %>
+          
+            <h2> Tip <%= tip_index  %>  </h2>
+            <p> <%= tip.tip  %> </p>
+
+            <% tip_index++ %> 
+
+        <% }); %> 
+    </div>
+
+    <footer>
+      <p>Web project 2022 Faculty of Computer Science Iași</p>
+      <br />
+      <p id="copyright">&copy; All Rights Reserved</p>
+    </footer>
+
+    <!-- FOR THE MODAL BOX -->
+    <div id="overlay"></div>
+
+    <script></script>
+  </body>
+</html>
