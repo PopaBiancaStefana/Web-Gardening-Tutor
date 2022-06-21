@@ -1,6 +1,12 @@
 const { CLIENT_FOUND_ROWS, CLIENT_LONG_PASSWORD } = require("mysql/lib/protocol/constants/client");
 const db = require("../database");
 
+function toFormalEncoding(string)
+{
+  string = string.charAt(0).toLowerCase() + course_name.slice(1); // capitalize
+    course_name = course_name.replace(' ', '_');
+}
+
 async function updateProgress(data) {
   //data contains the fields: user_id, course_name and progress(ex:2)
 
@@ -8,7 +14,7 @@ async function updateProgress(data) {
   let user_id = data.user_id;
 
   //get the id of the course
-  let course_id = await getCourseId(data.course_name);
+  let course_id = await getCourseId(toFormalEncoding(data.course_name));
 
   //set finished
   let nr_check = await getCheckpoints(course_id);
@@ -95,7 +101,7 @@ async function getCourseProgress(data) {
   let user_id = data.user_id;
 
   //get the id of the course
-  let course_id = await getCourseId(data.course_name);
+  let course_id = await getCourseId(toFormalEncoding(data.course_name));
 
   return new Promise((resolve, reject) => {
     db.pool.query(
@@ -129,7 +135,7 @@ async function getCourseByName(name)
   {
     course = courses[name];
   } else
-    course["error"] = "course not found";
+    course.error = "course not found";
 
   console.log('trimitem cursul ' + course);
   return course;

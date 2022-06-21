@@ -66,6 +66,9 @@ async function getCourse(data, res)
 {
     console.log("am ajuns aici " + data.path);
     let course_name =  data.path.split('/')[1];
+    course_name = course_name.charAt(0).toUpperCase() + course_name.slice(1); // capitalize
+    course_name = course_name.replace('_', ' ');
+
     console.log('nume curs' + course_name);
 
 
