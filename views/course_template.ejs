@@ -119,7 +119,18 @@
                              <h2> <%= step.step_title  %> </h2>
                              <br>
                              <%- step.step_text  %> 
-                        <div class="photos" id="photos"></div>
+                        </div>
+
+                        <% if("step_images" in step) {%>
+                            <div class="photos" id="photos">
+                                <% step.step_images.forEach(image => { %>
+                                    <div class="gallery"><img src="../<%- image.img_src %>" alt="images/turf4.png">
+                                    <div class="desc"> <%= image.img_desc  %>  </div></div>
+                                <% }) %> 
+                            </div>
+                        <% } %> 
+
+                        
                     </div>
 
                     <% step_index++ %> 
@@ -132,19 +143,22 @@
 
         </div>
 
-        <div id="right">
-            <h1>Useful Tips</h1>
+    </div>
 
-            <% let tip_index = 1 %> 
-            <% tips.forEach(tip => { %>
-              
-                <h2> Tip <%= tip_index  %>  </h2>
-                <p> <%= tip.tip  %> </p>
 
-                <% tip_index++ %> 
+    <div id="right">
+        <h1>Useful Tips</h1>
 
-            <% }); %> 
-        </div>
+        <% let tip_index = 1 %> 
+        <% tips.forEach(tip => { %>
+          
+            <h2> Tip <%= tip_index  %>  </h2>
+            <p> <%= tip.tip  %> </p>
+
+            <% tip_index++ %> 
+
+        <% }); %> 
+    </div>
 
     <footer>
       <p>Web project 2022 Faculty of Computer Science Iași</p>

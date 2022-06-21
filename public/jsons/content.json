@@ -62,7 +62,7 @@
             },
             {
                 "step_title": "Step three ~ Plant the grass seed",
-                "step_imgages": [
+                "step_images": [
                     {
                     "img_src": "images/turf4.png",
                     "img_desc": "Spread the grass seed in two different directions"
@@ -152,7 +152,7 @@
             },
             {
                 "step_title": "Ensure that your houseplants get the right amount of light",
-                "step_img": [
+                "step_images": [
                     {
                     "img_src": "images/light.png",
                     "img_desc": "Spot near the window"
@@ -162,7 +162,7 @@
             },
             {    
                 "step_title": " Use the right potting soil",
-                "step _text": "<p> A high-quality potting soil will help plant roots grow by providing the ideal balance of nutrition, aeration, and water absorption. Potting soil mixes typically include peat moss, shredded pine bark, perlite, and vermiculite. Garden centers sell generic potting soils, but whenever possible you should choose a potting soil specific to your houseplant. For example, orchids and bromeliads require fast-draining soil, but succulents grow best in porous, sandy soils</p>"
+                "step_text": "<p> A high-quality potting soil will help plant roots grow by providing the ideal balance of nutrition, aeration, and water absorption. Potting soil mixes typically include peat moss, shredded pine bark, perlite, and vermiculite. Garden centers sell generic potting soils, but whenever possible you should choose a potting soil specific to your houseplant. For example, orchids and bromeliads require fast-draining soil, but succulents grow best in porous, sandy soils</p>"
             }
         ]
     }
@@ -222,7 +222,7 @@
             },    
             {    
                 "step_title": "Step 3 ~ Choosing Vegetables",
-                "step_img": [
+                "step_images": [
                     {    
                         "img_src": "images/veggie1.png",
                         "img_desc": "Lettuce"
@@ -306,7 +306,7 @@
         "steps": [
             {
                 "step_title": "Step 1 ~ Start Early",
-                "step_img": [
+                "step_images": [
                     {    
                         "img_src": "images/tree2.png",
                         "img_desc": ""
@@ -332,11 +332,13 @@
             },    
             {
                 "step_title": "Step 4 ~ Set It Up",
-                "step_img": {
-                    "img_src": "images/tree1.png",
-                    "img_desc": ""
-                },
-                "step_text": "<p>After planting, dig a broad, shallow basin in a four-foot diameter donut shape around the tree, forming a low berm on the outside edge of the donut to capture rainwater and encourage it to percolate into the root zone. Spread a two-inch layer of compost over the donut area, followed by a two-inch layer of wood chip mulch on top (but don’t pile it directly against the trunk). </p><p>This blanket of organic matter will feed the roots for years to come, while buffering them from heat and drought. Finally, pound a pair of stout wooden stakes into the ground on either side of the tree and tie the trunk to the stakes so that your young sapling doesn’t blow over in high winds (use old pieces of garden hose or plastic tubing over the rope or wire where it contacts the trunk to protect it from chafing). After two years, the tree should have a strong enough root system to hold its own and the stakes may be removed.</p>"
+                "step_images":[
+                    {
+                        "img_src": "images/tree1.png",
+                        "img_desc": ""
+                    }
+                ],
+               "step_text": "<p>After planting, dig a broad, shallow basin in a four-foot diameter donut shape around the tree, forming a low berm on the outside edge of the donut to capture rainwater and encourage it to percolate into the root zone. Spread a two-inch layer of compost over the donut area, followed by a two-inch layer of wood chip mulch on top (but don’t pile it directly against the trunk). </p><p>This blanket of organic matter will feed the roots for years to come, while buffering them from heat and drought. Finally, pound a pair of stout wooden stakes into the ground on either side of the tree and tie the trunk to the stakes so that your young sapling doesn’t blow over in high winds (use old pieces of garden hose or plastic tubing over the rope or wire where it contacts the trunk to protect it from chafing). After two years, the tree should have a strong enough root system to hold its own and the stakes may be removed.</p>"
             },
             {    
                     "step_title": "Step 5 ~ How to care for fruit trees",
