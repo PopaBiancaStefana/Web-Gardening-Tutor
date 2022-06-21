@@ -1,5 +1,5 @@
 {
-    "turf": {
+    "Turf": {
         "title": "Turf",
         "difficulty":"medium",
         "tools": [
@@ -82,7 +82,7 @@
     },
 
 
-    "indoor_plants": {
+    "Indoor plants": {
         "title":"Indoor plants",
         "difficulty":"easy",
         "tools": [
@@ -167,7 +167,7 @@
         ]
     }
     ,
-    "vegetables": {
+    "Vegetables": {
         "title":"vegetables",
         "difficulty":"easy",
         "tools": [
@@ -252,7 +252,7 @@
             }
         ]
     },
-    "fruit_trees": {
+    "Fruit trees": {
         "title":"Fruit Trees",
         "difficulty":"hard",
         "tools": [
