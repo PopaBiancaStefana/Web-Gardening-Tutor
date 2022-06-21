@@ -83,6 +83,26 @@ function readFormData() {
   return formData;
 }
 
+function insertNewRecord(data) {
+  var table = document
+    .getElementById("plantList")
+    .getElementsByTagName("tbody")[0];
+  var newRow = table.insertRow(table.length);
+  cell1 = newRow.insertCell(0);
+  cell1.innerHTML = data.plant_name;
+  cell2 = newRow.insertCell(1);
+  cell2.innerHTML = data.last_interaction;
+  cell3 = newRow.insertCell(2);
+  cell3.innerHTML = data.due_date;
+  cell4 = newRow.insertCell(3);
+  cell4.innerHTML = data.stage;
+  cell5 = newRow.insertCell(4);
+  cell5.innerHTML = data.interaction;
+  cell6 = newRow.insertCell(5);
+  cell6.innerHTML = `<a class="edit-delete" onClick="onEdit(this)">Edit</a>
+                       <a class="edit-delete" onClick="onDelete(this)">Delete</a>`;
+}
+
 function sendData(data, endpoint) {
   let url = `http://localhost:1234/${endpoint}`;
   let head = new Headers();

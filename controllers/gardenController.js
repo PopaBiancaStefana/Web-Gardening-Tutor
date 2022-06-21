@@ -31,17 +31,11 @@ async function getPlants(data, res) {
     if ("error" in result)
         return;
 
-    console.log(result.user_id);
     let message = await gardenModel.getGarden(result.user_id);
+    console.log(message);
     console.log("Showing plants from garden.");
 
     try {
-
-
-        //get the id of the current user
-        // let result = await checkSession(data.headers);
-        // id = JSON.parse(result);
-
         ejs.renderFile(path.join(__dirname, "/../views/gardenmanager.ejs"), message, {}, (err, result) => {
             if (err)
                 throw err;
@@ -49,9 +43,6 @@ async function getPlants(data, res) {
             res.writeHead(200, { "Content-type": "text/html" });
             res.end(result);
         });
-
-        // res.setHeader("Content-type", "application/json");
-        // res.end(JSON.stringify({ data: message }));
     } catch (err) {
         console.log(err);
         res.setHeader("Content-type", "application/json");

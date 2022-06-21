@@ -3,11 +3,8 @@ const db = require("../database");
 async function getGarden(user_id) {
     let data = {};
 
-    user_id = 3;
-    console.log(user_id);
     //adaugam array-ul de plante
-    let plantsTable = await getGardenTable(3);
-    console.log(user_id);
+    let plantsTable = await getGardenTable(user_id);
     Object.assign(data, plantsTable);
 
     return data;
@@ -24,11 +21,8 @@ async function getGardenTable(user_id) {
                     reject(err);
                     return;
                 }
-                // console.log("Plants: " + JSON.stringify(data));
                 let data = {};
                 let getGarden = [];
-
-                console.log(user_id);
 
                 Object.keys(result).forEach((key) => {
                     let row = result[key];

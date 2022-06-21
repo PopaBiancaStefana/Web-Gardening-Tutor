@@ -75,7 +75,7 @@
                   <option value="changed-soil">Changed the soil</option>
                 </select>
               </div>
-              <div class="add-button">
+              <div class="add-button" id="add-button">
                 <input type="submit" value="Add new plant" />
               </div>
             </form>
@@ -102,8 +102,6 @@
                   <td><%= plant.interaction %></td>
                   <td>
                     <a class="edit-delete" onClick="onEdit(this)">Edit</a>
-                  </td>
-                  <td>
                     <a class="edit-delete" onClick="onDelete(this)">Delete</a>
                   </td>
                 </tr>
@@ -121,6 +119,6 @@
       <p id="copyright">&copy; All Rights Reserved</p>
     </footer>
 
-    <script src="scripts/gm.js"></script>
+    <script src="../scripts/garden_manager.js"></script>
   </body>
 </html>
