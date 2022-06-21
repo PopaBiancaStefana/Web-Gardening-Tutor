@@ -89,7 +89,7 @@ const server = http.createServer((req, res) => {
                 route(data, res);
                 break;
             }
-            case "delete": {
+            case 'delete': {
                 let route;
                 if (urlPath in deleteRoutes) {
                     route = deleteRoutes[urlPath];
@@ -100,7 +100,7 @@ const server = http.createServer((req, res) => {
                 break;
             }
 
-            case "put": {
+            case 'put': {
                 let route;
                 if (urlPath in putRoutes) {
                     route = putRoutes[urlPath];
@@ -117,13 +117,12 @@ const server = http.createServer((req, res) => {
 const getRoutes = {
     "^staticFile$": fileController.serveFile,
     "^profile$": userController.getProfile,
-    "^garden_manager$": fileController.restrictedFile,
     "^courses$": courseController.getCourses,
     "^courses/\\w+$": courseController.getCourse,
     staticFile: fileController.serveFile,
     "^leaderboard$": leaderboardController.gettopUsers,
     "^course_template$": courseController.getProgress,
-    "^garden$": gardenController.getPlants,
+    "^garden_manager$": gardenController.getPlants
 };
 
 

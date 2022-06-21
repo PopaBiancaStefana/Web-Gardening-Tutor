@@ -1,16 +1,50 @@
 const db = require("../database");
 
 async function getGarden(user_id) {
+    let data = {};
+
+    user_id = 3;
+    console.log(user_id);
+    //adaugam array-ul de plante
+    let plantsTable = await getGardenTable(3);
+    console.log(user_id);
+    Object.assign(data, plantsTable);
+
+    return data;
+}
+
+async function getGardenTable(user_id) {
     return new Promise((resolve, reject) => {
         db.pool.query(
             "select plant_name, date_format(last_interaction, '%Y-%m-%d') as last_interaction, date_format(due_date, '%Y-%m-%d') as due_date, stage, interaction from garden_manager where id_user = ?",
             [user_id],
-            (err, data) => {
+            (err, result) => {
                 if (err) {
                     console.log(err);
                     reject(err);
+                    return;
                 }
-                console.log("Plants: " + JSON.stringify(data));
+                // console.log("Plants: " + JSON.stringify(data));
+                let data = {};
+                let getGarden = [];
+
+                console.log(user_id);
+
+                Object.keys(result).forEach((key) => {
+                    let row = result[key];
+                    let plant = {};
+
+                    plant.plant_name = row.plant_name;
+                    plant.last_interaction = row.last_interaction;
+                    plant.due_date = row.due_date;
+                    plant.stage = row.stage;
+                    plant.interaction = row.interaction;
+
+                    getGarden.push(plant);
+
+                })
+
+                data.garden = getGarden;
 
                 resolve(data);
             }
