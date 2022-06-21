@@ -139,7 +139,7 @@ function getUserCourses(id_user)
 function getBookmarkedCourses(id_user)
 {
         return new Promise((resolve, reject) => {
-            db.pool.query("select c.name, from registered_users as u join bookmarked_courses as bc on u.id = bc.id_user join courses as c on bc.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
+            db.pool.query("select c.name from registered_users as u join bookmarked_courses as bc on u.id = bc.id_user join courses as c on bc.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
                 if(err) {
                     reject(err);
                     return;

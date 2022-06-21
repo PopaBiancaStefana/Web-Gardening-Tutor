@@ -144,7 +144,8 @@
                                     <h3> <%= course.title %> </h3>
                                     <button class="course-button">Continue</button>
                                     <div class="progress-container">
-                                        <div class="progress-bar"> <%= course.progress %> </div>
+                                        <% let percentage = course.progress * 100 + '%' %> 
+                                        <div class="progress-bar" style="width: <%= percentage %> ;"> </div>
                                     </div>
                                 </div>    
                             </div>
