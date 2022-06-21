@@ -135,4 +135,89 @@ async function getCourseByName(name)
   return course;
 }
 
-module.exports = { updateProgress, getCourseProgress, getCourseByName };
+async function getBookmarked(id_user) {
+
+  let data = {};
+  let bookmark = await getBookmarkedCourses(id_user);
+  Object.assign(data, bookmark);
+
+  return data;
+}
+
+async function getBookmarkedCourses(id_user) {
+
+  return new Promise((resolve, reject) => {
+    db.pool.query(
+      "select name from courses where id in (select id_course from bookmarked_courses where id_user = ? and bookmarked = 1);",
+      [id_user],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+          return;
+        }
+
+        let data = {};
+        let booked = [];
+        Object.keys(result).forEach((key) => {
+          let row = result[key];
+          let course = {};
+          course.title = row.name;
+
+          booked.push(course);
+        });
+
+        data.booked_courses = booked;
+        resolve(data);
+      }
+    );
+  });
+}
+
+async function updateBookmark(data) {
+  //data contains the fields: user_id, course_name and bookmarked
+
+  //get the id of the course
+  let course_id = await getCourseId(data.course_name);
+
+
+  let booked = await verifyBookmark(data.user_id, course_id);
+  if (Object.keys(booked).length === 0) {
+    db.pool.query(
+      "INSERT INTO bookmarked_courses(id_user, id_course, bookmarked) values (?,?,?)",
+      [data.user_id, course_id, data.bookmarked],
+      function (err) {
+        if (err) throw err;
+        console.log("Bookmark created");
+      }
+    );
+  } else {
+    db.pool.query(
+      "UPDATE bookmarked_courses SET bookmarked = ?  WHERE  id_user = ? and id_course = ?",
+      [data.bookmarked, data.user_id, course_id],
+      function (err) {
+        if (err) throw err;
+        console.log("Bookmark updated");
+      }
+    );
+  }
+
+}
+
+async function verifyBookmark(user_id, course_id) {
+  return new Promise((resolve, reject) => {
+    db.pool.query(
+      "SELECT id FROM bookmarked_courses WHERE id_user = ? AND id_course = ?",
+      [user_id, course_id],
+      (err, data) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        }
+        resolve(data);
+      }
+    );
+  });
+}
+
+module.exports = { updateProgress, getCourseProgress, getCourseByName, getBookmarked, updateBookmark };

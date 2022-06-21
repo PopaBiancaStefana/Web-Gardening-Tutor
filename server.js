@@ -129,6 +129,7 @@ const postRoutes = {
     course_template: courseController.saveForm,
     logout: userController.logout,
     garden_manager: gardenController.savePlants,
+    courses: courseController.saveBookmark
 };
 
 const putRoutes = {

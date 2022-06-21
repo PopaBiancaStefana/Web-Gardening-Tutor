@@ -53,13 +53,29 @@ async function getProgress(data, res) {
 }
 
 
- async function getCourses(data, res)
-{
-    let result = await staticFileController.restrictedFile(data, res);
-    if("error" in result) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
-        return;
 
-    staticFileController.serveFile(data,res);
+async function getCourses(data, res) {
+  let result = await staticFileController.restrictedFile(data, res);
+  if ("error" in result) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
+    return;
+
+  let bookmarked = await courseModel.getBookmarked(result.user_id);
+
+  console.log(bookmarked);
+
+  try {
+    ejs.renderFile(path.join(__dirname, "/../views/courses.ejs"), bookmarked, {}, (err, result) => {
+      if (err)
+        throw err;
+
+      res.writeHead(200, { "Content-type": "text/html" });
+      res.end(result);
+    });
+  } catch (err) {
+    console.log(err);
+    res.writeHead(500);
+    res.end();
+  }
 }
 
 async function getCourse(data, res)
@@ -96,4 +112,31 @@ async function getCourse(data, res)
     
 }
 
-module.exports = {saveForm, getProgress, getCourses, getCourse}
+async function saveBookmark(data, res) {
+  try {
+    //get the id of the current user
+    let result = await checkSession(data.headers);
+    let id = JSON.parse(result);
+    data.payload.user_id = id["user_id"];
+
+    console.log(
+      "course name: " +
+      data.payload.course_name +
+      ", bookmarked: " +
+      data.payload.bookmarked + 
+      ", user: " +
+      data.payload.user_id
+    );
+
+    await courseModel.updateBookmark(data.payload);
+
+    res.setHeader("Content-type", "application/json");
+    res.end(JSON.stringify({ data: data.payload }));
+  } catch (err) {
+    console.log(err);
+    res.setHeader("Content-type", "application/json");
+    res.end(JSON.stringify({ error: err }));
+  }
+}
+
+module.exports = {saveForm, getProgress, getCourses, getCourse, saveBookmark}

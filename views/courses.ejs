@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link rel="preload" href="https://fonts.googleapis.com" />
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href=" styles/course_template.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a class="logo" href="home">
+                <img src=" images/logo2.png" alt="Logo" />
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="profile">Profile</a></li>
+                    <li><a href="courses">Courses</a></li>
+                    <li><a href="leaderboard">Leaderboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner-container">
+        <h1>What are you waiting for? Let's go in the garden!</h1>
+        <p>Take a look at the courses.</p>
+    </div>
+
+    <div class="courses-container">
+        <div class="box">
+            <div class="course" id="Indoor plants">
+                <h1>Indoor plants</h1>
+                <div class="photo">
+                    <img src="images/indoor-flowers.png" alt="" />
+                    <div class="bookmark" data-text="bookmark">
+                        <% var count; %>
+                        <% var ok=0; %>
+                        <% for ( count=0; count < booked_courses.length; count++) { %>
+                            <% if (booked_courses[count].title=="Indoor plants" ) { %>
+                                <img src="images/book1.png" id="star1" alt="bookmarked" />
+                                <% ok=1; %>
+                            <% } %>
+                        <% } %>
+                        <% if ( ok==0 ) { %>
+                            <img src="images/book0.png" id="star1" alt="bookmarked" />
+                        <% } %>
+                    </div>
+                </div>
+                <button class="btn" onclick='setCourse("indoor_plants")'>
+                    Get started
+                </button>
+            </div>
+            <span class="tag-shadow">
+                <span class="tag-easy"> easy </span>
+            </span>
+        </div>
+
+        <div class="box">
+            <div class="course" id="Vegetables">
+                <h1>Vegetables</h1>
+                <div class="photo">
+                    <img src="images/vegetables.png" alt="img" />
+                    <div class="bookmark" data-text="bookmark">
+                        <% var count; %>
+                        <% var ok=0; %>
+                        <% for ( count=0; count < booked_courses.length; count++) { %>
+                            <% if (booked_courses[count].title=="Vegetables" ) { %>
+                                <img src="images/book1.png" id="star2" alt="bookmarked" />
+                                <% ok=1; %>
+                             <% } %>
+                        <% } %>
+                        <% if ( ok==0 ) { %>
+                            <img src="images/book0.png" id="star2" alt="bookmarked" />
+                        <% } %>
+                    </div>
+                </div>
+                <button class="btn" onclick='setCourse("vegetables")'>
+                    Get started
+                </button>
+            </div>
+            <span class="tag-shadow">
+                <span class="tag-easy"> easy </span>
+            </span>
+        </div>
+    </div>
+
+    <div class="courses-container">
+        <div class="box">
+            <div class="course" id="Turf">
+                <h1>Turf</h1>
+                <div class="photo">
+                    <img src="images/lawn.png" alt="flowers" />
+                    <div class="bookmark" data-text="bookmark">
+                        <% var count; %>
+                        <% var ok=0; %>
+                        <% for ( count=0; count < booked_courses.length; count++) { %>
+                            <% if (booked_courses[count].title=="Turf" ) { %>
+                                <img src="images/book1.png" id="star3" alt="bookmarked" />
+                                <% ok=1; %>
+                            <% } %>
+                        <% } %>
+                        <% if ( ok==0 ) { %>
+                            <img src="images/book0.png" id="star3" alt="bookmarked" />
+                        <% } %>
+                    </div>
+                </div>
+                <button class="btn" onclick='setCourse("turf")'>Get started</button>
+            </div>
+
+            <span class="tag-shadow">
+                <span class="tag-medium"> med </span>
+            </span>
+        </div>
+
+        <div class="box">
+            <div class="course" id="Fruit trees">
+                <h1>Fruit trees</h1>
+                <div class="photo">
+                    <img src="images/tree.png" alt="flowers" />
+                    <div class="bookmark" data-text="bookmark">
+                        <% var count; %>
+                        <% var ok=0; %>
+                        <% for ( count=0; count < booked_courses.length; count++) { %>
+                            <% if (booked_courses[count].title=="Fruit trees" ) { %>
+                                <img src="images/book1.png" id="star4" alt="bookmarked" />
+                                <% ok=1; %>
+                            <% } %>
+                        <% } %>
+                        <% if ( ok==0 ) { %>
+                            <img src="images/book0.png" id="star4" alt="bookmarked" />
+                        <% } %>
+                    </div>
+                </div>
+                <button class="btn" onclick='setCourse("fruit_trees")'>
+                    Get started
+                </button>
+            </div>
+            <span class="tag-shadow">
+                <span class="tag-hard"> hard </span>
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Web project 2022 Faculty of Computer Science Iași</p>
+        <br />
+        <p id="copyright">&copy; All Rights Reserved</p>
+    </footer>
+
+    <script>
+
+        for (var contor = 1; contor <= 4; contor++) {
+            var star = document.getElementById("star" + contor);
+            document.getElementById("star" + contor).addEventListener("click", clickBookmark);
+        }
+
+        function clickBookmark(event) {
+            var star = document.getElementById(event.srcElement.id);
+            var course = star.parentElement.parentElement.parentElement.id
+            if (star.src.split('/').pop() == "book0.png") {
+                //add bookmark to specified course
+                updateBookmark(course, 1 );
+                star.src = "images/book1.png";
+            }
+            else {
+                //remove bookmark to specified course
+                updateBookmark(course, 0 );
+                star.src = "images/book0.png";
+            }
+        }
+
+        function updateBookmark(course, action) {
+            if(action == 1) console.log("Adding bookmark to course " + course);
+            else    console.log("Removing bookmark from course " + course);
+
+            //event.preventDefault();
+            var data = {
+                user_id: null,
+                course_name: course,
+                bookmarked: action,
+            };
+
+            let endpoint = "courses";
+            sendData(data, endpoint);
+
+            return true;
+        }
+
+        function sendData(data, endpoint) {
+                let url = `http://localhost:1234/${endpoint}`;
+                let head = new Headers();
+                head.append("Content-Type", "application/json");
+                let req = new Request(url, {
+                    method: "POST",
+                    mode: "cors",
+                    headers: head,
+                    body: JSON.stringify(data),
+                });
+                fetch(req)
+                    .then((res) => res.json())
+                    .then((content) => {
+                        if ("error" in content) {
+                            //incerare esuata
+                            console.log("Eroare", content.error);
+                        }
+                        if ("data" in content) {
+                            console.log("Bookmark saved", data);
+                        }
+                    });
+            }
+
+
+        function setCourse(course) {
+            window.location.href = "courses/" + course;
+            sessionStorage.setItem("course", course);
+        }
+        
+    </script>
+</body>
+
+</html>
