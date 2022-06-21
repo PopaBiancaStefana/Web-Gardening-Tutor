@@ -76,7 +76,7 @@
                             <% if (booked_courses[count].title=="Vegetables" ) { %>
                                 <img src="images/book1.png" id="star2" alt="bookmarked" />
                                 <% ok=1; %>
-                             <% } %>
+                            <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
                             <img src="images/book0.png" id="star2" alt="bookmarked" />
@@ -105,11 +105,11 @@
                         <% for ( count=0; count < booked_courses.length; count++) { %>
                             <% if (booked_courses[count].title=="Turf" ) { %>
                                 <img src="images/book1.png" id="star3" alt="bookmarked" />
-                                <% ok=1; %>
+                                    <% ok=1; %>
                             <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
-                            <img src="images/book0.png" id="star3" alt="bookmarked" />
+                             <img src="images/book0.png" id="star3" alt="bookmarked" />
                         <% } %>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
             </span>
         </div>
     </div>
-
+  
     <footer>
         <p>Web project 2022 Faculty of Computer Science Iași</p>
         <br />
@@ -168,19 +168,19 @@
             var course = star.parentElement.parentElement.parentElement.id
             if (star.src.split('/').pop() == "book0.png") {
                 //add bookmark to specified course
-                updateBookmark(course, 1 );
+                updateBookmark(course, 1);
                 star.src = "images/book1.png";
             }
             else {
                 //remove bookmark to specified course
-                updateBookmark(course, 0 );
+                updateBookmark(course, 0);
                 star.src = "images/book0.png";
             }
         }
 
         function updateBookmark(course, action) {
-            if(action == 1) console.log("Adding bookmark to course " + course);
-            else    console.log("Removing bookmark from course " + course);
+            if (action == 1) console.log("Adding bookmark to course " + course);
+            else console.log("Removing bookmark from course " + course);
 
             //event.preventDefault();
             var data = {
@@ -196,34 +196,33 @@
         }
 
         function sendData(data, endpoint) {
-                let url = `http://localhost:1234/${endpoint}`;
-                let head = new Headers();
-                head.append("Content-Type", "application/json");
-                let req = new Request(url, {
-                    method: "POST",
-                    mode: "cors",
-                    headers: head,
-                    body: JSON.stringify(data),
+            let url = `http://localhost:1234/${endpoint}`;
+            let head = new Headers();
+            head.append("Content-Type", "application/json");
+            let req = new Request(url, {
+                method: "POST",
+                mode: "cors",
+                headers: head,
+                body: JSON.stringify(data),
+            });
+            fetch(req)
+                .then((res) => res.json())
+                .then((content) => {
+                    if ("error" in content) {
+                        //incerare esuata
+                        console.log("Eroare", content.error);
+                    }
+                    if ("data" in content) {
+                        console.log("Bookmark saved", data);
+                    }
                 });
-                fetch(req)
-                    .then((res) => res.json())
-                    .then((content) => {
-                        if ("error" in content) {
-                            //incerare esuata
-                            console.log("Eroare", content.error);
-                        }
-                        if ("data" in content) {
-                            console.log("Bookmark saved", data);
-                        }
-                    });
-            }
-
+        }
 
         function setCourse(course) {
             window.location.href = "courses/" + course;
             sessionStorage.setItem("course", course);
         }
-        
+
     </script>
 </body>
 
