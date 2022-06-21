@@ -49,13 +49,26 @@
 
         </div>
         <div class="list" id="tools">
+            <% let tool_index = 0 %> 
             <ul>
-                <% tools.forEach(tool => { %>
+                <% for(tool_index=0; tool_index<4 && tool_index < tools.length; tool_index++) { %>
                     
-                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tool.tool %> </li>
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tools[tool_index].tool %> </li>
 
-                <% }); %> 
+                <% } %>
             </ul>
+
+            <% if (tool_index < tools.length) { %>
+
+                <ul>
+                    <% for(; tool_index < tools.length; tool_index++) { %>
+                        
+                        <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tools[tool_index].tool %> </li>
+    
+                    <% } %>
+                </ul>
+
+            <%  } %> 
 
             <ul>
                 <li data-modal-target="#modal" id="tool5" style="display:none"></li>
@@ -82,22 +95,28 @@
         <div class="list" id="environment">
 
 
-
+            <% let env_index =0 %> 
             <ul>
-                <% environment.forEach(env => { %>
+                <% for(env_index=0; env_index<4 && env_index < environment.length; env_index++) { %>
                     
-                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= env.env %> </li>
+                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= environment[env_index].env %> </li>
 
-                <% }); %> 
+                <% }; %> 
             </ul>
 
+            <% if (env_index < environment.length) { %>
 
-            <ul>
-                <li id="env5" style="display:none"> </li>
-                <li id="env6" style="display:none"></li>
-                <li id="env7" style="display:none"></li>
-                <li id="env8" style="display:none"></li>
-            </ul>
+                <ul>
+                    <% for(; env_index < environment.length; env_index++) { %>
+                        
+                        <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= environment[env_index].env %> </li>
+    
+                    <% } %>
+                </ul>
+
+            <%  } %> 
+        
+
         </div>
     </div>
 
@@ -112,7 +131,7 @@
                     <div class="part">
 
                         <label for="test1" class="part">
-                            <input type="checkbox" name="ckb" value="<% step_index +1  %> " id="test1"  <% onclick="enable_next_checkbox(step_index)" %> > 
+                            <input  checked="false" enabled="true" type="checkbox" name="ckb" value="<% step_index +1  %> " id="test1" onclick="enable_next_checkbox(<%= step_index %>)"> 
                         </label>
     
                         <div id="text-part">
@@ -137,7 +156,7 @@
 
                 <% }); %> 
 
-                <button type="button" onclick="return_val()">Done!</button>
+                <button type="button" onclick="saveForm()">Save</button>
                 <p id="message"></p>
             </form>
 
