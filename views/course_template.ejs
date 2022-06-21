@@ -53,7 +53,9 @@
             <ul>
                 <% for(tool_index=0; tool_index<4 && tool_index < tools.length; tool_index++) { %>
                     
-                    <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tools[tool_index].tool %> </li>
+                    <li data-modal-target="#modal" id="tool" style="display: block;" onclick="changeModal ( '<%= tool_index %>' )"> 
+                        <%= tools[tool_index].tool %>
+                     </li>
 
                 <% } %>
             </ul>
@@ -63,19 +65,16 @@
                 <ul>
                     <% for(; tool_index < tools.length; tool_index++) { %>
                         
-                        <li data-modal-target="#modal" id="tool1" style="display: block;"> <%= tools[tool_index].tool %> </li>
+                        <li data-modal-target="#modal" id="tool1" style="display: block;" onclick="changeModal ( '<%= tool_index %>' )">
+                             <%= tools[tool_index].tool %> 
+                        </li>
     
                     <% } %>
                 </ul>
 
             <%  } %> 
 
-            <ul>
-                <li data-modal-target="#modal" id="tool5" style="display:none"></li>
-                <li data-modal-target="#modal" id="tool6" style="display:none"></li>
-                <li data-modal-target="#modal" id="tool7" style="display:none"></li>
-                <li data-modal-target="#modal" id="tool8" style="display:none"></li>
-            </ul>
+        
             <!-- THE MODAL FOR EACH TOOL -->
             <div class="modal" id="modal">
                 <div id="modal-text">
@@ -188,6 +187,13 @@
     <!-- FOR THE MODAL BOX -->
     <div id="overlay"></div>
 
-    <script></script>
+    <script>
+        function changeModal(index)
+        {
+            var modal = document.getElementById("modal-text");
+            let courseTools = <%-JSON.stringify(tools)%> ;
+            modal.innerHTML = courseTools[index].tool_modal; 
+        }
+    </script>
   </body>
 </html>

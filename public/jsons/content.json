@@ -100,7 +100,7 @@
             },
             { 
                 "tool": "label maker",
-                "tool-modal": "<h2>What is this tool?</h2> <p> If you particularly want to use a pen try a black Sharpie - ultra fine (larger size nibs are available). These are the pens used by many of my local nurseries - and they are the most fade resistant I've used. The ultra-fine nib allows you to write neatly and put additional info on the label if you want to.</p>"
+                "tool_modal": "<h2>What is this tool?</h2> <p> If you particularly want to use a pen try a black Sharpie - ultra fine (larger size nibs are available). These are the pens used by many of my local nurseries - and they are the most fade resistant I've used. The ultra-fine nib allows you to write neatly and put additional info on the label if you want to.</p>"
             },
             {
                 "tool": " neem oil ",

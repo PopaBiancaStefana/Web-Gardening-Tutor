@@ -118,7 +118,7 @@ const data = await getData("../jsons/content.json");
 // ---------CODE FOR MODAL POPUP--------
 
 
-function change_modal() {
+export function change_modal() {
     window.onclick = e => {
         var course = sessionStorage.getItem("course");
         var modal = document.getElementById("modal-text");
