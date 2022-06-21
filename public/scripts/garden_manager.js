@@ -1,46 +1,10 @@
 var selectedRow = null;
 
-loadTable();
-
-function loadTable() {
-  console.log("Loading table");
-
-  let endpoint = "garden";
-  getData(endpoint);
-}
-
 function deleteFromTable(plant_name) {
   console.log("Deleting from table");
 
   let endpoint = "garden_manager";
   deleteData(plant_name, endpoint);
-}
-function getData(endpoint) {
-  let url = `http://localhost:1234/${endpoint}`;
-  let head = new Headers();
-
-  let req = new Request(url, {
-    method: "GET",
-    headers: head,
-  });
-  fetch(req)
-    .then((res) => res.json())
-    .then((content) => {
-      if ("error" in content) {
-        //incerare esuata
-        console.log(content.error);
-      }
-      if ("data" in content) {
-        console.log("Got table: ", content.data);
-        putInTable(content.data);
-      }
-    });
-}
-
-function putInTable(data) {
-  data.forEach(function (line) {
-    insertNewRecord(line);
-  });
 }
 
 function sendData(data, endpoint) {

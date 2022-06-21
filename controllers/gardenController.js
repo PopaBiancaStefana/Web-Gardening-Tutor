@@ -1,5 +1,8 @@
 const gardenModel = require("../models/gardenModel");
 const checkSession = require("../models/sessionModel").checkSession;
+const { restrictedFile } = require("./staticFileController");
+const ejs = require("ejs");
+const path = require("path");
 
 async function savePlants(data, res) {
     try {
@@ -22,15 +25,24 @@ async function savePlants(data, res) {
 }
 
 async function getPlants(data, res) {
-    try {
-        //get the id of the current user
-        let result = await checkSession(data.headers);
-        id = JSON.parse(result);
 
-        let message = await gardenModel.getGarden(id["user_id"]);
-        console.log("Showing plants from garden.");
-        res.setHeader("Content-type", "application/json");
-        res.end(JSON.stringify({ data: message }));
+    let result = await restrictedFile(data, res);
+
+    if ("error" in result)
+        return;
+
+    let message = await gardenModel.getGarden(result.user_id);
+    console.log(message);
+    console.log("Showing plants from garden.");
+
+    try {
+        ejs.renderFile(path.join(__dirname, "/../views/gardenmanager.ejs"), message, {}, (err, result) => {
+            if (err)
+                throw err;
+
+            res.writeHead(200, { "Content-type": "text/html" });
+            res.end(result);
+        });
     } catch (err) {
         console.log(err);
         res.setHeader("Content-type", "application/json");
