@@ -50,8 +50,7 @@ const server = http.createServer((req, res) => {
                 {
                     let route = null;
                     Object.keys(getRoutes).every((key) => {
-                        if(new RegExp(key).test(urlPath))
-                        {
+                        if (new RegExp(key).test(urlPath)) {
                             route = getRoutes[key];
                             return false; //break
                         }
@@ -79,11 +78,10 @@ const server = http.createServer((req, res) => {
                 }
             case 'post': {
                 let route;
-                if(urlPath in postRoutes)
-                {
+                if (urlPath in postRoutes) {
                     route = postRoutes[urlPath];
                 } else {
-                    route = (data,res) => (console.log('nimic'));
+                    route = (data, res) => (console.log('nimic'));
                 }
                 route(data, res);
                 break;
@@ -121,7 +119,7 @@ const getRoutes = {
     staticFile: fileController.serveFile,
     "^leaderboard$": leaderboardController.gettopUsers,
     "^course_template$": courseController.getProgress,
-    "^garden_manager$": gardenController.getPlants
+    "^gardenmanager$": gardenController.getPlants
 };
 
 

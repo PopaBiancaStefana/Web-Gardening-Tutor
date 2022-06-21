@@ -38,22 +38,20 @@
     </div>
 
     <div class="courses-container">
-
-
-        <div class="box">
-            <div class="course">
-            <h1>Indoor plants</h1>
-            <div class="photo">
-                <img src="images/indoor-flowers.png" alt="" />
-            </div>
-            <button class="btn" onclick='setCourse("indoor_plants")'>
-                Get started
-            </button>
-            </div>
-            <span class="tag-shadow">
-            <span class="tag-easy"> easy </span>
-            </span>
+      <div class="box">
+        <div class="course">
+          <h1>Indoor plants</h1>
+          <div class="photo">
+            <img src="images/indoor-flowers.png" alt="" />
+          </div>
+          <button class="btn" onclick='setCourse("indoor_plants")'>
+            Get started
+          </button>
         </div>
+        <span class="tag-shadow">
+          <span class="tag-easy"> easy </span>
+        </span>
+      </div>
 
       <div class="box">
         <div class="course">
@@ -110,7 +108,7 @@
 
     <script>
       function setCourse(course) {
-        window.location.href = "courses/" +  course;
+        window.location.href = "courses/" + course;
         sessionStorage.setItem("course", course);
       }
     </script>
