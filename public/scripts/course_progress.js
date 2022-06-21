@@ -40,6 +40,7 @@ function getData(course, endpoint) {
 }
 
 function putProgress(progress) {
+  console.log("se ajunge in fuctia de aci" + progress);
   //make the checkboxes definitively checked
   for (var i = 0; i < progress; i++) {
     document.form1.ckb[i].checked = true;
@@ -103,7 +104,6 @@ function sendData(data, endpoint) {
 }
 
 function enable_next_checkbox(j) {
-  console.log('se ajunge in functia asta ' + j);
   if (
     document.form1.ckb[j].checked == true &&
     j < document.form1.ckb.length - 1

@@ -29,6 +29,14 @@ async function saveForm(data, res) {
   }
 }
 
+function toFormalEncoding(string)
+{
+  string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
+  string = string.replace('_', ' ');
+  console.log("sirul intors este " + string);
+  return string;
+}
+
 async function getProgress(data, res) {
   try {
     //get the id of the current user
@@ -37,7 +45,7 @@ async function getProgress(data, res) {
 
     let info = {
       user_id: id["user_id"],
-      course_name: data.headers.course,
+      course_name: toFormalEncoding(data.headers.course),
     };
 
     let prog = await courseModel.getCourseProgress(info);
@@ -82,6 +90,9 @@ async function getCourse(data, res)
 {
     console.log("am ajuns aici " + data.path);
     let course_name =  data.path.split('/')[1];
+    course_name = course_name.charAt(0).toUpperCase() + course_name.slice(1); // capitalize
+    course_name = course_name.replace('_', ' ');
+
     console.log('nume curs' + course_name);
 
 
