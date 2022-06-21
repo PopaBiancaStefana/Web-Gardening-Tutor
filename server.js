@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
         // console.log(data.payload);
 
         switch (method) {
-            case 'get' : 
+            case 'get':
                 {
                     let route = null;
                     Object.keys(getRoutes).every((key) => {
@@ -65,19 +65,19 @@ const server = http.createServer((req, res) => {
                     //     route = getRoutes["staticFile"];
                     // }
 
-                    if(route == null) // daca nu s-a gasit o ruta
+                    if (route == null) // daca nu s-a gasit o ruta
                     {
                         route = fileController.serveFile;
                     }
                     route(data, res);
                     break;
-                    
+
                     // //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
                     // route(data, res);
                     // console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
                     // break;
                 }
-            case 'post':{
+            case 'post': {
                 let route;
                 if(urlPath in postRoutes)
                 {
@@ -120,8 +120,7 @@ const getRoutes = {
     "^courses$": courseController.getCourses,
     "^courses/\\w+$": courseController.getCourse, // path: courses/:course
     staticFile: fileController.serveFile,
-    "^topUsers$": leaderboardController.topUsers,
-    "^leaderboard$": fileController.serveFile,
+    "^leaderboard$": leaderboardController.gettopUsers,
     "^course_template$": courseController.getProgress,
     "^garden$": gardenController.getPlants,
 };
