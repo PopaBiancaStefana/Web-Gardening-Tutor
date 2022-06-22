@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@200;300&family=Poppins:wght@200&family=Quicksand:wght@300&family=Rokkitt:wght@200&family=Source+Code+Pro:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@200;300&family=Poppins:wght@200&family=Quicksand:wght@300&family=Rokkitt:wght@200&family=Source+Code+Pro:wght@300&font-display=swap");
 
 * {
   margin: 0;
@@ -12,11 +12,12 @@ html {
 }
 
 body {
-  background-image: url("../images/pattern_flori.png");
+  background-image: url("../images/pattern_flori.webp");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   font-family: "Quicksand", sans-serif;
+  font-display: swap;
   min-height: 100%;
   background-position: center center;
 }
@@ -136,6 +137,7 @@ main {
   box-shadow: 0 9px #999;
   text-transform: uppercase;
   font-family: "Quicksand", sans-serif;
+  font-display: swap;
   margin-top: 15px;
   margin-left: 10px;
 }
@@ -222,7 +224,7 @@ ul.about-content {
 .about-left {
   background-repeat: no-repeat;
   width: 46rem;
-  background-image: url(../images/handwithplant.png);
+  background-image: url(../images/handwithplant.webp);
 }
 
 .about-right {
@@ -376,7 +378,7 @@ ul.faq-content {
 
 .faq-left {
   flex-basis: 37%;
-  background-image: url(../images/chat.png);
+  background-image: url(../images/chat.webp);
 }
 
 .faq-right {
@@ -410,7 +412,7 @@ ul.faq-content {
 }
 
 #faq-image {
-  background-image: url(../images/chat.png);
+  background-image: url(../images/chat.webp);
   height: 15rem;
   width: 15rem;
   margin: 0rem 1rem;
@@ -519,7 +521,7 @@ footer {
   }
 
   #faq-image {
-    background-image: url(../images/chat.png);
+    background-image: url(../images/chat.webp);
     height: 28rem;
     width: 34rem;
     margin: 0rem 14rem;

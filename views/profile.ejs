@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Your gardener profile.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>My profile</title>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
@@ -17,7 +18,7 @@
         <header class="main-header">
             <div class="header-container">
               <a class="logo" href="home">
-                <img src="images/logo2.png" alt="Logo" />
+                <img src="images/logo2.webp" alt="Logo" />
               </a>
       
               <nav>
@@ -91,10 +92,10 @@
                                 <span>Change Image</span>
                             </label>
 
-                            <% let photo_path = "images/avatar.png"; %> 
+                            <% let photo_path = "images/avatar.webp"; %> 
                             <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png, .jpg, .jpeg">
                             <% if(!(locals.profile_photo)) { %>
-                                <% photo_path = "images/avatar.png" %> 
+                                <% photo_path = "images/avatar.webp" %> 
                             <% } else { %>  
                                 <% photo_path = profile_information.profile_photo %>
                             <% } %> 

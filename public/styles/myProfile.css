@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand&font-display=swap');
 
 * {
     padding: 0;
@@ -9,7 +8,7 @@
 html {
     height: 100%;
    
-    background: url("../images/pattern.png") no-repeat center fixed;     
+    background: url("../images/pattern.webp") no-repeat center fixed;     
     background-size: cover;
 }
 
@@ -44,6 +43,7 @@ body{
     width: 100%;
     cursor: pointer;
     font-family: Quicksand, sans-serif;
+    font-display: swap;
     font-weight: bold;
     font-size: large;
     text-align: center;

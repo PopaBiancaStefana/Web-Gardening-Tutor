@@ -9,7 +9,7 @@
 html {
     height: 100%;
    
-    background: url("../images/pattern_flori.png") no-repeat center fixed;     
+    background: url("../images/pattern_flori.webp") no-repeat center fixed;     
     background-size: cover;
 }
 
@@ -25,6 +25,7 @@ body{
     width: 100%;;
     justify-content: space-around;
     font-family: 'Quicksand', sans-serif;
+    font-display: swap;
     margin: 0;
 
     display: flex;

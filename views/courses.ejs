@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Free various courses for gardening.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses</title>
     <link rel="preload" href="https://fonts.googleapis.com" />
@@ -17,7 +18,7 @@
     <header class="main-header">
         <div class="container">
             <a class="logo" href="home">
-                <img src=" images/logo2.png" alt="Logo" />
+                <img src=" images/logo2.webp" alt="Logo" />
             </a>
 
             <nav>
@@ -40,18 +41,18 @@
             <div class="course" id="Indoor plants">
                 <h1>Indoor plants</h1>
                 <div class="photo">
-                    <img src="images/indoor-flowers.png" alt="" />
+                    <img src="images/indoor-flowers.webp" alt="" />
                     <div class="bookmark" data-text="bookmark">
                         <% var count; %>
                         <% var ok=0; %>
                         <% for ( count=0; count < booked_courses.length; count++) { %>
                             <% if (booked_courses[count].title=="Indoor plants" ) { %>
-                                <img src="images/book1.png" id="star1" alt="bookmarked" />
+                                <img src="images/book1.webp" id="star1" alt="bookmarked" />
                                 <% ok=1; %>
                             <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
-                            <img src="images/book0.png" id="star1" alt="bookmarked" />
+                            <img src="images/book0.webp" id="star1" alt="bookmarked" />
                         <% } %>
                     </div>
                 </div>
@@ -68,18 +69,18 @@
             <div class="course" id="Vegetables">
                 <h1>Vegetables</h1>
                 <div class="photo">
-                    <img src="images/vegetables.png" alt="img" />
+                    <img src="images/vegetables.webp" alt="img" />
                     <div class="bookmark" data-text="bookmark">
                         <% var count; %>
                         <% var ok=0; %>
                         <% for ( count=0; count < booked_courses.length; count++) { %>
                             <% if (booked_courses[count].title=="Vegetables" ) { %>
-                                <img src="images/book1.png" id="star2" alt="bookmarked" />
+                                <img src="images/book1.webp" id="star2" alt="bookmarked" />
                                 <% ok=1; %>
                             <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
-                            <img src="images/book0.png" id="star2" alt="bookmarked" />
+                            <img src="images/book0.webp" id="star2" alt="bookmarked" />
                         <% } %>
                     </div>
                 </div>
@@ -98,18 +99,18 @@
             <div class="course" id="Turf">
                 <h1>Turf</h1>
                 <div class="photo">
-                    <img src="images/lawn.png" alt="flowers" />
+                    <img src="images/lawn.webp" alt="flowers" />
                     <div class="bookmark" data-text="bookmark">
                         <% var count; %>
                         <% var ok=0; %>
                         <% for ( count=0; count < booked_courses.length; count++) { %>
                             <% if (booked_courses[count].title=="Turf" ) { %>
-                                <img src="images/book1.png" id="star3" alt="bookmarked" />
+                                <img src="images/book1.webp" id="star3" alt="bookmarked" />
                                     <% ok=1; %>
                             <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
-                             <img src="images/book0.png" id="star3" alt="bookmarked" />
+                             <img src="images/book0.webp" id="star3" alt="bookmarked" />
                         <% } %>
                     </div>
                 </div>
@@ -125,18 +126,18 @@
             <div class="course" id="Fruit trees">
                 <h1>Fruit trees</h1>
                 <div class="photo">
-                    <img src="images/tree.png" alt="flowers" />
+                    <img src="images/tree.webp" alt="flowers" />
                     <div class="bookmark" data-text="bookmark">
                         <% var count; %>
                         <% var ok=0; %>
                         <% for ( count=0; count < booked_courses.length; count++) { %>
                             <% if (booked_courses[count].title=="Fruit trees" ) { %>
-                                <img src="images/book1.png" id="star4" alt="bookmarked" />
+                                <img src="images/book1.webp" id="star4" alt="bookmarked" />
                                 <% ok=1; %>
                             <% } %>
                         <% } %>
                         <% if ( ok==0 ) { %>
-                            <img src="images/book0.png" id="star4" alt="bookmarked" />
+                            <img src="images/book0.webp" id="star4" alt="bookmarked" />
                         <% } %>
                     </div>
                 </div>
@@ -169,12 +170,12 @@
             if (star.src.split('/').pop() == "book0.png") {
                 //add bookmark to specified course
                 updateBookmark(course, 1);
-                star.src = "images/book1.png";
+                star.src = "images/book1.webp";
             }
             else {
                 //remove bookmark to specified course
                 updateBookmark(course, 0);
-                star.src = "images/book0.png";
+                star.src = "images/book0.webp";
             }
         }
 

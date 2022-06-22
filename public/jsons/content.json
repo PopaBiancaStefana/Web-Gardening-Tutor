@@ -60,15 +60,15 @@
         "step_title": "Step two~ Test and prepare the soil",
         "step_images": [
           {
-            "img_src": "images/turf1.png",
+            "img_src": "images/turf1.webp",
             "img_desc": "Test soil pH"
           },
           {
-            "img_src": "images/turf2.png",
+            "img_src": "images/turf2.webp",
             "img_desc": "Till the soil about 3 inches deep"
           },
           {
-            "img_src": "images/turf3.png",
+            "img_src": "images/turf3.webp",
             "img_desc": "Rake the soil"
           }
         ],
@@ -78,7 +78,7 @@
         "step_title": "Step three ~ Plant the grass seed",
         "step_images": [
           {
-            "img_src": "images/turf4.png",
+            "img_src": "images/turf4.webp",
             "img_desc": "Spread the grass seed in two different directions"
           }
         ],
@@ -134,19 +134,19 @@
         "step_title": "Select a pot that fits your plant",
         "step_images": [
           {
-            "img_src": "images/pot1.png",
+            "img_src": "images/pot1.webp",
             "img_desc": "Cache Pot & Saucer"
           },
           {
-            "img_src": "images/pot2.png",
+            "img_src": "images/pot2.webp",
             "img_desc": "Cache Pot & Pot Liner"
           },
           {
-            "img_src": "images/pot3.png",
+            "img_src": "images/pot3.webp",
             "img_desc": "Repotting in a Pot Liner"
           },
           {
-            "img_src": "images/pot4.png",
+            "img_src": "images/pot4.webp",
             "img_desc": "Hydroculture - The Ultimate Easy-Care Solution"
           }
         ],
@@ -164,7 +164,7 @@
         "step_title": "Ensure that your houseplants get the right amount of light",
         "step_images": [
           {
-            "img_src": "images/light.png",
+            "img_src": "images/light.webp",
             "img_desc": "Spot near the window"
           }
         ],
@@ -233,19 +233,19 @@
         "step_title": "Step 3 ~ Choosing Vegetables",
         "step_images": [
           {
-            "img_src": "images/veggie1.png",
+            "img_src": "images/veggie1.webp",
             "img_desc": "Lettuce"
           },
           {
-            "img_src": "images/veggie2.png",
+            "img_src": "images/veggie2.webp",
             "img_desc": "Green beans"
           },
           {
-            "img_src": "images/veggie3.png",
+            "img_src": "images/veggie3.webp",
             "img_desc": "Zucchini"
           },
           {
-            "img_src": "images/veggie4.png",
+            "img_src": "images/veggie4.webp",
             "img_desc": "Beets"
           }
         ],
@@ -317,15 +317,15 @@
         "step_title": "Step 1 ~ Start Early",
         "step_images": [
           {
-            "img_src": "images/tree2.png",
+            "img_src": "images/tree2.webp",
             "img_desc": ""
           },
           {
-            "img_src": "images/tree3.png",
+            "img_src": "images/tree3.webp",
             "img_desc": ""
           },
           {
-            "img_src": "images/tree4.png",
+            "img_src": "images/tree4.webp",
             "img_desc": ""
           }
         ],
@@ -343,7 +343,7 @@
         "step_title": "Step 4 ~ Set It Up",
         "step_images": [
           {
-            "img_src": "images/tree1.png",
+            "img_src": "images/tree1.webp",
             "img_desc": ""
           }
         ],
