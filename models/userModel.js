@@ -20,7 +20,7 @@ const { userInfo } = require("os");
                 console.log(err);
                 reject(err);
             }
-            //console.log(JSON.stringify(data));
+    
             resolve(data);
         })
     });

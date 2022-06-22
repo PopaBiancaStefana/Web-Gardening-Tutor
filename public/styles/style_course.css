@@ -105,10 +105,10 @@ button:active {
 }
 
 .main-header .container ul li a {
-    padding: 0 20px;
+    padding: 0 15px;
     text-decoration: none;
     color: #FF7C59;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     justify-content: center;
 
@@ -120,11 +120,10 @@ button:active {
 }
 
 .logo img {
-    width: 28vw;
-    height: 13vw;
+    width: 29rem;
+    height: 13rem;
     padding: 5px;
 }
-
 
 /*--------TITLE BANNER----------*/
 
@@ -589,7 +588,7 @@ footer {
 @media only screen and (max-width:800px) {
 
     #course-title h1 {
-        font-size: 55px;
+        font-size: 50px;
     }
 
     .title .text {
@@ -699,49 +698,28 @@ footer {
 }
 
 @media only screen and (max-width:620px) {
-    #course-title {
-        width: 820px;
-    }
-
-    .main-header .container {
-        width: 820px;
-    }
-
-    .title {
-        width: 820px;
-    }
 
     .title .text h1 {
         font-size: 75px;
-    }
-
-    .second-banner {
-        width: 820px;
     }
 
     .second-banner .list ul li {
         font-size: 28px;
     }
 
-    .third-banner {
-        width: 820px;
-    }
-
     .third-banner .list ul li {
         font-size: 28px;
-    }
-
-    .content {
-        width: 820px;
     }
 
     .right p {
         font-size: 22px;
     }
 
-    footer {
-        width: 820px;
+    #course-title {
+        /* background-repeat: repeat; */
+        background-size:cover;
     }
+
 }
 
 @media only screen and (max-width:460px) {
@@ -751,23 +729,21 @@ footer {
     }
 
     form {
-        width: 660px;
         float: left;
+
     }
 
-    .right {
+    #right {
         width: 100%;
 
     }
 }
 
 @media only screen and (max-width:460px) and (min-width:360px) {
-    #course-title {
-        width: 660px;
-    }
+
 
     .main-header .container {
-        width: 660px;
+
         height: auto;
     }
 
@@ -786,12 +762,11 @@ footer {
     }
 
     .main-header .container ul li a {
-        font-size: 27px;
-        padding-left: 30px;
+        padding: 0 13px;
     }
 
+
     .title {
-        width: 660px;
         background-size: 150%;
         background-position-x: center;
     }
@@ -808,19 +783,19 @@ footer {
         font-size: 27px;
     }
 
-    .second-banner {
-        width: 660px;
-    }
-
     .second-banner .image {
         height: auto;
         width: fit-content;
         flex-direction: row-reverse;
+
         padding-bottom: 20px;
     }
 
     .second-banner .image h {
-        font-size: 40px;
+        font-size: 30px;
+    }
+
+    #banner2-title {
         padding-top: 15px;
     }
 
@@ -834,29 +809,27 @@ footer {
     }
 
     .second-banner .list ul li {
-        font-size: 30px;
+        font-size: 20px;
     }
 
-    .third-banner {
-        width: 660px;
-    }
 
     .third-banner .image {
         height: auto;
         width: fit-content;
         flex-direction: row-reverse;
         padding-bottom: 20px;
+        margin-left: 0;
     }
 
     .third-banner .image h {
-        font-size: 40px;
-        padding-top: 15px;
-        padding-left: 10px;
+        font-size: 30px;
     }
 
     .third-banner .image img {
         width: 80px;
         height: 80px;
+        padding-right: 20px;
+
     }
 
     .third-banner .list {
@@ -864,163 +837,22 @@ footer {
     }
 
     .third-banner .list ul li {
-        font-size: 30px;
-    }
-
-    .content {
-        width: 660px;
-    }
-
-    .right {
-        width: 660px;
+        font-size: 20px;
     }
 
     .right h2 {
-        font-size: 35px;
-    }
-
-    .right p {
         font-size: 25px;
     }
 
-    footer {
-        width: 660px;
-    }
-}
-
-
-
-@media only screen and (max-width:360px) {
-    #course-title {
-        width: 600px;
-    }
-
-    .main-header .container {
-        width: 600px;
-        height: auto;
-    }
-
-    .main-header .container .logo img {
-        width: 86%;
-        margin-left: 40px;
-    }
-
-    .main-header .container ul {
-        margin-bottom: 15px;
-    }
-
-    .main-header .container ul li a {
-        font-size: 27px;
-        padding-left: 35px;
-    }
-
-    .title {
-        width: 600px;
-        background-size: 150%;
-        background-position-x: center;
-    }
-
-    .title .text {
-        padding-top: 18%;
-    }
-
-    .title .text h1 {
-        font-size: 60px;
-    }
-
-    .title .text ul li {
-        font-size: 27px;
-    }
-
-    .second-banner {
-        width: 600px;
-    }
-
-    .second-banner .image {
-        height: auto;
-        width: fit-content;
-        flex-direction: row-reverse;
-        padding-bottom: 20px;
-    }
-
-    .second-banner .image h {
-        font-size: 40px;
-        padding-top: 15px;
-    }
-
-    .second-banner .image img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .second-banner .list {
-        height: auto;
-    }
-
-    .second-banner .list ul li {
-        font-size: 30px;
-    }
-
-    .third-banner {
-        width: 600px;
-    }
-
-    .third-banner .image {
-        height: auto;
-        width: fit-content;
-        flex-direction: row-reverse;
-        padding-bottom: 20px;
-    }
-
-    .third-banner .image h {
-        font-size: 40px;
-        padding-top: 15px;
-        padding-left: 10px;
-    }
-
-    .third-banner .image img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .third-banner .list {
-        height: auto;
-    }
-
-    .third-banner .list ul li {
-        font-size: 30px;
-    }
-
-
-    .content {
-        width: 600px;
-    }
-
-    form {
-        width: 600px;
+    .right p {
+        font-size: 20px;
     }
 
     .main .part p {
+        font-size: 20px;
+    }
+
+    .main .part h2 {
         font-size: 30px;
-    }
-
-    .main .part .photos .gallery {
-        margin-left: 10px;
-    }
-
-    .right {
-        width: 600px;
-    }
-
-    .right h2 {
-        font-size: 40px;
-    }
-
-    .right p {
-        font-size: 30px;
-    }
-
-    footer {
-        width: 600px;
     }
 }

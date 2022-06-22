@@ -88,7 +88,6 @@ async function getCourses(data, res) {
 
 async function getCourse(data, res)
 {
-    console.log("am ajuns aici " + data.path);
     let course_name =  data.path.split('/')[1];
     course_name = course_name.charAt(0).toUpperCase() + course_name.slice(1); // capitalize
     course_name = course_name.replace('_', ' ');
@@ -96,7 +95,6 @@ async function getCourse(data, res)
     console.log('nume curs' + course_name);
 
 
-    //todo
     let course = await courseModel.getCourseByName(course_name);
     console.log("am primit cursul " + course);
     if("error" in course)
