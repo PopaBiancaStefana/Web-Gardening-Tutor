@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentație</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
     <style>
@@ -91,10 +92,14 @@
 
         #image1{
             width: 70rem;
-            height: 35rem;
+            height: 30rem;
         }
         #image2{
             width: 55rem;
+            height: 40rem;
+        }
+        #image3{
+            width: 60rem;
             height: 40rem;
         }
     </style>
@@ -106,9 +111,9 @@
     <div class="content">
         <h2>Autori</h2>
         <ul>
-            <li>Muntean Iulian</li>
-            <li>Godovaniuc Victoria</li>
-            <li>Popa Bianca</li>
+            <li>Muntean Iulian (40%)</li>
+            <li>Godovaniuc Victoria (30%)</li>
+            <li>Popa Bianca (30%)</li>
         </ul>
 
         <h2>Cuprins</h2>
@@ -211,8 +216,7 @@
                     grădinărit o serie de cursuri, de diferite dificultăți și categorii, cu ajutorul cărora utilizatorii 
                     vor învăța pas cu pas modul în care se crește și îngrijește corect o anumită plantă. 
                     Aceștia vor primi indicații în legătură cu ustensilele necesare, timpul de
-                    parcurgere al cursului, sfaturi utile și, de asemenea, vor primi notificări cu privire la 
-                    activitățile pe care trebuie să le întreprindă pentru buna dezvoltare a plantei.
+                    parcurgere al cursului și sfaturi utile.
                 </p>
             </section>
         </section>
@@ -241,7 +245,6 @@
                     <li>Adăugarea unor anumite plante și informații legate de acestea în tabelul din secțiunea de
                         management a grădinii </li>
                     <li>Vizualizarea realizărilor utilizatorului și a topului celor mai sârguincioși utilizatori</li>
-                    <li>Primirea de notificări în vederea întreținerii plantelor gestionate de utilizator</li>
                 </ul>
 
                 </p>
@@ -262,8 +265,6 @@
                     A doua categorie reprezintă utilizatorul activ, ce și-a creat un cont și are acces la conținutul
                     cursurilor și posibilitatea de a le parcurge, evoluția sa, informațiile profilului său și pagina dedicată
                     managementului grădinii.
-                    De asemenea, va primi notificări legate de întreținerea plantelor ( data limită pentru o anumită
-                    acțiune asupra unei plante), în funcție de informațiile adăugate de acesta în tabelul de plante.
                 </p>
             </section>
 
@@ -304,8 +305,7 @@
                 <h2>2.7 Premise și dependențe</h2>
                 <p>
                     Proiectul prezintă dependențe față de factori externi, de exemplu alte componente software.
-                    Aplicația oferă la dispoziție un mediu de gestionare al plantelor și un sistem de notificare,
-                    rămânând la discreția clientului utilizarea și respectarea acestuia.
+                    Aplicația oferă la dispoziție un mediu de gestionare al plantelor.
                 </p>
             </section>
         </section>
@@ -508,8 +508,6 @@
                     <p>
                         Utilizatorii au posibilitatea de a-și monitoriza fiecare plantă, introducând-o, apoi modificând-o în formularul aflat pe pagina "Garden Manager".
                         De asemenea, aceștia pot șterge o plantă din tabel în cazul în care nu mai doresc monitorizarea acesteia.
-                        Utilizatorii vor fi notificați prin e-mail cu privire la deadline-ul pentru următoarea activitate asupra unei plante 
-                        cu 2 sau 3 zile înainte. 
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
@@ -604,12 +602,32 @@
         <section id="structura">
             <h1>6. Structura proiectului</h1>
             <ul>
-                <li>html</li>
-                <li>styles</li>
-                <li>scripts</li>
-                <li>images</li>
-                <li>diagrams</li>
-                <li>fonts</li>
+                <li>controllers</li>
+                <li>models</li>
+                <li>node_modules</li>
+                <li>public
+                    <ul>
+                        <li>database</li>
+                        <li>diagrams</li>
+                        <li>fonts</li>
+                        <li>images</li>
+                        <li>jsons</li>
+                        <li>scripts</li>
+                        <li>styles</li>
+                        <li>course_template.html</li>
+                        <li>courses.html</li>
+                        <li>documentatie.html</li>
+                        <li>gardenmanager.html</li>
+                        <li>home.html</li>
+                        <li>leaderboard.html</li>
+                        <li>login.html</li>
+                        <li>profile.html</li>
+                        <li>register.html</li>
+                    </ul>
+                </li>
+                <li>views</li>
+                <li>database.js</li>
+                <li>server.js</li>
             </ul>
         </section>
 
@@ -627,6 +645,8 @@
             <img id="image1" src="diagrams/web.png" alt="Diagramă pentru structura și interacțiunea dintre pagini">
             <h2>8.2 Arhitectura aplicației</h2>
             <img id="image2" src="diagrams/arhitectura.png" alt="Diagramă pentru arhitectura aplicației">
+            <h2>8.3 Diagrama bazei de date</h2>
+            <img id="image3" src="database/Web_Gardening_Tutor.png" alt="Diagrama bazei de date">
         </section>
     </div>
 </body>

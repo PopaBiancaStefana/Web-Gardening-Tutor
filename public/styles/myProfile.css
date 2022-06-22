@@ -34,7 +34,7 @@ body{
     flex:1;
 }
 
-.content-container{
+#content-container{
     flex: 3;
 }
 
@@ -70,13 +70,13 @@ body{
     background-color: white;
 }
 
-.content-container{
+#content-container{
     background-color: powderblue;
     border-radius: 0px 50px 50px 50px;
 }
 
 
-.content-container{
+#content-container{
     padding: 30px;
 }
 
@@ -151,6 +151,14 @@ body{
   }
 
 /*  */
+
+#save-button{
+    z-index: 100;
+    position: absolute;
+    top: 400px;
+    right: 80px;
+}
+
 .profile-info {
     display: flex;
     flex-direction: column;
@@ -174,7 +182,22 @@ body{
 .profile-details-label{
     font-weight: bold;
     margin-top: 5px;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: powderblue;
+    border-width: 0;
+    color: #205565;
+    font-family: 'Quicksand', sans-serif;
 }
+
+
+.profile-details-label:hover, .profile-details-label:focus{
+    background-color: rgb(168, 217, 207);
+}
+
+
 .profile-details-label::after
 {
     content: ":";
@@ -277,7 +300,7 @@ body{
     transition: .2s ease-in-out;
 }
 
-.course-button, #logout-button {
+.course-button, #logout-button, #save-button {
     background-color: #ffffff;
     border-radius: 6px;
     border-width: 0;
@@ -305,16 +328,16 @@ body{
     font-weight: 600;
 }
 
-.course-button:focus, #logout-button:focus {
+.course-button:focus, #logout-button:focus, #save-button:focus {
     box-shadow: #fbe4ce 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0         -3px 0 inset;
 }
 
-.course-button:hover, #logout-button:hover {
+.course-button:hover, #logout-button:hover, #save-button:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -5px 0 inset;
     transform: translateY(-2px);
 }
 
-.course-button:active, #logout-button:active {
+.course-button:active, #logout-button:active, #save-button:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
 }
@@ -331,6 +354,7 @@ body{
     height: inherit;
     border-radius: inherit;
 }
+
 
 
 footer {
@@ -391,7 +415,7 @@ footer {
         border-radius: 0px;
     }
 
-    .content-container {
+    #content-container {
         border-radius: 50px;
         padding: 10px;
         margin: 0px 5px;

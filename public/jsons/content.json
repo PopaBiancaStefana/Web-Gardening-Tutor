@@ -1,397 +1,404 @@
 {
-    "Turf": {
-        "title": "Turf",
-        "difficulty":"medium",
-        "tools": [
-            {
-                "tool": "sod cutter",
-                "tool_modal": " <h2>What is this tool?</h2> <p> Sod cutters, a sod remover tool, remove the grass and a thin layer of dirt underneath so that when you go to lay the new sod, it is flat and even with other parts of your lawn.</p>"
-            },
-            
-            {
-                "tool": "seed spreader",
-                "tool_modal": "<h2>What is this tool?</h2><p>Drop spreaders are very accurate as they distribute even rows of fertilizer and grass seed exactly where you want it. It’s important that you overlap wheel marks to ensure the entire lawn has been covered. </p>"
-            },
+  "Turf": {
+    "title": "Turf",
+    "difficulty": "medium",
+    "tools": [
+      {
+        "tool": "sod cutter",
+        "tool_modal": " <h2>What is this tool?</h2> <p> Sod cutters, a sod remover tool, remove the grass and a thin layer of dirt underneath so that when you go to lay the new sod, it is flat and even with other parts of your lawn.</p>"
+      },
 
-            {
-                "tool": "rake",
-                "tool_modal": "<h2>What is this tool?</h2><p>A rake  is a broom for outside use; a horticultural implement consisting of a toothed bar fixed transversely to a handle, or tines fixed to a handle, and used to collect leaves, hay, grass, etc., and in gardening, for loosening the soil, light weeding and levelling, removing dead grass from lawns, and generally for purposes performed in agriculture by the harrow.</p>"
-            },
-            {
-                "tool": "automatic sprinklers",
-                "tool_modal": "<h2>What is this tool?</h2><p>An automatic sprinkler is a fire-suppression or fire-control device with a heat-activated element. The sprinkler operates automatically when the air temperature rises to or above the device's specified temperature rating. When that happens, the sprinkler discharges water over a specified area.</p>"
-            }
+      {
+        "tool": "seed spreader",
+        "tool_modal": "<h2>What is this tool?</h2><p>Drop spreaders are very accurate as they distribute even rows of fertilizer and grass seed exactly where you want it. It’s important that you overlap wheel marks to ensure the entire lawn has been covered. </p>"
+      },
+
+      {
+        "tool": "rake",
+        "tool_modal": "<h2>What is this tool?</h2><p>A rake  is a broom for outside use; a horticultural implement consisting of a toothed bar fixed transversely to a handle, or tines fixed to a handle, and used to collect leaves, hay, grass, etc., and in gardening, for loosening the soil, light weeding and levelling, removing dead grass from lawns, and generally for purposes performed in agriculture by the harrow.</p>"
+      },
+      {
+        "tool": "automatic sprinklers",
+        "tool_modal": "<h2>What is this tool?</h2><p>An automatic sprinkler is a fire-suppression or fire-control device with a heat-activated element. The sprinkler operates automatically when the air temperature rises to or above the device's specified temperature rating. When that happens, the sprinkler discharges water over a specified area.</p>"
+      }
+    ],
+    "environment": [
+      { "env": "spring- warm season grass" },
+      { "env": "fall-cool season grass" },
+      { "env": "balanced soil pH" },
+      { "env": "balanced salt level" }
+    ],
+    "tips": [
+      {
+        "tip": "When shopping for your grass seed, you’ll notice that some bags contain seed blends and seed mixes. But what’s the difference? <br> A seed blend is a combination of two or more cultivars of the same grass species. <br> A seed mix is a combination of different grass species."
+      },
+      {
+        "tip": "Do not apply pre-emergent weed control during planting, as it will harm grass seed germination."
+      },
+      {
+        "tip": "On average, a bag of grass seed costs between $1.35 and $7.04 per pound. A 20-pound bag of grass seed ranges between $27 and $141, depending on the grass type."
+      },
+      {
+        "tip": "Throwing grass seeds on hard, unworked soil puts the seeds at risk of the rain washing them away. "
+      },
+      {
+        "tip": " Check to see if a pest or disease is attacking your lawn before you overseed. Otherwise, you might be prolonging a severe issue."
+      },
+      {
+        "tip": "Using a spreader can make the job go by a little faster, especially when seeding over large areas. It also ensures you spread the seed evenly and don’t miss any spots."
+      },
+      {
+        "tip": "Not every grass type has the same water demands. Some grass species need more water than others to survive. Before planting your grass seed, it’s a good idea to research the grass type and discover its water needs. "
+      }
+    ],
+    "steps": [
+      {
+        "step_title": "Step one ~ Select the best grass seed for your lawn",
+        "step_text": " <p> Choose grass with a good temperature tolerance. If you’re opting for cool-season turf, pick a cultivar that has a high heat tolerance. If you want warm-season grass, find one that will tolerate the cold better than other warm-season grasses. </p> <p> Common warm- and cool-season lawn grasses that grow well in the Transition Zone include: Tall fescue, Perennial ryegrass, Kentucky bluegrass, Bermudagrass, Zoysiagrass. </p><p> Do you use your lawn for cookouts and family badminton tournaments? Then you’ll likely want grass with a high foot-traffic tolerance. Live in an area where water is scarce? Consider a grass type that can withstand drought or doesn’t need lots of water to survive. Other factors to consider include pests, diseases, shade, heat, and cold tolerance. </p><p>Planting two or more grass types helps make up for any low tolerances one grass type might have.</p> "
+      },
+      {
+        "step_title": "Step two~ Test and prepare the soil",
+        "step_images": [
+          {
+            "img_src": "images/turf1.png",
+            "img_desc": "Test soil pH"
+          },
+          {
+            "img_src": "images/turf2.png",
+            "img_desc": "Till the soil about 3 inches deep"
+          },
+          {
+            "img_src": "images/turf3.png",
+            "img_desc": "Rake the soil"
+          }
         ],
-        "environment": [
-            {"env": "spring- warm season grass"},
-            {"env": "fall-cool season grass"},
-            {"env": "balanced soil pH"},
-            {"env": "balanced salt level"}
+        "step_text": "<p>Testing your soil isn’t required for planting grass, but it’s a good idea if you want your seeds to grow into a healthy lawn. When nutrients, soil pH, and salt levels are imbalanced, your grass will have difficulty thriving. </p><p>While you may be eager to seed your lawn, it must be the right time of year. Spring is the best time of year to plant warm-season grasses, and fall is the best time to plant cool-season grasses. You should always plant grass seed during your grass’s peak growing season.</p><p>Remove all debris from the lawn, including leaves, sticks, rocks, and old grass –– yes, even old grass! Then, once you’ve removed all the debris and grass, you’ll need to till the soil about 3 inches deep. </p><p>Rent or buy a sod cutter. A sod cutter is similar to a lawn mower, only it cuts the grass all the way down to its roots and completely removes the turf. </p><p>Laying plastic or newspaper over the lawn is another effective way to kill the grass. The lack of sunlight and the buildup of heat will eventually destroy the turf.</p><p>Soil aeration helps relieve soil compaction. As the soil becomes more compacted, less oxygen can reach the roots and vital organisms living in the ground. <p/>"
+      },
+      {
+        "step_title": "Step three ~ Plant the grass seed",
+        "step_images": [
+          {
+            "img_src": "images/turf4.png",
+            "img_desc": "Spread the grass seed in two different directions"
+          }
         ],
-        "tips": [
-            {"tip": "When shopping for your grass seed, you’ll notice that some bags contain seed blends and seed mixes. But what’s the difference? <br> A seed blend is a combination of two or more cultivars of the same grass species. <br> A seed mix is a combination of different grass species."},
-            {"tip": "Do not apply pre-emergent weed control during planting, as it will harm grass seed germination."},
-            {"tip": "On average, a bag of grass seed costs between $1.35 and $7.04 per pound. A 20-pound bag of grass seed ranges between $27 and $141, depending on the grass type."},
-            {"tip": "Throwing grass seeds on hard, unworked soil puts the seeds at risk of the rain washing them away. "},
-            {"tip": " Check to see if a pest or disease is attacking your lawn before you overseed. Otherwise, you might be prolonging a severe issue."},
-            {"tip": "Using a spreader can make the job go by a little faster, especially when seeding over large areas. It also ensures you spread the seed evenly and don’t miss any spots."},
-            {"tip": "Not every grass type has the same water demands. Some grass species need more water than others to survive. Before planting your grass seed, it’s a good idea to research the grass type and discover its water needs. "}
+        "step_text": "<p>Once your soil is ready, it’s time to spread the grass seed over the yard. </p> <p>For best results, spread the grass seed in two different directions. If you go east to west for the first layer, go north to south for the second layer. Spreading the grass seed in both directions ensures you cover the entire area.</p><p>There are four standard methods to spreading grass seed: spread the grass by hand, push a wheeled seed spreader, hand-crank a handheld seed spreader, mount a seed spreader to your chest</p><p>Lightly rake the lawn with a garden rake to cover the seeds with a bit of soil. </p><p>Apply a thin layer of straw over your grass seed to protect it from wind and rain. Keep in mind that straw may contain some weed seeds. </p>"
+      },
+      {
+        "step_title": "Step four ~  Water the lawn",
+        "step_text": "<p>The seeds might be tucked away in their cozy seedbeds, but that doesn’t mean your job is over. Your grass seedlings need a lot of attention if they’re going to grow to be big, green, and strong.</p><p>Once you’ve planted your seeds, you’ll need to sprinkle them with water one to three times a day. The number of times you water them per day will vary depending on your soil type, how hot it is outside, and the weather.</p> <p>Don’t let the top ½ inch of soil go dry. The key is to keep the soil moist but not soggy. You don’t want to see puddles forming on your lawn. Too much water might wash away or drown your seeds. But too little water also could kill them. Once they go dry, they die. </p><p>When the grass is fully established, you’ll want to water your grass infrequently but for long periods. This watering schedule encourages root growth by forcing the roots to expand and search for more water. If you water too frequently for short periods, the roots will have little reason to scout for nearby water.</p>"
+      },
+      {
+        "step_title": "Step five ~  The first mow",
+        "step_text": "<p>You’ll need to be patient before mowing the grass. New grass takes time to grow. Depending on your grass type, the turf needs to reach a minimum height before you can cut it. This minimum height varies among grass species, but it’s safe to cut most grasses when they reach 2 to 3 inches tall. </p><p>According to the Division of Agriculture and Natural Resources at the University of California, it can take up to two months before a seeded lawn is ready to be mowed. </p><p>Remember not to let the seeded area get too dry, and do your best to avoid walking on the grass for at least 30 days.  </p><p>In a few short weeks, tiny sprouts will shoot up from the soil. And if you did everything else right, your new green lawn should give your home the curb appeal boost it deserves.</p>"
+      }
+    ]
+  },
+
+  "Indoor plants": {
+    "title": "Indoor plants",
+    "difficulty": "easy",
+    "tools": [
+      {
+        "tool": " indoor pots",
+        "tool_modal": "<h2>What is this tool?</h2><p>Indoor pots will generally not have a drainage hole, with the plant generally kept in its plastic pot using the decorative or 'cache' pot as the saucer.</p>"
+      },
+      {
+        "tool": "soil knife",
+        "tool_modal": "<h2>What is this tool?</h2> <p>It is an invaluable tool for weeding, transplanting, cutting sod, and dividing plants. Some garden knives have a ruler etched into the steel that is useful for measuring depths when planting bulbs or seeds. The tip of the blade is great for drawing lines into the soil for planting gauges.</p>"
+      },
+      {
+        "tool": "hand trowel",
+        "tool_modal": "<h2>What is this tool?</h2> <p> A trowel is a small hand tool used for digging, applying, smoothing, or moving small amounts of viscous or particulate material.</p>"
+      },
+      {
+        "tool": "label maker",
+        "tool_modal": "<h2>What is this tool?</h2> <p> If you particularly want to use a pen try a black Sharpie - ultra fine (larger size nibs are available). These are the pens used by many of my local nurseries - and they are the most fade resistant I've used. The ultra-fine nib allows you to write neatly and put additional info on the label if you want to.</p>"
+      },
+      {
+        "tool": " neem oil ",
+        "tool_modal": "<h2>What is this tool?</h2> <p>Neem oil kills a wide variety of insects, including aphids, mealybugs, whiteflies, Japanese beetles, leafhoppers, thrips, fungus gnats, and other garden pests like spider mites and nematodes. Neem oil can also kill fungal diseases like powdery mildew, black spot, scab, anthracnose, and leaf spot.</p>"
+      }
+    ],
+    "environment": [{ "env": "any season" }, { "env": "opening to light" }],
+    "tips": [
+      {
+        "tip": "To achieve sustained, healthy indoor plant growth, regularly replenish the nutrients in the potting soil. In general, fertilize your houseplants once a month when they're growing or flowering."
+      },
+      {
+        "tip": "You can take the plant out of the decorative pot to water and drain in a sink before replacing or water in the decorative pot. The saucer will catch excess water which you may need to empty."
+      }
+    ],
+    "steps": [
+      {
+        "step_title": "Select a pot that fits your plant",
+        "step_images": [
+          {
+            "img_src": "images/pot1.png",
+            "img_desc": "Cache Pot & Saucer"
+          },
+          {
+            "img_src": "images/pot2.png",
+            "img_desc": "Cache Pot & Pot Liner"
+          },
+          {
+            "img_src": "images/pot3.png",
+            "img_desc": "Repotting in a Pot Liner"
+          },
+          {
+            "img_src": "images/pot4.png",
+            "img_desc": "Hydroculture - The Ultimate Easy-Care Solution"
+          }
         ],
-        "steps": [
-            {
-                "step_title": "Step one ~ Select the best grass seed for your lawn",
-                "step_text": " <p> Choose grass with a good temperature tolerance. If you’re opting for cool-season turf, pick a cultivar that has a high heat tolerance. If you want warm-season grass, find one that will tolerate the cold better than other warm-season grasses. </p> <p> Common warm- and cool-season lawn grasses that grow well in the Transition Zone include: Tall fescue, Perennial ryegrass, Kentucky bluegrass, Bermudagrass, Zoysiagrass. </p><p> Do you use your lawn for cookouts and family badminton tournaments? Then you’ll likely want grass with a high foot-traffic tolerance. Live in an area where water is scarce? Consider a grass type that can withstand drought or doesn’t need lots of water to survive. Other factors to consider include pests, diseases, shade, heat, and cold tolerance. </p><p>Planting two or more grass types helps make up for any low tolerances one grass type might have.</p> "
-            },
-            {
-                "step_title": "Step two~ Test and prepare the soil",
-                "step_images": [
-                    {
-                        "img_src": "images/turf1.png",
-                        "img_desc": "Test soil pH"
-                    },
-                    {
-                        "img_src": "images/turf2.png",
-                        "img_desc": "Till the soil about 3 inches deep"
-                    },
-                    {
-                        "img_src": "images/turf3.png",
-                        "img_desc": "Rake the soil"
-                    }
-                ],
-                "step_text": "<p>Testing your soil isn’t required for planting grass, but it’s a good idea if you want your seeds to grow into a healthy lawn. When nutrients, soil pH, and salt levels are imbalanced, your grass will have difficulty thriving. </p><p>While you may be eager to seed your lawn, it must be the right time of year. Spring is the best time of year to plant warm-season grasses, and fall is the best time to plant cool-season grasses. You should always plant grass seed during your grass’s peak growing season.</p><p>Remove all debris from the lawn, including leaves, sticks, rocks, and old grass –– yes, even old grass! Then, once you’ve removed all the debris and grass, you’ll need to till the soil about 3 inches deep. </p><p>Rent or buy a sod cutter. A sod cutter is similar to a lawn mower, only it cuts the grass all the way down to its roots and completely removes the turf. </p><p>Laying plastic or newspaper over the lawn is another effective way to kill the grass. The lack of sunlight and the buildup of heat will eventually destroy the turf.</p><p>Soil aeration helps relieve soil compaction. As the soil becomes more compacted, less oxygen can reach the roots and vital organisms living in the ground. <p/>"
-            },
-            {
-                "step_title": "Step three ~ Plant the grass seed",
-                "step_images": [
-                    {
-                    "img_src": "images/turf4.png",
-                    "img_desc": "Spread the grass seed in two different directions"
-                    }
-                ],
-                "step_text": "<p>Once your soil is ready, it’s time to spread the grass seed over the yard. </p> <p>For best results, spread the grass seed in two different directions. If you go east to west for the first layer, go north to south for the second layer. Spreading the grass seed in both directions ensures you cover the entire area.</p><p>There are four standard methods to spreading grass seed: spread the grass by hand, push a wheeled seed spreader, hand-crank a handheld seed spreader, mount a seed spreader to your chest</p><p>Lightly rake the lawn with a garden rake to cover the seeds with a bit of soil. </p><p>Apply a thin layer of straw over your grass seed to protect it from wind and rain. Keep in mind that straw may contain some weed seeds. </p>"
-            },
-            {
-                "step_title": "Step four ~  Water the lawn",
-                "step_text": "<p>The seeds might be tucked away in their cozy seedbeds, but that doesn’t mean your job is over. Your grass seedlings need a lot of attention if they’re going to grow to be big, green, and strong.</p><p>Once you’ve planted your seeds, you’ll need to sprinkle them with water one to three times a day. The number of times you water them per day will vary depending on your soil type, how hot it is outside, and the weather.</p> <p>Don’t let the top ½ inch of soil go dry. The key is to keep the soil moist but not soggy. You don’t want to see puddles forming on your lawn. Too much water might wash away or drown your seeds. But too little water also could kill them. Once they go dry, they die. </p><p>When the grass is fully established, you’ll want to water your grass infrequently but for long periods. This watering schedule encourages root growth by forcing the roots to expand and search for more water. If you water too frequently for short periods, the roots will have little reason to scout for nearby water.</p>"
-            },
-            {
-                "step_title": "Step five ~  The first mow",   
-                "step_text": "<p>You’ll need to be patient before mowing the grass. New grass takes time to grow. Depending on your grass type, the turf needs to reach a minimum height before you can cut it. This minimum height varies among grass species, but it’s safe to cut most grasses when they reach 2 to 3 inches tall. </p><p>According to the Division of Agriculture and Natural Resources at the University of California, it can take up to two months before a seeded lawn is ready to be mowed. </p><p>Remember not to let the seeded area get too dry, and do your best to avoid walking on the grass for at least 30 days.  </p><p>In a few short weeks, tiny sprouts will shoot up from the soil. And if you did everything else right, your new green lawn should give your home the curb appeal boost it deserves.</p>"
-            }
-        ]
+        "step_text": "<p>When choosing a pot, make sure to consider its material, size, and drainage capability. Use a pot that’s proportional to your plant's current size—not more than a few inches wider in diameter than your plant’s root mass. Once the plant outgrows its home, you can transplant it into a larger pot. If you instead start a plant in a larger pot than necessary, its roots won't be able to absorb moisture fast enough as it drains through the soil. Plastic pots are lightweight, making them ideal for use in hanging baskets or on wall shelves. Terra cotta pots are heavier, and their porous nature means they don’t hold water as well as plastic pots. Make sure your pot has a drainage hole at the bottom.</p>"
+      },
+      {
+        "step_title": "Learn to recognize when houseplants need water",
+        "step_text": "<p>In general, you should be more concerned with over-watering than under-watering; most houseplants are better off slightly dry than sopping wet. The goal is to provide your plants with enough water to keep the soil moist but not soggy (with succulents being a notable exception to this rule—they require periodic soakings). Pour water slowly into the potting soil until it trickles out from the drainage holes in the bottom of the pot. Most plants only need to be watered once or twice a week, and less during the winter months. An easy way to check if your plant needs a drink is to stick your finger two inches deep into the soil. If it feels dry, then it's most likely time to water.</p>"
+      },
+      {
+        "step_title": "Be aware of temperature, humidity, and ventilation",
+        "step_text": "<p>Most houseplants thrive in temperatures between 65 and 75°F during the day and about 10 degrees cooler at night. In general, houseplants require a level of humidity similar to that of their natural growing conditions. Air plants (of the genus Tillandsia) take in all their water from the air and thus require regular misting with a spray bottle. For other houseplants, condensation that stays on leaves too long can be harmful, which is why proper airflow is crucial for healthy plants. Placing a fan near your houseplants to circulate air can evaporate excess moisture and prevent dust buildup on leaves.</p>"
+      },
+      {
+        "step_title": "Ensure that your houseplants get the right amount of light",
+        "step_images": [
+          {
+            "img_src": "images/light.png",
+            "img_desc": "Spot near the window"
+          }
+        ],
+        "step_text": "<p>All plants need light energy for photosynthesis, but different houseplants require different amounts of light. With the exception of desert cacti and other succulents, most houseplants need indirect light rather than direct light. Houseplants that thrive in indirect light grow well near west-facing windows or—for plants that require bright light but not direct sun—a few feet back from south-facing windows. Plants that survive in especially shady, low-light conditions and flourish indoors include ZZ plant, snake plant, pothos, and philodendron; these plants can grow in north and east-facing windows.</p><p> Some houseplants require artificial light to grow indoors, especially during the winter months and in certain regions where there are fewer hours of light. Normal household light bulbs are not effective in providing light to houseplants, so you'll need to purchase fluorescent or LED grow lights, which have full-spectrum bulbs that provide a balance of cool and warm light to mimic the natural solar spectrum.</p>"
+      },
+      {
+        "step_title": " Use the right potting soil",
+        "step_text": "<p> A high-quality potting soil will help plant roots grow by providing the ideal balance of nutrition, aeration, and water absorption. Potting soil mixes typically include peat moss, shredded pine bark, perlite, and vermiculite. Garden centers sell generic potting soils, but whenever possible you should choose a potting soil specific to your houseplant. For example, orchids and bromeliads require fast-draining soil, but succulents grow best in porous, sandy soils</p>"
+      }
+    ]
+  },
+  "Vegetables": {
+    "title": "Vegetables",
+    "difficulty": "easy",
+    "tools": [
+      {
+        "tool": "watering wand ",
+        "tool_modal": "<h2>What is this tool?</h2><p> Give your plants a gentle rain shower with a water-breaking wand. The extended reach is also helpful to get to out-of-the-way containers, hanging plants, or the back edges of borders. Watering wands come in a variety of lengths, from 10 to 48 inches.</p>"
+      },
+      {
+        "tool": "garden fork",
+        "tool_modal": "<h2>What is this tool?</h2><p>An efficient tool for turning soil, garden forks can dig into dense soil better than a spade.</p>"
+      },
+      {
+        "tool": "spade",
+        "tool_modal": "<h2>What is this tool?</h2><p>These short-handled square shovels are garden workhorses. They make easy work of digging holes for plants, edging, lifting sod, and moving small mounds of dirt from one area to another. This tool can be more on the pricey side, but a good spade will last you the rest of your gardening life.</p>"
+      },
+      {
+        "tool": "pruning shears",
+        "tool_modal": " <h2>What is this tool?</h2><p>Hand pruners, also called secateurs, help reign in plants that are getting out of control and taking over. Anvil-style pruners cut with a sharp blade meeting a flat surface, similar to a knife on a board. Bypass pruners cut with a sharp blade passing by a sharp-edged flat surface, more like scissors.</p>"
+      }
+    ],
+    "environment": [
+      { "env": "sunny spot" },
+      { "env": "not windy" },
+      { "env": "nutrient-rich soil" },
+      { "env": "drains well" }
+    ],
+    "tips": [
+      {
+        "tip": "It’s better to be proud of a small garden than be frustrated by a big one!"
+      },
+      {
+        "tip": "Choose what you (and your family) like to eat. If no one likes brussels sprouts, don’t bother planting them! But if your kids love green beans, put more effort towards growing a big crop of beans."
+      },
+      {
+        "tip": "Be realistic about how many vegetables your family will eat. Be careful not to overplant, as you will only stretch yourself thin by trying to take care of tons of plants! (Of course, you could always give excess veggies away to friends, family, or the local soup kitchen.)"
+      },
+      {
+        "tip": "Consider the availability of veggies at your grocery store. Maybe you want to grow tomatillos, instead of cabbage or carrots, which are readily available. Also, certain veggies are so far superior when homegrown, it’s almost a shame not to consider them (we’re thinking of garden lettuce and tomatoes). Also, homegrown herbs are far less expensive than grocery store herbs."
+      },
+      {
+        "tip": "Be prepared to take care of your plants throughout the growing season. Going on a summer vacation? Remember that tomatoes and zucchinis are growing strongest in the middle of summer. If you’re gone part of the summer, you need someone to look after the crops or they will suffer. Or, you could just grow cool-season crops such as lettuce, kale, peas, and root veggies during the cooler months of late spring and early fall. "
+      }
+    ],
+    "steps": [
+      {
+        "step_title": "Step 1 ~ Pick the right location  ",
+        "step_text": "<p>Picking a good location for your garden is absolutely key. A subpar location can result in subpar veggies! Here are a few tips for choosing a good site</p><p>Sunny spot: Most vegetables need 6 to 8 hours of direct sunlight per day. There are a few veggies (mostly the leafy ones) that will tolerate some shade.</p><p>Drains well and doesn’t stay wet: If you have poorly drained soil where water pools, plant veggies in a raised bed or raised row for improved drainage. Wet soil means wet roots, which can turn into rotted roots. If you have rocky soil, till and remove the rocks, as they will interfere with root growth and make for weaker plants.</p><p>Stable and not windy: Avoid places that receive strong winds that could knock over your young plants or keep pollinators from doing their job. Nor do you want to plant in a location that receives too much foot traffic or floods easily. Plant in a location that would make Goldilocks smile—somewhere that’s 'just right.'</p><p>Nutrient-rich soil. You soil feeds your plants. If you have thin, nutrient-poor soil, you’ll have poor, unhealthy plants. Mix in plenty of organic matter to help your plants gro.</p>"
+      },
+      {
+        "step_title": "Step 2 ~ Choosing a Plot Size: Start Small!",
+        "step_text": "<p>One of the most common errors that beginners make is planting too much too soon—way more than anybody could ever eat or want! Unless you want to have zucchinis taking up residence in your attic, plan your garden with care. Start small, and only grow what you know you and your family will eat.</p><p>If planting in the ground, a 10’ x 10’ garden (100 square feet) is a managable size. Pick 3 to 5 of your favorite vegetables and buy 3 to 5 plants of each one. If planting in a raised bed, a 4’ x 4’ or 4’ x 8’ is a good beginner size. See our Raised Garden Bed Guide which covers the benefits of raised beds, how to build a raised bed, and what type of soil to fill a raised bed with. If you want to go bigger, a 12’ x 24’ garden in the ground is probably the biggest a first-timer should go. For example, a garden that feeds a family of four could include: 3 hills of yellow squash; 1 mound of zucchini; 10 assorted peppers; 6 tomato plants; 12 okra plants; a 12-foot row of bush beans; 2 cucumbers on a cage; 2 eggplant; 6 basil; 1 rosemary, and a few low-growing herbs such as oregano, thyme, and marjoram.</p><p>Whatever the size of your garden: Every four feet or so, make sure that you have paths that allow you to access your plants to weed and harvest. Just make sure that you can reach the center of the row or bed easily without stepping on the soil.</p>"
+      },
+      {
+        "step_title": "Step 3 ~ Choosing Vegetables",
+        "step_images": [
+          {
+            "img_src": "images/veggie1.png",
+            "img_desc": "Lettuce"
+          },
+          {
+            "img_src": "images/veggie2.png",
+            "img_desc": "Green beans"
+          },
+          {
+            "img_src": "images/veggie3.png",
+            "img_desc": "Zucchini"
+          },
+          {
+            "img_src": "images/veggie4.png",
+            "img_desc": "Beets"
+          }
+        ],
+        "step_text": "<p>As a beginner, start by choosing easy vegetables that are also productive. We’ve listed ten easy vegetable below. However, it would also be wise to contact your state’s Cooperative Extension Service to find out what plants grow best in your area. For example, if you live in an area with extremely hot weather, vegetables that prefer cooler temps may struggle. </p><p>Top 10 Easy Vegetables: lettuce, green beans, radishes, tomatoes, zucchini, peppers, beets, carrots, chars, peas. Use high-quality seeds. Seed packets are less expensive than individual plants, but if seeds don’t germinate, your money—and time—are wasted. A few extra cents spent in spring for that year’s seeds will pay off in higher yields at harvesttime.</p>"
+      },
+      {
+        "step_title": "Step 4 ~ Where and When to Plant",
+        "step_text": "<p> If you are simply growing two or three tomato plants, this process is easy. But if you plan to grow a full garden, you need to consider:Where will each plant go?When will each vegetable need to be planted?</p><p>Not all vegetables are planted at the same time.  “Cool-season” vegetables such as lettuce and brocoil and peas grow in cooler weather of early spring (and fall). “Warm-season” such as tomatoes and peppers and cucumbers aren’t planted until the soil warms up in late spring and summer.</p><p>Plant tall veggies (such as pole beans on a trellis or sweet corn) on the north side of the garden so they don’t shade shorter plants. If you do get shade in a part of your garden, save that area for small, cool-season veggies. If shade is unavoidable in parts of your garden, save those areas for cool-season vegetables which appreciate shade as the weather heats up.</p><p>Most veggies are annuals (planted each year). If you’re planning on growing “perennial” crops such as asparagus, rhubarb, and some herbs, provide permanent locations or beds.</p><p>Consider that some crops mature quickly and have a very short harvest period (radishes, bush beans). Other plants, such as tomatoes, take longer to produce, but also produce for longer. These “days to maturity” are typically listed on the seed packet. </p><p>Stagger plantings. You don’t want to plant all your lettuce seeds at the same time, or all that lettuce will need to be harvested at around the same time! Stagger plantings by a few weeks to keep ‘em coming!</p><p>Every region has a different planting time based mainly on their weather, and every vegetable has its temperature preferences, too. See the Almanac’s Best Planting Dates—a gardening calendar customized to your local frost dates. Just enter your zip code (or postal code in Canada)! </p>"
+      },
+      {
+        "step_title": "Step 5 ~ Maintenance",
+        "step_text": "<p>For best results, you’ll need to keep your garden beds free from weeds, provide sufficient irrigation, and fertilize.Young seedlings are tender, and require a gentle touch when watering.Use the “shower” setting on a hose nozzle and water the soil surrounding the plants, avoiding the leaves and immature stalks. The best time to water is in the morning, as an early watering provides plants with the moisture they need on a hot day, and makes it easier for them to absorb nutrients from the soil. Watering in the hot afternoon sun can produce shock in young plants, and cause tender leaves to scorch.And watering in the evening should also be avoided as excess moisture left on the leaves in cool overnight temperatures can promote plant disease, such as damping off and powdery mildew.</p><p>Once plants are four to six weeks old, you can begin to fertilize.For light feeders, like leafy greens and root veggies, follow the suggestions on seed packets and nursery stock for frequency and strength.For heavy feeders, such as beets, corn, tomatoes, and the brassicas (broccoli, Brussels sprouts, cabbage, and cauliflower), a top dressing of well-rotted manure or compost is a welcome addition – as well as regular feeding with a water soluble fertilizer.</p><p>Weeding is easily handled if you stay on top of it – even 20 minutes every day or two will help to keep these persistent growers in check.</p>"
+      }
+    ]
+  },
+  "Fruit trees": {
+    "title": "Fruit Trees",
+    "difficulty": "hard",
+    "tools": [
+      {
+        "tool": "bypass pruners",
+        "tool_modal": "<h2>What is this tool?</h2> <p>For the cleanest cuts, choose bypass pruners, which cut like a pair of scissors, with a curved cutting blade that slides past a lower broad blade. Also called lopping shears, a lopper is the tool of choice for cutting branches 2 inches in diameter.</p>"
+      },
+      {
+        "tool": "digging bar",
+        "tool_modal": "<h2>What is this tool?</h2><p>If you need to plant a tree or set posts, a digging bar can make the job of creating holes for them easier. Whether you need to plant a tree or dig a hole for a backyard barbecue pit, a digging bar is designed specifically to help you clear dirt, rocks and other items out of the way.</p>"
+      },
+      {
+        "tool": "wagon",
+        "tool_modal": "<h2>What is this tool?</h2><p>Trees are heavy, particularly those grown in large pots. You don’t want to carry them far, so having a wagon (either a hand-pulled cart or a larger tractor-pulled trailer) will help you bring the trees right to their holes without breaking your back.</p>"
+      },
+      {
+        "tool": "GPS receiver",
+        "tool_modal": "<h2>What is this tool?</h2><p>When coupled with a tape measure and graph paper, a GPS receiver can help you plan the most ideal location for every tree, allowing you to envision your orchard at maturity even when the trees are still young.</p>"
+      },
+      {
+        "tool": "tape measure ",
+        "tool_modal": "<h2>What is this tool?</h2><p>Rather than eyeball the depth of your holes and hope they’re correct, measure the height and width of the rootballs you’ll be planting to make sure your holes are an ideal match. Dig the holes a few inches deeper than necessary, then backfill the bottom with loose soil until the tree sits at the correct height.</p>"
+      },
+      {
+        "tool": "T-posts",
+        "tool_modal": " <h2>What is this tool?</h2><p>If your trees are spindly and/or a bit crooked in their growth, staking them with a T-post will support them against the wind, helping them to grow straight until they’re large enough to fend for themselves. You can also install T-posts around each tree to support a welded wire fence for protection against hungry deer.</p>"
+      }
+    ],
+    "environment": [
+      { "env": "full sun" },
+      { "env": "well-drained soil" },
+      { "env": "moderately-rich soil" }
+    ],
+    "tips": [
+      {
+        "tip": "Fruit trees should not be planted too close together to avoid root competition and to allow light to reach the ground. In general, they need to be around 10-30 feet apart. Allow at least 6ft between espaliers and 2ft between cordons."
+      },
+      {
+        "tip": "Self-fertile trees won’t need another nearby for cross-pollination to generate fruit, but pollinating ones will need at least one companion tree nearby."
+      },
+      {
+        "tip": "Ideally you would choose fruit trees to suit your natural soil pH, but it is possible to can amend it to a degree using lime or acidifier. For example, apple trees enjoy 5.5-6.5 pH, while plum trees prefer 6.0-8.8 pH – so get the pH right, and you will be rewarded every season."
+      },
+      {
+        "tip": "Dwarf fruit trees are some of the best trees to grow in pots and are fantastic small garden ideas as they can be positioned on the patio or even a balcony. "
+      },
+      {
+        "tip": "When planting fruit trees in pots, it is important to stake them to provide protection against prevailing winds. Most fruit trees should be placed in a sheltered spot in full sun – but check the requirements of your plant."
+      }
+    ],
+    "steps": [
+      {
+        "step_title": "Step 1 ~ Start Early",
+        "step_images": [
+          {
+            "img_src": "images/tree2.png",
+            "img_desc": ""
+          },
+          {
+            "img_src": "images/tree3.png",
+            "img_desc": ""
+          },
+          {
+            "img_src": "images/tree4.png",
+            "img_desc": ""
+          }
+        ],
+        "step_text": "<p>It’s best to plant fruit trees in late winter or early spring before they emerge from dormancy. During this time, they may be purchased “bare root”—sans soil, that is—from mail order nurseries. How early you can plant depends on where you live, but it’s essentially a matter of the ground no longer being frozen. Give the nursery your ZIP code and they will tell you the earliest window that it’s safe to ship the tree.</p>"
+      },
+      {
+        "step_title": "Step 2 ~ Find the Right Spot",
+        "step_text": "<p>Fruit trees need a minimum of six hours of sun, and ideally eight hours or more. Soil that drains quickly after a rain is essential; otherwise, fungal diseases are likely to set in. Microclimate is extremely important. Heat-loving fruits such as peaches work best against a south-facing wall that will amplify the sun’s rays. Species such as cherries that require a high degree of “winter chill”—a horticultural term for the number of hours below 45 degrees that some fruits require each season in order to produce—are best with a cooler northern exposure.</p>"
+      },
+      {
+        "step_title": "Step 3 ~ Dig the Perfect Hole",
+        "step_text": "<p>Bare root trees don’t need a huge hole. It just needs to be big enough to hold the roots. More important than size is to create a planting environment that keeps the tree from sinking into the ground, which often occurs as loose soil settles beneath it, leading to moist soil around the base of the trunk—a common mistake that promotes disease. Dig only as deep as the roots are long and then form a cone of soil in the center of the hole over which the roots can splay. This provides support to keep the trunk from sinking later on (pack the cone of soil with your feet so that it doesn’t settle).</p><p> Most fruit trees are grafted about eight inches above the root system—orient the tree so that the graft “wound” (the knobby area where the cut was made) faces north, where this weak link in the trunk will not be exposed to the scalding sun. Fill the hole with the remaining excavated soil and then use a heavy stream of water from a hose to wash it into place around the roots, helping to eliminate air pockets.</p>"
+      },
+      {
+        "step_title": "Step 4 ~ Set It Up",
+        "step_images": [
+          {
+            "img_src": "images/tree1.png",
+            "img_desc": ""
+          }
+        ],
+        "step_text": "<p>After planting, dig a broad, shallow basin in a four-foot diameter donut shape around the tree, forming a low berm on the outside edge of the donut to capture rainwater and encourage it to percolate into the root zone. Spread a two-inch layer of compost over the donut area, followed by a two-inch layer of wood chip mulch on top (but don’t pile it directly against the trunk). </p><p>This blanket of organic matter will feed the roots for years to come, while buffering them from heat and drought. Finally, pound a pair of stout wooden stakes into the ground on either side of the tree and tie the trunk to the stakes so that your young sapling doesn’t blow over in high winds (use old pieces of garden hose or plastic tubing over the rope or wire where it contacts the trunk to protect it from chafing). After two years, the tree should have a strong enough root system to hold its own and the stakes may be removed.</p>"
+      },
+      {
+        "step_title": "Step 5 ~ How to care for fruit trees",
+        "step_text": "<p>A key part of learning how to plant fruit trees is knowing how to look after them once they are in the ground.When your fruit tree is first planted, it’s important to keep it well watered until it is established. ‘Irrigate well for the first week in particular, watering once daily,’ says Sons.</p><p>Check the requirements for your particular fruit tree to see if it needs any particular feeding regime.Many fruit trees will benefit from an annual mulch. ‘If mulching around the tree, do not allow mulch to touch the tree trunk,’ says Fellows.</p><p>Pruning to make major changes to the tree’s shape is best performed in the winter, when the plant is dormant and the leaves have fallen, so you can get a good sense of the overall shape.You can also prune a fruit tree in the spring and summer to keep on top of excessive growth and to help train it.</p>"
+      }
+    ]
+  },
+
+  "template": {
+    "difficulty": "",
+    "tools": {
+      "tool1": "",
+      "tool1_modal": "",
+      "tool2": "",
+      "tool2_modal": "",
+      "tool3": "",
+      "tool3_modal": "",
+      "tool4": "",
+      "tool4_modal": ""
     },
-
-
-    "Indoor plants": {
-        "title":"Indoor plants",
-        "difficulty":"easy",
-        "tools": [
-            {
-                "tool": " indoor pots",
-                "tool_modal": "<h2>What is this tool?</h2><p>Indoor pots will generally not have a drainage hole, with the plant generally kept in its plastic pot using the decorative or 'cache' pot as the saucer.</p>"
-            },
-            {
-                "tool": "soil knife",
-                "tool_modal": "<h2>What is this tool?</h2> <p>It is an invaluable tool for weeding, transplanting, cutting sod, and dividing plants. Some garden knives have a ruler etched into the steel that is useful for measuring depths when planting bulbs or seeds. The tip of the blade is great for drawing lines into the soil for planting gauges.</p>"
-            },
-            {
-                "tool": "hand trowel",
-                "tool_modal": "<h2>What is this tool?</h2> <p> A trowel is a small hand tool used for digging, applying, smoothing, or moving small amounts of viscous or particulate material.</p>"
-            },
-            { 
-                "tool": "label maker",
-                "tool_modal": "<h2>What is this tool?</h2> <p> If you particularly want to use a pen try a black Sharpie - ultra fine (larger size nibs are available). These are the pens used by many of my local nurseries - and they are the most fade resistant I've used. The ultra-fine nib allows you to write neatly and put additional info on the label if you want to.</p>"
-            },
-            {
-                "tool": " neem oil ",
-                "tool_modal": "<h2>What is this tool?</h2> <p>Neem oil kills a wide variety of insects, including aphids, mealybugs, whiteflies, Japanese beetles, leafhoppers, thrips, fungus gnats, and other garden pests like spider mites and nematodes. Neem oil can also kill fungal diseases like powdery mildew, black spot, scab, anthracnose, and leaf spot.</p>"
-            }
-        ],
-        "environment": [
-            {"env": "any season"},    
-            {"env": "opening to light"}
-        ],
-        "tips": [
-            {
-                "tip": "To achieve sustained, healthy indoor plant growth, regularly replenish the nutrients in the potting soil. In general, fertilize your houseplants once a month when they're growing or flowering."
-            },
-            {
-                "tip": "You can take the plant out of the decorative pot to water and drain in a sink before replacing or water in the decorative pot. The saucer will catch excess water which you may need to empty."
-            }
-        ],
-        "steps": [
-            {
-                "step_title": "Select a pot that fits your plant",
-                "step_images": [
-                    {    
-                        "img_src": "images/pot1.png",
-                        "img_desc":"Cache Pot & Saucer"
-                    },
-                    {
-                        "img_src": "images/pot2.png",
-                        "img_desc": "Cache Pot & Pot Liner"
-                    },
-                    {
-                        "img_src": "images/pot3.png",
-                        "img_desc": "Repotting in a Pot Liner"
-                    },
-                    {
-                        "img_src": "images/pot4.png",
-                        "img_desc": "Hydroculture - The Ultimate Easy-Care Solution"
-                    }
-                ],
-                "step_text": "<p>When choosing a pot, make sure to consider its material, size, and drainage capability. Use a pot that’s proportional to your plant's current size—not more than a few inches wider in diameter than your plant’s root mass. Once the plant outgrows its home, you can transplant it into a larger pot. If you instead start a plant in a larger pot than necessary, its roots won't be able to absorb moisture fast enough as it drains through the soil. Plastic pots are lightweight, making them ideal for use in hanging baskets or on wall shelves. Terra cotta pots are heavier, and their porous nature means they don’t hold water as well as plastic pots. Make sure your pot has a drainage hole at the bottom.</p>"
-            },
-            { 
-                "step_title": "Learn to recognize when houseplants need water",
-                "step_text": "<p>In general, you should be more concerned with over-watering than under-watering; most houseplants are better off slightly dry than sopping wet. The goal is to provide your plants with enough water to keep the soil moist but not soggy (with succulents being a notable exception to this rule—they require periodic soakings). Pour water slowly into the potting soil until it trickles out from the drainage holes in the bottom of the pot. Most plants only need to be watered once or twice a week, and less during the winter months. An easy way to check if your plant needs a drink is to stick your finger two inches deep into the soil. If it feels dry, then it's most likely time to water.</p>"
-            },
-            {
-                "step_title": "Be aware of temperature, humidity, and ventilation",
-                "step_text": "<p>Most houseplants thrive in temperatures between 65 and 75°F during the day and about 10 degrees cooler at night. In general, houseplants require a level of humidity similar to that of their natural growing conditions. Air plants (of the genus Tillandsia) take in all their water from the air and thus require regular misting with a spray bottle. For other houseplants, condensation that stays on leaves too long can be harmful, which is why proper airflow is crucial for healthy plants. Placing a fan near your houseplants to circulate air can evaporate excess moisture and prevent dust buildup on leaves.</p>"
-            },
-            {
-                "step_title": "Ensure that your houseplants get the right amount of light",
-                "step_images": [
-                    {
-                    "img_src": "images/light.png",
-                    "img_desc": "Spot near the window"
-                    }
-                ],
-                "step_text": "<p>All plants need light energy for photosynthesis, but different houseplants require different amounts of light. With the exception of desert cacti and other succulents, most houseplants need indirect light rather than direct light. Houseplants that thrive in indirect light grow well near west-facing windows or—for plants that require bright light but not direct sun—a few feet back from south-facing windows. Plants that survive in especially shady, low-light conditions and flourish indoors include ZZ plant, snake plant, pothos, and philodendron; these plants can grow in north and east-facing windows.</p><p> Some houseplants require artificial light to grow indoors, especially during the winter months and in certain regions where there are fewer hours of light. Normal household light bulbs are not effective in providing light to houseplants, so you'll need to purchase fluorescent or LED grow lights, which have full-spectrum bulbs that provide a balance of cool and warm light to mimic the natural solar spectrum.</p>"
-            },
-            {    
-                "step_title": " Use the right potting soil",
-                "step_text": "<p> A high-quality potting soil will help plant roots grow by providing the ideal balance of nutrition, aeration, and water absorption. Potting soil mixes typically include peat moss, shredded pine bark, perlite, and vermiculite. Garden centers sell generic potting soils, but whenever possible you should choose a potting soil specific to your houseplant. For example, orchids and bromeliads require fast-draining soil, but succulents grow best in porous, sandy soils</p>"
-            }
-        ]
+    "environment": {
+      "env1": "",
+      "env2": "",
+      "env3": ""
+    },
+    "tips": {
+      "tip1": "",
+      "tip2": "",
+      "tip3": ""
+    },
+    "steps": {
+      "step1_title": "",
+      "step1_img": {
+        "img1_src": "",
+        "img1_desc": "",
+        "img2_src": "",
+        "img2_desc": "",
+        "img3_src": "",
+        "img3_desc": "",
+        "img4_src": "",
+        "img4_desc": ""
+      },
+      "step1_text": "",
+      "step2_title": "",
+      "step2_text": "",
+      "step3_title": "",
+      "step3_text": "",
+      "step4_title": "",
+      "step4_text": "",
+      "step5_title": "",
+      "step5_text": ""
     }
-    ,
-    "Vegetables": {
-        "title":"vegetables",
-        "difficulty":"easy",
-        "tools": [
-            {
-                "tool": "watering wand ",
-                "tool_modal": "<h2>What is this tool?</h2><p> Give your plants a gentle rain shower with a water-breaking wand. The extended reach is also helpful to get to out-of-the-way containers, hanging plants, or the back edges of borders. Watering wands come in a variety of lengths, from 10 to 48 inches.</p>"
-            },   
-            {    
-                "tool": "garden fork",
-                "tool_modal": "<h2>What is this tool?</h2><p>An efficient tool for turning soil, garden forks can dig into dense soil better than a spade.</p>"
-            },  
-            {    
-                "tool": "spade",
-                "tool_modal": "<h2>What is this tool?</h2><p>These short-handled square shovels are garden workhorses. They make easy work of digging holes for plants, edging, lifting sod, and moving small mounds of dirt from one area to another. This tool can be more on the pricey side, but a good spade will last you the rest of your gardening life.</p>"
-            },   
-            {    
-                "tool": "pruning shears",
-                "tool_modal": " <h2>What is this tool?</h2><p>Hand pruners, also called secateurs, help reign in plants that are getting out of control and taking over. Anvil-style pruners cut with a sharp blade meeting a flat surface, similar to a knife on a board. Bypass pruners cut with a sharp blade passing by a sharp-edged flat surface, more like scissors.</p>"
-            }
-        ],
-        "environment": [
-            {"env": "sunny spot"},
-            {"env": "not windy"},
-            {"env": "nutrient-rich soil"},
-            {"env":"drains well"}
-        ],
-        "tips": [
-            {
-                "tip": "It’s better to be proud of a small garden than be frustrated by a big one!"
-            },
-            {  
-                "tip": "Choose what you (and your family) like to eat. If no one likes brussels sprouts, don’t bother planting them! But if your kids love green beans, put more effort towards growing a big crop of beans."
-            },
-            {   
-                "tip": "Be realistic about how many vegetables your family will eat. Be careful not to overplant, as you will only stretch yourself thin by trying to take care of tons of plants! (Of course, you could always give excess veggies away to friends, family, or the local soup kitchen.)"
-            },
-            {  
-                "tip":"Consider the availability of veggies at your grocery store. Maybe you want to grow tomatillos, instead of cabbage or carrots, which are readily available. Also, certain veggies are so far superior when homegrown, it’s almost a shame not to consider them (we’re thinking of garden lettuce and tomatoes). Also, homegrown herbs are far less expensive than grocery store herbs."
-            },
-            {  
-                "tip":"Be prepared to take care of your plants throughout the growing season. Going on a summer vacation? Remember that tomatoes and zucchinis are growing strongest in the middle of summer. If you’re gone part of the summer, you need someone to look after the crops or they will suffer. Or, you could just grow cool-season crops such as lettuce, kale, peas, and root veggies during the cooler months of late spring and early fall. "
-            }
-        ],
-        "steps": [
-            {
-                "step_title": "Step 1 ~ Pick the right location  ",
-                "step_text": "<p>Picking a good location for your garden is absolutely key. A subpar location can result in subpar veggies! Here are a few tips for choosing a good site</p><p>Sunny spot: Most vegetables need 6 to 8 hours of direct sunlight per day. There are a few veggies (mostly the leafy ones) that will tolerate some shade.</p><p>Drains well and doesn’t stay wet: If you have poorly drained soil where water pools, plant veggies in a raised bed or raised row for improved drainage. Wet soil means wet roots, which can turn into rotted roots. If you have rocky soil, till and remove the rocks, as they will interfere with root growth and make for weaker plants.</p><p>Stable and not windy: Avoid places that receive strong winds that could knock over your young plants or keep pollinators from doing their job. Nor do you want to plant in a location that receives too much foot traffic or floods easily. Plant in a location that would make Goldilocks smile—somewhere that’s 'just right.'</p><p>Nutrient-rich soil. You soil feeds your plants. If you have thin, nutrient-poor soil, you’ll have poor, unhealthy plants. Mix in plenty of organic matter to help your plants gro.</p>"
-            },    
-            {    
-                "step_title": "Step 2 ~ Choosing a Plot Size: Start Small!",
-                "step_text": "<p>One of the most common errors that beginners make is planting too much too soon—way more than anybody could ever eat or want! Unless you want to have zucchinis taking up residence in your attic, plan your garden with care. Start small, and only grow what you know you and your family will eat.</p><p>If planting in the ground, a 10’ x 10’ garden (100 square feet) is a managable size. Pick 3 to 5 of your favorite vegetables and buy 3 to 5 plants of each one. If planting in a raised bed, a 4’ x 4’ or 4’ x 8’ is a good beginner size. See our Raised Garden Bed Guide which covers the benefits of raised beds, how to build a raised bed, and what type of soil to fill a raised bed with. If you want to go bigger, a 12’ x 24’ garden in the ground is probably the biggest a first-timer should go. For example, a garden that feeds a family of four could include: 3 hills of yellow squash; 1 mound of zucchini; 10 assorted peppers; 6 tomato plants; 12 okra plants; a 12-foot row of bush beans; 2 cucumbers on a cage; 2 eggplant; 6 basil; 1 rosemary, and a few low-growing herbs such as oregano, thyme, and marjoram.</p><p>Whatever the size of your garden: Every four feet or so, make sure that you have paths that allow you to access your plants to weed and harvest. Just make sure that you can reach the center of the row or bed easily without stepping on the soil.</p>"
-            },    
-            {    
-                "step_title": "Step 3 ~ Choosing Vegetables",
-                "step_images": [
-                    {    
-                        "img_src": "images/veggie1.png",
-                        "img_desc": "Lettuce"
-                    },
-                    {    
-                        "img_src": "images/veggie2.png",
-                        "img_desc": "Green beans"
-                    },
-                    {    
-                        "img_src": "images/veggie3.png",
-                        "img_desc": "Zucchini"
-                    },
-                    {    
-                        "img_src": "images/veggie4.png",
-                        "img_desc": "Beets"
-                    }
-                ],
-                "step_text": "<p>As a beginner, start by choosing easy vegetables that are also productive. We’ve listed ten easy vegetable below. However, it would also be wise to contact your state’s Cooperative Extension Service to find out what plants grow best in your area. For example, if you live in an area with extremely hot weather, vegetables that prefer cooler temps may struggle. </p><p>Top 10 Easy Vegetables: lettuce, green beans, radishes, tomatoes, zucchini, peppers, beets, carrots, chars, peas. Use high-quality seeds. Seed packets are less expensive than individual plants, but if seeds don’t germinate, your money—and time—are wasted. A few extra cents spent in spring for that year’s seeds will pay off in higher yields at harvesttime.</p>"
-            },
-            {
-                "step_title": "Step 4 ~ Where and When to Plant",
-                "step_text": "<p> If you are simply growing two or three tomato plants, this process is easy. But if you plan to grow a full garden, you need to consider:Where will each plant go?When will each vegetable need to be planted?</p><p>Not all vegetables are planted at the same time.  “Cool-season” vegetables such as lettuce and brocoil and peas grow in cooler weather of early spring (and fall). “Warm-season” such as tomatoes and peppers and cucumbers aren’t planted until the soil warms up in late spring and summer.</p><p>Plant tall veggies (such as pole beans on a trellis or sweet corn) on the north side of the garden so they don’t shade shorter plants. If you do get shade in a part of your garden, save that area for small, cool-season veggies. If shade is unavoidable in parts of your garden, save those areas for cool-season vegetables which appreciate shade as the weather heats up.</p><p>Most veggies are annuals (planted each year). If you’re planning on growing “perennial” crops such as asparagus, rhubarb, and some herbs, provide permanent locations or beds.</p><p>Consider that some crops mature quickly and have a very short harvest period (radishes, bush beans). Other plants, such as tomatoes, take longer to produce, but also produce for longer. These “days to maturity” are typically listed on the seed packet. </p><p>Stagger plantings. You don’t want to plant all your lettuce seeds at the same time, or all that lettuce will need to be harvested at around the same time! Stagger plantings by a few weeks to keep ‘em coming!</p><p>Every region has a different planting time based mainly on their weather, and every vegetable has its temperature preferences, too. See the Almanac’s Best Planting Dates—a gardening calendar customized to your local frost dates. Just enter your zip code (or postal code in Canada)! </p>"
-            },   
-            {   
-                "step_title": "Step 5 ~ Maintenance",
-                "step_text": "<p>For best results, you’ll need to keep your garden beds free from weeds, provide sufficient irrigation, and fertilize.Young seedlings are tender, and require a gentle touch when watering.Use the “shower” setting on a hose nozzle and water the soil surrounding the plants, avoiding the leaves and immature stalks. The best time to water is in the morning, as an early watering provides plants with the moisture they need on a hot day, and makes it easier for them to absorb nutrients from the soil. Watering in the hot afternoon sun can produce shock in young plants, and cause tender leaves to scorch.And watering in the evening should also be avoided as excess moisture left on the leaves in cool overnight temperatures can promote plant disease, such as damping off and powdery mildew.</p><p>Once plants are four to six weeks old, you can begin to fertilize.For light feeders, like leafy greens and root veggies, follow the suggestions on seed packets and nursery stock for frequency and strength.For heavy feeders, such as beets, corn, tomatoes, and the brassicas (broccoli, Brussels sprouts, cabbage, and cauliflower), a top dressing of well-rotted manure or compost is a welcome addition – as well as regular feeding with a water soluble fertilizer.</p><p>Weeding is easily handled if you stay on top of it – even 20 minutes every day or two will help to keep these persistent growers in check.</p>"
-            }
-        ]
-    },
-    "Fruit trees": {
-        "title":"Fruit Trees",
-        "difficulty":"hard",
-        "tools": [
-            {
-                "tool": "bypass pruners",
-                "tool_modal": "<h2>What is this tool?</h2> <p>For the cleanest cuts, choose bypass pruners, which cut like a pair of scissors, with a curved cutting blade that slides past a lower broad blade. Also called lopping shears, a lopper is the tool of choice for cutting branches 2 inches in diameter.</p>"
-            },
-            {
-                "tool": "digging bar",
-                "tool_modal": "<h2>What is this tool?</h2><p>If you need to plant a tree or set posts, a digging bar can make the job of creating holes for them easier. Whether you need to plant a tree or dig a hole for a backyard barbecue pit, a digging bar is designed specifically to help you clear dirt, rocks and other items out of the way.</p>"
-            },
-            {
-                "tool": "wagon",
-                "tool_modal": "<h2>What is this tool?</h2><p>Trees are heavy, particularly those grown in large pots. You don’t want to carry them far, so having a wagon (either a hand-pulled cart or a larger tractor-pulled trailer) will help you bring the trees right to their holes without breaking your back.</p>"
-            },
-            {
-                "tool": "GPS receiver",
-                "tool_modal": "<h2>What is this tool?</h2><p>When coupled with a tape measure and graph paper, a GPS receiver can help you plan the most ideal location for every tree, allowing you to envision your orchard at maturity even when the trees are still young.</p>"
-            },
-            {
-                "tool": "tape measure ",
-                "tool_modal": "<h2>What is this tool?</h2><p>Rather than eyeball the depth of your holes and hope they’re correct, measure the height and width of the rootballs you’ll be planting to make sure your holes are an ideal match. Dig the holes a few inches deeper than necessary, then backfill the bottom with loose soil until the tree sits at the correct height.</p>"
-            },
-            {
-                "tool": "T-posts",
-                "tool_modal": " <h2>What is this tool?</h2><p>If your trees are spindly and/or a bit crooked in their growth, staking them with a T-post will support them against the wind, helping them to grow straight until they’re large enough to fend for themselves. You can also install T-posts around each tree to support a welded wire fence for protection against hungry deer.</p>"
-            }
-        ],
-        "environment": [
-            {"env": "full sun"},
-            {"env": "well-drained soil"},
-            {"env": "moderately-rich soil"}
-        ],
-        "tips": [
-            {
-                "tip": "Fruit trees should not be planted too close together to avoid root competition and to allow light to reach the ground. In general, they need to be around 10-30 feet apart. Allow at least 6ft between espaliers and 2ft between cordons."
-            },
-            {   
-                "tip": "Self-fertile trees won’t need another nearby for cross-pollination to generate fruit, but pollinating ones will need at least one companion tree nearby."
-            },  
-            {
-                "tip": "Ideally you would choose fruit trees to suit your natural soil pH, but it is possible to can amend it to a degree using lime or acidifier. For example, apple trees enjoy 5.5-6.5 pH, while plum trees prefer 6.0-8.8 pH – so get the pH right, and you will be rewarded every season."
-            },
-            {    
-                "tip": "Dwarf fruit trees are some of the best trees to grow in pots and are fantastic small garden ideas as they can be positioned on the patio or even a balcony. "
-            },
-            {    
-                "tip": "When planting fruit trees in pots, it is important to stake them to provide protection against prevailing winds. Most fruit trees should be placed in a sheltered spot in full sun – but check the requirements of your plant."
-            }
-        ],
-        "steps": [
-            {
-                "step_title": "Step 1 ~ Start Early",
-                "step_images": [
-                    {    
-                        "img_src": "images/tree2.png",
-                        "img_desc": ""
-                    },
-                    {    
-                        "img_src": "images/tree3.png",
-                        "img_desc": ""
-                    },
-                    {
-                        "img_src": "images/tree4.png",
-                        "img_desc": ""
-                    }
-                ],
-                "step_text": "<p>It’s best to plant fruit trees in late winter or early spring before they emerge from dormancy. During this time, they may be purchased “bare root”—sans soil, that is—from mail order nurseries. How early you can plant depends on where you live, but it’s essentially a matter of the ground no longer being frozen. Give the nursery your ZIP code and they will tell you the earliest window that it’s safe to ship the tree.</p>"
-            },
-            {
-                "step_title": "Step 2 ~ Find the Right Spot",
-                "step_text": "<p>Fruit trees need a minimum of six hours of sun, and ideally eight hours or more. Soil that drains quickly after a rain is essential; otherwise, fungal diseases are likely to set in. Microclimate is extremely important. Heat-loving fruits such as peaches work best against a south-facing wall that will amplify the sun’s rays. Species such as cherries that require a high degree of “winter chill”—a horticultural term for the number of hours below 45 degrees that some fruits require each season in order to produce—are best with a cooler northern exposure.</p>"
-            },
-            {    
-                    "step_title": "Step 3 ~ Dig the Perfect Hole",
-                    "step_text": "<p>Bare root trees don’t need a huge hole. It just needs to be big enough to hold the roots. More important than size is to create a planting environment that keeps the tree from sinking into the ground, which often occurs as loose soil settles beneath it, leading to moist soil around the base of the trunk—a common mistake that promotes disease. Dig only as deep as the roots are long and then form a cone of soil in the center of the hole over which the roots can splay. This provides support to keep the trunk from sinking later on (pack the cone of soil with your feet so that it doesn’t settle).</p><p> Most fruit trees are grafted about eight inches above the root system—orient the tree so that the graft “wound” (the knobby area where the cut was made) faces north, where this weak link in the trunk will not be exposed to the scalding sun. Fill the hole with the remaining excavated soil and then use a heavy stream of water from a hose to wash it into place around the roots, helping to eliminate air pockets.</p>"
-            },    
-            {
-                "step_title": "Step 4 ~ Set It Up",
-                "step_images":[
-                    {
-                        "img_src": "images/tree1.png",
-                        "img_desc": ""
-                    }
-                ],
-               "step_text": "<p>After planting, dig a broad, shallow basin in a four-foot diameter donut shape around the tree, forming a low berm on the outside edge of the donut to capture rainwater and encourage it to percolate into the root zone. Spread a two-inch layer of compost over the donut area, followed by a two-inch layer of wood chip mulch on top (but don’t pile it directly against the trunk). </p><p>This blanket of organic matter will feed the roots for years to come, while buffering them from heat and drought. Finally, pound a pair of stout wooden stakes into the ground on either side of the tree and tie the trunk to the stakes so that your young sapling doesn’t blow over in high winds (use old pieces of garden hose or plastic tubing over the rope or wire where it contacts the trunk to protect it from chafing). After two years, the tree should have a strong enough root system to hold its own and the stakes may be removed.</p>"
-            },
-            {    
-                    "step_title": "Step 5 ~ How to care for fruit trees",
-                    "step_text": "<p>A key part of learning how to plant fruit trees is knowing how to look after them once they are in the ground.When your fruit tree is first planted, it’s important to keep it well watered until it is established. ‘Irrigate well for the first week in particular, watering once daily,’ says Sons.</p><p>Check the requirements for your particular fruit tree to see if it needs any particular feeding regime.Many fruit trees will benefit from an annual mulch. ‘If mulching around the tree, do not allow mulch to touch the tree trunk,’ says Fellows.</p><p>Pruning to make major changes to the tree’s shape is best performed in the winter, when the plant is dormant and the leaves have fallen, so you can get a good sense of the overall shape.You can also prune a fruit tree in the spring and summer to keep on top of excessive growth and to help train it.</p>"
-            }    
-        ]
-    },
-
-
-    
-    "template": {
-        "difficulty":"",
-        "tools": {
-            "tool1": "",
-            "tool1_modal": "",
-            "tool2": "",
-            "tool2_modal": "",
-            "tool3": "",
-            "tool3_modal": "",
-            "tool4": "",
-            "tool4_modal": ""
-        },
-        "environment": {
-            "env1": "",
-            "env2": "",
-            "env3": ""
-        },
-        "tips": {
-            "tip1": "",
-            "tip2": "",
-            "tip3": ""
-        },
-        "steps": {
-            "step1_title": "",
-            "step1_img": {
-                "img1_src": "",
-                "img1_desc": "",
-                "img2_src": "",
-                "img2_desc": "",
-                "img3_src": "",
-                "img3_desc": "",
-                "img4_src": "",
-                "img4_desc": ""
-            },
-            "step1_text": "",
-            "step2_title": "",
-            "step2_text": "",
-            "step3_title": "",
-            "step3_text": "",
-            "step4_title": "",
-            "step4_text": "",
-            "step5_title": "",
-            "step5_text": ""
-        }
-    }
+  }
 }

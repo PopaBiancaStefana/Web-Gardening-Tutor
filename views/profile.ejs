@@ -80,7 +80,7 @@
 
             </div>
 
-            <div class="content-container">
+            <div id="content-container">
                 
                 <div class="section-card content" id="profile-information" style="display: block;">
                     <div class="profile-header"> 
@@ -90,28 +90,45 @@
                                 <span class="glyphicon glyphicon-camera"></span>
                                 <span>Change Image</span>
                             </label>
+
+                            <% let photo_path = "images/avatar.png"; %> 
                             <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png, .jpg, .jpeg">
-                            <img src="images/avatar.png" alt="avatar" class="profile-image" id="output">
+                            <% if(!(locals.profile_photo)) { %>
+                                <% photo_path = "images/avatar.png" %> 
+                            <% } else { %>  
+                                <% photo_path = profile_information.profile_photo %>
+                            <% } %> 
+                            <img src="<%- photo_path %>" alt="<%= photo_path %> " class="profile-image" id="output">
                         </div>
                         <div class="profile-info">
-                            <h3 class="my-name"> <%= name %>  </h3> <br>
-                            <h3> <%= email %> </h3>
+                            <h3 class="my-name"> <%= profile_information.name %>  </h3> <br>
+                            <h3> <%= profile_information.email %> </h3>
                         </div>
 
                     </div> 
 
                     <section class="profile-details">
-                        <h1>About</h1>
+                        <h1>Registration Date</h1>
                         <div class="profile-details-field">
-                            <p class="profile-details-label">bla</p>
-                            <p class="profile-details-value">bla</p>
-                        </div>
-
-                        <div class="profile-details-field">
-                            <p class="profile-details-label">Registration date</p>
-                            <p class="profile-details-value">10.04.2022</p>
+                            <div class="profile-details-label"> <%= profile_information.registration_date  %>  </div>
                         </div>
                     </section>
+
+                    <section class="profile-details">
+                        <h1>Profession</h1>
+                        <div class="profile-details-field">
+                            <input class="profile-details-label" id="profession" type="text" onchange="popupSaveButton(event)">
+                        </div>
+                    </section>
+
+                    <section class="profile-details">
+                        <h1>About</h1>
+                        <div class="profile-details-field">
+                            <textarea class="profile-details-label" rows="5" id="about" onchange="popupSaveButton(event)" placeholder="My Bio"> </textarea>
+                        </div>
+                    </section>
+
+
 
                     <section class="profile-details">
                         <h1>Statistics</h1>
@@ -221,6 +238,75 @@
                     window.location.href = "login";
                 }
             }
+
+
+            function popupSaveButton()
+            {
+                console.log("s-a schimbat continutul")
+                let saveButton = document.createElement("button");
+                saveButton.innerHTML = "Save";
+                saveButton.setAttribute("id", "save-button");
+                saveButton.addEventListener("click", saveInformation)
+
+                let container = document.getElementById("content-container");
+                container.appendChild(saveButton)
+            }
+            
+            function saveInformation(event){
+                let information = {}
+                
+                //umplem obiectul cu textul din input uri
+                let about = document.getElementById("about");
+                let profession = document.getElementById("profession");
+                
+                information.about = about.value;
+                information.profession = profession.value;
+                
+                console.log(information);
+
+                //trimitem catre server obiectul
+                let endpoint = "profile";
+                sendData(information, endpoint, );
+            }
+
+            function sendData(information, endpoint)
+            {
+                let url = `http://localhost:1234/${endpoint}`;
+                let head = new Headers();
+                head.append("Content-Type", "application/json");
+                let req = new Request(url, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: head,
+                    body: JSON.stringify(information)
+                });
+                fetch(req).then((res) => res.json())
+                .then((content) => {
+                    if("error" in content){
+                        //incerare esuata
+                        failure(content.error);
+                    } 
+                    if ("data" in content) {
+                        console.log(content.data);
+                    }
+                    
+                })
+                .catch(failure);
+
+            }
+            function failure(error)
+            {
+                console.log(error);
+            }
+
+
+            window.addEventListener('load', (event) => {
+                let about = document.getElementById("about");
+                let profession = document.getElementById("profession");
+
+                about.value = '<%= profile_information.about %>';
+                profession.value = '<%= profile_information.profession %>';
+            });
 
         </script>
 
