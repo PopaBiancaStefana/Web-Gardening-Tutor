@@ -1,5 +1,7 @@
 const { CLIENT_FOUND_ROWS, CLIENT_LONG_PASSWORD } = require("mysql/lib/protocol/constants/client");
 const db = require("../database");
+const userModel = require("../models/userModel");
+
 
 function toFormalEncoding(string)
 {
@@ -24,6 +26,9 @@ async function updateProgress(data) {
   let finished = false;
   if (data.progress == nr_check) {
     finished = true;
+
+    userModel.incrementFinishedCourses(user_id);
+    
   }
 
   let progress = await verifyProgress(user_id, course_id);
@@ -228,4 +233,10 @@ async function verifyBookmark(user_id, course_id) {
   });
 }
 
-module.exports = { updateProgress, getCourseProgress, getCourseByName, getBookmarked, updateBookmark };
+module.exports = {
+   updateProgress,
+  getCourseProgress, 
+  getCourseByName, 
+  getBookmarked, 
+  updateBookmark,
+};

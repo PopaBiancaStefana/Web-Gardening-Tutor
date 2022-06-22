@@ -75,7 +75,6 @@ async function getProfile(data, res)
     
     console.log('sarlalala ' + profileData);
 
-    //todo render profile view
     try{
         ejs.renderFile(path.join(__dirname, "/../views/profile.ejs"), profileData, {}, (err, result) =>{
             if(err)

@@ -7,6 +7,7 @@ const fs = require("fs");
 const { isStringObject } = require("util/types");
 const { info } = require("console");
 const path = require("path");
+const { userInfo } = require("os");
 
 
  async function findByEmail(email)
@@ -45,9 +46,11 @@ async function createUser(user)
         profession:"",
         registration_date: new Date(),
         achievements: [
-            {name: "Created Account",
-            photo_src: "images/reg.png"}
-        ]
+            {
+            description: "Singned up",
+            photo_src: "images/achievements/signed_in.png"}
+        ],
+        finished_courses:0
     }
 
     let file_name = uuid.v4()+'.json';
@@ -216,6 +219,7 @@ function getProfileInformation(id_user)
                 })
 
             });
+            console.log("trimitem data " +JSON.stringify(data) );
             resolve(data);
         })
     })
@@ -229,7 +233,7 @@ async function saveInformation(userId, information)
     console.log('path ' + file_path);
     file_path = path.join(__dirname, "../public/users", file_path);
 
-    infoObj = require(file_path);
+    let infoObj = require(file_path);
     
     //editam jsou ul de pe disc
     Object.keys(information).forEach((key) => {
@@ -259,11 +263,52 @@ async function saveInformation(userId, information)
     });
 }
 
+async function incrementFinishedCourses(userId)
+{
+    let file_path = await getFileName(userId);
+    file_path = path.join(__dirname, "../public/users", file_path);
+
+    let userInformation = require(file_path);
+
+    userInformation.finished_courses = userInformation.finished_courses + 1;
+    if(userInformation.finished_course == 1)
+    {
+
+        userInformation.achievements.push({
+            photo_src: "images/achievements/first_course.png",
+            description: "Finished first course"
+        })
+    }
+
+    userInformation.achievements.push({
+        photo_src: "images/achievements/first_course.png",
+        description: "Finished first course"
+    })
+    
+    if(userInformation.finished_course == 4)
+    {
+        userInformation.achievements.push({
+            photo_src: "images/achievements/all_courses.png",
+            description: "Finished all courses"
+        })
+    }
+
+    fs.writeFile(file_path, JSON.stringify(userInformation), (err) => {
+        if (err){
+            console.log("eroare la scriere in fisier");
+            throw err;
+        }
+        console.log("scriem " + JSON.stringify(userInformation))
+    } )
+    
+}
+
 module.exports = {
     findByEmail,
     createUser, 
     login,
     getUserBySid,
     getProfile,
-    saveInformation
+    saveInformation,
+    incrementFinishedCourses
 };
