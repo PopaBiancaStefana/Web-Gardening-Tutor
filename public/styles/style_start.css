@@ -66,8 +66,8 @@ ul li a:hover {
 }
 
 .logo img {
-  width: 35rem;
-  height: 15rem;
+  width: 29rem;
+  height: 13rem;
   padding: 5px;
 }
 
@@ -76,26 +76,17 @@ ul li a:hover {
   header {
     flex-direction: column;
   }
-  .logo img {
-    margin: 0;
-    padding: 10px;
-    width: 20rem;
-    height: 10rem;
-  }
 }
+
 @media (max-width: 700px) {
   header {
     flex-direction: column;
   }
-  .logo img {
-    margin: 0;
-    padding: 10px;
-    width: 20rem;
-    height: 10rem;
-  }
+
   header nav li {
     margin: 0;
   }
+
   .container {
     height: 160px;
   }
@@ -163,16 +154,15 @@ main {
   transform: translateY(15px);
 }
 
-/*Responsive main elements*/
-@media only screen and (max-width: 1000px) {
-  .main-header .container {
-    padding: 20px 50px;
-  }
-}
-
 @media only screen and (max-width: 700px) {
   .main-header .container {
     flex-direction: column;
+    height: 190px;
+
+  }
+
+  ul {
+    margin-bottom: 10px;
   }
 
   header nav li {
@@ -188,6 +178,7 @@ section {
   padding: 110px 100px;
   height: auto;
 }
+
 section p {
   max-width: 800px;
   text-align: center;
@@ -202,6 +193,7 @@ section p {
     padding: 100px 50px;
   }
 }
+
 @media (max-width: 600px) {
   section {
     padding: 125px 30px;
@@ -215,6 +207,7 @@ ul.about-content {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .about-content li {
   margin: 20px;
   height: 290px;
@@ -233,6 +226,7 @@ ul.about-content {
 .about-right {
   flex-basis: 63%;
 }
+
 .about-area p {
   max-width: 800px;
   margin-bottom: 35px;
@@ -241,6 +235,7 @@ ul.about-content {
   padding-left: 0;
   font-size: 20px;
 }
+
 .section-title {
   text-transform: uppercase;
   font-size: 40px;
@@ -249,6 +244,7 @@ ul.about-content {
   color: #e18737;
   padding: 20px;
 }
+
 .about-right h2 {
   margin-bottom: 3%;
 }
@@ -256,6 +252,7 @@ ul.about-content {
 .about-area {
   background-color: rgba(178, 216, 227, 0.8);
 }
+
 .about-left.img {
   height: 20rem;
   width: 15rem;
@@ -265,30 +262,36 @@ ul.about-content {
 
 /* Responsive About area */
 @media only screen and (max-width: 1000px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
   }
+
   .about-content li {
     padding: 8px;
   }
 }
 
 @media only screen and (max-width: 800px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
   }
+
   .about-content li {
     padding: 8px;
   }
 }
 
 @media only screen and (max-width: 600px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
   }
+
   .about-content li {
     padding: 8px;
   }
@@ -298,21 +301,25 @@ ul.about-content {
 .services-area {
   background: rgba(221, 221, 221, 0.8);
 }
+
 ul.services-content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .services-content li {
   padding: 0 30px;
   flex-basis: 33%;
   text-align: center;
 }
+
 .services-content li p {
   font-size: 15px;
   margin-bottom: 25px;
 }
+
 .services-content li h4 {
   font-size: 25px;
   margin-bottom: 25px;
@@ -320,23 +327,29 @@ ul.services-content {
   color: rgba(44, 131, 60, 0.7);
   padding: 5px;
 }
+
 .services-content li p {
   margin: 0;
 }
+
 .gardening-courses {
   width: 15vw;
 }
+
 .garden-manager {
   width: 15vw;
 }
+
 @media (max-width: 1000px) {
   .services-content li {
     flex-basis: 100%;
     margin-bottom: 65px;
   }
+
   .services-content li:last-child {
     margin-bottom: 0;
   }
+
   .services-content li p {
     padding: 0;
   }
@@ -349,6 +362,7 @@ ul.faq-content {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .faq-content li {
   padding: 20px;
   height: 290px;
@@ -366,6 +380,7 @@ ul.faq-content {
 .faq-right {
   flex-basis: 63%;
 }
+
 .faq-area p {
   max-width: 800px;
   margin-bottom: 35px;
@@ -374,6 +389,7 @@ ul.faq-content {
   padding-left: 0;
   font-size: 20px;
 }
+
 .section-title {
   text-transform: uppercase;
   font-size: 40px;
@@ -382,12 +398,15 @@ ul.faq-content {
   color: #e18737;
   padding: 20px;
 }
+
 .faq-right h2 {
   margin-bottom: 3%;
 }
+
 .faq-area {
   background-color: rgba(228, 190, 168, 0.8);
 }
+
 #faq-image {
   background-image: url(../images/chat.png);
   height: 15rem;
@@ -398,10 +417,12 @@ ul.faq-content {
 
 /* Responsive FAQ area */
 @media only screen and (max-width: 1000px) {
+
   .faq-left,
   .faq-right {
     flex-basis: 100%;
   }
+
   .faq-content li {
     padding: 8px;
   }
@@ -411,40 +432,49 @@ ul.faq-content {
 .contact-area {
   background: rgba(255, 255, 255, 0.8);
 }
+
 ul.contact-content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .contact-content li {
   padding: 0 30px;
   flex-basis: 33%;
   text-align: center;
 }
+
 .contact-content li p {
   font-size: 30px;
   color: rgba(220, 20, 60, 0.7);
   margin-bottom: 25px;
   font-weight: bold;
 }
+
 .contact-content li p {
   margin: 0;
 }
+
 .telephone {
   width: 10vw;
 }
+
 .envelope {
   width: 10vw;
 }
+
 @media (max-width: 1000px) {
   .contact-content li {
     flex-basis: 100%;
     margin-bottom: 65px;
   }
+
   .contact-content li:last-child {
     margin-bottom: 0;
   }
+
   .contact-content li p {
     padding: 0;
   }
@@ -471,15 +501,10 @@ footer {
     margin: 0rem 20rem;
     padding: 0;
   }
+
   .welcome-text h1 {
     margin: 2rem;
   }
-  .logo img {
-    width: 35rem;
-    height: 15rem;
-    padding: 5px;
-  }
-
   .about-right p {
     padding: 0rem 4rem;
     margin: 11rem 0rem;
@@ -490,6 +515,7 @@ footer {
   .services-content h4 {
     margin-top: 1rem;
   }
+
   #faq-image {
     background-image: url(../images/chat.png);
     height: 28rem;
@@ -501,26 +527,27 @@ footer {
 
 /* Responsive on Mobile screen with portrait orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
   }
-  .logo img {
-    height: 105px;
-    width: 220px;
-  }
+
   ul li a {
     padding: 0 10px;
   }
+
   .about-left.img {
     height: 18rem;
     width: 15rem;
     margin: 0rem 5rem;
     padding: 0;
   }
+
   .contact-content li p {
     font-size: 20px;
   }
+
   .welcome-text h1 {
     margin: 4rem 0rem;
   }
@@ -528,30 +555,32 @@ footer {
 
 /* Responsive on Mobile screen with landscape orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: landscape) {
-  .logo img {
-    height: 90px;
-    width: 170px;
-  }
   header {
     padding: 0;
   }
+
   .welcome-text {
     height: 100px;
   }
+
   .about-area {
     margin-top: 35px;
   }
+
   .about-left.img {
     height: 18rem;
     width: 10rem;
     margin: 0rem 18rem;
   }
+
   .welcome-text h1 {
     font-size: 40px;
   }
+
   .welcome-text h1 span {
     font-size: 40px;
   }
+
   .button {
     margin-top: 15px;
   }
@@ -559,18 +588,16 @@ footer {
 
 /* Responsive on Tablet screen with portrait orientation */
 @media only screen and (min-width: 651px) and (max-width: 1920px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
-  }
-  .logo img {
-    height: 105px;
-    width: 220px;
   }
 
   ul li a {
     padding: 0 10px;
   }
+
   .about-left.img {
     height: 18rem;
     width: 15rem;
@@ -581,6 +608,7 @@ footer {
   .contact-content li p {
     font-size: 20px;
   }
+
   .welcome-text h1 {
     margin: 4rem 0rem;
   }
@@ -591,12 +619,14 @@ footer {
   .contact-content li p {
     font-size: 24px;
   }
+
   .about-left.img {
     height: 15rem;
     width: 15rem;
     margin: 0rem 22rem;
     padding: 0;
   }
+
   .button {
     margin-top: 25px;
   }

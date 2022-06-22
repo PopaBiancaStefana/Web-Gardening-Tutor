@@ -11,10 +11,7 @@ async function register(data, res)
     try{
         
         await userModel.createUser(data.payload);
-        // console.log("sunt aici: " + JSON.stringify(data.payload));
-
-        // res.writeHead(201, {"Content-type" : "applicaton/json"});
-        // res.end( {msg: "user registered"});
+    
         res.setHeader("Content-type", "application/json");
         res.writeHead(201, "user created");
         res.end(JSON.stringify({data: data.payload }));
@@ -33,7 +30,7 @@ async function login(data,res) {
     let msg = await userModel.login(data.payload);
     if(typeof msg === 'object' && msg !== null)
     {
-        console.log('suntem pe aici :' + JSON.stringify(msg));
+        console.log('in login:' + JSON.stringify(msg));
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
         //res.writeHead(307, {Location: 'profile'});
@@ -68,11 +65,11 @@ async function getProfile(data, res)
     if("error" in result) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
         return;
 
-    console.log('am primit ' + result);
+    console.log('am primit ' , result);
     let profileData = await userModel.getProfile(result.user_id);
 
     
-    console.log('sarlalala ' + profileData);
+    console.log("Profile Data: " , profileData);
 
     //todo render profile view
     try{

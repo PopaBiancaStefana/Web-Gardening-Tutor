@@ -51,10 +51,10 @@ ul {
 }
 
 ul li a {
-    padding: 0 20px;
+    padding: 0 15px;
     text-decoration: none;
     color: #FF7C59;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     justify-content: center;
 
@@ -66,8 +66,8 @@ ul li a:hover {
 }
 
 .logo img {
-    width: 28vw;
-    height: 13vw;
+    width: 29rem;
+    height: 13rem;
     padding: 5px;
 }
 
@@ -336,13 +336,6 @@ footer {
         margin-bottom: 10px;
     }
 
-    .main-header .container .logo img {
-        margin-left: 20%;
-        margin-bottom: 0px;
-        width: 70%;
-        height: auto;
-    }
-
     .banner-container h1 {
         font-size: 43px;
     }
@@ -390,37 +383,17 @@ footer {
 }
 
 @media only screen and (max-width:460px) and (min-width:360px) {
-    .main-header .container {
-        width: 460px;
-    }
 
-    .courses-container {
-        width: 460px;
-    }
-
-    .main-header .container .logo img {
-        margin-left: 70px;
-    }
-
-    .banner-container {
-        width: 460px;
+    .courses-container .box {
+        width: 360px;
     }
 
     .banner-container h1 {
         font-size: 40px;
     }
 
-
     .banner-container p {
         font-size: 28px;
-    }
-
-    footer {
-        width: 460px;
-    }
-
-    .courses-container .box {
-        width: 410px;
     }
 
     .box .tag-easy {
@@ -443,24 +416,29 @@ footer {
         padding-right: 22px;
         padding-left: 4px;
     }
+
+    ul li a {
+        padding: 0 13px;
+        font-size: 18px;
+    }
+
+    .course .bookmark {
+        left: -60px;
+        top: -160px;
+    }
 }
 
 @media only screen and (max-width:360px) {
     .main-header .container {
-        width: 420px;
-    }
-
-    .main-header .container .logo img {
-        width: 80%;
-        margin-left: 55px;
+        width: 360px;
     }
 
     .courses-container {
-        width: 420px;
+        width: 360px;
     }
 
     .banner-container {
-        width: 420px;
+        width: 360px;
     }
 
     .banner-container h1 {
@@ -473,7 +451,7 @@ footer {
     }
 
     footer {
-        width: 420px;
+        width: 360px;
     }
 
     .courses-container .box {
@@ -504,5 +482,19 @@ footer {
     .course .photo {
         left: 40px;
         top: 0px;
+    }
+
+    header nav {
+        width: 360px;
+    }
+
+    ul li a {
+        padding: 0 13px;
+        font-size: 18px;
+    }
+
+    .course .bookmark {
+        left: -60px;
+        top: -170px;
     }
 }

@@ -69,8 +69,8 @@ ul {
 }
 
 .logo img {
-  width: 35rem;
-  height: 15rem;
+  width: 29rem;
+  height: 13rem;
   padding: 5px;
 }
 
@@ -78,16 +78,16 @@ ul {
 @media (max-width: 700px) {
   header {
     flex-direction: column;
+    height: 190px;
   }
-  .logo img {
-    margin: 0;
-    padding: 10px;
-    width: 20rem;
-    height: 10rem;
+
+  ul {
+    margin-bottom: 10px;
   }
   header nav li {
     margin: 0;
   }
+
   .container {
     height: 150px;
   }
@@ -136,6 +136,7 @@ main {
 @media only screen and (max-width: 700px) {
   .main-header .container {
     flex-direction: column;
+    height: 190px;
   }
 
   header nav li {
@@ -152,17 +153,20 @@ section {
   background-color: rgba(228, 190, 168, 0.8);
   height: 550px;
 }
+
 .scroll {
   height: 550px;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 /* Responsive section */
 @media (max-width: 1000px) {
   section {
     padding: 100px 50px;
   }
 }
+
 @media (max-width: 600px) {
   section {
     padding: 125px 30px;
@@ -180,6 +184,7 @@ section {
   width: 120rem;
   background-color: rgba(149, 177, 175, 0.5);
 }
+
 .divTableHeader .divTableCell {
   width: 100px;
   margin: 10px;
@@ -190,6 +195,7 @@ section {
   color: #205565;
   border-radius: 1.5rem;
 }
+
 .divTableRow {
   display: flex;
   flex-wrap: nowrap;
@@ -198,6 +204,7 @@ section {
   width: 120rem;
   background-color: rgba(149, 177, 175, 0.5);
 }
+
 .divTableRow .divTableCell {
   width: 100px;
   margin: 10px;
@@ -208,28 +215,35 @@ section {
   color: #205565;
   border-radius: 1.5rem;
 }
+
 .divTableRow .divTableCell img {
   width: 10rem;
   height: 10rem;
 }
+
 /* Responsive Leaderboard area */
 @media only screen and (max-width: 1000px) {
   .divTableHeader {
     width: 25rem;
   }
+
   .divTableRow {
     width: 25rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 30px;
   }
@@ -239,19 +253,24 @@ section {
   .divTableHeader {
     width: 35rem;
   }
+
   .divTableRow {
     width: 35rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 30px;
   }
@@ -276,14 +295,10 @@ footer {
     margin: 2rem;
     font-size: 50px;
   }
-  .logo img {
-    width: 35rem;
-    height: 15rem;
-    padding: 5px;
-  }
   .title-text h1 span {
     font-size: 50px;
   }
+
   .title-text img {
     width: 25rem;
     margin-top: 5px;
@@ -292,46 +307,54 @@ footer {
 
 /* Responsive on Mobile screen with portrait orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
   }
-  .logo img {
-    height: 105px;
-    width: 220px;
-  }
+
   .nav-bar li a {
     padding: 0 10px;
   }
+
   .title-text h1 {
     margin: 4rem 0rem;
     font-size: x-large;
   }
+
   .title-text h1 span {
     font-size: x-large;
   }
+
   .title-text img {
     width: 16rem;
   }
+
   .container {
     height: 150px;
   }
+
   .divTableHeader {
     width: 35rem;
   }
+
   .divTableRow {
     width: 35rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 30px;
   }
@@ -342,44 +365,52 @@ footer {
   main {
     height: 22rem;
   }
-  .logo img {
-    height: 90px;
-    width: 170px;
-  }
+
   header {
     padding: 0;
   }
+
   .title-text {
     height: 100px;
   }
+
   .title-text h1 {
     font-size: 15px;
   }
+
   .title-text h1 span {
     font-size: 15px;
   }
+
   .container {
     height: 140px;
   }
+
   .title-text img {
     width: 10rem;
   }
+
   .divTableHeader {
     width: 60rem;
   }
+
   .divTableRow {
     width: 60rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 30px;
   }
@@ -387,40 +418,41 @@ footer {
 
 /* Responsive on Tablet screen with portrait orientation */
 @media only screen and (min-width: 651px) and (max-width: 1920px) and (orientation: landscape) {
+
   .main-header,
   .main-header .container {
     padding: 0;
   }
-  .logo img {
-    height: 105px;
-    width: 220px;
-  }
 
-  .nav-bar li a {
-    padding: 0 10px;
-  }
   .title-text h1 {
     margin: 4rem 0rem;
   }
+
   .title-text img {
     width: 15rem;
   }
+
   .divTableHeader {
     width: 85rem;
   }
+
   .divTableRow {
     width: 85rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 80px;
   }
@@ -431,22 +463,28 @@ footer {
   .container {
     height: 150px;
   }
+
   .divTableHeader {
     width: 60rem;
   }
+
   .divTableRow {
     width: 60rem;
   }
+
   .divTableHeader .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell {
     font-size: 1.3rem;
   }
+
   .divTableRow .divTableCell img {
     width: 5rem;
     height: 5rem;
   }
+
   section {
     padding: 30px;
   }

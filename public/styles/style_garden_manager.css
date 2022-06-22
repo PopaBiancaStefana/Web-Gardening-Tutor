@@ -69,8 +69,8 @@ ul {
 }
 
 .logo img {
-  width: 35rem;
-  height: 15rem;
+  width: 29rem;
+  height: 13rem;
   padding: 5px;
 }
 
@@ -79,15 +79,11 @@ ul {
   header {
     flex-direction: column;
   }
-  .logo img {
-    margin: 0;
-    padding: 10px;
-    width: 20rem;
-    height: 10rem;
-  }
+
   header nav li {
     margin: 0;
   }
+
   .container {
     height: 150px;
   }
@@ -136,6 +132,11 @@ main {
 @media only screen and (max-width: 700px) {
   .main-header .container {
     flex-direction: column;
+    height: 190px;
+  }
+
+  ul {
+    margin-bottom: 10px;
   }
 
   header nav li {
@@ -151,17 +152,20 @@ section {
   padding: 110px 100px;
   height: auto;
 }
+
 .scroll {
   height: 550px;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 /* Responsive section */
 @media (max-width: 1000px) {
   section {
     padding: 100px 50px;
   }
 }
+
 @media (max-width: 600px) {
   section {
     padding: 125px 30px;
@@ -175,6 +179,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .manager-content li {
   margin: 20px;
   height: 500px;
@@ -187,9 +192,11 @@ section {
 .manager-left {
   flex-basis: 40%;
 }
+
 .manager-right {
   flex-basis: 60%;
 }
+
 .manager-right h2 {
   margin-bottom: 3%;
 }
@@ -238,6 +245,7 @@ section {
   font-weight: bold;
   color: #ff7c59;
 }
+
 .manager-left input {
   width: 23rem;
   height: 4rem;
@@ -259,6 +267,7 @@ section {
 .manager-left div {
   margin: 20px 20px 20px 20px;
 }
+
 .manager-area {
   background-color: rgba(178, 216, 227, 0.6);
   padding: 55px;
@@ -299,6 +308,7 @@ section {
 table {
   border-collapse: collapse;
 }
+
 table.list {
   width: 100%;
 }
@@ -314,7 +324,7 @@ th {
 }
 
 tr:nth-child(even),
-table.list thead > tr {
+table.list thead>tr {
   background-color: #95ce8b;
 }
 
@@ -330,30 +340,36 @@ table.list thead > tr {
 
 /* Responsive Garden Manager area */
 @media only screen and (max-width: 1000px) {
+
   .manager-left,
   .manager-right {
     flex-basis: 100%;
   }
+
   .manager-content li {
     padding: 8px;
   }
 }
 
 @media only screen and (max-width: 800px) {
+
   .manager-left,
   .manager-right {
     flex-basis: 100%;
   }
+
   .manager-content li {
     padding: 8px;
   }
 }
 
 @media only screen and (max-width: 600px) {
+
   .manager-left,
   .manager-right {
     flex-basis: 100%;
   }
+
   .manager-content li {
     padding: 8px;
   }
@@ -378,11 +394,7 @@ footer {
     margin: 2rem;
     font-size: 50px;
   }
-  .logo img {
-    width: 35rem;
-    height: 15rem;
-    padding: 5px;
-  }
+
   .manager-left #name-label {
     width: 20rem;
     height: 5rem;
@@ -391,6 +403,7 @@ footer {
     font-weight: bold;
     color: #ff7c59;
   }
+
   .manager-left #last-interaction-label {
     width: 20rem;
     height: 5rem;
@@ -399,6 +412,7 @@ footer {
     font-weight: bold;
     color: #ff7c59;
   }
+
   .manager-left #due-date-label {
     width: 20rem;
     height: 5rem;
@@ -407,6 +421,7 @@ footer {
     font-weight: bold;
     color: #ff7c59;
   }
+
   .manager-left #stage-label {
     width: 20rem;
     height: 5rem;
@@ -415,6 +430,7 @@ footer {
     font-weight: bold;
     color: #ff7c59;
   }
+
   .manager-left #interaction-label {
     width: 20rem;
     height: 5rem;
@@ -423,21 +439,26 @@ footer {
     font-weight: bold;
     color: #ff7c59;
   }
+
   .add-button button {
     padding: 10px 20px;
     font-size: 24px;
   }
+
   .title-text h1 span {
     font-size: 50px;
   }
+
   .title-text img {
     width: 25rem;
     margin-top: 5px;
   }
+
   td,
   th {
     font-size: 2.5rem;
   }
+
   .edit-delete {
     font-size: 2.5rem;
   }
@@ -445,70 +466,83 @@ footer {
 
 /* Responsive on Mobile screen with portrait orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
   }
-  .logo img {
-    height: 105px;
-    width: 220px;
-  }
   .nav-bar li a {
     padding: 0 10px;
   }
+
   .title-text h1 {
     margin: 4rem 0rem;
     font-size: 18px;
   }
+
   .title-text h1 span {
     font-size: 18px;
   }
+
   .title-text img {
     width: 10rem;
   }
+
   .container {
     height: 150px;
   }
+
   main {
     margin-top: 70px;
     height: 180px;
   }
+
   td,
   th {
     font-size: 1rem;
   }
+
   .manager-area {
     padding: 0px;
   }
+
   .manager-left input {
     height: 3rem;
     font-size: 12px;
   }
+
   .manager-left select {
     height: 3rem;
     font-size: 12px;
   }
+
   .manager-left #name-label {
     font-size: 1.5rem;
   }
+
   .manager-left #last-interaction-label {
     font-size: 1.5rem;
     margin-right: 23px;
   }
+
   .manager-left #due-date-label {
     font-size: 1.5rem;
     margin-right: 65px;
   }
+
   .manager-left #stage-label {
     font-size: 1.5rem;
   }
+
   .manager-left #interaction-label {
     font-size: 1.5rem;
     margin-right: 55px;
   }
+
   .manager-left .add-button input {
     font-size: 1.5rem;
   }
+
   .edit-delete {
     font-size: 1rem;
   }
@@ -516,31 +550,35 @@ footer {
 
 /* Responsive on Mobile screen with landscape orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: landscape) {
-  .logo img {
-    height: 90px;
-    width: 170px;
-  }
+
   header {
     padding: 0;
   }
+
   .title-text {
     height: 100px;
   }
+
   .manager-area {
     margin-top: 35px;
   }
+
   .title-text h1 {
     font-size: 20px;
   }
+
   .title-text h1 span {
     font-size: 20px;
   }
+
   .container {
     height: 140px;
   }
+
   .title-text img {
     width: 10rem;
   }
+
   main {
     height: 190px;
   }
@@ -548,31 +586,29 @@ footer {
 
 /* Responsive on Tablet screen with portrait orientation */
 @media only screen and (min-width: 651px) and (max-width: 1920px) and (orientation: landscape) {
+
   .main-header,
   .main-header .container {
     padding: 0;
-  }
-  .logo img {
-    height: 105px;
-    width: 220px;
   }
 
   .nav-bar li a {
     padding: 0 10px;
   }
+
   .title-text h1 {
     margin: 4rem 0rem;
   }
+
   .title-text img {
     width: 15rem;
   }
+
   td,
   th {
     font-size: 1.5rem;
   }
-  /* main {
-    height: 385px;
-  } */
+
 }
 
 /* Responsive on Tablet screen with landscape orientation */
@@ -580,6 +616,7 @@ footer {
   .container {
     height: 150px;
   }
+
   .title-text img {
     width: 20rem;
   }

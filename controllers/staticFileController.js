@@ -43,7 +43,7 @@ async function restrictedFile(data, res)
 
     
 
-    console.log("blablablasdf " + result );
+    console.log("user " + result );
 
 
     if("user_id" in JSON.parse(result)) // exista sesiunea pentru client

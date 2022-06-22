@@ -15,7 +15,7 @@ const { EUCJPMS } = require("mysql/lib/protocol/constants/charsets");
                 console.log(err);
                 reject(err);
             }
-            //console.log(JSON.stringify(data));
+    
             resolve(data);
         })
     });
