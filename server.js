@@ -11,6 +11,7 @@ const courseController = require("./controllers/courseController");
 const { createNullProtoObjWherePossible } = require("ejs/lib/utils");
 const leaderboardController = require("./controllers/leaderboardController");
 const gardenController = require("./controllers/gardenController");
+const { profile } = require("console");
 
 require("dotenv").config();
 
@@ -129,7 +130,8 @@ const postRoutes = {
     course_template: courseController.saveForm,
     logout: userController.logout,
     garden_manager: gardenController.savePlants,
-    courses: courseController.saveBookmark
+    courses: courseController.saveBookmark,
+    profile: userController.saveInformation
 };
 
 const putRoutes = {

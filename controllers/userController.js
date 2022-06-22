@@ -5,6 +5,8 @@ const ejs = require("ejs");
 const path = require("path"); 
 const { write } = require("fs");
 const { compareSync } = require("bcrypt");
+const checkSession = require('../models/sessionModel').checkSession;
+
 
 async function register(data, res)
 {
@@ -37,7 +39,7 @@ async function login(data,res) {
         //logare cu succes, trimiem cookieul catre client
         res.setHeader("Set-Cookie", `sid=${msg.sid}`);
         //res.writeHead(307, {Location: 'profile'});
-        res.writeHead(201);
+        res.writeHead(201,{"Content-type": "application/json"});
         res.end(JSON.stringify({data: "logged in"}));
     }
     else{
@@ -68,7 +70,6 @@ async function getProfile(data, res)
     if("error" in result) // nu a existat sesiune si userul a fost deja redirectat catre pagina de login
         return;
 
-    console.log('am primit ' + result);
     let profileData = await userModel.getProfile(result.user_id);
 
     
@@ -93,4 +94,31 @@ async function getProfile(data, res)
 
 }
 
-module.exports = {register, login, logout, getProfile};
+
+async function saveInformation(data, res)
+{
+    //console.log("informatii" + JSON.stringify(data.payload));
+    let result = await checkSession(data.headers)
+    .catch((err) => {
+        res.writeHead(500); //server error
+        res.end();
+        return {error: "no session"};
+    });
+
+    result = JSON.parse(result);
+    let userId;
+    if("user_id" in result) // exista sesiunea pentru client
+    {
+        userId = result.user_id;
+    }
+    else{
+        res.writeHead(401);
+        res.end();
+        return {error: "no session"};
+    }
+
+    userModel.saveInformation(userId, data.payload);
+
+}
+
+module.exports = {register, login, logout, getProfile, saveInformation};

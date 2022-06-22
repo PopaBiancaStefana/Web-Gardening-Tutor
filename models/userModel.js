@@ -3,6 +3,10 @@ const db =require("../database");
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const { EUCJPMS } = require("mysql/lib/protocol/constants/charsets");
+const fs = require("fs");
+const { isStringObject } = require("util/types");
+const { info } = require("console");
+const path = require("path");
 
 
  async function findByEmail(email)
@@ -35,7 +39,28 @@ async function createUser(user)
         throw "There is already an account with this email";
 
 
-    db.pool.query("insert into registered_users (name, e_mail, password, registration_date) values (?,?,?,?)" , [user.name, user.email, hashedPassword, null], (err, result) =>{
+    let profile_information = {
+        photo_path:"",
+        about:"",
+        profession:"",
+        registration_date: new Date(),
+        achievements: [
+            {name: "Created Account",
+            photo_src: "images/reg.png"}
+        ]
+    }
+
+    let file_name = uuid.v4()+'.json';
+    let info_path = path.join(__dirname,  "../public/users", file_name );
+    fs.writeFile(info_path, JSON.stringify(profile_information), (err) => {
+        if (err){
+            console.log("eroare la scriere in fisier");
+            throw err;
+        }
+    } )
+
+
+    db.pool.query("insert into registered_users (name, e_mail, password, profile_information) values (?,?,?,?)" , [user.name, user.email, hashedPassword, file_name], (err, result) =>{
         if(err) throw err;
         console.log("user inserted");
     })
@@ -92,9 +117,9 @@ async function getProfile(id_user)
 {
     let data ={};
 
-        //adaugam numele si emailul
+        //adaugam informatiile despre profil
     let profileInfo = await getProfileInformation(id_user);
-    Object.assign(data, profileInfo);
+    data.profile_information = profileInfo;
 
     let userCourses = await getUserCourses(id_user);
     //adaugam cursurile
@@ -139,7 +164,7 @@ function getUserCourses(id_user)
 function getBookmarkedCourses(id_user)
 {
         return new Promise((resolve, reject) => {
-            db.pool.query("select c.name from registered_users as u join bookmarked_courses as bc on u.id = bc.id_user join courses as c on bc.id_course = c.id where u.id = ?", [id_user], (err, result)=>{
+            db.pool.query("select c.name from registered_users as u join bookmarked_courses as bc on u.id = bc.id_user join courses as c on bc.id_course = c.id where u.id = ? and bc.bookmarked = 1", [id_user], (err, result)=>{
                 if(err) {
                     reject(err);
                     return;
@@ -167,20 +192,71 @@ function getBookmarkedCourses(id_user)
 function getProfileInformation(id_user)
 {
     return new Promise((resolve, reject) => {
-        db.pool.query("select name, e_mail from registered_users where id = ?" , [id_user], (err, result) => {
+        db.pool.query("select name, e_mail, profile_information from registered_users where id = ?" , [id_user], (err, result) => {
             if (err){
                 reject(err);
                 return;
             }
             let data = {};
+            let profileDetails ={};
             Object.keys(result).forEach((key) => {
                 let row = result[key];
                 data.name = row.name;
                 data.email = row.e_mail;  
+                
+                if(row.profile_information)
+                {
+                    file = path.join(__dirname, "../public/users", row.profile_information);
+                    profileDetails = require(file);
+
+
+                }
+                Object.keys(profileDetails).forEach((key) => {
+                    data[key] = profileDetails[key];
+                })
+
             });
             resolve(data);
         })
     })
+}
+
+
+async function saveInformation(userId, information)
+{
+    //get info_file path
+    let file_path = await getFileName(userId);
+    console.log('path ' + file_path);
+    file_path = path.join(__dirname, "../public/users", file_path);
+
+    infoObj = require(file_path);
+    
+    //editam jsou ul de pe disc
+    Object.keys(information).forEach((key) => {
+        infoObj[key] = information[key];
+    })
+
+    fs.writeFile(file_path, JSON.stringify(infoObj), (err) => {
+        if(err)
+            throw err;
+        console.log("am modificat! - " + JSON.stringify(information));
+    })
+}
+
+ function getFileName(userId)
+{
+    return new Promise((resolve,reject) => 
+    {
+        db.pool.query("select profile_information from registered_users where id = ?", [userId], (err, data) => {
+            if(err) 
+            {
+                console.log(err);
+                reject(err);
+                return;
+            }
+            resolve( data[0].profile_information);
+        } )
+    });
 }
 
 module.exports = {
@@ -188,5 +264,6 @@ module.exports = {
     createUser, 
     login,
     getUserBySid,
-    getProfile
+    getProfile,
+    saveInformation
 };
