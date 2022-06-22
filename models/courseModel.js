@@ -7,7 +7,6 @@ function toFormalEncoding(string)
 {
   string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
   string = string.replace('_', ' ');
-  console.log("sirul intors este " + string);
   return string;
 }
 
@@ -144,7 +143,6 @@ async function getCourseByName(name)
   } else
     course.error = "course not found";
 
-  console.log('trimitem cursul ' + course);
   return course;
 }
 
