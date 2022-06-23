@@ -258,14 +258,18 @@
                 let about = document.getElementById("about");
                 let profession = document.getElementById("profession");
                 
-                information.about = about.value;
+                information.about = about.value.replace(/(\n)+/g, '\\n');
+
                 information.profession = profession.value;
                 
                 console.log(information);
 
                 //trimitem catre server obiectul
                 let endpoint = "profile";
-                sendData(information, endpoint, );
+                sendData(information, endpoint)
+                
+                let saveButton  = document.getElementById("save-button");
+                saveButton.style.display = "none";
             }
 
             function sendData(information, endpoint)
@@ -303,8 +307,9 @@
                 let about = document.getElementById("about");
                 let profession = document.getElementById("profession");
 
-                about.value = '<%= profile_information.about %>';
-                profession.value = '<%= profile_information.profession %>';
+
+                about.value = '<%- profile_information.about %>';
+                profession.value = '<%- profile_information.profession %>';
             });
 
             function redirectToCourse(string)

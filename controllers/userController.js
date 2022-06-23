@@ -115,6 +115,9 @@ async function saveInformation(data, res)
 
     userModel.saveInformation(userId, data.payload);
 
+    res.writeHead(200, {"Content-type":"application/json"});
+    res.write(JSON.stringify({data: "infomatie salvata"}))
+
 }
 
 module.exports = {register, login, logout, getProfile, saveInformation};
