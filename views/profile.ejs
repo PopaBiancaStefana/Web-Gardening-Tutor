@@ -92,14 +92,14 @@
                                 <span>Change Image</span>
                             </label>
 
-                            <% let photo_path = "images/avatar.webp"; %> 
+                            <% let path = "images/avatar.webp"; %> 
                             <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png">
-                            <% if(!(locals.profile_photo)) { %>
-                                <% photo_path = "images/avatar.webp" %> 
+                            <% if((locals.photo_path == '')) { %>
+                                <% path = "images/avatar.webp" %> 
                             <% } else { %>  
-                                <% photo_path = profile_information.profile_photo %>
+                                <% path = profile_information.photo_path %>
                             <% } %> 
-                            <img src="<%- photo_path %>" alt="avatar" class="profile-image" id="output">
+                            <img src="<%- path %>" alt="avatar" class="profile-image" id="output">
                         </div>
                         <div class="profile-info">
                             <h3 class="my-name"> <%= profile_information.name %>  </h3> <br>
