@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@200;300&family=Poppins:wght@200&family=Quicksand:wght@300&family=Rokkitt:wght@200&family=Source+Code+Pro:wght@300&font-display=swap");
+@font-face {
+  font-family: 'Quicksand';
+  src: url(https://fonts.gstatic.com/s/quicksand/v29/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: swap;
+}
 
 * {
   margin: 0;
@@ -16,7 +21,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-display: swap;
   min-height: 100%;
   background-position: center center;
@@ -136,7 +141,7 @@ main {
   border-radius: 15px;
   box-shadow: 0 9px #999;
   text-transform: uppercase;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-display: swap;
   margin-top: 15px;
   margin-left: 10px;
@@ -265,6 +270,7 @@ ul.about-content {
 
 /* Responsive About area */
 @media only screen and (max-width: 1000px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
@@ -276,6 +282,7 @@ ul.about-content {
 }
 
 @media only screen and (max-width: 800px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
@@ -287,6 +294,7 @@ ul.about-content {
 }
 
 @media only screen and (max-width: 600px) {
+
   .about-left,
   .about-right {
     flex-basis: 100%;
@@ -421,6 +429,7 @@ ul.faq-content {
 
 /* Responsive FAQ area */
 @media only screen and (max-width: 1000px) {
+
   .faq-left,
   .faq-right {
     flex-basis: 100%;
@@ -514,6 +523,7 @@ footer {
   .welcome-text h1 {
     margin: 2rem;
   }
+
   .about-right p {
     padding: 0rem 4rem;
     margin: 11rem 0rem;
@@ -536,6 +546,7 @@ footer {
 
 /* Responsive on Mobile screen with portrait orientation*/
 @media only screen and (min-width: 360px) and (max-width: 650px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
@@ -596,6 +607,7 @@ footer {
 
 /* Responsive on Tablet screen with portrait orientation */
 @media only screen and (min-width: 651px) and (max-width: 1920px) and (orientation: portrait) {
+
   .main-header,
   .main-header .container {
     padding: 0;
