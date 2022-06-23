@@ -28,14 +28,12 @@ const server = http.createServer((req, res) => {
     let method = req.method.toLocaleLowerCase();
 
     let payload = "";
-    console.log(urlPath + " " + method);
     req.on("data", (chunk) => {
         payload += chunk.toString();
     });
     req.on("end", () => {
         let parsedPayload;
         if (payload != "") parsedPayload = JSON.parse(payload);
-        console.log("payload: " + payload);
 
         let data = {
             path: urlPath,
@@ -44,7 +42,6 @@ const server = http.createServer((req, res) => {
             method: method,
             payload: parsedPayload,
         };
-        // console.log(data.payload);
 
         switch (method) {
             case 'get':
@@ -72,10 +69,7 @@ const server = http.createServer((req, res) => {
                     route(data, res);
                     break;
 
-                    // //let route = getRoutes[urlPath] != "undefined" ?  getRoutes[urlPath] : getRoutes["staticFile"];
-                    // route(data, res);
-                    // console.log('headers: \n' + JSON.stringify(data.headers) +'\n');
-                    // break;
+                   
                 }
             case 'post': {
                 let route;

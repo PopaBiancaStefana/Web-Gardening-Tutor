@@ -33,7 +33,6 @@ function toFormalEncoding(string)
 {
   string = string.charAt(0).toUpperCase() + string.slice(1); // capitalize
   string = string.replace('_', ' ');
-  console.log("sirul intors este " + string);
   return string;
 }
 
@@ -96,7 +95,6 @@ async function getCourse(data, res)
 
 
     let course = await courseModel.getCourseByName(course_name);
-    console.log("am primit cursul " + course);
     if("error" in course)
     {
         res.head(404);

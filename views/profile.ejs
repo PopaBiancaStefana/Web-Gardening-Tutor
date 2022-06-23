@@ -28,7 +28,7 @@
                   <li><a href="leaderboard">Leaderboard</a></li>
                 </ul>
                 <button id="logout-button">
-                    Logut
+                    Logout
                     <span class="material-icons">
                         logout
                     </span>
@@ -51,7 +51,7 @@
                 </button>
                 
 
-                <button class="menu-button" onclick="openContent(event, 'achievemnets')">
+                <button class="menu-button" onclick="openContent(event, 'achievements')">
                     Achievements
                     <span class="material-icons">
                         workspace_premium
@@ -129,23 +129,22 @@
                         </div>
                     </section>
 
-
-
-                    <section class="profile-details">
-                        <h1>Statistics</h1>
-                        
-                        <div class="profile-details-field">
-                            <p class="profile-details-label">Completed courses</p>
-                            <p class="profile-details-value">2</p>
-                        </div>
-                    </section>
                 </div>
 
                 
-                <section class="section-card content" id="achievemnets" style="display: none;">
+                <section class="section-card content" id="achievements" style="display: none;">
                     <h1>Achievements</h1>
-
                     <div class="section-card-content">
+
+                       
+                        <% profile_information.achievements.forEach(achievement => { %>
+                            <div class="badge-container tooltip">
+                                <img src="<%- achievement.photo_src %> " alt="badge" class="badge">
+                                <span class="tooltip-text"> <%= achievement.description  %>  </span>
+                            </div>
+
+                        <% }); %> 
+                    <div class="section-card-content">                   
 
 
                 </section>
@@ -160,7 +159,7 @@
                             <div class="section-card-content">
                                 <div class="course-card">
                                     <h3> <%= course.title %> </h3>
-                                    <button class="course-button">Continue</button>
+                                    <button class="course-button" onclick="redirectToCourse('<%- course.title %>')">Continue</button>
                                     <div class="progress-container">
                                         <% let percentage = course.progress * 100 + '%' %> 
                                         <div class="progress-bar" style="width: <%= percentage %> ;"> </div>
@@ -182,7 +181,7 @@
                             <div class="section-card-content">
                                 <div class="course-card">
                                     <h3> <%= course.title %>  </h3>
-                                    <button class="course-button">Get started</button>
+                                    <button class="course-button" onclick="redirectToCourse('<%- course.title %>')">Get started</button>
                                 </div>    
                             </div>
     
@@ -308,6 +307,19 @@
                 about.value = '<%= profile_information.about %>';
                 profession.value = '<%= profile_information.profession %>';
             });
+
+            function redirectToCourse(string)
+            {
+                window.location.href = "courses/" + toFormal(string);
+                sessionStorage.setItem("course", toFormal(string));
+            }
+
+            function toFormal(string)
+            {
+                string = string.replace(' ', '_');
+                string = string.charAt(0).toLowerCase() + string.slice(1);
+                return string;
+            }
 
         </script>
 
