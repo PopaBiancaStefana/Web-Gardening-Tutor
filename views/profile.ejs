@@ -93,7 +93,7 @@
                             </label>
 
                             <% let path = "images/avatar.webp"; %> 
-                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png">
+                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png,.jpg">
                             <% if((locals.photo_path == '')) { %>
                                 <% path = "images/avatar.webp" %> 
                             <% } else { %>  

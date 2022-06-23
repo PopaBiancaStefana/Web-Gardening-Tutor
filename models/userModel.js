@@ -264,7 +264,8 @@ async function incrementFinishedCourses(userId)
     let userInformation = require(file_path);
 
     userInformation.finished_courses = userInformation.finished_courses + 1;
-    if(userInformation.finished_course == 1)
+    console.log('verif '  + userInformation.finished_courses);
+    if(userInformation.finished_courses == 1)
     {
 
         userInformation.achievements.push({
@@ -272,11 +273,6 @@ async function incrementFinishedCourses(userId)
             description: "Finished first course"
         })
     }
-
-    userInformation.achievements.push({
-        photo_src: "images/achievements/first_course.webp",
-        description: "Finished first course"
-    })
     
     if(userInformation.finished_course == 4)
     {
