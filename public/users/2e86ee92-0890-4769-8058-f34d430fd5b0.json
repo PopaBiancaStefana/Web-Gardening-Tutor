@@ -1,0 +1,13 @@
+{
+  "photo_path": "",
+  "about": "Hello my name is Cecilia Nice to meet you\n",
+  "profession": "Student",
+  "registration_date": "2022-06-22T21:07:43.289Z",
+  "achievements": [
+    {
+      "description": "Singned up",
+      "photo_src": "images/achievements/signed_in.webp"
+    }
+  ],
+  "finished_courses": 0
+}

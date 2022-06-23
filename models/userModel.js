@@ -48,7 +48,7 @@ async function createUser(user)
         achievements: [
             {
             description: "Singned up",
-            photo_src: "images/achievements/signed_in.png"}
+            photo_src: "images/achievements/signed_in.webp"}
         ],
         finished_courses:0
     }
@@ -275,20 +275,20 @@ async function incrementFinishedCourses(userId)
     {
 
         userInformation.achievements.push({
-            photo_src: "images/achievements/first_course.png",
+            photo_src: "images/achievements/first_course.webp",
             description: "Finished first course"
         })
     }
 
     userInformation.achievements.push({
-        photo_src: "images/achievements/first_course.png",
+        photo_src: "images/achievements/first_course.webp",
         description: "Finished first course"
     })
     
     if(userInformation.finished_course == 4)
     {
         userInformation.achievements.push({
-            photo_src: "images/achievements/all_courses.png",
+            photo_src: "images/achievements/all_courses.webp",
             description: "Finished all courses"
         })
     }

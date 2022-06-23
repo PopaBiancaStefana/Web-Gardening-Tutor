@@ -1,9 +1,9 @@
 /*  Base styling */
 
-
 @font-face {
     font-family: Dashed;
     src: url(../fonts/Quicksand_Dash.otf);
+    font-display: swap;
 }
 
 * {
@@ -14,11 +14,12 @@
 }
 
 body {
-    background-image: url("../images/pattern.png");
+    background-image: url("../images/pattern.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand' , sans-serif;
+    font-display: swap;
     height: 100%;
 }
 
@@ -130,7 +131,7 @@ button:active {
 #course-title {
     height: auto;
     width: 100%;
-    background-image: url("../images/skyy.jpg");
+    background-image: url("../images/skyy.webp");
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -346,7 +347,7 @@ button:active {
 
 
 #right {
-    background-image: url("../images/tools.jpg");
+    background-image: url("../images/tools.webp");
     float: left;
     width: 25%;
     padding-left: 20px;
