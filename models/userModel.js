@@ -8,6 +8,8 @@ const { isStringObject } = require("util/types");
 const { info } = require("console");
 const path = require("path");
 const { userInfo } = require("os");
+const checkSession = require('./sessionModel').checkSession;
+
 
 
  async function findByEmail(email)
@@ -105,15 +107,6 @@ async function createSession(userId, sessionId)
 }
 
 
-function getUserBySid(sid)
-{
-    return new Promise((resolve, reject) => {
-        db.pool.query("select id_user from user_session where id_session = ?", [sid], (err, data) => {
-            if(err) reject(err);
-            resolve(data);
-        })
-    })
-}
 
 
 async function getProfile(id_user)
@@ -303,12 +296,48 @@ async function incrementFinishedCourses(userId)
     
 }
 
+async function saveImage(data)
+{
+    let base64code = data.payload.image.split(',')[1];
+
+    //scriem pe disc imaginea
+    let imageName = uuid.v4() + '.webp';
+    let imagePath = path.join(__dirname, '../public/images/avatars', imageName );
+    fs.writeFile(imagePath, base64code, 'base64', (err) => {
+        if(err)
+        {
+            console.log(err);
+            throw err;
+        }
+    });
+
+    //put image path in user information json
+
+    let result = await checkSession(data.headers);
+    let user_id = JSON.parse(result).user_id;
+
+
+    let info_file_path = await getFileName(user_id);
+    info_file_path = path.join(__dirname, "../public/users", info_file_path);
+
+    let userInformation = require(info_file_path);
+    userInformation.photo_path = path.join('images', 'avatars', imageName);
+
+
+    fs.writeFile(info_file_path, JSON.stringify(userInformation), (err) => {
+        if (err){
+            console.log("eroare la scriere in fisier");
+            throw err;
+        }
+    } )
+}
+
 module.exports = {
     findByEmail,
     createUser, 
     login,
-    getUserBySid,
     getProfile,
     saveInformation,
-    incrementFinishedCourses
+    incrementFinishedCourses,
+    saveImage
 };

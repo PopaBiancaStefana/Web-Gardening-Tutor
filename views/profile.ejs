@@ -93,13 +93,13 @@
                             </label>
 
                             <% let photo_path = "images/avatar.webp"; %> 
-                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png, .jpg, .jpeg">
+                            <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png">
                             <% if(!(locals.profile_photo)) { %>
                                 <% photo_path = "images/avatar.webp" %> 
                             <% } else { %>  
                                 <% photo_path = profile_information.profile_photo %>
                             <% } %> 
-                            <img src="<%- photo_path %>" alt="<%= photo_path %> " class="profile-image" id="output">
+                            <img src="<%- photo_path %>" alt="avatar" class="profile-image" id="output">
                         </div>
                         <div class="profile-info">
                             <h3 class="my-name"> <%= profile_information.name %>  </h3> <br>
@@ -223,6 +223,19 @@
             var loadFile = function (event) {
                 var image = document.getElementById("output");
                 image.src = URL.createObjectURL(event.target.files[0]);
+
+                console.log(event.target.files[0]) 
+                let endpoint = "save_image";
+
+                let reader = new FileReader();
+                reader.readAsDataURL(event.target.files[0]);
+                reader.onload = () => {
+                    sendData({image : reader.result}, endpoint);
+                    console.log(reader.result);
+                }
+                reader.onerror = () => {
+                    console.log("eroare la citirea imaginii");
+                }
             }
 
 
@@ -307,7 +320,6 @@
             window.addEventListener('load', (event) => {
                 let about = document.getElementById("about");
                 let profession = document.getElementById("profession");
-
 
                 about.value = '<%- profile_information.about %>';
                 profession.value = '<%- profile_information.profession %>';
