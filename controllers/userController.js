@@ -115,6 +115,24 @@ async function saveInformation(data, res)
 
     userModel.saveInformation(userId, data.payload);
 
+    res.writeHead(200, {"Content-type":"application/json"});
+    res.write(JSON.stringify({data: "infomatie salvata"}))
+
 }
 
-module.exports = {register, login, logout, getProfile, saveInformation};
+function saveImage(data, res)
+{
+    console.log(JSON.stringify(data.payload));
+
+    try{
+        userModel.saveImage(data)
+    } catch (err) {
+        res.writeHead(500, {"Content-type": "application/json"});
+        res.end(JSON.stringify({error: err}));
+    }
+
+    res.writeHead(200, {"Content-type":"application/json"});
+    res.write(JSON.stringify({data: "imagine salvata"}))
+}
+
+module.exports = {register, login, logout, getProfile, saveInformation, saveImage};

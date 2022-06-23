@@ -125,7 +125,8 @@ const postRoutes = {
     logout: userController.logout,
     garden_manager: gardenController.savePlants,
     courses: courseController.saveBookmark,
-    profile: userController.saveInformation
+    profile: userController.saveInformation,
+    save_image: userController.saveImage
 };
 
 const putRoutes = {

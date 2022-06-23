@@ -13,11 +13,19 @@
         @font-face {
             font-family: Dashed;
             src: url(/fonts/Quicksand_Dash.otf);
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Quicksand';
+            src: url(https://fonts.gstatic.com/s/quicksand/v29/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            font-display: swap;
         }
 
 
         body {
-            background-image: url("images/pattern.png");
+            background-image: url("./images/pattern.webp");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -77,7 +85,8 @@
             text-align: left;
         }
 
-        .cuprins, .cuprins ol {
+        .cuprins,
+        .cuprins ol {
             counter-reset: item;
         }
 
@@ -90,15 +99,17 @@
             counter-increment: item;
         }
 
-        #image1{
+        #image1 {
             width: 70rem;
             height: 30rem;
         }
-        #image2{
+
+        #image2 {
             width: 55rem;
             height: 40rem;
         }
-        #image3{
+
+        #image3 {
             width: 60rem;
             height: 40rem;
         }
@@ -202,8 +213,8 @@
                 <h2>1.2 Publicul țintă și sugestii pentru parcurgerea documentului</h2>
                 <p>
                     Proiectul prezentat în acest document are ca public țintă cadrele didactice ale Facultății de
-                    Informatică din cadrul Universității Alexandru Ioan Cuza, specializate în domeniul Tehnologii Web. 
-                    Pentru o cât mai bună înțelegere a acestui document se recomandă parcurgerea în ordinea 
+                    Informatică din cadrul Universității Alexandru Ioan Cuza, specializate în domeniul Tehnologii Web.
+                    Pentru o cât mai bună înțelegere a acestui document se recomandă parcurgerea în ordinea
                     subunităților prezentate în cuprinsul de mai sus.
                 </p>
             </section>
@@ -213,8 +224,8 @@
                 <p>
 
                     Scopul proiectului "Gardening Tutor" este acela de a pune la dispoziția tuturor celor pasionați de
-                    grădinărit o serie de cursuri, de diferite dificultăți și categorii, cu ajutorul cărora utilizatorii 
-                    vor învăța pas cu pas modul în care se crește și îngrijește corect o anumită plantă. 
+                    grădinărit o serie de cursuri, de diferite dificultăți și categorii, cu ajutorul cărora utilizatorii
+                    vor învăța pas cu pas modul în care se crește și îngrijește corect o anumită plantă.
                     Aceștia vor primi indicații în legătură cu ustensilele necesare, timpul de
                     parcurgere al cursului și sfaturi utile.
                 </p>
@@ -228,9 +239,9 @@
             <section id="perspectiva">
                 <h2>2.1 Perspectiva produsului</h2>
                 <p>Aplicația web "Gardening Tutor" a fost aleasă dintr-o serie de aplicații propuse spre dezvoltare de
-                    către domnul profesor Matei Micu, având scop didactic și de dezvoltare. Această aplicație este 
+                    către domnul profesor Matei Micu, având scop didactic și de dezvoltare. Această aplicație este
                     constituită din trei componente: o pagină web principală ce poate fi vizualizată de către orice
-                    utilizator, o serie de pagini web disponibile numai clienților cu un cont creat și o bază de 
+                    utilizator, o serie de pagini web disponibile numai clienților cu un cont creat și o bază de
                     date pentru a stoca toate informațiile legate de utilizatori.</p>
             </section>
 
@@ -258,12 +269,13 @@
                 </p>
                 <p>
                     Prima categorie reprezintă vizitatorul. Acesta poate vizualiza detaliile legate de aplicație și
-                    contact pe pagina principală, categoriile de cursuri și dificultățile acestora, precum și 
+                    contact pe pagina principală, categoriile de cursuri și dificultățile acestora, precum și
                     clasamentul utilizatorilor cei mai activi.
                 </p>
                 <p>
                     A doua categorie reprezintă utilizatorul activ, ce și-a creat un cont și are acces la conținutul
-                    cursurilor și posibilitatea de a le parcurge, evoluția sa, informațiile profilului său și pagina dedicată
+                    cursurilor și posibilitatea de a le parcurge, evoluția sa, informațiile profilului său și pagina
+                    dedicată
                     managementului grădinii.
                 </p>
             </section>
@@ -296,7 +308,7 @@
                 <h2>2.6 Documentația pentru utilizator</h2>
                 <p>
                     Deoarece aplicația este realizată cu scopul de a fi ușor de utilizat și intuitivă, documentația de
-                    față este suficientă pentru înțelegerea de către utilizator a funcționalităților și folosirea 
+                    față este suficientă pentru înțelegerea de către utilizator a funcționalităților și folosirea
                     acesteia.
                 </p>
             </section>
@@ -337,7 +349,8 @@
                     accesată pagina
                     Garden Manager utilizatorul va avea un tabel pentru managementul plantelor din grădina sa, unde va
                     putea să planteze
-                    și mai apoi să facă update-uri la statutul acestora. Mai mult decât atât, în cadrul serviciului Garden
+                    și mai apoi să facă update-uri la statutul acestora. Mai mult decât atât, în cadrul serviciului
+                    Garden
                     Manager utilizatorul
                     va putea primi reminder pe e-mailul pe care l-a folosit la înregistrare cu o zi sau două înainte de
                     deadline
@@ -358,22 +371,27 @@
             <section id="hardware_interfaces">
                 <h2>3.2 Interfețe hardware</h2>
                 <p> Interfața aplicației a fost creată astfel încât să fie compatibilă cu cele mai utilizate dispozitive
-                    (telefon mobil, tabletă, PC etc.). Având în vedere funcționalitățile simple ale aplicației, se estimează un
-                    cost minim al necesităților tehnice și de asemenea a unei capacități reduse necesare pentru back-end. Protocolul
+                    (telefon mobil, tabletă, PC etc.). Având în vedere funcționalitățile simple ale aplicației, se
+                    estimează un
+                    cost minim al necesităților tehnice și de asemenea a unei capacități reduse necesare pentru
+                    back-end. Protocolul
                     de comunicare client-server și server-server (pentru comunicare internă între componente) va fi TCP.
                 </p>
             </section>
 
             <section id="software_interfaces">
                 <h2>3.3 Interfețe software</h2>
-                <p> Aplicația interacționează cu alte elemente software externe, cum ar fi: browser-ul și sistem de mailing.
+                <p> Aplicația interacționează cu alte elemente software externe, cum ar fi: browser-ul și sistem de
+                    mailing.
                 </p>
             </section>
 
             <section id="comunication_interfaces">
                 <h2>3.4 Interfețe de comunicare</h2>
-                <p> Comunicarea dintre front-end si back-end se bazează pe protocolul HTTP. Request-urile pentru baza de date se vor realiza cu ajutorul
-                    unor interogări SQL. Deși, pentru securitatea datelor este necesară utilizarea protocolului HTTPS, nu îl putem utiliza din
+                <p> Comunicarea dintre front-end si back-end se bazează pe protocolul HTTP. Request-urile pentru baza de
+                    date se vor realiza cu ajutorul
+                    unor interogări SQL. Deși, pentru securitatea datelor este necesară utilizarea protocolului HTTPS,
+                    nu îl putem utiliza din
                     cauza costurilor ridicate pentru că proiectul este unul realizat doar în scop didactic.
 
                 </p>
@@ -388,40 +406,51 @@
                 <div>
                     <h3>Descriere și prioritate</h3>
                     <p>
-                        Pentru a putea accesa conținutul unui curs și pentru a beneficia de monitorizarea progresului, respectiv de posibilitatea de a salva cursuri, utilizatorii aplicației sunt nevoiți să-și creeze mai întâi un cont.
-                        Informațiile necesare creării contului vor fi un nume, un e-mail valid și o parolă care să respecte anumite condiții de siguranță. <br>
-                        Prioritatea acestei componente este ridicată deoarece, pentru ca un utilizator să se poată bucura pe deplin de funcționalitățile aplicației, acesta trebuia să dețină un cont.
+                        Pentru a putea accesa conținutul unui curs și pentru a beneficia de monitorizarea progresului,
+                        respectiv de posibilitatea de a salva cursuri, utilizatorii aplicației sunt nevoiți să-și creeze
+                        mai întâi un cont.
+                        Informațiile necesare creării contului vor fi un nume, un e-mail valid și o parolă care să
+                        respecte anumite condiții de siguranță. <br>
+                        Prioritatea acestei componente este ridicată deoarece, pentru ca un utilizator să se poată
+                        bucura pe deplin de funcționalitățile aplicației, acesta trebuia să dețină un cont.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
                         Pașii pe care un utilizator trebuie să îi urmeze pentru a-și crea un cont sunt următorii: <br>
-                        <ul>
-                            <li>introducerea numelui în câmpul corespunzător;</li>
-                            <li>introducerea unei adrese de e-mail valide în câmpul corespunzător;</li>
-                            <li>introducerea unei parole care să respecte anumite cerințe; <br>
-                                utilizatorul va fi informat în timp real, care din aceste cerințe sunt îndeplinite de textul introdus în câmpul aferent parolei;
-                            </li>
-                            <li>reintroducerea parolei (exact aceeași) din câmpul precedent;</li>
-                            <li>apăsarea butonului "Sign Up", aflat sub câmpurile de completat.</li>                            
-                        </ul>
+                    <ul>
+                        <li>introducerea numelui în câmpul corespunzător;</li>
+                        <li>introducerea unei adrese de e-mail valide în câmpul corespunzător;</li>
+                        <li>introducerea unei parole care să respecte anumite cerințe; <br>
+                            utilizatorul va fi informat în timp real, care din aceste cerințe sunt îndeplinite de textul
+                            introdus în câmpul aferent parolei;
+                        </li>
+                        <li>reintroducerea parolei (exact aceeași) din câmpul precedent;</li>
+                        <li>apăsarea butonului "Sign Up", aflat sub câmpurile de completat.</li>
+                    </ul>
 
-                        <p>
-                            După apăsarea butonului "Sign up", dacă unul dintre câmpuri nu a fost completat sau dacă nu a fost completat corect,
-                            atunci contul nu va fi creat, iar utilizatorului i se va atrage atenția asupra câmpului care nu a fost completat/ nu a fost completat corect.
-                            Dacă înregistrarea a fost făcută cu succes, atunci utilizatorul va primi un mesaj prin care va fi informat ca i-a fost transmis un e-mail pentru
-                            confirmarea identității. 
-                        </p>
+                    <p>
+                        După apăsarea butonului "Sign up", dacă unul dintre câmpuri nu a fost completat sau dacă nu a
+                        fost completat corect,
+                        atunci contul nu va fi creat, iar utilizatorului i se va atrage atenția asupra câmpului care nu
+                        a fost completat/ nu a fost completat corect.
+                        Dacă înregistrarea a fost făcută cu succes, atunci utilizatorul va primi un mesaj prin care va
+                        fi informat ca i-a fost transmis un e-mail pentru
+                        confirmarea identității.
+                    </p>
                     </p>
 
                     <h3>Cerințe funcționale</h3>
                     <p>
-                        Pentru a putea fi creat contul, fiecare câmp trebuie completat, iar următoarele câmpuri trebuie să aibă și un conținut valid:
-                        <ul>
-                            <li>email-ul trebuie să fie unul valid</li>
-                            <li>parola trebuie să respecte următoarele cerințe: să conțină cel puțin 8 caractere, să conțină cel puțin o literă mică, o literă mare, respectiv o cifră</li>
-                            <li>textul introdus în câmpul pentru confirmarea parolei trebuie să coincidă cu textul din câmpul corespunzător parolei</li>
-                        </ul>
+                        Pentru a putea fi creat contul, fiecare câmp trebuie completat, iar următoarele câmpuri trebuie
+                        să aibă și un conținut valid:
+                    <ul>
+                        <li>email-ul trebuie să fie unul valid</li>
+                        <li>parola trebuie să respecte următoarele cerințe: să conțină cel puțin 8 caractere, să conțină
+                            cel puțin o literă mică, o literă mare, respectiv o cifră</li>
+                        <li>textul introdus în câmpul pentru confirmarea parolei trebuie să coincidă cu textul din
+                            câmpul corespunzător parolei</li>
+                    </ul>
                     </p>
                 </div>
             </section>
@@ -432,24 +461,27 @@
                 <div>
                     <h3>Descriere și prioritate</h3>
                     <p>
-                        Rolul acestei componente este același ca cel al componentei de înregistrare. Singura diferență este că autentificarea completează înregistrarea: 
-                        nu este suficient ca un utilizator să aibă cont în aplicație, acesta trebuie să se și autentifice cu acest cont, pentru a putea beneficia de funcționalitățile aplicației.
+                        Rolul acestei componente este același ca cel al componentei de înregistrare. Singura diferență
+                        este că autentificarea completează înregistrarea:
+                        nu este suficient ca un utilizator să aibă cont în aplicație, acesta trebuie să se și
+                        autentifice cu acest cont, pentru a putea beneficia de funcționalitățile aplicației.
                         <br> Prioritatea este ridicată.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
                         Pașii pe care un utilizator trebuie să îi urmeze pentru a se autentifica sunt următorii:
-                        <ul>
-                            <li>introducerea adresei de e-mail pe care a folosit-o la crearea contului;</li>
-                            <li>introducerea parolei pe care a setat-o la crearea contului;</li>
-                            <li>apăsarea butonului "Log In";</li>
-                        </ul>
+                    <ul>
+                        <li>introducerea adresei de e-mail pe care a folosit-o la crearea contului;</li>
+                        <li>introducerea parolei pe care a setat-o la crearea contului;</li>
+                        <li>apăsarea butonului "Log In";</li>
+                    </ul>
                     </p>
 
                     <h3>Cerințe funcționale</h3>
                     <p>
-                        Pentru a se putea realiza autentificarea, combinația dintre e-mail și parolă trebuie să fie una corectă - să fi fost folosită la crearea unui cont.
+                        Pentru a se putea realiza autentificarea, combinația dintre e-mail și parolă trebuie să fie una
+                        corectă - să fi fost folosită la crearea unui cont.
                     </p>
                 </div>
             </section>
@@ -460,24 +492,31 @@
                 <div>
                     <h3>Descriere și prioritate</h3>
                     <p>
-                        Această componentă constituie nucleul produsului, fiind cea care oferă utilizatorului cele mai importante motive ca să folosească această aplicație.
+                        Această componentă constituie nucleul produsului, fiind cea care oferă utilizatorului cele mai
+                        importante motive ca să folosească această aplicație.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
                         Pașii pe care un utilizator trebuie să îi urmeze pentru a parcurge un curs sunt următorii:
-                        <ul>
-                            <li>accesarea paginii "Courses" prin apăsarea butonului cu același nume aflat în bara de navigare pusă la dispoziție în fiecare pagină a aplicației; sau accesarea secțiunii "My Courses" din interiorul paginii "Profile"</li>
-                            <li>selectarea cursului dorit, prin apăsarea butonului "Get Started"/"Continue" din cadrul cardului unui curs</li>
-                            <li>bifarea pe rând a etapelor necesare ducerii la bun sfârșit a cursului</li>
-                            <li>apăsarea butonului "Done" de la finalul cursului</li>
-                        </ul>
+                    <ul>
+                        <li>accesarea paginii "Courses" prin apăsarea butonului cu același nume aflat în bara de
+                            navigare pusă la dispoziție în fiecare pagină a aplicației; sau accesarea secțiunii "My
+                            Courses" din interiorul paginii "Profile"</li>
+                        <li>selectarea cursului dorit, prin apăsarea butonului "Get Started"/"Continue" din cadrul
+                            cardului unui curs</li>
+                        <li>bifarea pe rând a etapelor necesare ducerii la bun sfârșit a cursului</li>
+                        <li>apăsarea butonului "Done" de la finalul cursului</li>
+                    </ul>
                     </p>
 
                     <h3>Cerințe funcționale</h3>
                     <p>
-                        Utilizatorul va trebui să bifeze pe rând etapele din interiorul cursului, în ordinea în care apar (de sus în jos). Încercarea de bifare a unei etape nu va avea succes dacă toate etapele premergătoare nu au fost deja bifate.
-                        Pentru a avea efect apăsarea butonului "Done", utilizatorul trebuie mai întâi să bifeze toate etapele cursului, respectând cerințele prezentate mai sus.
+                        Utilizatorul va trebui să bifeze pe rând etapele din interiorul cursului, în ordinea în care
+                        apar (de sus în jos). Încercarea de bifare a unei etape nu va avea succes dacă toate etapele
+                        premergătoare nu au fost deja bifate.
+                        Pentru a avea efect apăsarea butonului "Done", utilizatorul trebuie mai întâi să bifeze toate
+                        etapele cursului, respectând cerințele prezentate mai sus.
                     </p>
                 </div>
             </section>
@@ -487,16 +526,21 @@
                 <div>
                     <h3>Descriere și prioritate</h3>
                     <p>
-                        Utilizatorii care și-au creat un cont în această aplicație pot verifica anumite informații despre propriul profil, cum ar fi: informații generale, realizări, cursurile pe care le urmează, cursurile salvate.
+                        Utilizatorii care și-au creat un cont în această aplicație pot verifica anumite informații
+                        despre propriul profil, cum ar fi: informații generale, realizări, cursurile pe care le urmează,
+                        cursurile salvate.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
-                        Pașii pe care un utiliztor trebuie să îi urmeze pentru a vizualiza informațiile despre propriul profil sunt următorii:
-                        <ul>    
-                            <li>accesarea paginii "Profile" prin apăsarea butonului cu același nume aflat în bara de navigare puăa la dispoziție în fiecare pagină a aplicației</li>
-                            <li>accesarea unei secțiuni specifice de informații prin apăsarea unui buton din meniul aflat în această pagină</li>
-                        </ul>
+                        Pașii pe care un utiliztor trebuie să îi urmeze pentru a vizualiza informațiile despre propriul
+                        profil sunt următorii:
+                    <ul>
+                        <li>accesarea paginii "Profile" prin apăsarea butonului cu același nume aflat în bara de
+                            navigare puăa la dispoziție în fiecare pagină a aplicației</li>
+                        <li>accesarea unei secțiuni specifice de informații prin apăsarea unui buton din meniul aflat în
+                            această pagină</li>
+                    </ul>
                     </p>
                 </div>
             </section>
@@ -506,29 +550,35 @@
                 <div>
                     <h3>Descriere</h3>
                     <p>
-                        Utilizatorii au posibilitatea de a-și monitoriza fiecare plantă, introducând-o, apoi modificând-o în formularul aflat pe pagina "Garden Manager".
-                        De asemenea, aceștia pot șterge o plantă din tabel în cazul în care nu mai doresc monitorizarea acesteia.
+                        Utilizatorii au posibilitatea de a-și monitoriza fiecare plantă, introducând-o, apoi
+                        modificând-o în formularul aflat pe pagina "Garden Manager".
+                        De asemenea, aceștia pot șterge o plantă din tabel în cazul în care nu mai doresc monitorizarea
+                        acesteia.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
-                        Pașii pe care un utilizator trebuie să îi urmeze pentru a introduce o plantă în tabelul de monitorizare sunt următorii:
-                        <ul>
-                            <li>introducerea unui nume pentru planta ce se dorește a fi monitorizată</li>
-                            <li>introducerea datei calenderistice la care a avut loc ultima interacțiune cu planta</li>
-                            <li>introducerea datei calendaristice la care utilizatorul trebuie să desfășoare următoarea activitate</li>
-                            <li>selectarea stadiului în care se află obiectul ce se dorește a fi monitorizat</li>
-                            <li>selectarea următoarei interacțiuni pe care trebuie să o aibă utilizatorul cu planta</li>
-                            <li>apăsarea butonului "Add New Plant"</li>
-                        </ul>
+                        Pașii pe care un utilizator trebuie să îi urmeze pentru a introduce o plantă în tabelul de
+                        monitorizare sunt următorii:
+                    <ul>
+                        <li>introducerea unui nume pentru planta ce se dorește a fi monitorizată</li>
+                        <li>introducerea datei calenderistice la care a avut loc ultima interacțiune cu planta</li>
+                        <li>introducerea datei calendaristice la care utilizatorul trebuie să desfășoare următoarea
+                            activitate</li>
+                        <li>selectarea stadiului în care se află obiectul ce se dorește a fi monitorizat</li>
+                        <li>selectarea următoarei interacțiuni pe care trebuie să o aibă utilizatorul cu planta</li>
+                        <li>apăsarea butonului "Add New Plant"</li>
+                    </ul>
                     </p>
 
                     <h3>Cerințe funcționale</h3>
                     <p>
-                        Pentru a putea adăuga o plantă în tabelul de monitorizare, toate câmpurile de mai sus trebuie să fie completate.
-                        Data până la care trebuie să aibă loc următoarea interacțiune cu planta, nu trebuie să fie cronologic înaintea datei ultimei interacțiuni.
+                        Pentru a putea adăuga o plantă în tabelul de monitorizare, toate câmpurile de mai sus trebuie să
+                        fie completate.
+                        Data până la care trebuie să aibă loc următoarea interacțiune cu planta, nu trebuie să fie
+                        cronologic înaintea datei ultimei interacțiuni.
                     </p>
-                    
+
                 </div>
             </section>
 
@@ -537,13 +587,15 @@
                 <div>
                     <h3>Descriere</h3>
                     <p>
-                        Aplicația pune la dispoziția tuturor utilizatorilor (nu doar celor care au un cont) să vizualizeze un clasamnet creat pe baza
+                        Aplicația pune la dispoziția tuturor utilizatorilor (nu doar celor care au un cont) să
+                        vizualizeze un clasamnet creat pe baza
                         numărului și dificultății cursurilor terminate.
                     </p>
 
                     <h3>Secvențe de stimul/răspuns</h3>
                     <p>
-                        Pentru a putea vizualiza clasamentul, singurul lucru pe care trebuie sa îl facă un utilizator este să aceseze pagina "Leaderboard" apăsând butonul cu același nume din bara de navigare. 
+                        Pentru a putea vizualiza clasamentul, singurul lucru pe care trebuie sa îl facă un utilizator
+                        este să aceseze pagina "Leaderboard" apăsând butonul cu același nume din bara de navigare.
                     </p>
                 </div>
             </section>
@@ -556,23 +608,25 @@
             <section id="performance">
                 <h2>5.1 Cerințe de performanță</h2>
                 <p>
-                    <ul>
-                        <li>Normalizarea bazei de date</li>
-                    </ul>
+                <ul>
+                    <li>Normalizarea bazei de date</li>
+                </ul>
                 </p>
             </section>
 
             <section id="siguranta">
                 <h2>5.2 Cerințe de siguranță</h2>
                 <p>
-                    După ce utilizatorul a introdus date valide în formularul de înregistrare acesta va primi pe adresa de e-mail specificată un mail de confirmare a identității.
+                    După ce utilizatorul a introdus date valide în formularul de înregistrare acesta va primi pe adresa
+                    de e-mail specificată un mail de confirmare a identității.
                 </p>
             </section>
 
             <section id="securitate">
                 <h2>5.3 Cerințe de securitate</h2>
                 <p>
-                    Parola introdusă de utilizator va fi trimisă către back-end și menținută în baza de date într-un format criptat.
+                    Parola introdusă de utilizator va fi trimisă către back-end și menținută în baza de date într-un
+                    format criptat.
                 </p>
             </section>
 
@@ -580,11 +634,11 @@
                 <h2>5.4 Cerințe de calitate software</h2>
                 <ul>
                     <li>
-                        Portability: aplicația va putea fi folosită pe mai multe tipuri de dispozitive 
+                        Portability: aplicația va putea fi folosită pe mai multe tipuri de dispozitive
                     </li>
                     <li>Corectness: informațiile regăsite în cursuri sunt corecte</li>
                     <li>Usability: ușurința în navigarea între paginilie aplicației și un comportament predictibil</li>
-                    
+
                 </ul>
             </section>
 
@@ -592,7 +646,8 @@
                 <h2>5.5 Reguli de business</h2>
                 <p>
                     Un utilizator fără cont are acces doar la home page, lista de cursuri și clasament. <br>
-                    Pentru a putea beneficia de funcționalitățile aplicației: parcurgerea de cursuri și managemntul grădinii, un utilizator trebuie mai întâi să-și creeze un cont. 
+                    Pentru a putea beneficia de funcționalitățile aplicației: parcurgerea de cursuri și managemntul
+                    grădinii, un utilizator trebuie mai întâi să-și creeze un cont.
                 </p>
             </section>
 
@@ -631,7 +686,7 @@
             <a href="https://www.figma.com/file/s7eMr2OtBGEiGMKa6a3Eww/GARDENING-TUTOR?node-id=2%3A14">
                 Link pentru flow-ul aplicației elaborat în Figma
             </a>
-            
+
         </section>
 
         <section id="arhitectura">

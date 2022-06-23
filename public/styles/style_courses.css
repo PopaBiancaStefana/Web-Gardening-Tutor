@@ -1,4 +1,10 @@
 /*  BASE STYLING */
+@font-face {
+    font-family: 'Quicksand';
+    src: url(https://fonts.gstatic.com/s/quicksand/v29/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
 
 * {
     margin: 0;
@@ -8,11 +14,12 @@
 }
 
 body {
-    background-image: url("../images/pattern.png");
+    background-image: url("../images/pattern.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Quicksand', sans-serif;
+    font-display: swap;
 }
 
 a {
@@ -87,7 +94,6 @@ ul li a:hover {
     -webkit-text-fill-color: transparent;
     font-size: 50px;
     padding-top: 3%;
-    font-family: 'Quicksand', sans-serif;
 }
 
 .banner-container p {
@@ -149,7 +155,6 @@ ul li a:hover {
     color: rgb(255, 255, 255);
     font-weight: 900;
     font-size: 28px;
-    font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -214,6 +219,7 @@ ul li a:hover {
     position: relative;
     top: 40px;
     font: bold 30px 'Quicksand', sans-serif;
+    font-display: swap;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -229,7 +235,6 @@ ul li a:hover {
     height: 60px;
     position: relative;
     top: 40px;
-    font: bold 30px 'Quicksand', sans-serif;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -244,8 +249,6 @@ ul li a:hover {
     height: 60px;
     position: relative;
     top: 40px;
-    font: bold 30px 'Quicksand',
-        sans-serif;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,

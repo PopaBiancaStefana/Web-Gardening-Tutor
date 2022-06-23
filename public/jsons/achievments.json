@@ -1,22 +1,22 @@
 {
     "first_course":{
-        "photo_path": "first_course.png",
+        "photo_path": "first_course.webp",
         "description":"Finished a course"
     },
     "all_course":{    
-        "photo_path": "all_courses.png",
+        "photo_path": "all_courses.webp",
         "description":"Finished all courses"
     },
     "first":{
-        "photo_path": "first.png",
+        "photo_path": "first.webp",
         "description":"First place"
     },
     "second":{
-        "photo_path": "second.png",
+        "photo_path": "second.webp",
         "description":"Second place"
     },
     "third":{
-        "photo_path": "third.png",
+        "photo_path": "third.webp",
         "description":"Third place"
     }
 }
