@@ -219,7 +219,6 @@ ul li a:hover {
     position: relative;
     top: 40px;
     font: bold 30px 'Quicksand', sans-serif;
-    font-display: swap;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -235,6 +234,7 @@ ul li a:hover {
     height: 60px;
     position: relative;
     top: 40px;
+    font: bold 30px 'Quicksand', sans-serif;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -249,6 +249,7 @@ ul li a:hover {
     height: 60px;
     position: relative;
     top: 40px;
+    font: bold 30px 'Quicksand', sans-serif;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
