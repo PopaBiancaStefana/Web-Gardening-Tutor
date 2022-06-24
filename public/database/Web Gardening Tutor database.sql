@@ -1,6 +1,5 @@
 CREATE TABLE registered_users (
   id int PRIMARY KEY AUTO_INCREMENT,
-  photo_path  varchar(255),
   name  varchar(255),
   e_mail  varchar(255),
   password  varchar(255),
@@ -71,4 +70,5 @@ alter table user_session drop column id;
 alter table courses_in_progress drop column bookmarked;
 alter table registered_users drop column registration_date;
 alter table registered_users add column profile_information varchar(50);
+alter table registered_users drop column photo_path;
 
