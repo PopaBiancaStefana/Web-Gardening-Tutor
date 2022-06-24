@@ -122,8 +122,6 @@ async function saveInformation(data, res)
 
 function saveImage(data, res)
 {
-    console.log(JSON.stringify(data.payload));
-
     try{
         userModel.saveImage(data)
     } catch (err) {
