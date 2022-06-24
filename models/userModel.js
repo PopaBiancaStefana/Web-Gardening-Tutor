@@ -43,7 +43,7 @@ async function createUser(user)
 
 
     let profile_information = {
-        photo_path:"",
+        photo_path:"images/avatars/avatar.webp",
         about:"",
         profession:"",
         registration_date: new Date(),

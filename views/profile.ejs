@@ -95,7 +95,7 @@
                             <% let path = "images/avatar.webp"; %> 
                             <input type="file" name="avatar" id="avatar" onchange="loadFile(event)" accept=".png,.jpg">
                             <% if((locals.photo_path == '')) { %>
-                                <% path = "images/avatar.webp" %> 
+                                <% path = "images/avatars/avatar.webp" %> 
                             <% } else { %>  
                                 <% path = profile_information.photo_path %>
                             <% } %> 
