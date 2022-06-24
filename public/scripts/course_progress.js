@@ -67,7 +67,9 @@ function saveForm(event) {
     }
   }
   putProgress(total);
-
+  if (total == 5) {
+    putConfetti();
+  }
   var data = {
     user_id: null,
     course_name: course,
@@ -115,4 +117,11 @@ function enable_next_checkbox(j) {
       document.form1.ckb[i].disabled = true;
     }
   }
+}
+
+function putConfetti() {
+  let conf = document.getElementById("confettis");
+  conf.style.display = "block";
+  document.documentElement.scrollTop = 0;
+  setTimeout(() => { conf.style.display = "none"; }, 14000);
 }
